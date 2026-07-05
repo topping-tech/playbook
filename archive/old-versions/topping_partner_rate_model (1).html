@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Topping Courier - Daily Partner Rate Model</title>
+  <style>
+    body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f4f6f8;color:#1f2937;line-height:1.8}
+    .page{max-width:1000px;margin:40px auto;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.08)}
+    .hero{background:linear-gradient(135deg,#111827,#2563eb);color:white;padding:42px}
+    .hero h1{margin:0 0 10px;font-size:34px}
+    .hero p{margin:0;font-size:18px;opacity:.95}
+    .section{padding:34px 42px;border-bottom:1px solid #e5e7eb}
+    h2{margin-top:0;color:#111827;font-size:24px}
+    .note{background:#eff6ff;border-right:6px solid #2563eb;padding:18px 20px;border-radius:14px;margin:18px 0}
+    .warning{background:#fff7ed;border-right:6px solid #f97316;padding:18px 20px;border-radius:14px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin-top:18px;direction:ltr;text-align:center;overflow:hidden;border-radius:14px}
+    th{background:#111827;color:white;padding:14px}
+    td{padding:14px;border-bottom:1px solid #e5e7eb;background:#fafafa}
+    tr:nth-child(even) td{background:#f3f4f6}
+    .formula{direction:ltr;background:#111827;color:#e5e7eb;padding:20px;border-radius:14px;font-family:Consolas,monospace;margin-top:16px;white-space:pre-wrap;text-align:left}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:16px;padding:18px}
+    .card b{display:block;color:#111827;font-size:18px;margin-bottom:6px}
+    .footer{padding:26px 42px;background:#111827;color:#d1d5db;text-align:center}
+    .ltr{direction:ltr;text-align:left}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="hero">
+      <h1>مدل نرخ همکاری روزانه Topping Courier</h1>
+      <p>Daily Partner Rate Model برای مشتریان دائمی B2B</p>
+    </div>
+
+    <div class="section">
+      <h2>هدف مدل</h2>
+      <p>
+        این مدل برای مشتریانی طراحی شده که به‌صورت دائمی و روزانه سفارش دارند. مشتری می‌تواند از همان روز اول داخل سیستم پلن همکاری را انتخاب کند و سیستم به‌صورت خودکار قیمت را محاسبه کند.
+      </p>
+      <div class="note">
+        نکته کلیدی: تخفیف از روز اول فعال می‌شود، اما هر پلن دارای حداقل تعهد ماهانه است تا شرکت ضرر نکند.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>جدول پلن‌های همکاری</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Daily Volume</th>
+            <th>Discount</th>
+            <th>Minimum Monthly Commitment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Standard</td>
+            <td>Pay Per Order</td>
+            <td>0%</td>
+            <td>No Commitment</td>
+          </tr>
+          <tr>
+            <td>Starter Partner</td>
+            <td>1 Order / Day</td>
+            <td>5%</td>
+            <td>20 Orders / Month</td>
+          </tr>
+          <tr>
+            <td>Silver Partner</td>
+            <td>2–4 Orders / Day</td>
+            <td>10%</td>
+            <td>40 Orders / Month</td>
+          </tr>
+          <tr>
+            <td>Gold Partner</td>
+            <td>5–9 Orders / Day</td>
+            <td>15%</td>
+            <td>100 Orders / Month</td>
+          </tr>
+          <tr>
+            <td>Platinum Partner</td>
+            <td>10–19 Orders / Day</td>
+            <td>20%</td>
+            <td>200 Orders / Month</td>
+          </tr>
+          <tr>
+            <td>Enterprise</td>
+            <td>20+ Orders / Day</td>
+            <td>Custom</td>
+            <td>Custom Contract</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>فرمول محاسبه قیمت</h2>
+      <p>قیمت پایه ابتدا محاسبه می‌شود، سپس بر اساس پلن انتخابی مشتری، درصد همکاری اعمال می‌شود.</p>
+      <div class="formula">Base Price = Base Fee + (Distance × KM Rate) + Extra Services
+
+Standard Price = Base Price
+Starter Partner = Base Price × 0.95
+Silver Partner = Base Price × 0.90
+Gold Partner = Base Price × 0.85
+Platinum Partner = Base Price × 0.80
+
+Final Price = Partner Price + HST</div>
+    </div>
+
+    <div class="section">
+      <h2>قانون محافظت از ضرر</h2>
+      <div class="warning">
+        اگر مشتری پلن همکاری را انتخاب کند اما در پایان ماه به حداقل تعداد سفارش نرسد، سیستم باید مابه‌التفاوت قیمت همکاری و قیمت عادی را محاسبه کند.
+      </div>
+      <div class="formula">If Monthly Orders >= Minimum Commitment:
+    Keep Partner Rate
+
+If Monthly Orders < Minimum Commitment:
+    Adjustment = Standard Price Total - Partner Price Total
+    Add Adjustment to Monthly Invoice</div>
+    </div>
+
+    <div class="section">
+      <h2>متن پیشنهادی داخل سیستم</h2>
+      <div class="card ltr">
+        By selecting a Partner Rate, you agree to maintain the minimum monthly shipment volume required for this plan. If the minimum monthly volume is not met, the standard rate may apply and the difference may be added to your monthly invoice.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>توضیح ساده برای جلسه فروش</h2>
+      <div class="grid">
+        <div class="card"><b>برای مشتری جدید</b>قیمت عادی قابل استفاده است، بدون تعهد ماهانه.</div>
+        <div class="card"><b>برای مشتری دائمی</b>از روز اول می‌تواند نرخ همکاری بگیرد.</div>
+        <div class="card"><b>برای کنترل ریسک</b>هر پلن حداقل سفارش ماهانه دارد.</div>
+        <div class="card"><b>برای رشد فروش</b>مشتری تشویق می‌شود سفارش‌های بیشتری را به Topping بدهد.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Topping Courier Inc. — Deliver with confidence
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>متد سنتر — مطالعه موردی زنده | Topping Courier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#070B14;
+    --void-2:#0D1729;
+    --panel:#101C31;
+    --panel-line:rgba(255,255,255,.08);
+    --paper:#F6F3EC;
+    --paper-2:#EFEAE0;
+    --ink:#12182B;
+    --muted-dark:#8794AC;
+    --muted-light:#6B7280;
+    --amber:#FF8A3D;
+    --amber-soft:rgba(255,138,61,.16);
+    --teal:#2FD4C4;
+    --line-light:rgba(18,24,43,.1);
+    --mono:'JetBrains Mono',monospace;
+    --display:'Vazirmatn','Tahoma',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--display);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.85;
+  }
+  ::selection{background:var(--amber-soft);color:var(--ink);}
+
+  .num{font-family:var(--mono);direction:ltr;display:inline-block;font-variant-numeric:tabular-nums;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(47,212,196,.12), transparent 45%),
+      radial-gradient(circle at 80% 75%, rgba(255,138,61,.14), transparent 40%),
+      var(--void);
+    color:#fff;
+    overflow:hidden;
+    padding:100px 24px 90px;
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;
+    color:var(--teal);text-transform:uppercase;
+    padding:8px 14px;border:1px solid rgba(47,212,196,.35);border-radius:999px;
+    background:rgba(47,212,196,.06);
+    margin-bottom:28px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:blink 1.6s infinite;}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  .hero h1{
+    font-size:clamp(38px,6vw,68px);
+    font-weight:900;
+    letter-spacing:-1px;
+    margin:0 0 22px;
+    line-height:1.12;
+  }
+  .hero h1 span{color:var(--amber);}
+  .hero p{
+    max-width:680px;font-size:18.5px;color:rgba(255,255,255,.72);margin:0 0 40px;
+  }
+  .hero-stats{display:flex;gap:44px;flex-wrap:wrap;}
+  .hero-stat b{display:block;font-family:var(--mono);font-size:30px;color:#fff;font-weight:700;}
+  .hero-stat span{font-size:13.5px;color:rgba(255,255,255,.5);}
+
+  .net-field{
+    position:absolute;inset:0;z-index:1;opacity:.55;
+    pointer-events:none;
+  }
+  .net-field svg{width:100%;height:100%;}
+  .drift{animation:drift 9s ease-in-out infinite;}
+  @keyframes drift{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(6px,-10px);}
+  }
+
+  /* ---------- SECTION SHELLS ---------- */
+  section.block{padding:84px 24px;}
+  .wrap{max-width:1120px;margin:0 auto;}
+  .kicker{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber);margin:0 0 14px;font-weight:600;
+  }
+  h2.title{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.5px;margin:0 0 18px;}
+  .lede{font-size:18px;color:var(--muted-light);max-width:760px;margin:0 0 48px;}
+
+  /* ---------- PROBLEM COMPARISON ---------- */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .compare-card{
+    border-radius:22px;padding:32px;border:1px solid var(--line-light);background:#fff;
+  }
+  .compare-card.old{background:linear-gradient(180deg,#fff,#FBF6F0);}
+  .compare-card.new{
+    background:linear-gradient(160deg,var(--void),var(--void-2));
+    color:#fff;border-color:transparent;
+    box-shadow:0 30px 60px rgba(7,11,20,.25);
+  }
+  .compare-card h3{font-size:20px;margin:0 0 6px;}
+  .compare-card .tag{font-family:var(--mono);font-size:12px;color:var(--muted-light);letter-spacing:.05em;}
+  .compare-card.new .tag{color:rgba(47,212,196,.85);}
+  .compare-list{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:13px;}
+  .compare-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;}
+  .compare-card.old .compare-list li::before{content:"✕";color:#C4573C;font-weight:800;flex-shrink:0;}
+  .compare-card.new .compare-list li::before{content:"✓";color:var(--teal);font-weight:800;flex-shrink:0;}
+  .compare-card.old .compare-list{color:#4B4238;}
+  .compare-card.new .compare-list{color:rgba(255,255,255,.82);}
+  @media(max-width:800px){.compare{grid-template-columns:1fr;}}
+
+  /* ---------- CANDIDATES ---------- */
+  .cand-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .cand-card{
+    border:1px solid var(--line-light);border-radius:20px;padding:22px 18px;background:#fff;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .cand-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(18,24,43,.08);}
+  .cand-letter{
+    width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+    background:var(--void);color:var(--amber);font-family:var(--mono);font-weight:700;font-size:15px;
+    margin-bottom:16px;
+  }
+  .cand-card h4{font-size:16.5px;margin:0 0 6px;letter-spacing:-.2px;}
+  .cand-card p{font-size:13.5px;color:var(--muted-light);margin:0;line-height:1.7;}
+  @media(max-width:960px){.cand-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.cand-grid{grid-template-columns:1fr;}}
+
+  /* ---------- TOOL SECTION ---------- */
+  .tool-section{background:var(--void);color:#fff;}
+  .tool-section .lede{color:rgba(255,255,255,.55);}
+  .tool-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;align-items:start;}
+  @media(max-width:980px){.tool-grid{grid-template-columns:1fr;}}
+
+  .panel{
+    background:var(--panel);border:1px solid var(--panel-line);border-radius:24px;padding:28px;
+  }
+  .panel h3{margin:0 0 4px;font-size:17px;}
+  .panel .sub{font-size:13px;color:var(--muted-dark);margin:0 0 22px;}
+
+  .slider-row{margin-bottom:20px;}
+  .slider-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+  .slider-head .label{font-size:14.5px;color:rgba(255,255,255,.88);}
+  .slider-head .val{font-family:var(--mono);font-size:13px;color:var(--teal);}
+  input[type=range]{
+    -webkit-appearance:none;width:100%;height:5px;border-radius:99px;
+    background:rgba(255,255,255,.12);outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:17px;height:17px;border-radius:50%;
+    background:var(--amber);cursor:pointer;border:3px solid var(--void);
+    box-shadow:0 0 0 1px rgba(255,138,61,.5);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:17px;height:17px;border-radius:50%;background:var(--amber);cursor:pointer;border:3px solid var(--void);
+  }
+  .reset-btn{
+    margin-top:6px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--panel-line);
+    background:transparent;color:rgba(255,255,255,.6);font-family:var(--display);font-size:13.5px;
+    cursor:pointer;transition:all .2s ease;
+  }
+  .reset-btn:hover{border-color:var(--teal);color:var(--teal);}
+
+  .weight-note{font-family:var(--mono);font-size:12px;color:var(--muted-dark);margin-top:16px;display:flex;justify-content:space-between;}
+
+  /* ranking bars */
+  .rank-row{margin-bottom:16px;}
+  .rank-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;}
+  .rank-head .name{font-size:14.5px;color:#fff;font-weight:600;}
+  .rank-head .score{font-family:var(--mono);font-size:14px;color:var(--amber);}
+  .rank-track{height:10px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;}
+  .rank-fill{
+    height:100%;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--amber));
+    width:0%;transition:width .5s cubic-bezier(.22,1,.36,1);
+  }
+  .rank-row.winner .name{color:var(--amber);}
+  .rank-row.winner .rank-track{box-shadow:0 0 0 1px rgba(255,138,61,.4);}
+  .winner-badge{
+    display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;
+    color:var(--void);background:var(--amber);padding:2px 8px;border-radius:6px;margin-inline-start:8px;
+    font-weight:700;letter-spacing:.03em;
+  }
+
+  /* ---------- NETWORK DIAGRAM ---------- */
+  .diagram-panel{grid-column:1/-1;margin-top:26px;}
+  .diagram-wrap{display:flex;justify-content:center;padding:10px 0 0;}
+  #network-svg{width:100%;max-width:560px;height:auto;}
+  .node-label{fill:rgba(255,255,255,.85);font-family:var(--display);font-size:13px;font-weight:600;}
+  .node-score{fill:var(--void);font-family:var(--mono);font-size:12px;font-weight:700;}
+  .hub-label{fill:#fff;font-family:var(--display);font-weight:800;font-size:13.5px;}
+  .link-line{stroke:rgba(255,255,255,.18);transition:stroke .4s ease, stroke-width .4s ease;}
+  .node-circle{transition:r .4s cubic-bezier(.22,1,.36,1), fill .4s ease, stroke .4s ease;}
+
+  /* ---------- TABLE ---------- */
+  .table-wrap{overflow-x:auto;border-radius:20px;border:1px solid var(--line-light);}
+  table{width:100%;border-collapse:collapse;background:#fff;min-width:640px;}
+  th,td{padding:14px 16px;text-align:right;font-size:14px;border-bottom:1px solid var(--line-light);}
+  th{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--muted-light);background:var(--paper-2);font-weight:600;
+  }
+  td.score-cell{font-family:var(--mono);text-align:center;}
+  tr:last-child td{border-bottom:none;}
+  tr.winner-row{background:var(--amber-soft);}
+  tr.winner-row td:first-child{font-weight:700;color:#B25A18;}
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    background:linear-gradient(160deg,var(--void),var(--void-2));color:#fff;text-align:center;
+  }
+  .closing .wrap{max-width:760px;}
+  .closing .quote{
+    font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.5;margin:0 0 20px;
+  }
+  .closing .quote .hi{color:var(--amber);}
+  .closing p.foot-note{color:rgba(255,255,255,.55);font-size:15px;max-width:600px;margin:0 auto;}
+  .principle-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:34px 0 40px;}
+  .principle-pills span{
+    font-family:var(--mono);font-size:12.5px;padding:9px 16px;border-radius:999px;
+    border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);
+  }
+
+  footer{
+    background:var(--void);color:rgba(255,255,255,.4);padding:28px 24px;text-align:center;
+    font-size:13px;border-top:1px solid var(--panel-line);
+  }
+
+  @media(max-width:700px){
+    section.block{padding:56px 20px;}
+    .hero{padding:70px 20px 60px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="net-field" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <g stroke="rgba(47,212,196,.35)" stroke-width="1" fill="none">
+        <line x1="600" y1="300" x2="150" y2="120" class="drift" style="animation-delay:0s"/>
+        <line x1="600" y1="300" x2="1020" y2="140" class="drift" style="animation-delay:.4s"/>
+        <line x1="600" y1="300" x2="980" y2="470" class="drift" style="animation-delay:.8s"/>
+        <line x1="600" y1="300" x2="230" y2="500" class="drift" style="animation-delay:1.2s"/>
+        <line x1="600" y1="300" x2="120" y2="330" class="drift" style="animation-delay:1.6s"/>
+      </g>
+      <g fill="rgba(255,138,61,.55)">
+        <circle cx="150" cy="120" r="5" class="drift" style="animation-delay:0s"/>
+        <circle cx="1020" cy="140" r="4" class="drift" style="animation-delay:.4s"/>
+        <circle cx="980" cy="470" r="6" class="drift" style="animation-delay:.8s"/>
+        <circle cx="230" cy="500" r="4" class="drift" style="animation-delay:1.2s"/>
+        <circle cx="120" cy="330" r="5" class="drift" style="animation-delay:1.6s"/>
+      </g>
+      <circle cx="600" cy="300" r="9" fill="rgba(255,138,61,.9)"/>
+      <circle cx="600" cy="300" r="22" fill="none" stroke="rgba(255,138,61,.35)" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span>مطالعه موردی زنده · ابزار تعاملی</div>
+    <h1>متد سنتر در عمل:<br>پیدا کردن <span>گره پرقدرت</span> شبکه</h1>
+    <p>
+      به‌جای تماس با ۲۰۰ کلینیک، Topping Courier یک سؤال ساده می‌پرسد: اگر فقط بتوانیم روی یک نقطه تمرکز کنیم،
+      کدام نقطه بیشترین اثر را روی کل شبکه سفارش می‌گذارد؟ در ادامه، همین سؤال را با یک ابزار امتیازدهی زنده تست می‌کنیم.
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat"><b class="num">5</b><span>گزینه رقیب</span></div>
+      <div class="hero-stat"><b class="num">5</b><span>معیار وزن‌دار</span></div>
+      <div class="hero-stat"><b class="num">1</b><span>مرکز پرقدرت</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="block">
+  <div class="wrap">
+    <p class="kicker">فصل ۱ — مسئله</p>
+    <h2 class="title">دو راه برای ورود به یک بازار جدید</h2>
+    <p class="lede">فرض کنید Topping می‌خواهد بازار تجهیزات پزشکی را وارد شبکه خودش کند. دو مسیر ممکن است.</p>
+    <div class="compare">
+      <div class="compare-card old">
+        <div class="tag">روش سنتی</div>
+        <h3>تعقیب مشتری</h3>
+        <ul class="compare-list">
+          <li>تماس با ۲۰۰ کلینیک به‌صورت جداگانه</li>
+          <li>هزینه فروش بالا، بازده پایین</li>
+          <li>هر مشتری یک مذاکره از صفر است</li>
+          <li>رشد خطی و کند</li>
+        </ul>
+      </div>
+      <div class="compare-card new">
+        <div class="tag">متد سنتر</div>
+        <h3>کنترل گره</h3>
+        <ul class="compare-list">
+          <li>شناسایی نقطه‌ای که جریان از آن عبور می‌کند</li>
+          <li>یک قرارداد، دسترسی غیرمستقیم به ده‌ها مقصد</li>
+          <li>هزینه ورود پایین‌تر، اثر شبکه‌ای بالاتر</li>
+          <li>رشد ترکیبی و قابل تکرار</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CANDIDATES ============ -->
+<section class="block" style="background:var(--paper-2);">
+  <div class="wrap">
+    <p class="kicker">فصل ۲ — گزینه‌ها</p>
+    <h2 class="title">پنج گره رقیب برای عنوان «مرکز»</h2>
+    <p class="lede">هر کدام از این‌ها می‌تواند نقطه ورود Topping به بازار تجهیزات پزشکی و حوزه‌های مجاور باشد. کدام‌یک واقعاً مرکز است؟</p>
+    <div class="cand-grid">
+      <div class="cand-card"><div class="cand-letter">A</div><h4>کلینیک‌های مستقل</h4><p>ده‌ها کلینیک کوچک و پراکنده در سطح شهر.</p></div>
+      <div class="cand-card"><div class="cand-letter">B</div><h4>توزیع‌کننده تجهیزات</h4><p>یک شرکت که سفارش صدها کلینیک را تجمیع می‌کند.</p></div>
+      <div class="cand-card"><div class="cand-letter">C</div><h4>مرکز پخش غذا</h4><p>هاب توزیعی که به ده‌ها فروشگاه سرویس می‌دهد.</p></div>
+      <div class="cand-card"><div class="cand-letter">D</div><h4>فروشگاه اینترنتی</h4><p>فروشنده‌ای با اتصال مستقیم به Marketplace و API.</p></div>
+      <div class="cand-card"><div class="cand-letter">E</div><h4>انبار Fulfillment</h4><p>انباری که هم‌زمان میزبان چند برند مختلف است.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOL ============ -->
+<section class="block tool-section" id="tool">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--teal)">فصل ۳ — ابزار زنده</p>
+    <h2 class="title">Center Scorecard</h2>
+    <p class="lede">وزن هر معیار را جابه‌جا کنید و ببینید رتبه‌بندی گره‌ها چطور تغییر می‌کند. برنده هر لحظه، «مرکز» پیشنهادی همان لحظه است — نه یک حقیقت ثابت.</p>
+
+    <div class="tool-grid">
+      <div class="panel">
+        <h3>وزن معیارها</h3>
+        <p class="sub">اهمیت نسبی هر معیار را تنظیم کنید</p>
+        <div id="sliders"></div>
+        <div class="weight-note"><span>مجموع وزن‌ها</span><span class="num" id="weight-sum">100</span></div>
+        <button class="reset-btn" id="reset-btn">بازگشت به وزن‌های پیش‌فرض</button>
+      </div>
+
+      <div class="panel">
+        <h3>رتبه‌بندی زنده</h3>
+        <p class="sub">امتیاز نهایی از ۵</p>
+        <div id="ranking"></div>
+      </div>
+
+      <div class="panel diagram-panel">
+        <h3>نقشه شبکه</h3>
+        <p class="sub">اندازه و درخشش هر گره متناسب با امتیاز آن است</p>
+        <div class="diagram-wrap">
+          <svg id="network-svg" viewBox="0 0 600 600"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TABLE ============ -->
+<section class="block">
+  <div class="wrap">
+    <p class="kicker">فصل ۴ — شفافیت داده</p>
+    <h2 class="title">امتیاز خام هر گره در هر معیار</h2>
+    <p class="lede">این جدول پایه محاسبات بالاست؛ اعداد از ۱ تا ۵ و بر اساس فرض‌های نمونه برای این مطالعه موردی تخمین زده شده‌اند.</p>
+    <div class="table-wrap">
+      <table id="raw-table"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="block closing">
+  <div class="wrap">
+    <p class="kicker" style="color:var(--teal)">جمع‌بندی</p>
+    <p class="quote">مرکز، <span class="hi">حقیقت قطعی موفقیت</span> نیست؛<br>یک <span class="hi">ابزار تشخیص</span> برای پیدا کردن نقطه پرقدرت است.</p>
+    <div class="principle-pills">
+      <span>Principle نه</span><span>Method بله</span><span>ادعا نه</span><span>امتیازدهی بله</span><span>فلسفه نه</span><span>تست واقعی بله</span>
+    </div>
+    <p class="foot-note">در این مطالعه موردی، «انبار Fulfillment» با وزن‌های پیش‌فرض برنده می‌شود — اما وزن معیارها را عوض کنید، و مرکز هم عوض می‌شود. این دقیقاً همان چیزی است که این ابزار را قابل دفاع می‌کند.</p>
+  </div>
+</section>
+
+<footer>Topping Courier Inc. · Center Method — Interactive Case Study</footer>
+
+<script>
+(function(){
+  const CRITERIA = [
+    {id:'vol',  label:'حجم و ارزش سفارش',      weight:20},
+    {id:'dec',  label:'قدرت تصمیم‌گیری',        weight:20},
+    {id:'acc',  label:'دسترسی و اتصال',         weight:15},
+    {id:'net',  label:'اثر شبکه‌ای',            weight:30},
+    {id:'cash', label:'سرعت تبدیل به پول',       weight:15},
+  ];
+
+  const CANDIDATES = [
+    {id:'clinic',       label:'کلینیک‌های مستقل',        letter:'A', pos:[300,100],  scores:{vol:2,dec:2,acc:3,net:1,cash:3}},
+    {id:'distributor',  label:'توزیع‌کننده تجهیزات',      letter:'B', pos:[490,238],  scores:{vol:4,dec:5,acc:4,net:5,cash:3}},
+    {id:'food',         label:'مرکز پخش غذا',            letter:'C', pos:[418,462],  scores:{vol:4,dec:4,acc:3,net:4,cash:4}},
+    {id:'store',        label:'فروشگاه اینترنتی',         letter:'D', pos:[182,462],  scores:{vol:3,dec:3,acc:5,net:3,cash:5}},
+    {id:'fulfillment',  label:'انبار Fulfillment',        letter:'E', pos:[110,238],  scores:{vol:5,dec:4,acc:5,net:5,cash:3}},
+  ];
+
+  const HUB = [300,300];
+  let weights = {};
+  CRITERIA.forEach(c => weights[c.id] = c.weight);
+
+  // ---------- build sliders ----------
+  const slidersEl = document.getElementById('sliders');
+  CRITERIA.forEach(c=>{
+    const row = document.createElement('div');
+    row.className = 'slider-row';
+    row.innerHTML = `
+      <div class="slider-head">
+        <span class="label">${c.label}</span>
+        <span class="val num" id="val-${c.id}">${c.weight}</span>
+      </div>
+      <input type="range" min="0" max="50" value="${c.weight}" id="slider-${c.id}">
+    `;
+    slidersEl.appendChild(row);
+  });
+
+  // ---------- build ranking rows ----------
+  const rankingEl = document.getElementById('ranking');
+  CANDIDATES.forEach(cand=>{
+    const row = document.createElement('div');
+    row.className = 'rank-row';
+    row.id = 'rank-' + cand.id;
+    row.innerHTML = `
+      <div class="rank-head">
+        <span class="name">${cand.label}<span class="winner-badge" style="display:none;">CENTER</span></span>
+        <span class="score num" id="score-${cand.id}">0.00</span>
+      </div>
+      <div class="rank-track"><div class="rank-fill" id="fill-${cand.id}"></div></div>
+    `;
+    rankingEl.appendChild(row);
+  });
+
+  // ---------- build network svg ----------
+  const svg = document.getElementById('network-svg');
+  let svgHTML = '';
+  CANDIDATES.forEach(cand=>{
+    svgHTML += `<line class="link-line" id="link-${cand.id}" x1="${HUB[0]}" y1="${HUB[1]}" x2="${cand.pos[0]}" y2="${cand.pos[1]}" stroke-width="1.5"/>`;
+  });
+  svgHTML += `<circle cx="${HUB[0]}" cy="${HUB[1]}" r="30" fill="#111C2E" stroke="#2FD4C4" stroke-width="2"/>`;
+  svgHTML += `<text x="${HUB[0]}" y="${HUB[1]+5}" text-anchor="middle" class="hub-label">Topping</text>`;
+  CANDIDATES.forEach(cand=>{
+    svgHTML += `
+      <g id="group-${cand.id}">
+        <circle class="node-circle" id="circle-${cand.id}" cx="${cand.pos[0]}" cy="${cand.pos[1]}" r="20" fill="#1B4B66" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
+        <text class="node-score" id="nscore-${cand.id}" x="${cand.pos[0]}" y="${cand.pos[1]+4}" text-anchor="middle">0</text>
+        <text class="node-label" x="${cand.pos[0]}" y="${cand.pos[1] + (cand.pos[1] < HUB[1] ? -34 : 46)}" text-anchor="middle">${cand.label}</text>
+      </g>`;
+  });
+  svg.innerHTML = svgHTML;
+
+  // ---------- build raw table ----------
+  const table = document.getElementById('raw-table');
+  let thead = '<thead><tr><th>گره</th>';
+  CRITERIA.forEach(c=> thead += `<th>${c.label}</th>`);
+  thead += '</tr></thead>';
+  let tbody = '<tbody>';
+  CANDIDATES.forEach(cand=>{
+    tbody += `<tr id="row-${cand.id}"><td>${cand.label}</td>`;
+    CRITERIA.forEach(c=>{
+      tbody += `<td class="score-cell">${cand.scores[c.id]}</td>`;
+    });
+    tbody += '</tr>';
+  });
+  tbody += '</tbody>';
+  table.innerHTML = thead + tbody;
+
+  // ---------- compute + render ----------
+  function compute(){
+    const sum = CRITERIA.reduce((s,c)=> s + weights[c.id], 0) || 1;
+    document.getElementById('weight-sum').textContent = sum;
+
+    const results = CANDIDATES.map(cand=>{
+      let score = 0;
+      CRITERIA.forEach(c=>{
+        const norm = weights[c.id] / sum;
+        score += cand.scores[c.id] * norm;
+      });
+      return {id:cand.id, label:cand.label, score};
+    }).sort((a,b)=> b.score - a.score);
+
+    const winnerId = results[0].id;
+    const maxScore = 5;
+
+    results.forEach(r=>{
+      const pct = (r.score / maxScore) * 100;
+      document.getElementById('fill-'+r.id).style.width = pct + '%';
+      document.getElementById('score-'+r.id).textContent = r.score.toFixed(2);
+
+      const rowEl = document.getElementById('rank-'+r.id);
+      const badge = rowEl.querySelector('.winner-badge');
+      const tblRow = document.getElementById('row-'+r.id);
+      const circle = document.getElementById('circle-'+r.id);
+      const nscore = document.getElementById('nscore-'+r.id);
+      const link = document.getElementById('link-'+r.id);
+
+      const isWinner = r.id === winnerId;
+      rowEl.classList.toggle('winner', isWinner);
+      badge.style.display = isWinner ? 'inline-flex' : 'none';
+      tblRow.classList.toggle('winner-row', isWinner);
+
+      const radius = 16 + (r.score / maxScore) * 26;
+      circle.setAttribute('r', radius.toFixed(1));
+      circle.setAttribute('fill', isWinner ? '#FF8A3D' : '#1B4B66');
+      circle.setAttribute('stroke', isWinner ? '#FFD1A8' : 'rgba(255,255,255,.25)');
+      nscore.textContent = r.score.toFixed(1);
+      nscore.setAttribute('fill', isWinner ? '#3A1D00' : 'rgba(255,255,255,.9)');
+
+      link.setAttribute('stroke-width', (1 + (r.score/maxScore) * 3.5).toFixed(1));
+      link.setAttribute('stroke', isWinner ? 'rgba(255,138,61,.65)' : 'rgba(255,255,255,.18)');
+
+      rankingEl.appendChild(rowEl); // reorder
+    });
+  }
+
+  // reorder ranking rows by current result each compute call
+  CRITERIA.forEach(c=>{
+    const slider = document.getElementById('slider-'+c.id);
+    slider.addEventListener('input', ()=>{
+      weights[c.id] = parseInt(slider.value, 10);
+      document.getElementById('val-'+c.id).textContent = weights[c.id];
+      compute();
+    });
+  });
+
+  document.getElementById('reset-btn').addEventListener('click', ()=>{
+    CRITERIA.forEach(c=>{
+      weights[c.id] = c.weight;
+      document.getElementById('slider-'+c.id).value = c.weight;
+      document.getElementById('val-'+c.id).textContent = c.weight;
+    });
+    compute();
+  });
+
+  compute();
+})();
+</script>
+
+</body>
+</html>

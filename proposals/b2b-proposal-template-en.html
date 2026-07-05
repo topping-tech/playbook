@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topping Courier | B2B Collaboration Proposal Template</title>
+<style>
+:root{
+  --navy:#0f172a;
+  --blue:#1e3a8a;
+  --blue2:#1d4ed8;
+  --sky:#eff6ff;
+  --light:#f8fafc;
+  --text:#1f2937;
+  --muted:#64748b;
+  --gold:#f59e0b;
+  --green:#047857;
+  --red:#b91c1c;
+  --border:#e2e8f0;
+  --purple:#6d28d9;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  padding:0;
+  font-family:Tahoma, Arial, sans-serif;
+  background:linear-gradient(135deg,#eef3f8,#ffffff);
+  color:var(--text);
+  line-height:2;
+}
+.page{
+  max-width:1180px;
+  margin:32px auto;
+  background:white;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 22px 65px rgba(15,23,42,.14);
+}
+.hero{
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  color:white;
+  padding:54px 60px 48px;
+  position:relative;
+}
+.logo{
+  width:86px;
+  height:86px;
+  border-radius:24px;
+  background:white;
+  color:#1e3a8a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  font-weight:800;
+  margin-bottom:22px;
+  letter-spacing:1px;
+}
+.hero h1{
+  margin:0;
+  font-size:36px;
+  line-height:1.45;
+}
+.hero h2{
+  margin:10px 0 0;
+  color:#dbeafe;
+  font-weight:400;
+  font-size:20px;
+}
+.hero .meta{
+  margin-top:28px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.pill{
+  background:rgba(255,255,255,.13);
+  border:1px solid rgba(255,255,255,.25);
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:14px;
+}
+.content{padding:48px 60px 60px;}
+.section{margin-bottom:48px;}
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--blue);
+  font-size:26px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+.num{
+  min-width:42px;
+  height:42px;
+  border-radius:14px;
+  background:var(--blue);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+.lead{
+  font-size:18px;
+  color:#334155;
+  background:#f8fafc;
+  padding:24px 28px;
+  border-radius:18px;
+  border-left:6px solid var(--blue);
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+  gap:18px;
+  margin-top:22px;
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:22px;
+}
+.card{
+  background:#ffffff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 8px 22px rgba(15,23,42,.05);
+}
+.card h3{margin:0 0 10px;color:var(--navy);font-size:20px;}
+.card p{margin:0;color:#475569;}
+.goodbad{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;}
+.bad,.good,.neutral,.warning,.purplebox{border-radius:18px;padding:22px;}
+.bad{background:#fef2f2;border:1px solid #fecaca;}
+.good{background:#ecfdf5;border:1px solid #bbf7d0;}
+.neutral{background:#f8fafc;border:1px solid var(--border);}
+.warning{background:#fffbeb;border:1px solid #fde68a;border-left:6px solid var(--gold);}
+.purplebox{background:#f5f3ff;border:1px solid #ddd6fe;border-left:6px solid var(--purple);}
+.bad h3{color:var(--red);margin-top:0;}
+.good h3{color:var(--green);margin-top:0;}
+.warning h3{color:#92400e;margin-top:0;}
+.purplebox h3{color:var(--purple);margin-top:0;}
+.script{
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+  border-radius:18px;
+  padding:24px 28px;
+  margin-top:20px;
+}
+.script strong{color:#9a3412;}
+.quote{
+  background:var(--sky);
+  border-left:6px solid var(--blue);
+  padding:22px 26px;
+  border-radius:18px;
+  font-size:18px;
+  color:#0f172a;
+  margin:20px 0;
+}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid var(--border);
+  margin-top:22px;
+}
+th{background:#1e3a8a;color:white;padding:14px;text-align:left;font-size:16px;}
+td{padding:15px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+.flow{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;align-items:center;}
+.step{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:16px;padding:12px 16px;font-weight:700;color:#0f172a;}
+.arrow{color:#1e3a8a;font-weight:800;}
+.checklist{background:#f8fafc;border:1px solid var(--border);border-radius:18px;padding:24px 28px;}
+.checklist li{margin-bottom:8px;}
+.small{font-size:14px;color:var(--muted);}
+.tag{display:inline-block;background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe;border-radius:999px;padding:5px 12px;margin:4px;font-size:13px;font-weight:700;}
+.form-line{border-bottom:1px dashed #94a3b8;min-height:34px;display:block;}
+.footer{background:#f8fafc;border-top:1px solid var(--border);padding:34px 60px;text-align:center;color:#64748b;}
+.footer strong{display:block;color:#1e3a8a;font-size:22px;margin-bottom:6px;}
+@media print{
+  body{background:white;}
+  .page{box-shadow:none;margin:0;border-radius:0;max-width:none;}
+  .hero{border-radius:0;}
+  .content{padding:36px 42px;}
+  .section{page-break-inside:avoid;}
+}
+@media(max-width:760px){
+  .hero,.content,.footer{padding:30px 24px;}
+  .hero h1{font-size:28px;}
+  .goodbad,.grid-2{grid-template-columns:1fr;}
+  .section-title{font-size:22px;}
+  table{font-size:14px;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hero">
+    <div class="logo">TC</div>
+    <h1>B2B Collaboration Proposal Template for Topping Courier</h1>
+    <h2>B2B Proposal Template | Customized Pricing & Pilot Plan</h2>
+    <div class="meta">
+      <span class="pill">For the second meeting</span>
+      <span class="pill">After the Discovery session</span>
+      <span class="pill">Suitable for same-day and next-day</span>
+      <span class="pill">Focused on pilot and monthly collaboration</span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-title"><span class="num">1</span> How to Use This Proposal</div>
+      <div class="lead">
+        This template should be completed after the first meeting and based on real customer information. The goal is not to create a long, complex document; the goal is to help the customer quickly understand in the second meeting what Topping learned, what solution is recommended, how pricing or pricing framework works, and how the pilot starts.
+      </div>
+      <div class="quote">
+        Best timing: <strong>after Meeting 1 / Discovery</strong> and for <strong>Meeting 2 / Proposal Presentation</strong>. A third meeting is only needed for large, multi-stakeholder, or complex accounts.
+      </div>
+      <div class="warning">
+        <h3>Important Note</h3>
+        <p>This proposal should not be sent before collecting enough data. Without volume, route, goods type, scheduling, and repeatability details, pricing can become unrealistic or unprofitable.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">2</span> First Page: Proposal Overview</div>
+      <table>
+        <tr><th>Item</th><th>Information</th></tr>
+        <tr><td>Customer / Company Name</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Decision-Maker Name</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Date of Discovery Meeting</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Proposal Presentation Date</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Topping Courier Representative</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Recommended Service Type</td><td>Same-Day / Next-Day / Scheduled / Recurring Route / Hybrid</td></tr>
+        <tr><td>Proposal Status</td><td>Draft / Ready for Pilot / Pending Approval / Revised</td></tr>
+      </table>
+      <div class="script">
+        <p><strong>Short introduction text:</strong></p>
+        <p>This proposal is prepared based on our initial discussion with your team. Our goal is to provide a simple, executable, and measurable model for managing your recurring B2B deliveries. We recommend starting with a short pilot so quality, cost, schedule, and operational fit can be validated in real conditions.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">3</span> Customer Needs Summary</div>
+      <p>This section should show that Topping listened carefully and tailored the proposal to the customer’s real business context.</p>
+      <table>
+        <tr><th>Topic</th><th>Customer Information Summary</th></tr>
+        <tr><td>Business Type</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Goods Type</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Estimated Delivery Volume</td><td>Daily: ____ / Weekly: ____ / Monthly: ____</td></tr>
+        <tr><td>Volume Pattern</td><td>Stable / Variable / Seasonal / Some low-volume days and some high-volume days</td></tr>
+        <tr><td>Pickup location</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Delivery zones</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Current Delivery Method</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Main Pain Point or Need</td><td><span class="form-line"></span></td></tr>
+        <tr><td>Preferred Start Date</td><td><span class="form-line"></span></td></tr>
+      </table>
+      <div class="quote">
+        Sample sentence: "Based on the first meeting, your main need is a regular, trackable, and predictable delivery process for recurring orders in the GTA."
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">4</span> Core Problem or Opportunity</div>
+      <p>A proposal should not only introduce a service. It should first clarify which business problem will be solved.</p>
+      <div class="grid">
+        <div class="card"><h3>Hidden Costs</h3><p>Too many calls, manual follow-up, lost internal team time, fragmented delivery, or unclear driver cost.</p></div>
+        <div class="card"><h3>Operational Disorder</h3><p>No clear schedule, no proof of delivery, no regular reporting, or delayed coordination.</p></div>
+        <div class="card"><h3>End-Customer Experience</h3><p>End customers do not know where orders are, when they will arrive, or how to track them.</p></div>
+        <div class="card"><h3>Future Growth</h3><p>If order volume increases, the current system may not scale effectively.</p></div>
+      </div>
+      <div class="script">
+        <p><strong>Suggested sentence:</strong></p>
+        <p>Topping Courier’s goal is to move your deliveries from ad hoc and fragmented execution to a structured, trackable, and measurable process; especially for recurring, same-day, next-day, and scheduled orders.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">5</span> Topping Courier Proposed Solution</div>
+      <table>
+        <tr><th>Solution Component</th><th>Recommended Description</th></tr>
+        <tr><td>Service Model</td><td>Same-Day / Next-Day / Scheduled / Recurring Route / Hybrid based on customer need</td></tr>
+        <tr><td>Pickup Structure</td><td>Pickup from the customer’s specified address in agreed time windows</td></tr>
+        <tr><td>Delivery Structure</td><td>Delivery to defined zones, planned around volume, schedule, and route density</td></tr>
+        <tr><td>Batching</td><td>When possible, orders are grouped into efficient routes to reduce cost and improve productivity.</td></tr>
+        <tr><td>Tracking and Reporting</td><td>Order status, proof of delivery, invoice, and agreed reporting based on customer needs</td></tr>
+        <tr><td>Operational Communication</td><td>Defined channel for order coordination, changes, issues, and follow-up</td></tr>
+      </table>
+      <div class="warning">
+        <h3>Clear Service Boundary</h3>
+        <p>Topping’s primary focus is same-day, next-day, scheduled, and recurring B2B delivery. Rush/urgent service is reviewed only if operationally feasible and separately approved.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">6</span> Proposed Service Scope</div>
+      <div class="grid-2">
+        <div class="good">
+          <h3>Included</h3>
+          <ul>
+            <li>Pickup according to agreed schedule</li>
+            <li>Delivery within agreed zones</li>
+            <li>Same-day or next-day based on selected model</li>
+            <li>Recurring route option when volume is sufficient</li>
+            <li>Proof of delivery where required</li>
+            <li>Invoice and periodic reporting per agreement</li>
+            <li>Operational coordination through a defined channel</li>
+          </ul>
+        </div>
+        <div class="bad">
+          <h3>Excluded unless separately agreed</h3>
+          <ul>
+            <li>Guaranteed rush/urgent delivery</li>
+            <li>Very heavy goods beyond car/van capacity</li>
+            <li>High-risk, hazardous, illegal, or specially licensed goods</li>
+            <li>Unlimited driver waiting time at pickup or delivery</li>
+            <li>Last-minute changes beyond operational capacity</li>
+            <li>Custom integration or dashboard without separate scope and pricing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">7</span> Proposed Pricing Framework</div>
+      <p>Pricing should be set using data from the first meeting. To simplify customer decision-making, provide a clear pricing framework even if final figures need internal approval.</p>
+      <table>
+        <tr><th>Pricing Model</th><th>Best For</th><th>Description</th><th>Price / Range</th></tr>
+        <tr><td>Single or ad hoc delivery</td><td>Low or irregular volume</td><td>Close to public rate model or case-by-case quote</td><td>$____ to $____</td></tr>
+        <tr><td>Recurring with medium volume</td><td>Around 40 to 50 monthly deliveries or higher</td><td>Better pricing based on repeatability, zones, and batching potential</td><td>$____ per delivery / or monthly model</td></tr>
+        <tr><td>Batchable route</td><td>Multiple orders on similar routes</td><td>More economical due to route density and lower operational cost</td><td>$____ / route or $____ / delivery</td></tr>
+        <tr><td>Scheduled route</td><td>Fixed days and time windows each week</td><td>More predictable and suitable for monthly partnership</td><td>$____ weekly / monthly</td></tr>
+        <tr><td>Custom model</td><td>High volume or complex requirements</td><td>Needs deeper review, likely a third meeting and scenario-based pricing</td><td>Custom quote</td></tr>
+      </table>
+      <div class="quote">
+        Suggested customer phrasing: "Our goal is to design a more economical model when your deliveries are recurring and schedulable; however, final pricing must align with volume, zones, timing, and goods type."
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">8</span> Two- to Four-Week Pilot Proposal</div>
+      <div class="lead">
+        To reduce risk for both customer and Topping, the primary recommendation is to start with a pilot. A pilot lets the customer assess service quality without a long-term commitment, while Topping can validate profitability and operational complexity with real data.
+      </div>
+      <table>
+        <tr><th>Pilot Item</th><th>Recommendation</th></tr>
+        <tr><td>Duration</td><td>2 to 4 weeks</td></tr>
+        <tr><td>Test Volume</td><td>About ____ deliveries per week / ____ deliveries per month</td></tr>
+        <tr><td>Geographic Scope</td><td>Pickup: ____ / Delivery zones: ____</td></tr>
+        <tr><td>Service Type</td><td>Same-day / Next-day / Scheduled / Recurring</td></tr>
+        <tr><td>Pilot Price</td><td>$____ / delivery or $____ / week or $____ / month</td></tr>
+        <tr><td>Success Criteria</td><td>Successful deliveries, schedule adherence, customer satisfaction, communication quality, operating cost, and on-time payment</td></tr>
+        <tr><td>After Pilot</td><td>Continue monthly partnership / adjust model / increase volume / stop collaboration</td></tr>
+      </table>
+      <div class="script">
+        <p><strong>Suggested wording:</strong></p>
+        <p>We recommend starting with a short pilot period. During this stage, both sides can evaluate delivery quality, schedule, cost, communications, and operational fit. If outcomes are positive, we can transition into a structured monthly collaboration model.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">9</span> Simple and Clear SLA</div>
+      <p>The SLA should not be complex for the customer. In early stages, a few simple measurable commitments are enough.</p>
+      <table>
+        <tr><th>Topic</th><th>Suggested Commitment</th><th>Description</th></tr>
+        <tr><td>Pickup window</td><td>According to agreed window</td><td>For example between ____ and ____</td></tr>
+        <tr><td>Delivery expectation</td><td>Same-day or next-day based on selected model</td><td>Depending on pickup time and delivery zone</td></tr>
+        <tr><td>Proof of delivery</td><td>Provided if agreed</td><td>Photo, signature, system status, or report</td></tr>
+        <tr><td>Communication</td><td>Defined coordination channel</td><td>Email / Phone / WhatsApp / Portal / Dashboard</td></tr>
+        <tr><td>Issue handling</td><td>Report issues at first reasonable opportunity</td><td>Customer must provide accurate recipient and goods information</td></tr>
+        <tr><td>Invoice</td><td>Weekly or monthly as agreed</td><td>Payment terms must be clear</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">10</span> Responsibilities of Both Parties</div>
+      <div class="grid-2">
+        <div class="neutral">
+          <h3>Topping Courier Responsibilities</h3>
+          <ul>
+            <li>Execute pickup and delivery within agreed scope</li>
+            <li>Coordinate driver and operations according to plan</li>
+            <li>Notify customer of major operational issues</li>
+            <li>Provide proof of delivery or reports if agreed</li>
+            <li>Issue invoice according to agreed cycle</li>
+            <li>Evaluate pilot and provide continuation recommendations</li>
+          </ul>
+        </div>
+        <div class="neutral">
+          <h3>Customer Responsibilities</h3>
+          <ul>
+            <li>Provide complete and accurate order information</li>
+            <li>Ensure goods are ready at pickup time</li>
+            <li>Declare goods limits, weight, size, or sensitivity</li>
+            <li>Provide accurate recipient and delivery address details</li>
+            <li>Pay invoices according to agreed terms</li>
+            <li>Communicate volume or scheduling changes on time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">11</span> Proposed Execution Plan</div>
+      <table>
+        <tr><th>Stage</th><th>Suggested Timing</th><th>Action</th></tr>
+        <tr><td>Proposal Approval</td><td>Day 0</td><td>Customer confirms pilot model and initial terms.</td></tr>
+        <tr><td>Operational Setup</td><td>Day 1 to 3</td><td>Define pickup, delivery zones, communication channel, invoice, and reporting.</td></tr>
+        <tr><td>Pilot Launch</td><td>Week 1</td><td>Run deliveries according to plan and log issues.</td></tr>
+        <tr><td>Midpoint Review</td><td>Week 2</td><td>Review quality, cost, schedule, and customer feedback.</td></tr>
+        <tr><td>Final Decision</td><td>End of week 2 to 4</td><td>Continue monthly, revise model, or stop collaboration.</td></tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">12</span> Payment and Commercial Terms</div>
+      <table>
+        <tr><th>Item</th><th>Suggested Term</th></tr>
+        <tr><td>Payment method</td><td>E-transfer / Credit Card / Bank Transfer / Other: ____</td></tr>
+        <tr><td>Invoice cycle</td><td>Weekly / Bi-weekly / Monthly</td></tr>
+        <tr><td>Payment term</td><td>Due on receipt / Net 7 / Net 15 / Other: ____</td></tr>
+        <tr><td>Monthly minimum</td><td>If needed: minimum ____ deliveries or minimum spend $____</td></tr>
+        <tr><td>Price adjustments</td><td>If there are major changes in volume, zones, schedule, fuel cost, or scope, pricing can be reviewed.</td></tr>
+        <tr><td>Order cancellation/change</td><td>According to agreed policy with timely notice</td></tr>
+      </table>
+      <div class="warning">
+        <h3>Professional Recommendation for Topping</h3>
+        <p>For recurring B2B accounts, a monthly minimum or minimum spend is essential. Without it, customers may send very low volume while expecting dedicated pricing.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">13</span> When to Suggest a Third Meeting</div>
+      <p>For simple to medium customers, this proposal should lead to a pilot decision in meeting two. For more complex opportunities, a third meeting can be justified.</p>
+      <div class="purplebox">
+        <h3>Third meeting only in these cases</h3>
+        <ul>
+          <li>There are multiple decision-makers in the customer organization.</li>
+          <li>Delivery volume is high or routes are complex.</li>
+          <li>Pricing requires multiple separate scenarios.</li>
+          <li>Integration, dashboarding, custom reporting, or special workflows are required.</li>
+          <li>The customer requests formal internal review of the proposal.</li>
+        </ul>
+      </div>
+      <div class="script">
+        <p><strong>Suggested wording to request a third meeting:</strong></p>
+        <p>Given the volume and operational details discussed, we recommend one additional short meeting with key decision-makers to finalize the pricing scenario, operating scope, and pilot terms accurately.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">14</span> Suggested Next Step</div>
+      <div class="lead">
+        The recommended next step is to start a two- to four-week pilot. After pilot completion, Topping Courier and the customer decide using real data whether to continue monthly, revise the model, or stop.
+      </div>
+      <table>
+        <tr><th>Option</th><th>Status</th><th>Next Action</th></tr>
+        <tr><td>Pilot Accepted</td><td>Customer agrees to launch trial</td><td>Set start date, communication channel, and payment terms</td></tr>
+        <tr><td>Minor Revision Needed</td><td>Price, scope, or schedule needs adjustment</td><td>Send revised proposal version</td></tr>
+        <tr><td>Internal Approval Needed</td><td>Final decision-maker must review</td><td>Set a specific follow-up date</td></tr>
+        <tr><td>High Complexity</td><td>Further assessment is required</td><td>Hold a third meeting only if economically justified</td></tr>
+      </table>
+      <div class="script">
+        <p><strong>Closing line for meeting two:</strong></p>
+        <p>If you are aligned with the overall framework, our recommendation is to start with a short pilot. This path is lower risk for both sides and allows real evaluation of quality and partnership fit before any long-term commitment.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><span class="num">15</span> Initial Confirmation</div>
+      <table>
+        <tr><th>Party</th><th>Name and Title</th><th>Signature / Confirmation</th><th>Date</th></tr>
+        <tr><td>Topping Courier</td><td></td><td></td><td></td></tr>
+        <tr><td>Customer</td><td></td><td></td><td></td></tr>
+      </table>
+      <p class="small">This section can be used for pilot or initial agreement confirmation. For long-term formal contracts, a separate legal document is recommended.</p>
+    </div>
+
+  </div>
+  <div class="footer">
+    <strong>Topping Courier Inc.</strong>
+    Customized B2B Delivery Proposal • Discovery-Based Pricing • Pilot-First Partnership
+    <br>
+    "A strong proposal is built after understanding customer needs, not before."
+  </div>
+</div>
+<script src="../assets/i18n-pairs.js"></script>
+<script src="../assets/tc-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>راهنمای کامل Topping CRM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --border:#2a2f3a;
+    --text:#e7e9ee; --muted:#9aa3b2; --primary:#f97316; --primary-soft:rgba(249,115,22,.12);
+    --green:#22c55e; --blue:#3b82f6; --purple:#a855f7; --amber:#f59e0b; --cyan:#06b6d4;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:"Vazirmatn","Tahoma","Segoe UI",system-ui,sans-serif;
+    line-height:1.9; font-size:16px;
+  }
+  a{color:var(--primary); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px}
+
+  /* Hero */
+  header.hero{
+    background:radial-gradient(1200px 400px at 80% -10%, rgba(249,115,22,.18), transparent),
+               linear-gradient(180deg,#13161c,#0f1115);
+    border-bottom:1px solid var(--border); padding:56px 0 40px;
+  }
+  .brand{display:flex; align-items:center; gap:14px; margin-bottom:24px}
+  .logo{width:46px;height:46px;border-radius:12px;background:var(--primary);
+        display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:22px;
+        box-shadow:0 8px 24px rgba(249,115,22,.35)}
+  .brand .t1{font-weight:900;font-size:18px;line-height:1}
+  .brand .t2{color:var(--muted);font-size:13px;margin-top:3px}
+  header.hero h1{font-size:38px;font-weight:900;margin:0 0 10px;letter-spacing:-.5px}
+  header.hero p{color:var(--muted);font-size:18px;max-width:680px;margin:0}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .pill{background:var(--primary-soft);border:1px solid rgba(249,115,22,.3);color:#fdba74;
+        padding:6px 12px;border-radius:999px;font-size:13px;font-weight:500}
+
+  /* Layout */
+  .layout{display:grid;grid-template-columns:240px 1fr;gap:32px;padding:36px 0 80px;align-items:start}
+  nav.toc{position:sticky;top:20px;background:var(--panel);border:1px solid var(--border);
+          border-radius:14px;padding:16px;font-size:14px;max-height:calc(100vh - 40px);overflow:auto}
+  nav.toc .h{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);
+             margin:14px 8px 6px;font-weight:700}
+  nav.toc .h:first-child{margin-top:0}
+  nav.toc a{display:block;color:var(--text);padding:7px 10px;border-radius:8px;font-weight:500}
+  nav.toc a:hover{background:var(--panel2);text-decoration:none}
+
+  main{min-width:0}
+  section{background:var(--panel);border:1px solid var(--border);border-radius:16px;
+          padding:26px 28px;margin-bottom:22px;scroll-margin-top:20px}
+  section h2{font-size:24px;font-weight:900;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+  section .lead{color:var(--muted);margin:0 0 18px;font-size:15px}
+  h3{font-size:18px;font-weight:700;margin:22px 0 8px}
+  p{margin:0 0 12px}
+  ul{margin:0 0 14px;padding-right:22px}
+  li{margin-bottom:7px}
+  code,.kbd{background:var(--panel2);border:1px solid var(--border);border-radius:6px;
+            padding:2px 7px;font-size:13px;font-family:ui-monospace,Menlo,Consolas,monospace;direction:ltr;display:inline-block}
+  .eng{direction:ltr;font-weight:700;color:#fff}
+
+  .num{width:26px;height:26px;border-radius:8px;background:var(--primary);color:#fff;
+       display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0}
+
+  /* feature cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:6px}
+  .card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px}
+  .card .ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+             font-size:18px;margin-bottom:10px;background:var(--primary-soft)}
+  .card h4{margin:0 0 4px;font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .card p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.7}
+  .tag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px;border:1px solid;direction:ltr}
+  .tag.admin{color:#fbbf24;border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.1)}
+  .tag.all{color:#4ade80;border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.1)}
+  .tag.mgr{color:#c084fc;border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.1)}
+
+  /* role table */
+  table{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:14px}
+  th,td{text-align:right;padding:11px 12px;border-bottom:1px solid var(--border)}
+  th{color:var(--muted);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+  tr:last-child td{border-bottom:none}
+  td .eng{font-size:13px}
+
+  .callout{border-radius:12px;padding:14px 16px;margin:14px 0;font-size:14px;border:1px solid}
+  .callout.tip{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.3)}
+  .callout.warn{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.3)}
+  .callout.info{background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.3)}
+  .callout b{color:#fff}
+
+  .steps{counter-reset:step;list-style:none;padding:0;margin:0}
+  .steps li{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px}
+
+  footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+
+  @media (max-width:860px){
+    .layout{grid-template-columns:1fr}
+    nav.toc{position:static;max-height:none}
+    header.hero h1{font-size:30px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">T</div>
+      <div>
+        <div class="t1">Topping Courier</div>
+        <div class="t2">Business Operating System — CRM</div>
+      </div>
+    </div>
+    <h1>راهنمای کامل برنامه</h1>
+    <p>این سند کلِ سیستمِ Topping CRM را قدم‌به‌قدم توضیح می‌دهد: هر بخش چه‌کاری می‌کند، چه‌کسی به آن دسترسی دارد و چطور از آن استفاده کنید.</p>
+    <div class="pills">
+      <span class="pill">مدیریت فروش</span>
+      <span class="pill">پایپ‌لاین معاملات</span>
+      <span class="pill">تقویم تیمی</span>
+      <span class="pill">گزارش KPI</span>
+      <span class="pill">حقوق و پاداش</span>
+      <span class="pill">اتوماسیون</span>
+      <span class="pill">دستیار هوش مصنوعی</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap layout">
+
+  <nav class="toc">
+    <div class="h">شروع</div>
+    <a href="#intro">۱. این برنامه چیست؟</a>
+    <a href="#login">۲. ورود به سیستم</a>
+    <a href="#roles">۳. نقش‌ها و دسترسی‌ها</a>
+    <div class="h">بخش‌های اصلی</div>
+    <a href="#dashboard">داشبورد و کارهای من</a>
+    <a href="#sales">فروش: پایپ‌لاین و سرنخ‌ها</a>
+    <a href="#clients">مشتریان و شرکت‌ها</a>
+    <a href="#schedule">تقویم، جلسات و وظایف</a>
+    <a href="#performance">KPI، اتوماسیون، دستیار AI</a>
+    <a href="#finance">حقوق، پاداش و کمیسیون</a>
+    <a href="#admin">مدیریت تیم و تنظیمات</a>
+    <a href="#booking">لینک رزرو عمومی</a>
+    <div class="h">جمع‌بندی</div>
+    <a href="#features">فهرست کاملِ قابلیت‌ها</a>
+    <a href="#faq">سوالات متداول</a>
+  </nav>
+
+  <main>
+
+    <section id="intro">
+      <h2>۱. این برنامه چیست؟</h2>
+      <p class="lead">یک سیستمِ عاملِ کسب‌وکار (Business Operating System) برای شرکتِ Topping Courier.</p>
+      <p>این برنامه یک پلتفرمِ کاملِ <b>CRM</b> و <b>ردیابیِ عملکرد (KPI)</b> است که برای استفاده‌ی روزانه‌ی نمایندگانِ فروش (Sales Reps)، بستن‌کننده‌های قرارداد (Closers) و مدیران ساخته شده. همه‌چیز در یک‌جا جمع است: از پیگیریِ سرنخ‌های فروش و مدیریتِ معاملات گرفته تا تقویمِ تیمی، گزارش‌های عملکرد، محاسبه‌ی حقوق و پاداش، و اتوماسیون.</p>
+      <h3>چه چیزهایی را مدیریت می‌کند؟</h3>
+      <ul>
+        <li><b>مشتریان و معاملات</b> — از اولین تماس تا بستنِ قرارداد</li>
+        <li><b>تیم و عملکرد</b> — هر عضوِ تیم چه‌کاری کرده و چقدر نتیجه گرفته</li>
+        <li><b>برنامه‌ریزی</b> — جلسات، وظایف و تقویمِ مشترک</li>
+        <li><b>مالی</b> — کمیسیون، حقوق و پاداشِ هر فرد</li>
+        <li><b>اتوماسیون و هوش مصنوعی</b> — انجامِ خودکارِ کارهای تکراری و امتیازدهیِ هوشمند به سرنخ‌ها</li>
+      </ul>
+      <div class="callout info">💡 <b>زبانِ برنامه انگلیسی است.</b> در این راهنما، نامِ هر بخش را به همان شکلی که در برنامه می‌بینی (انگلیسی) آورده‌ام تا راحت پیدایش کنی.</div>
+    </section>
+
+    <section id="login">
+      <h2>۲. ورود به سیستم (Login)</h2>
+      <p class="lead">برای استفاده از برنامه باید وارد حسابِ کاربری شوی.</p>
+      <ol class="steps">
+        <li><span class="num">1</span><div>به آدرسِ برنامه برو (مثلاً <code>crm.toppingcourier.ca/login</code>).</div></li>
+        <li><span class="num">2</span><div>ایمیل و رمزِ عبور را وارد کن، یا روی <span class="eng">Continue with Google</span> بزن.</div></li>
+        <li><span class="num">3</span><div>اگر رمزت را فراموش کردی، روی <span class="eng">Forgot password?</span> بزن تا لینکِ بازیابی برایت ارسال شود.</div></li>
+      </ol>
+      <h3>حسابِ پیش‌فرضِ مدیر</h3>
+      <table>
+        <tr><th>مورد</th><th>مقدار</th></tr>
+        <tr><td>ایمیل (Email)</td><td><code>admin@toppingcourier.ca</code></td></tr>
+        <tr><td>رمز عبور (Password)</td><td><code>admin123</code></td></tr>
+      </table>
+      <div class="callout warn">⚠️ بعد از اولین ورود، حتماً از بخشِ <span class="eng">Settings</span> رمزِ عبور را عوض کن.</div>
+      <div class="callout info">🔗 برای کارکردنِ دکمه‌ی <span class="eng">Continue with Google</span> روی سرورِ شخصی، باید دامنه‌ی سایتت در تنظیماتِ Google OAuth (بخشِ Authorized origins) ثبت شده باشد، وگرنه فقط ورود با ایمیل/رمز کار می‌کند.</div>
+    </section>
+
+    <section id="roles">
+      <h2>۳. نقش‌ها و دسترسی‌ها (Roles)</h2>
+      <p class="lead">هرکس بسته به نقشش فقط بخش‌هایی را می‌بیند که به او مربوط است.</p>
+      <table>
+        <tr><th>نقش</th><th>توضیح</th><th>سطح دسترسی</th></tr>
+        <tr><td><span class="eng">CEO</span></td><td>مدیرعامل</td><td>دسترسیِ کامل به همه‌چیز</td></tr>
+        <tr><td><span class="eng">Admin</span></td><td>مدیر سیستم</td><td>دسترسیِ کامل (مثل CEO)</td></tr>
+        <tr><td><span class="eng">Marketing_Manager</span></td><td>مدیر بازاریابی</td><td>مدیریتِ وظایف و سرنخ‌های تیم</td></tr>
+        <tr><td><span class="eng">Sales_Rep</span></td><td>نماینده‌ی فروش</td><td>کارهای فروشِ خودش</td></tr>
+        <tr><td><span class="eng">Closer</span></td><td>بستن‌کننده‌ی قرارداد</td><td>کارهای فروشِ خودش</td></tr>
+        <tr><td><span class="eng">IT_Manager</span></td><td>مدیر فنی</td><td>دسترسیِ محدود</td></tr>
+        <tr><td><span class="eng">Employee</span></td><td>کارمند عادی</td><td>کارهای شخصیِ خودش</td></tr>
+      </table>
+      <div class="callout tip">✅ برچسب‌های کنارِ هر قابلیت در ادامه‌ی این راهنما: <span class="tag all">All</span> یعنی همه می‌بینند، <span class="tag mgr">Manager</span> یعنی مدیران، <span class="tag admin">Admin</span> یعنی فقط CEO/Admin.</div>
+    </section>
+
+    <section id="dashboard">
+      <h2>📊 داشبورد و کارهای من</h2>
+      <p class="lead">نقطه‌ی شروعِ هر روزِ کاری.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">📊</div><h4><span class="eng">Dashboard</span> <span class="tag admin">Admin</span></h4><p>نمای کلیِ عملکرد: تعدادِ جلسات، معاملاتِ بسته‌شده، نرخِ تبدیل (close rate)، درآمد و بهترین اعضای تیم.</p></div>
+        <div class="card"><div class="ico">💼</div><h4><span class="eng">My Work</span> <span class="tag all">All</span></h4><p>صفحه‌ی شخصیِ هر فرد: سرنخ‌ها، وظایف و جلساتِ خودش در یک نگاه. اولین جایی که هر کارمند سر می‌زند.</p></div>
+        <div class="card"><div class="ico">🧮</div><h4><span class="eng">Commission Calc</span> <span class="tag all">All</span></h4><p>ماشین‌حسابِ کمیسیون: هر فرد می‌تواند تخمین بزند بابتِ یک معامله چقدر پاداش می‌گیرد.</p></div>
+      </div>
+    </section>
+
+    <section id="sales">
+      <h2>📈 فروش: پایپ‌لاین و سرنخ‌ها</h2>
+      <p class="lead">قلبِ تپنده‌ی سیستمِ فروش.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">🔀</div><h4><span class="eng">Pipeline</span> <span class="tag all">All</span></h4><p>بُردِ کانبان (Kanban) برای معاملات در ۶ مرحله. معامله را با کشیدن یا انتخاب از منو بین مراحل جابه‌جا می‌کنی.</p></div>
+        <div class="card"><div class="ico">📈</div><h4><span class="eng">Leads</span> <span class="tag all">All</span></h4><p>جدولِ سرنخ‌ها با جست‌وجو، نشانِ مرحله، صاحبِ سرنخ و ارزش. ساخت، ویرایش و حذفِ کامل (CRUD).</p></div>
+      </div>
+      <h3>چطور کار می‌کند؟</h3>
+      <ul>
+        <li>یک سرنخِ جدید را در <span class="eng">Leads</span> ثبت می‌کنی.</li>
+        <li>وقتی واقعی شد، در <span class="eng">Pipeline</span> به‌صورتِ یک معامله مرحله‌به‌مرحله جلو می‌رود.</li>
+        <li>با هر تغییرِ مرحله، سیستم می‌تواند به‌صورتِ خودکار یک وظیفه‌ی پیگیری بسازد (بخشِ Automations).</li>
+      </ul>
+    </section>
+
+    <section id="clients">
+      <h2>🏢 مشتریان و شرکت‌ها</h2>
+      <p class="lead">بانکِ اطلاعاتیِ مشتریانِ فعلی.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">👥</div><h4><span class="eng">Clients</span> <span class="tag all">All</span></h4><p>فهرستِ مشتریان همراه با وضعیت و درآمدِ ماهانه‌ی هرکدام. ساخت، ویرایش و حذفِ کامل.</p></div>
+        <div class="card"><div class="ico">🏬</div><h4><span class="eng">Companies</span> <span class="tag all">All</span></h4><p>دایرکتوریِ شرکت‌ها. هر مشتری یا سرنخ می‌تواند به یک شرکت وصل باشد.</p></div>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <h2>🗓️ تقویم، جلسات و وظایف</h2>
+      <p class="lead">برنامه‌ریزیِ زمانِ تیم.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">📅</div><h4><span class="eng">Calendar</span> <span class="tag all">All</span></h4><p>تقویمِ تیمی به‌صورتِ نمای هفتگی. هنگامِ ساختِ جلسه، سیستم تداخلِ زمانی (Conflict) را تشخیص می‌دهد.</p></div>
+        <div class="card"><div class="ico">✅</div><h4><span class="eng">Tasks</span> <span class="tag mgr">Manager</span></h4><p>فهرستِ وظایف با تیکِ «انجام شد»، نشانِ اولویت (priority) و تغییرِ وضعیت.</p></div>
+        <div class="card"><div class="ico">🤝</div><h4><span class="eng">Meetings</span> <span class="tag all">All</span></h4><p>فهرستِ جلسات با به‌روزرسانیِ سریعِ وضعیت و نتیجه‌ی جلسه (outcome).</p></div>
+      </div>
+      <div class="callout tip">✅ مزیتِ ویژه: <b>تشخیصِ تداخل</b> نمی‌گذارد دو جلسه روی هم بیفتند — قبلِ ثبت، هشدار می‌دهد.</div>
+    </section>
+
+    <section id="performance">
+      <h2>⚡ عملکرد: KPI، اتوماسیون و دستیار AI</h2>
+      <p class="lead">اندازه‌گیری و هوشمندسازیِ کار.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">📊</div><h4><span class="eng">KPI</span> <span class="tag admin">Admin</span></h4><p>ثبتِ گزارشِ روزانه، تفکیکِ KPI برای هر کاربر و خلاصه‌ی کلِ تیم.</p></div>
+        <div class="card"><div class="ico">⚡</div><h4><span class="eng">Automations</span> <span class="tag admin">Admin</span></h4><p>موتورِ اتوماسیون: کارهای تکراری را خودکار انجام می‌دهد و دکمه‌ی «اجرای فوری» (Run now) هم دارد.</p></div>
+        <div class="card"><div class="ico">✨</div><h4><span class="eng">AI Assistant</span> <span class="tag all">All</span></h4><p>دستیارِ هوش مصنوعی برای کمک به کارهای روزمره و پاسخ به سوالاتِ مربوط به داده‌ها.</p></div>
+      </div>
+      <h3>موتورِ اتوماسیون چه‌کارهایی می‌کند؟</h3>
+      <ul>
+        <li><b>پیگیریِ خودکارِ سرنخ‌های راکد</b> — برای سرنخ‌هایی که مدتی بی‌حرکت مانده‌اند، خودکار وظیفه‌ی پیگیری می‌سازد.</li>
+        <li><b>هشدار به مدیران</b> — وقتی معامله‌ای گیر می‌کند یا KPI افت می‌کند، به مدیر اطلاع می‌دهد.</li>
+        <li><b>وظیفه‌ی خودکار با تغییرِ مرحله</b> — با هر جابه‌جاییِ معامله در پایپ‌لاین، کارِ بعدی ساخته می‌شود.</li>
+        <li><b>امتیازدهیِ هوشمند به سرنخ‌ها</b> — سرنخ‌های بدونِ امتیاز را به‌صورتِ خودکار با هوش مصنوعی امتیاز می‌دهد.</li>
+        <li><b>گزارشِ خودکارِ رشدِ فروش</b> — به‌صورتِ دوره‌ای برای مدیران ایمیل می‌شود.</li>
+      </ul>
+    </section>
+
+    <section id="finance">
+      <h2>💰 حقوق، پاداش و کمیسیون</h2>
+      <p class="lead">بخشِ مالیِ تیم.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">💵</div><h4><span class="eng">Payroll &amp; Comp</span> <span class="tag admin">Admin</span></h4><p>محاسبه‌ی حقوق و پاداش (Compensation) برای هر فرد بر اساسِ عملکرد، به‌تفکیکِ ماه و سال.</p></div>
+        <div class="card"><div class="ico">🧮</div><h4><span class="eng">Commission Calc</span> <span class="tag all">All</span></h4><p>ماشین‌حسابِ کمیسیون برای تخمینِ پاداشِ هر معامله، در دسترسِ همه.</p></div>
+      </div>
+      <div class="callout info">🔒 موتورِ پاداش یک سیستمِ «دروازه‌ای» دارد: تا وقتی شرایطِ لازم برقرار نشود، بعضی پرداخت‌ها در حالتِ انتظار/مسدود می‌مانند تا از پرداختِ اشتباه جلوگیری شود.</div>
+    </section>
+
+    <section id="admin">
+      <h2>🛡️ مدیریتِ تیم و تنظیمات</h2>
+      <p class="lead">ابزارهای مدیریتی.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">🛡️</div><h4><span class="eng">Approvals</span> <span class="tag admin">Admin</span></h4><p>صفِ تأییدها: مواردی که نیاز به تأییدِ مدیر دارند اینجا بررسی و تأیید/رد می‌شوند.</p></div>
+        <div class="card"><div class="ico">📖</div><h4><span class="eng">Bookings</span> <span class="tag admin">Admin</span></h4><p>درخواست‌های رزروِ ورودی (از لینکِ عمومیِ رزرو) اینجا مدیریت می‌شوند.</p></div>
+        <div class="card"><div class="ico">👤</div><h4><span class="eng">Team</span> <span class="tag all">All</span></h4><p>کارت‌های اعضای تیم با نشانِ نقش؛ امکانِ دعوتِ عضوِ جدید.</p></div>
+        <div class="card"><div class="ico">🔑</div><h4><span class="eng">Permissions</span> <span class="tag admin">Admin</span></h4><p>مدیریتِ سطحِ دسترسیِ نقش‌ها و کاربران.</p></div>
+        <div class="card"><div class="ico">⚙️</div><h4><span class="eng">Settings</span> <span class="tag all">All</span></h4><p>پروفایلِ کاربرِ فعلی، تغییرِ رمز و لینکِ رزروِ شخصی.</p></div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <h2>🔗 لینکِ رزروِ عمومی (Booking)</h2>
+      <p class="lead">اجازه می‌دهد افرادِ بیرون از شرکت، بدونِ ورود، با تیمِ شما جلسه رزرو کنند.</p>
+      <ul>
+        <li>هر کاربر یک لینکِ شخصیِ رزرو دارد (در <span class="eng">Settings</span>).</li>
+        <li>مشتری زمان‌های آزاد را می‌بیند و یک بازه را رزرو می‌کند.</li>
+        <li>درخواستِ رزرو در بخشِ <span class="eng">Bookings</span> برای مدیران نمایش داده می‌شود.</li>
+      </ul>
+      <div class="callout tip">✅ این تنها بخشی است که بدونِ ورود (Login) هم در دسترس است، چون برای مشتریانِ بیرونی طراحی شده.</div>
+    </section>
+
+    <section id="features">
+      <h2>📋 فهرستِ کاملِ قابلیت‌ها</h2>
+      <p class="lead">خلاصه‌ی همه‌چیز در یک نگاه.</p>
+      <ul>
+        <li>🔐 ورود امن با <b>ایمیل/رمز</b> و <b>گوگل</b>، به‌همراه بازیابیِ رمزِ عبور</li>
+        <li>📊 داشبوردِ مدیریتی با شاخص‌های کلیدی (KPI)</li>
+        <li>🔀 پایپ‌لاینِ معاملات به‌صورتِ کانبان با ۶ مرحله</li>
+        <li>📈 مدیریتِ کاملِ سرنخ‌ها، مشتریان و شرکت‌ها</li>
+        <li>🗓️ تقویمِ تیمیِ هفتگی با تشخیصِ تداخلِ زمانی</li>
+        <li>🤝 مدیریتِ جلسات و وظایف با اولویت و وضعیت</li>
+        <li>📝 ثبت و گزارشِ KPIِ روزانه به‌تفکیکِ فرد و تیم</li>
+        <li>⚡ موتورِ اتوماسیون (۵ اتوماسیونِ آماده + اجرای فوری)</li>
+        <li>✨ امتیازدهیِ هوشمندِ سرنخ‌ها و دستیارِ هوش مصنوعی</li>
+        <li>💰 محاسبه‌ی حقوق، پاداش و کمیسیون</li>
+        <li>🔔 سیستمِ اعلان‌ها (Notifications) با زنگوله‌ی بالای صفحه</li>
+        <li>🎯 اهداف (Goals) برای ردیابیِ پیشرفت</li>
+        <li>🛡️ صفِ تأییدها و مدیریتِ دسترسی‌ها</li>
+        <li>🔗 لینکِ عمومیِ رزروِ جلسه برای مشتریان</li>
+        <li>👥 مدیریتِ تیم با ۷ نقشِ مختلف</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>❓ سوالاتِ متداول</h2>
+      <h3>چرا بعضی منوها را نمی‌بینم؟</h3>
+      <p>هر نقش فقط بخش‌های مربوط به خودش را می‌بیند. مثلاً <span class="eng">Dashboard</span>، <span class="eng">KPI</span>، <span class="eng">Payroll</span> و <span class="eng">Automations</span> فقط برای CEO/Admin قابل‌مشاهده‌اند.</p>
+      <h3>رمزم را فراموش کرده‌ام، چه‌کار کنم؟</h3>
+      <p>در صفحه‌ی ورود روی <span class="eng">Forgot password?</span> بزن تا لینکِ بازیابی برایت ارسال شود.</p>
+      <h3>دکمه‌ی «ورود با گوگل» کار نمی‌کند.</h3>
+      <p>روی سرورِ شخصی، باید دامنه‌ی سایتت در تنظیماتِ Google OAuth ثبت شود؛ در غیرِ این صورت فقط ورود با ایمیل/رمز فعال است.</p>
+      <h3>ایمیل و Google Sheets روی سرورِ خودم کار نمی‌کند.</h3>
+      <p>این دو قابلیت در نسخه‌ی فعلی به پلتفرمِ میزبان وابسته‌اند و برای کارکردن روی سرورِ شخصی به تنظیماتِ اضافه (مثلِ SMTP) نیاز دارند.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">Topping Courier Inc. — راهنمای داخلیِ Topping CRM · این سند به‌صورتِ خودکار از روی ساختارِ واقعیِ برنامه تهیه شده است.</div>
+</footer>
+
+</body>
+</html>

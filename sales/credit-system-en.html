@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit & Bonus System | Topping Courier</title>
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+*{box-sizing:border-box}
+body{margin:0;padding:0}
+.wrap{font-family:Tahoma,Arial,sans-serif;direction:ltr;padding:20px 16px;color:var(--color-text-primary)}
+.sec{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:18px 20px;margin-bottom:16px}
+.sec-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin:0 0 14px;border-left:3px solid #BA7517;padding-left:10px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.metric{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px;text-align:center}
+.metric .num{font-size:26px;font-weight:500;line-height:1.2}
+.metric .lbl{font-size:12px;color:var(--color-text-secondary);margin-top:4px}
+.badge{display:inline-block;font-size:11px;font-weight:500;padding:3px 9px;border-radius:999px}
+.b-amber{background:#FAEEDA;color:#633806}
+.b-teal{background:#E1F5EE;color:#085041}
+.b-blue{background:#E6F1FB;color:#0C447C}
+.b-purple{background:#EEEDFE;color:#3C3489}
+.b-red{background:#FCEBEB;color:#791F1F}
+.b-gray{background:#F1EFE8;color:#444441}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:var(--color-background-secondary);font-weight:500;padding:9px 10px;text-align:left;border-bottom:0.5px solid var(--color-border-tertiary);font-size:12px;color:var(--color-text-secondary)}
+td{padding:9px 10px;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:top}
+tr:last-child td{border-bottom:none}
+.tier-row td:first-child{font-weight:500}
+.tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:999px;margin:2px 2px 2px 0}
+.callout{border-radius:var(--border-radius-md);padding:12px 14px;margin:12px 0;font-size:13px}
+.callout.warn{background:#FAEEDA;border:0.5px solid #EF9F27;color:#633806}
+.callout.info{background:#E6F1FB;border:0.5px solid #378ADD;color:#042C53}
+.callout.good{background:#E1F5EE;border:0.5px solid #1D9E75;color:#04342C}
+.callout.danger{background:#FCEBEB;border:0.5px solid #E24B4A;color:#501313}
+.formula{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px;font-size:13px;border:0.5px solid var(--color-border-tertiary);margin:10px 0;line-height:1.7}
+.formula strong{font-weight:500}
+.step-row{display:flex;align-items:flex-start;gap:10px;margin:8px 0}
+.step-num{min-width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0}
+.step-text{font-size:13px;color:var(--color-text-secondary);padding-top:4px;line-height:1.6}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:14px 0}
+.role-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:999px;font-weight:500}
+.highlight-row td{background:var(--color-background-info)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<h2 class="sr-only">Topping Courier Monthly Credit & Bonus System - Complete Guide</h2>
+
+<!-- SECTION 1: Credit Algorithm -->
+<div class="sec">
+  <div class="sec-title">Credit Calculation Algorithm - How It Adds Up</div>
+  <div class="formula">
+    <strong>Monthly credit = (number of active customers x quantity weight) + (contract value x value weight)</strong><br>
+    Both dimensions are counted together - not only volume and not only customer count
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Credit</th>
+        <th>Payment Trigger</th>
+        <th>Applicable Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Small active customer (up to $500/month)</td>
+        <td><span class="badge b-teal">1 credit</span></td>
+        <td>First paid invoice</td>
+        <td><span class="tag b-amber">Arshia</span><span class="tag b-blue">Shayan</span></td>
+      </tr>
+      <tr>
+        <td>Medium active customer ($501-$2,000/month)</td>
+        <td><span class="badge b-amber">2 credits</span></td>
+        <td>First paid invoice</td>
+        <td><span class="tag b-amber">Arshia</span><span class="tag b-blue">Shayan</span></td>
+      </tr>
+      <tr>
+        <td>Large active customer (above $2,000/month)</td>
+        <td><span class="badge b-purple">3 credits</span></td>
+        <td>First paid invoice + Founder approval</td>
+        <td><span class="tag b-amber">Arshia</span><span class="tag b-blue">Shayan</span></td>
+      </tr>
+      <tr>
+        <td>Active customer - meeting + presentation</td>
+        <td><span class="badge b-teal">1 credit</span></td>
+        <td>Signed contract</td>
+        <td><span class="tag b-gray">Field Sales Rep</span></td>
+      </tr>
+      <tr>
+        <td>Active customer - contract closed</td>
+        <td><span class="badge b-teal">1 credit</span></td>
+        <td>Paid invoice</td>
+        <td><span class="tag b-purple">Closer</span></td>
+      </tr>
+      <tr>
+        <td>90-day retained customer</td>
+        <td><span class="badge b-amber">+1 bonus credit</span></td>
+        <td>Active and dispute-free</td>
+        <td>All roles</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 2: Example 0-20 customers -->
+<div class="sec">
+  <div class="sec-title">Practical Example - From 0 to 20 Customers (KPI and Credit)</div>
+  <div class="callout info">Example for <strong>Arshia or Shayan</strong> - starts with zero customers and grows to 20 active customers monthly</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Active Customers</th>
+        <th>Total Credits</th>
+        <th>KPI Tier</th>
+        <th>Monthly Bonus</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0 - 2</td>
+        <td>0 - 4</td>
+        <td><span class="badge b-red">Below Target</span></td>
+        <td>—</td>
+        <td>No bonus</td>
+      </tr>
+      <tr>
+        <td>3 - 5</td>
+        <td>5 - 10</td>
+        <td><span class="badge b-gray">Base</span></td>
+        <td>$100</td>
+        <td>Early traction</td>
+      </tr>
+      <tr class="highlight-row">
+        <td><strong>6 - 10</strong></td>
+        <td><strong>10 - 20</strong></td>
+        <td><span class="badge b-amber">Target</span></td>
+        <td><strong>$250</strong></td>
+        <td>KPI confirmed ✓</td>
+      </tr>
+      <tr>
+        <td>11 - 15</td>
+        <td>21 - 35</td>
+        <td><span class="badge b-teal">Above Target</span></td>
+        <td>$450</td>
+        <td>Strong performance</td>
+      </tr>
+      <tr>
+        <td>16 - 20</td>
+        <td>36 - 50</td>
+        <td><span class="badge b-purple">Exceptional</span></td>
+        <td>$700</td>
+        <td>+ potential strategic bonus</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout warn" style="margin-top:10px">
+    <strong>Note:</strong> "10 credits" for the 6-10 customer tier means: if all customers are small, you need 10 customers; if you add one large customer, you may reach 10 credits with only 4 customers.
+  </div>
+</div>
+
+<!-- SECTION 3: Lead Conditions -->
+<div class="sec">
+  <div class="sec-title">Lead Acceptance Conditions</div>
+  <div class="grid2">
+    <div>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 10px">✅ <strong>Required conditions</strong></p>
+      <div class="step-row">
+        <div class="step-num" style="background:#E1F5EE;color:#085041">1</div>
+        <div class="step-text">Company name, contact number, and lead source - <strong>all three</strong> must be recorded in CRM</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num" style="background:#E1F5EE;color:#085041">2</div>
+        <div class="step-text">Clear source: Instagram · Facebook · Google · SEO · LinkedIn · Direct</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num" style="background:#E1F5EE;color:#085041">3</div>
+        <div class="step-text">Must be a B2B customer - business account, not personal</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num" style="background:#E1F5EE;color:#085041">4</div>
+        <div class="step-text">Must have a real courier/delivery need - not just curiosity</div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 10px">❌ <strong>Lead is rejected if</strong></p>
+      <div class="step-row">
+        <div class="step-num" style="background:#FCEBEB;color:#791F1F">✕</div>
+        <div class="step-text">Phone number is fake or invalid</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num" style="background:#FCEBEB;color:#791F1F">✕</div>
+        <div class="step-text">Customer was already registered in CRM by someone else (First Touch rule)</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num" style="background:#FCEBEB;color:#791F1F">✕</div>
+        <div class="step-text">Outside assigned geography nodes (Arshia = Node 1-2, Shayan = 3-5)</div>
+      </div>
+      <div class="step-row">
+        <div class="step-num" style="background:#FCEBEB;color:#791F1F">✕</div>
+        <div class="step-text">High-risk industry without Founder approval (Refrigerated · Pallet-based · Emergency)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: Payment after Invoice -->
+<div class="sec">
+  <div class="sec-title">Payment Timeline - After Invoice</div>
+  <table>
+    <thead>
+      <tr><th>Stage</th><th>Event</th><th>Payment</th><th>Explanation</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge b-gray">Stage 1</span></td>
+        <td>Lead recorded in CRM</td>
+        <td>—</td>
+        <td>No payment at this stage</td>
+      </tr>
+      <tr>
+        <td><span class="badge b-gray">Stage 2</span></td>
+        <td>Meeting / contract signed</td>
+        <td>—</td>
+        <td>No invoice yet, still pending</td>
+      </tr>
+      <tr class="highlight-row">
+        <td><span class="badge b-amber">Stage 3</span></td>
+        <td><strong>First invoice paid</strong></td>
+        <td><strong>Lead bonus is activated</strong></td>
+        <td>Collected pre-tax revenue ← calculation basis</td>
+      </tr>
+      <tr class="highlight-row">
+        <td><span class="badge b-teal">Stage 4</span></td>
+        <td><strong>2+ completed orders</strong></td>
+        <td><strong>Sales/Closer commission</strong></td>
+        <td>Active Qualified Customer is confirmed</td>
+      </tr>
+      <tr>
+        <td><span class="badge b-purple">Stage 5</span></td>
+        <td>90 days active with no dispute</td>
+        <td>+1 Retention bonus credit</td>
+        <td>Added to that month’s credits</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="formula">
+    <strong>Golden Rule:</strong><br>
+    No collected money → no commission · No CRM proof → no commission<br>
+    No margin → no commission · No qualified customer activity → no credit
+  </div>
+  <div class="callout good">
+    <strong>Clawback:</strong> if the customer cancels within the first 30-90 days or does not pay the invoice, bonuses and commissions can be withheld or deducted. For large customers, Founder may approve phased payouts.
+  </div>
+</div>
+
+<!-- SECTION 5: Commission structure -->
+<div class="sec">
+  <div class="sec-title">Commission (in addition to bonus and credit)</div>
+  <div class="callout info">Commission and bonus are separate items - both are paid after invoice collection</div>
+  <table>
+    <thead>
+      <tr><th>Role</th><th>Commission Rate</th><th>Basis</th><th>Condition</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="role-badge" style="background:#E1F5EE;color:#085041">Field Sales Rep</span></td>
+        <td>50% of 5% operating margin</td>
+        <td>Collected pre-tax revenue</td>
+        <td>Meeting + active customer</td>
+      </tr>
+      <tr>
+        <td><span class="role-badge" style="background:#EEEDFE;color:#3C3489">Closer</span></td>
+        <td>50% of 5% operating margin</td>
+        <td>Collected pre-tax revenue</td>
+        <td>Deal closed + invoice paid</td>
+      </tr>
+      <tr>
+        <td><span class="role-badge" style="background:#FAEEDA;color:#633806">Arshia / Shayan</span></td>
+        <td>Lead bonus (not closing commission)</td>
+        <td>Fixed by customer size</td>
+        <td>CRM + invoice + correct node</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout warn">
+    Sales commission cap = <strong>5% of operating margin</strong> (not gross revenue). HST tax is excluded from the base.
+  </div>
+</div>
+
+</div>
+<script src="../assets/i18n-pairs.js"></script>
+<script src="../assets/tc-nav.js"></script>
+</body>
+</html>

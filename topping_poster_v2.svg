@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="794" height="1123" viewBox="0 0 794 1123">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F3ED"/>
+      <stop offset="100%" stop-color="#EDE8DF"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1B4332"/>
+      <stop offset="100%" stop-color="#2D6A4F"/>
+    </linearGradient>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B4332"/>
+      <stop offset="100%" stop-color="#081C15"/>
+    </linearGradient>
+    <linearGradient id="timelineG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4A843"/>
+      <stop offset="50%" stop-color="#1B4332"/>
+      <stop offset="100%" stop-color="#2D6A4F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="794" height="1123" fill="url(#bgGrad)"/>
+
+  <!-- Top accent stripe -->
+  <rect x="0" y="0" width="794" height="6" fill="url(#accentBar)"/>
+
+  <!-- Left vertical accent -->
+  <rect x="0" y="6" width="6" height="600" fill="#1B4332" opacity="0.15"/>
+
+  <!-- ═══ HEADER BAND ═══ -->
+  <rect x="0" y="6" width="794" height="90" fill="#1B4332"/>
+
+  <!-- Brand -->
+  <text x="48" y="42" font-size="10" font-weight="300" fill="#74C69D" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="5">برنامه رشد</text>
+  <text x="48" y="78" font-size="36" font-weight="900" fill="#FFFFFF" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="-1">Topping<tspan fill="#D4A843">.</tspan></text>
+
+  <!-- Date pill -->
+  <rect x="576" y="34" width="170" height="38" rx="19" fill="#D4A843"/>
+  <text x="661" y="58" font-size="13" font-weight="700" fill="#1B1B1B" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle" letter-spacing="0.5">Start: 2026 / 06 / 17</text>
+
+  <!-- ═══ HERO BLOCK ═══ -->
+  <rect x="48" y="130" width="698" height="220" rx="20" fill="url(#heroGrad)"/>
+
+  <!-- Decorative circle -->
+  <circle cx="680" cy="170" r="80" fill="#2D6A4F" opacity="0.4"/>
+  <circle cx="680" cy="170" r="50" fill="#2D6A4F" opacity="0.3"/>
+
+  <!-- Corner label -->
+  <text x="80" y="168" font-size="11" font-weight="300" fill="#74C69D" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="5">هدف اصلی</text>
+
+  <!-- Hero text -->
+  <text x="80" y="218" font-size="58" font-weight="900" fill="#FFFFFF" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="-2">رسیدن به</text>
+  <text x="80" y="284" font-size="62" font-weight="900" fill="#D4A843" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="-2">Cashflow پایدار</text>
+
+  <!-- Hero sub -->
+  <text x="80" y="326" font-size="13" font-weight="300" fill="#74C69D" font-family="'Vazirmatn', Arial, sans-serif">از طریق جذب منظم لید، مدیریت CRM و تبدیل هدفمند به ۵۰ کلاینت فعال در ۱۲ ماه</text>
+
+  <!-- ═══ TARGET ROW ═══ -->
+  <!-- Large number display -->
+  <rect x="48" y="378" width="340" height="130" rx="16" fill="#1B4332"/>
+  <text x="72" y="414" font-size="11" font-weight="300" fill="#74C69D" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="4">هدف نهایی</text>
+  <text x="72" y="476" font-size="72" font-weight="900" fill="#FFFFFF" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="-3">50</text>
+  <text x="192" y="476" font-size="38" font-weight="700" fill="#D4A843" font-family="'Vazirmatn', Arial, sans-serif">Client</text>
+  <text x="72" y="500" font-size="12" font-weight="300" fill="#52B788" font-family="'Vazirmatn', Arial, sans-serif">Cashflow ماهانه — طی ۱۲ ماه</text>
+
+  <!-- Conversion display -->
+  <rect x="406" y="378" width="340" height="130" rx="16" fill="#D4A843"/>
+  <text x="430" y="414" font-size="11" font-weight="300" fill="#1B4332" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="4">نرخ تبدیل هدف</text>
+  <text x="430" y="476" font-size="60" font-weight="900" fill="#1B4332" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="-2">۱۵٪–۲۵٪</text>
+  <text x="430" y="500" font-size="12" font-weight="500" fill="#5C3D00" font-family="'Vazirmatn', Arial, sans-serif">از لید به مشتری</text>
+
+  <!-- ═══ KPI ROW ═══ -->
+  <!-- KPI 1 -->
+  <rect x="48" y="530" width="216" height="120" rx="14" fill="#FFFFFF" stroke="#E0D9CE" stroke-width="1"/>
+  <rect x="48" y="530" width="216" height="5" rx="2" fill="#D4A843"/>
+  <text x="72" y="566" font-size="10" font-weight="400" fill="#999" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="3">هفتگی</text>
+  <text x="72" y="616" font-size="50" font-weight="900" fill="#D4A843" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="-2">50</text>
+  <text x="72" y="638" font-size="12" font-weight="300" fill="#888" font-family="'Vazirmatn', Arial, sans-serif">Lead به CRM</text>
+
+  <!-- KPI 2 -->
+  <rect x="289" y="530" width="216" height="120" rx="14" fill="#FFFFFF" stroke="#E0D9CE" stroke-width="1"/>
+  <rect x="289" y="530" width="216" height="5" rx="2" fill="#1B4332"/>
+  <text x="313" y="566" font-size="10" font-weight="400" fill="#999" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="3">ماهانه</text>
+  <text x="313" y="616" font-size="50" font-weight="900" fill="#1B4332" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="-2">4</text>
+  <text x="313" y="638" font-size="12" font-weight="300" fill="#888" font-family="'Vazirmatn', Arial, sans-serif">جلسه حضوری</text>
+
+  <!-- KPI 3 -->
+  <rect x="530" y="530" width="216" height="120" rx="14" fill="#FFFFFF" stroke="#E0D9CE" stroke-width="1"/>
+  <rect x="530" y="530" width="216" height="5" rx="2" fill="#40916C"/>
+  <text x="554" y="566" font-size="10" font-weight="400" fill="#999" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="3">ماهانه</text>
+  <text x="554" y="616" font-size="50" font-weight="900" fill="#40916C" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="-2">5</text>
+  <text x="554" y="638" font-size="12" font-weight="300" fill="#888" font-family="'Vazirmatn', Arial, sans-serif">مشتری جدید</text>
+
+  <!-- ═══ FLOW SECTION ═══ -->
+  <rect x="48" y="678" width="698" height="170" rx="16" fill="#FFFFFF" stroke="#E0D9CE" stroke-width="1"/>
+
+  <text x="72" y="712" font-size="10" font-weight="400" fill="#999" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="4">مسیر اجرا</text>
+
+  <!-- Step nodes -->
+  <!-- 1 -->
+  <circle cx="107" cy="778" r="26" fill="#D4A843"/>
+  <text x="107" y="784" font-size="16" font-weight="900" fill="#1B1B1B" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">۱</text>
+  <text x="107" y="820" font-size="11" font-weight="500" fill="#444" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">جذب لید</text>
+
+  <!-- connector -->
+  <line x1="133" y1="778" x2="177" y2="778" stroke="#D4D4D4" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- 2 -->
+  <circle cx="203" cy="778" r="26" fill="#B7904A"/>
+  <text x="203" y="784" font-size="16" font-weight="900" fill="#1B1B1B" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">۲</text>
+  <text x="203" y="820" font-size="11" font-weight="500" fill="#444" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">ورود CRM</text>
+
+  <line x1="229" y1="778" x2="273" y2="778" stroke="#D4D4D4" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- 3 -->
+  <circle cx="299" cy="778" r="26" fill="#52B788"/>
+  <text x="299" y="784" font-size="16" font-weight="900" fill="#FFFFFF" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">۳</text>
+  <text x="299" y="820" font-size="11" font-weight="500" fill="#444" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">پیگیری</text>
+
+  <line x1="325" y1="778" x2="369" y2="778" stroke="#D4D4D4" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- 4 -->
+  <circle cx="395" cy="778" r="26" fill="#40916C"/>
+  <text x="395" y="784" font-size="16" font-weight="900" fill="#FFFFFF" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">۴</text>
+  <text x="395" y="820" font-size="11" font-weight="500" fill="#444" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">جلسه</text>
+
+  <line x1="421" y1="778" x2="465" y2="778" stroke="#D4D4D4" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- 5 -->
+  <circle cx="491" cy="778" r="26" fill="#2D6A4F"/>
+  <text x="491" y="784" font-size="16" font-weight="900" fill="#FFFFFF" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">۵</text>
+  <text x="491" y="820" font-size="11" font-weight="500" fill="#444" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">تبدیل</text>
+
+  <line x1="517" y1="778" x2="561" y2="778" stroke="#D4D4D4" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- 6 -->
+  <circle cx="587" cy="778" r="26" fill="#1B4332"/>
+  <text x="587" y="784" font-size="16" font-weight="900" fill="#D4A843" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">۶</text>
+  <text x="587" y="820" font-size="11" font-weight="500" fill="#1B4332" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">Cashflow</text>
+
+  <!-- Finish star marker -->
+  <rect x="636" y="762" width="82" height="32" rx="16" fill="#1B4332"/>
+  <text x="677" y="782" font-size="11" font-weight="700" fill="#D4A843" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="middle">هدف نهایی</text>
+
+  <!-- ═══ TIMELINE ═══ -->
+  <text x="48" y="886" font-size="10" font-weight="400" fill="#AAA" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="4">تایم‌لاین ۱۲ ماه</text>
+
+  <!-- bg -->
+  <rect x="48" y="898" width="698" height="10" rx="5" fill="#E0D9CE"/>
+  <!-- fill -->
+  <rect x="48" y="898" width="698" height="10" rx="5" fill="url(#timelineG)"/>
+  <!-- mid dot -->
+  <circle cx="397" cy="903" r="8" fill="#FFFFFF" stroke="#1B4332" stroke-width="2"/>
+
+  <text x="48" y="926" font-size="11" fill="#888" font-family="'Vazirmatn', Arial, sans-serif">2026 / 06 / 17</text>
+  <text x="397" y="926" font-size="11" fill="#1B4332" font-family="'Vazirmatn', Arial, sans-serif" font-weight="700" text-anchor="middle">۶ ماه — ۲۵ کلاینت</text>
+  <text x="746" y="926" font-size="11" fill="#888" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="end">2027 / 06 / 17</text>
+
+  <!-- ═══ FOOTER ═══ -->
+  <rect x="0" y="970" width="794" height="153" fill="#1B4332"/>
+
+  <text x="48" y="1008" font-size="11" font-weight="300" fill="#74C69D" font-family="'Vazirmatn', Arial, sans-serif" letter-spacing="3">خلاصه اجرایی</text>
+
+  <text x="48" y="1048" font-size="15" font-weight="700" fill="#FFFFFF" font-family="'Vazirmatn', Arial, sans-serif">هفتگی: ۵۰ لید → CRM</text>
+  <text x="48" y="1074" font-size="15" font-weight="400" fill="#74C69D" font-family="'Vazirmatn', Arial, sans-serif">ماهانه: ۴ جلسه · ۵ مشتری جدید · نرخ تبدیل ۱۵٪ تا ۲۵٪</text>
+
+  <text x="746" y="1048" font-size="11" font-weight="300" fill="#52B788" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="end">Weekly: 50 leads → CRM</text>
+  <text x="746" y="1068" font-size="11" font-weight="300" fill="#52B788" font-family="'Vazirmatn', Arial, sans-serif" text-anchor="end">Monthly: 4 meetings · 5 new clients</text>
+
+  <!-- bottom bar -->
+  <rect x="0" y="1117" width="794" height="6" fill="#D4A843"/>
+
+</svg>

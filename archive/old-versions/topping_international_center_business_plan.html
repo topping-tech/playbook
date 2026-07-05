@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>طرح کسب‌وکار بین‌المللی | Topping Courier</title>
+<style>
+:root{
+  --primary:#0F4C81;--primary2:#123C69;--blue:#1E88E5;--accent:#FF9800;--green:#1B9C6E;--red:#D64545;
+  --ink:#0B1E33;--muted:#62748A;--soft:#F4F8FC;--card:#fff;--line:#E5EDF5;
+  --shadow:0 24px 70px rgba(15,76,129,.13);--shadow2:0 12px 32px rgba(15,76,129,.09);
+  --radius:26px;--r2:16px;--ease:cubic-bezier(.16,.8,.24,1);
+  --font:"Vazirmatn","IRANSans","Segoe UI",Tahoma,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font);background:#fff;color:var(--ink);line-height:1.9;overflow-x:hidden}
+body.dark{--ink:#ECF5FF;--muted:#A8BCD2;--soft:#071B2F;--card:#0C2238;--line:#1C3F61;background:#071421;color:var(--ink)}
+.container{max-width:1180px;margin:auto;padding:0 30px}section{padding:105px 0;position:relative}.reveal{opacity:0;transform:translateY(28px);transition:.75s var(--ease)}.reveal.in{opacity:1;transform:none}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:10;background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center;font-weight:900}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--blue));display:grid;place-items:center;color:white;box-shadow:var(--shadow2)}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:500}.tools{display:flex;gap:8px}.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:13px;padding:10px 13px;cursor:pointer;transition:.25s}.btn:hover{transform:translateY(-2px);border-color:var(--blue)}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:90px;background:radial-gradient(900px 520px at 85% 0%,rgba(30,136,229,.16),transparent),radial-gradient(700px 500px at 0% 105%,rgba(255,152,0,.13),transparent),linear-gradient(180deg,var(--card),var(--soft));overflow:hidden}.network{position:absolute;inset:0;opacity:.5}.hero-inner{position:relative;z-index:2}.badge{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 16px;color:var(--primary);font-size:13px;font-weight:800;margin-bottom:28px}.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(27,156,110,.15)}
+h1{font-size:clamp(38px,6.2vw,74px);line-height:1.14;letter-spacing:-.03em;max-width:990px}h1 span,.grad{background:linear-gradient(90deg,var(--primary),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:clamp(17px,2vw,23px);color:var(--muted);max-width:720px;margin-top:24px}.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:52px}.stat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow2)}.stat b{display:block;font-size:30px;font-weight:900;color:var(--primary)}.stat span{font-size:13px;color:var(--muted)}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--blue);font-weight:900;font-size:13px;margin-bottom:14px}.eyebrow:before{content:"";width:24px;height:2px;background:var(--accent)}h2{font-size:clamp(28px,4vw,46px);line-height:1.35;margin-bottom:16px}.sub{color:var(--muted);font-size:17px;max-width:760px;margin-bottom:45px}.grid{display:grid;gap:22px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow2);transition:.35s var(--ease)}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.card h3{font-size:22px;margin-bottom:12px}.card p,.card li{color:var(--muted);font-size:15px}.card ul{list-style:none}.card li{margin:9px 0;padding-right:22px;position:relative}.card li:before{content:"";width:8px;height:8px;background:var(--accent);border-radius:2px;transform:rotate(45deg);position:absolute;right:0;top:13px}.two{grid-template-columns:1.05fr .95fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:repeat(4,1fr)}
+.quote{background:linear-gradient(135deg,var(--primary),var(--primary2));color:white;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);position:relative;overflow:hidden}.quote:before{content:"CENTER";position:absolute;left:-12px;bottom:-20px;font-size:82px;font-weight:900;opacity:.08}.quote p{color:white;font-size:20px;font-weight:800}.quote small{display:block;margin-top:12px;opacity:.75}
+.flow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.node{flex:1;min-width:130px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center;box-shadow:var(--shadow2)}.node strong{display:block}.arrow{color:var(--accent);font-size:28px;font-weight:900}.center-node{border-color:var(--accent);box-shadow:0 0 0 5px rgba(255,152,0,.13),var(--shadow2)}
+.phase{display:grid;grid-template-columns:60px 1fr;gap:18px}.phase-num{width:54px;height:54px;border-radius:17px;background:linear-gradient(135deg,var(--blue),var(--primary));color:white;display:grid;place-items:center;font-size:24px;font-weight:900}.timeline{position:relative}.timeline:before{content:"";position:absolute;right:25px;top:0;bottom:0;width:2px;background:var(--line)}.phase{position:relative;margin-bottom:22px}.phase .card{padding:24px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--shadow2)}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:16px;border-bottom:1px solid var(--line);text-align:right}th{background:var(--soft);font-size:13px;color:var(--muted)}td{font-size:14px}.score{font-weight:900;color:var(--primary)}
+.role-card{position:relative;overflow:hidden}.role-card:after{content:"Negotiator";position:absolute;left:18px;top:14px;font-size:11px;color:var(--accent);font-weight:900}.avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--blue));color:white;display:grid;place-items:center;font-weight:900;font-size:22px;margin-bottom:14px}.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tag{font-size:12px;border:1px solid var(--line);background:var(--soft);color:var(--muted);border-radius:999px;padding:5px 11px}.metric-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{background:var(--soft);border-radius:14px;padding:13px;text-align:center}.mini b{display:block;font-size:22px;color:var(--primary)}.mini span{font-size:11px;color:var(--muted)}
+.calculator{display:grid;grid-template-columns:1fr 1fr;gap:22px}.field{margin-bottom:14px}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:6px}.field input,.field select{width:100%;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);padding:12px;font-size:16px}.result{background:linear-gradient(135deg,var(--primary),var(--blue));color:white;border-radius:22px;padding:28px}.result .big{font-size:42px;font-weight:900;line-height:1.2}.result small{opacity:.8}.bars{margin-top:15px}.bar{margin-bottom:15px}.bar-head{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}.track{height:10px;border-radius:99px;background:var(--soft);overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--primary));border-radius:99px;transition:1.2s var(--ease)}
+.risk{border-right:5px solid var(--accent)}.risk.high{border-color:var(--red)}.risk.good{border-color:var(--green)}
+.footer{padding:80px 0;background:linear-gradient(135deg,var(--primary2),var(--primary));color:white;text-align:center}.footer h2{color:white}.footer p{color:rgba(255,255,255,.78);max-width:780px;margin:15px auto}.print-note{font-size:12px;color:var(--muted);margin-top:12px}
+@media(max-width:900px){.two,.three,.four,.hero-stats,.calculator{grid-template-columns:1fr}.flow{display:grid}.arrow{transform:rotate(90deg);text-align:center}.container{padding:0 20px}section{padding:75px 0}.topbar{padding:10px 16px}.brand small{display:none}}
+@media print{.topbar{position:static}.tools,.network{display:none}section{padding:35px 0;break-inside:avoid}.hero{min-height:auto}.card:hover{transform:none}.container{max-width:100%;padding:0 18px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">TC</div><div>Topping Courier<small>International Center-Driven Business Plan</small></div></div>
+  <div class="tools"><button class="btn" id="darkBtn">🌓</button><button class="btn" id="printBtn">🖨️ PDF</button></div>
+</header>
+
+<section class="hero">
+  <svg class="network" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice"><g id="lines"></g><g id="dots"></g></svg>
+  <div class="container hero-inner">
+    <div class="badge"><span class="pulse"></span> نسخه اجرایی ۲۰۲۶ · Canada → Europe</div>
+    <h1>طرح کسب‌وکار جامع <span>Topping Courier</span></h1>
+    <p>ارائه خدمات لجستیک بین‌المللی از کانادا به اروپا با تمرکز بر کیفیت، سرعت، قیمت رقابتی و مدل رشد مبتنی بر Center Method.</p>
+    <div class="hero-stats">
+      <div class="stat"><b data-count="15" data-suffix="+">0</b><span>کشور مقصد در اروپا</span></div>
+      <div class="stat"><b data-count="5000" data-suffix="+">0</b><span>بازار مشتری هدف</span></div>
+      <div class="stat"><b data-count="50000" data-prefix="$">0</b><span>سرمایه اولیه پیشنهادی</span></div>
+      <div class="stat"><b data-count="6">0</b><span>مرحله پیاده‌سازی</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow reveal">Executive Summary</p>
+    <h2 class="reveal">از یک سرویس ارسال بین‌المللی، به یک شبکه لجستیکی قابل رشد</h2>
+    <p class="sub reveal">هدف این برنامه، راه‌اندازی سرویس ارسال از کانادا به اروپا برای مهاجران ایرانی، کسب‌وکارهای کوچک، فروشندگان آنلاین و خانواده‌هاست؛ اما مسیر رشد آن بر اساس «پیدا کردن مرکز جریان سفارش» طراحی می‌شود، نه تبلیغات پراکنده.</p>
+    <div class="grid two">
+      <div class="card reveal"><h3>هدف کلی پروژه</h3><p>ایجاد شرکت لجستیک بین‌المللی با برند Topping Courier برای ارائه خدمات ارسال مطمئن، سریع و مقرون‌به‌صرفه از کانادا به اروپا؛ با پیک‌آپ محلی، بسته‌بندی، بارکد، مدیریت گمرک، ارسال به هاب اروپا و پخش نهایی با شرکای محلی.</p></div>
+      <div class="quote reveal"><p>«ما مشتری‌ها را دنبال نمی‌کنیم؛ مرکزهایی را پیدا می‌کنیم که جریان سفارش از آن‌ها تولید می‌شود.»</p><small>Center Method · Topping Courier</small></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--soft)">
+  <div class="container">
+    <p class="eyebrow reveal">Center Method</p>
+    <h2 class="reveal">مدل رشد: پیدا کردن مرکز سفارش، نه شکار تک‌تک مشتری‌ها</h2>
+    <p class="sub reveal">در بازار بین‌المللی، Center می‌تواند مهاجران پرتکرار، فروشندگان آنلاین، واردکنندگان/صادرکنندگان کوچک، کامیونیتی ایرانی، یا شرکای اروپایی پخش نهایی باشد. تیم مذاکره‌کننده باید روی این مراکز کار کند.</p>
+    <div class="flow reveal">
+      <div class="node"><strong>Market</strong><span>جامعه و بازار هدف</span></div><div class="arrow">←</div>
+      <div class="node center-node"><strong>Center Discovery</strong><span>کشف مرکز سفارش</span></div><div class="arrow">←</div>
+      <div class="node"><strong>Center Score</strong><span>امتیازدهی فرصت</span></div><div class="arrow">←</div>
+      <div class="node"><strong>Negotiation</strong><span>مذاکره تخصصی</span></div><div class="arrow">←</div>
+      <div class="node"><strong>Contract</strong><span>جریان درآمد</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow reveal">Negotiation Team</p>
+    <h2 class="reveal">هر نفر یک مذاکره‌کننده است؛ تفاوت در Center هدف است</h2>
+    <p class="sub reveal">نقش تیم عوض نمی‌شود؛ همه مذاکره‌کننده هستند. اما هر مذاکره‌کننده بازار خودش را با Center Method تحلیل و مذاکره می‌کند.</p>
+    <div class="grid three">
+      <div class="card role-card reveal"><div class="avatar">N</div><h3>Neima</h3><p><strong>Enterprise & Importer Negotiator</strong></p><div class="tags"><span class="tag">واردکننده‌ها</span><span class="tag">فروشندگان آنلاین</span><span class="tag">شرکت‌های صادراتی کوچک</span></div><ul><li>پیدا کردن شرکت‌هایی که ارسال تکرارشونده به اروپا دارند.</li><li>مذاکره برای قرارداد ماهانه یا بسته‌های حجمی.</li><li>ثبت همه فرصت‌ها در CRM و امتیازدهی Center.</li></ul><div class="metric-row"><div class="mini"><b>۵۰</b><span>Center Lead / ماه</span></div><div class="mini"><b>۳–۵</b><span>جلسه جدی</span></div></div></div>
+      <div class="card role-card reveal"><div class="avatar">K</div><h3>Kianoush</h3><p><strong>Community & Wholesale Negotiator</strong></p><div class="tags"><span class="tag">کامیونیتی ایرانی</span><span class="tag">عمده‌فروش‌ها</span><span class="tag">فروشگاه‌های محلی</span></div><ul><li>مذاکره با فروشگاه‌ها، کامیونیتی‌ها و مراکز تجمع مشتری.</li><li>ساخت جریان سفارش از طریق معرفی، تخفیف گروهی و همکاری محلی.</li><li>تمرکز روی مناطقی که Density سفارش می‌سازند.</li></ul><div class="metric-row"><div class="mini"><b>۵۰</b><span>Lead / ماه</span></div><div class="mini"><b>۱۰</b><span>همکاری محلی</span></div></div></div>
+      <div class="card role-card reveal"><div class="avatar">T</div><h3>Tina</h3><p><strong>Healthcare & Sensitive Shipment Negotiator</strong></p><div class="tags"><span class="tag">پزشکی</span><span class="tag">سلامت</span><span class="tag">ارسال حساس</span></div><ul><li>مذاکره با کلینیک‌ها، مراکز درمانی و تأمین‌کنندگان پزشکی.</li><li>تمرکز روی اعتماد، ردیابی، بسته‌بندی امن و سرویس قابل اتکا.</li><li>ساخت قراردادهای تکرارشونده برای ارسال‌های حساس و ارزشمند.</li></ul><div class="metric-row"><div class="mini"><b>۲۵</b><span>Lead / ماه</span></div><div class="mini"><b>۱–۳</b><span>قرارداد</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--soft)">
+  <div class="container">
+    <p class="eyebrow reveal">Implementation Roadmap</p>
+    <h2 class="reveal">۶ مرحله پیاده‌سازی</h2>
+    <div class="timeline reveal">
+      <div class="phase"><div class="phase-num">۱</div><div class="card"><h3>برنامه‌ریزی استراتژیک</h3><ul><li>حوزه فعالیت: ارسال بین‌المللی از کانادا به اروپا</li><li>مسیر اصلی: Canada → Frankfurt Hub → Europe</li><li>مزیت رقابتی: سرویس شخصی‌سازی‌شده و پیک‌آپ در محل</li></ul></div></div>
+      <div class="phase"><div class="phase-num">۲</div><div class="card"><h3>زیرساخت اولیه</h3><ul><li>وبسایت یا اپ ثبت سفارش و پرداخت Stripe/PayPal</li><li>CRM مدیریت سفارش و مشتری</li><li>ترازوی دیجیتال، پرینتر لیبل، بارکد و تجهیزات بسته‌بندی</li></ul></div></div>
+      <div class="phase"><div class="phase-num">۳</div><div class="card"><h3>اجرای عملیات</h3><ul><li>ثبت سفارش، پیک‌آپ، انتقال به انبار، بسته‌بندی و دسته‌بندی مقصد</li><li>ثبت وضعیت سفارش و آماده‌سازی برای ارسال بین‌المللی</li></ul></div></div>
+      <div class="phase"><div class="phase-num">۴</div><div class="card"><h3>ارسال و ترخیص</h3><ul><li>همکاری با خطوط هوایی/دریایی، بیمه محموله و کارگزار گمرکی</li><li>ارسال به هاب فرانکفورت و پخش نهایی با DPD/GLS/Hermes</li></ul></div></div>
+      <div class="phase"><div class="phase-num">۵</div><div class="card"><h3>جذب مشتری و Center Negotiation</h3><ul><li>بازاریابی در اینستاگرام، تلگرام، گوگل ادز و کامیونیتی‌ها</li><li>تخفیف سفارش اول، پیک‌آپ رایگان GTA و پیشنهادهای حجمی</li></ul></div></div>
+      <div class="phase"><div class="phase-num">۶</div><div class="card"><h3>رشد و توسعه</h3><ul><li>مسیر اروپا به کانادا، اپ اختصاصی، انبار دوم یا شریک اروپایی</li><li>اتوماسیون مالی، فاکتور، CRM و ردیابی پیشرفته</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow reveal">Center Scorecard</p>
+    <h2 class="reveal">امتیازدهی به فرصت‌های بازار</h2>
+    <p class="sub reveal">برای اینکه Center Method فقط شعار نباشد، هر فرصت قبل از مذاکره امتیاز می‌گیرد.</p>
+    <div class="table-wrap reveal"><table><thead><tr><th>معیار</th><th>توضیح</th><th>امتیاز ۱ تا ۵</th><th>چرا مهم است؟</th></tr></thead><tbody>
+      <tr><td>حجم سفارش</td><td>چند بسته در ماه ایجاد می‌کند؟</td><td class="score">۵</td><td>درآمد پایه</td></tr>
+      <tr><td>تکرار سفارش</td><td>هفتگی یا ماهانه تکرار دارد؟</td><td class="score">۵</td><td>Cash Flow</td></tr>
+      <tr><td>تعداد مقصد</td><td>به چند کشور/شهر اروپا ارسال دارد؟</td><td class="score">۴</td><td>Network Effect</td></tr>
+      <tr><td>اعتماد و حساسیت</td><td>نیاز به ردیابی، بیمه یا بسته‌بندی خاص دارد؟</td><td class="score">۴</td><td>ارزش سرویس</td></tr>
+      <tr><td>امکان اتصال نرم‌افزاری</td><td>سفارش‌ها قابل ورود به CRM/API هستند؟</td><td class="score">۳</td><td>Scale</td></tr>
+      <tr><td>سرعت تبدیل به پول</td><td>چقدر سریع قرارداد یا پرداخت ایجاد می‌شود؟</td><td class="score">۵</td><td>بقا و نقدینگی</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section style="background:var(--soft)">
+  <div class="container">
+    <p class="eyebrow reveal">Financial Model</p>
+    <h2 class="reveal">مدل مالی و ماشین حساب ساده</h2>
+    <p class="sub reveal">بر اساس داده‌های طرح: هدف سال اول ۵۰۰ بسته در ماه، درآمد حدود ۴۲ تا ۵۰ هزار دلار، و حاشیه سود عملیاتی قابل بهبود.</p>
+    <div class="calculator reveal">
+      <div class="card">
+        <div class="field"><label for="packages">تعداد بسته در ماه</label><input id="packages" type="number" value="500" min="0"></div>
+        <div class="field"><label for="avg">میانگین درآمد هر بسته (CAD)</label><input id="avg" type="number" value="85" min="0"></div>
+        <div class="field"><label for="margin">حاشیه سود ناخالص (%)</label><input id="margin" type="number" value="38" min="0" max="100"></div>
+        <div class="field"><label for="fixed">هزینه ثابت ماهانه (CAD)</label><input id="fixed" type="number" value="15200" min="0"></div>
+        <button class="btn" id="calcBtn" type="button">محاسبه کن</button>
+        <p class="print-note">این ابزار برای سناریوسازی سریع است و جایگزین حسابداری دقیق نیست.</p>
+      </div>
+      <div class="result" aria-live="polite">
+        <small>درآمد ماهانه تخمینی</small><div class="big" id="revenue">$42,500</div>
+        <small>سود ناخالص</small><div class="big" id="gross">$16,150</div>
+        <small>سود تقریبی بعد از هزینه ثابت</small><div class="big" id="profit">$950</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow reveal">Financial Projection</p>
+    <h2 class="reveal">پیش‌بینی سه‌ساله</h2>
+    <div class="grid three">
+      <div class="card reveal"><h3>سال ۱</h3><div class="bars"><div class="bar"><div class="bar-head"><span>بسته/ماه</span><b>۵۰۰</b></div><div class="track"><div class="fill" data-w="20"></div></div></div><p>درآمد ماهانه هدف: $50K · سود خالص هدف: $15K</p></div></div>
+      <div class="card reveal"><h3>سال ۲</h3><div class="bars"><div class="bar"><div class="bar-head"><span>بسته/ماه</span><b>۱۲۰۰</b></div><div class="track"><div class="fill" data-w="48"></div></div></div><p>درآمد ماهانه هدف: $120K · رشد تقریبی: +140%</p></div></div>
+      <div class="card reveal"><h3>سال ۳</h3><div class="bars"><div class="bar"><div class="bar-head"><span>بسته/ماه</span><b>۲۵۰۰</b></div><div class="track"><div class="fill" data-w="100"></div></div></div><p>درآمد ماهانه هدف: $250K · سود خالص هدف: $95K</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--soft)">
+  <div class="container">
+    <p class="eyebrow reveal">Risk Management</p>
+    <h2 class="reveal">ریسک‌ها و کنترل‌ها</h2>
+    <div class="grid four">
+      <div class="card risk high reveal"><h3>بین‌المللی</h3><p>قوانین گمرکی، تحریم، جنگ، تغییر مسیرها. راهکار: چند شریک، بیمه جامع و مسیر جایگزین.</p></div>
+      <div class="card risk reveal"><h3>مالی</h3><p>نوسان ارز و عدم پرداخت. راهکار: پرداخت پیش از ارسال، قیمت‌گذاری پویا و کنترل نقدینگی.</p></div>
+      <div class="card risk reveal"><h3>عملیاتی</h3><p>گم شدن بسته، تأخیر، خطای بسته‌بندی. راهکار: بارکد، ردیابی، SLA و شریک معتبر.</p></div>
+      <div class="card risk good reveal"><h3>امنیتی</h3><p>داده مشتری و سیستم‌ها. راهکار: رمزگذاری، بکاپ، سطح دسترسی و آموزش تیم.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow reveal">Immediate Next Steps</p>
+    <h2 class="reveal">اقدامات فوری ۹۰ روزه</h2>
+    <div class="grid three">
+      <div class="card reveal"><h3>هفته اول</h3><ul><li>نهایی‌سازی Business Plan برای سرمایه‌گذار</li><li>بررسی قوانین گمرکی کشورهای هدف</li><li>شروع مذاکره با شرکای حمل‌ونقل</li></ul></div>
+      <div class="card reveal"><h3>ماه اول</h3><ul><li>تکمیل سیستم سفارش و پرداخت</li><li>خرید تجهیزات پایه انبار</li><li>ساخت لیست Centerهای هدف برای هر مذاکره‌کننده</li></ul></div>
+      <div class="card reveal"><h3>ماه دوم و سوم</h3><ul><li>تست عملیات با مشتری محدود</li><li>شروع کمپین کامیونیتی ایرانی و فروشندگان آنلاین</li><li>امضای اولین قراردادهای تکرارشونده</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container"><h2>Topping Courier — از کانادا به اروپا، با اطمینان کامل</h2><p>این نسخه، Business Plan بین‌المللی را با Center Method و مدل تیم مذاکره‌کننده ترکیب می‌کند تا برنامه فقط یک سند مالی نباشد؛ بلکه نقشه اجرای رشد باشد.</p><p>info@toppingcourier.ca · www.toppingcourier.ca</p></div>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+$('#darkBtn').addEventListener('click',()=>document.body.classList.toggle('dark'));
+$('#printBtn').addEventListener('click',()=>window.print());
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});$$('.reveal').forEach(el=>io.observe(el));
+function fa(n){return Math.round(n).toLocaleString('fa-IR')}
+function animate(el){let t=+el.dataset.count,p=el.dataset.prefix||'',s=el.dataset.suffix||'',st=performance.now();function step(now){let r=Math.min((now-st)/1500,1),v=t*(1-Math.pow(1-r,3));el.textContent=p+fa(v)+s;if(r<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+const coi=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){animate(e.target);coi.unobserve(e.target)}}),{threshold:.45});$$('[data-count]').forEach(el=>coi.observe(el));
+const bio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';bio.unobserve(e.target)}}),{threshold:.35});$$('.fill').forEach(el=>bio.observe(el));
+function calc(){let packages=+$('#packages').value||0,avg=+$('#avg').value||0,margin=(+$('#margin').value||0)/100,fixed=+$('#fixed').value||0;let rev=packages*avg,gross=rev*margin,profit=gross-fixed;$('#revenue').textContent='$'+fa(rev);$('#gross').textContent='$'+fa(gross);$('#profit').textContent=(profit<0?'-$':'$')+fa(Math.abs(profit));}
+['packages','avg','margin','fixed'].forEach(id=>$('#'+id).addEventListener('input',calc));$('#calcBtn').addEventListener('click',calc);calc();
+(function(){const dots=$('#dots'),lines=$('#lines');let pts=[];for(let i=0;i<44;i++){pts.push({x:60+Math.random()*1080,y:60+Math.random()*680})}pts.forEach((a,i)=>{pts.slice(i+1).forEach(b=>{let d=Math.hypot(a.x-b.x,a.y-b.y);if(d<185&&Math.random()>.48){let l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',a.x);l.setAttribute('y1',a.y);l.setAttribute('x2',b.x);l.setAttribute('y2',b.y);l.setAttribute('stroke','#1E88E5');l.setAttribute('opacity','.12');lines.appendChild(l)}})});pts.forEach((p,i)=>{let c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('cx',p.x);c.setAttribute('cy',p.y);c.setAttribute('r',i%8?2.3:5);c.setAttribute('fill',i%8?'#0F4C81':'#FF9800');c.setAttribute('opacity',i%8?'.28':'.58');dots.appendChild(c)})})();
+</script>
+</body>
+</html>

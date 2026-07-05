@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topping Courier — چارچوب تولید محتوا</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap');
+
+:root {
+  --bg: #0a0e1a;
+  --card: #111827;
+  --card2: #1a2236;
+  --brand: #3b82f6;
+  --brand2: #60a5fa;
+  --accent: #f59e0b;
+  --green: #10b981;
+  --red: #ef4444;
+  --purple: #8b5cf6;
+  --ink: #f1f5f9;
+  --muted: #94a3b8;
+  --line: #1e2d45;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Vazirmatn', Tahoma, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.75; }
+
+.page { max-width: 1100px; margin: 0 auto; padding: 40px 20px 100px; }
+
+/* HERO */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b1e3d, #0f2a5c, #1a3a7c);
+  border-radius: 24px;
+  padding: 48px 40px;
+  margin-bottom: 32px;
+  border: 1px solid #1e3a6e;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '📸';
+  position: absolute;
+  font-size: 140px;
+  opacity: 0.06;
+  left: 30px; top: 20px;
+  pointer-events: none;
+}
+.hero h1 { font-size: 30px; font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+.hero p { font-size: 15px; color: rgba(255,255,255,0.8); max-width: 700px; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.pill { padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); font-size: 12.5px; font-weight: 700; color: #fff; }
+
+/* SECTION */
+.section { margin: 28px 0; }
+.section-title {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 20px; font-weight: 800; color: var(--brand2);
+  padding-bottom: 12px; border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+}
+.section-title .ico { font-size: 24px; }
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin: 14px 0;
+}
+.card-title {
+  font-size: 15px; font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+
+/* CALLOUT */
+.callout { background: #0d2010; border-left: 4px solid var(--green); border-radius: 12px; padding: 14px 16px; margin: 12px 0; font-size: 14px; }
+.note { background: #0d1a2e; border-left: 4px solid var(--brand); border-radius: 12px; padding: 14px 16px; margin: 12px 0; font-size: 14px; }
+.warning { background: #1a0d0d; border-left: 4px solid var(--red); border-radius: 12px; padding: 14px 16px; margin: 12px 0; font-size: 14px; }
+.tip { background: #1a1400; border-left: 4px solid var(--accent); border-radius: 12px; padding: 14px 16px; margin: 12px 0; font-size: 14px; }
+
+/* SHOT LIST */
+.shot-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin: 12px 0; }
+.shot-item {
+  background: var(--card2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.shot-item .ico { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+/* IDEA CARDS */
+.idea-card {
+  background: var(--card2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.idea-card::before {
+  content: attr(data-num);
+  position: absolute;
+  top: -10px; left: -4px;
+  font-size: 64px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+}
+.idea-card .tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.tag-li { background: #0d1a2e; color: #60a5fa; border: 1px solid #1e3a6e; }
+.tag-goog { background: #1a1200; color: #fbbf24; border: 1px solid #3d2e00; }
+.tag-ig { background: #1a0d1a; color: #c084fc; border: 1px solid #3d1e3d; }
+.tag-all { background: #0d2010; color: #34d399; border: 1px solid #1e3d20; }
+.idea-card h4 { font-size: 14.5px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+.idea-card p { font-size: 13px; color: var(--muted); margin: 0; }
+.idea-card .hook { font-size: 12.5px; color: var(--accent); margin-top: 8px; font-style: italic; }
+
+/* PLATFORM TABLE */
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 12px; }
+th, td { text-align: right; padding: 11px 13px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #0d1a2e; color: var(--brand2); font-weight: 800; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #13203a; }
+
+/* BRAND KIT */
+.brand-item {
+  background: var(--card2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.brand-item .big { font-size: 36px; margin-bottom: 8px; }
+.brand-item strong { display: block; font-size: 13.5px; color: var(--ink); margin-bottom: 4px; }
+.brand-item span { font-size: 12px; color: var(--muted); }
+
+/* RATIO VISUAL */
+.ratio-bar { display: flex; border-radius: 12px; overflow: hidden; height: 44px; margin: 14px 0; }
+.ratio-real { background: linear-gradient(90deg, #0f6b47, #10b981); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; width: 70%; }
+.ratio-design { background: linear-gradient(90deg, #1e1a6e, #6366f1); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; width: 30%; }
+
+/* CHECKLIST */
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; display: flex; align-items: flex-start; gap: 10px; }
+.checklist li:last-child { border-bottom: none; }
+.checklist li::before { content: '☐'; font-size: 16px; color: var(--brand); flex-shrink: 0; }
+
+/* FOOTER */
+.footer { text-align: center; color: var(--muted); font-size: 12.5px; margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); }
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .shot-grid { grid-template-columns: 1fr; }
+  .hero { padding: 28px 22px; }
+  .hero h1 { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>📸 Topping Courier — چارچوب تولید محتوا</h1>
+    <p>راهنمای کامل عکاسی، فیلمبرداری و ایده‌های محتوایی برای رشد در Google، LinkedIn و Instagram</p>
+    <div class="pill-row">
+      <span class="pill">📷 عکاسی میدانی</span>
+      <span class="pill">🎬 ویدئوهای لینکدین</span>
+      <span class="pill">🗺️ Google Business</span>
+      <span class="pill">🏷️ لوگو روی همه چیز</span>
+      <span class="pill">📱 کیفیت حرفه‌ای</span>
+    </div>
+  </div>
+
+  <!-- BRAND IDENTITY IN CONTENT -->
+  <section class="section">
+    <div class="section-title"><span class="ico">🏷️</span> هویت برند در محتوا — اجباری</div>
+    <div class="note">
+      <strong>قانون اول:</strong> هر عکس و ویدئویی که گرفته می‌شه باید لوگوی Topping به وضوح دیده بشه. محتوای بدون لوگو ارزش انتشار نداره — نه برای گوگل، نه لینکدین، نه هیچ‌جا.
+    </div>
+    <div class="grid-3">
+      <div class="brand-item">
+        <div class="big">🚗</div>
+        <strong>لوگو روی خودرو</strong>
+        <span>استیکر یا رپ روی ون/ماشین — هر دو طرف و پشت. مهم‌ترین عنصر برندینگ در عکس‌های گوگل</span>
+      </div>
+      <div class="brand-item">
+        <div class="big">👕</div>
+        <strong>یونیفرم راننده</strong>
+        <span>تیشرت یا پوشش با لوگوی Topping — باید در همه عکس‌ها و فیلم‌ها پوشیده بشه</span>
+      </div>
+      <div class="brand-item">
+        <div class="big">📦</div>
+        <strong>استیکر روی بسته</strong>
+        <span>اگه ممکنه استیکر Topping روی بسته‌ها — حتی یه برچسب کوچیک هم کافیه</span>
+      </div>
+    </div>
+    <div class="warning">
+      <strong>⚠️ بدون این سه مورد:</strong> تصاویر یونیک نمیشن و گوگل نمی‌تونه اون‌ها رو از رقبا تشخیص بده. لوگو = هویت = اعتماد.
+    </div>
+  </section>
+
+  <!-- QUALITY -->
+  <section class="section">
+    <div class="section-title"><span class="ico">🎥</span> کیفیت فیلم و عکس</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">📷 عکاسی</div>
+        <ul style="font-size:13.5px;padding-right:18px;">
+          <li style="margin:6px 0;">کیفیت بالا — واضح، روشن، بدون تاری</li>
+          <li style="margin:6px 0;">نور طبیعی روز بهترین نتیجه رو میده</li>
+          <li style="margin:6px 0;">از زوایای مختلف بگیر — جلو، کنار، نزدیک</li>
+          <li style="margin:6px 0;">پس‌زمینه تمیز و مرتب — نهごみ یا بی‌نظمی</li>
+          <li style="margin:6px 0;">لوگو در همه عکس‌ها visible باشه</li>
+          <li style="margin:6px 0;">فرمت: JPG با کیفیت بالا برای گوگل</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">🎬 ویدئو</div>
+        <ul style="font-size:13.5px;padding-right:18px;">
+          <li style="margin:6px 0;">کیفیت ویدئو باید واضح و روشن باشه — نه لرزون، نه تاریک</li>
+          <li style="margin:6px 0;">برای لینکدین: عمودی (۹:۱۶) یا مربع (۱:۱)</li>
+          <li style="margin:6px 0;">برای سایت و یوتیوب: افقی (۱۶:۹)</li>
+          <li style="margin:6px 0;">صدا مهمه — محیط آروم یا موزیک بک‌گراند</li>
+          <li style="margin:6px 0;">زیرنویس انگلیسی اضافه کن — ۸۰٪ لینکدین بدون صدا دیده میشه</li>
+          <li style="margin:6px 0;">مدت: ۳۰ تا ۶۰ ثانیه برای لینکدین</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO SHOT LIST -->
+  <section class="section">
+    <div class="section-title"><span class="ico">📷</span> لیست عکس‌های ضروری</div>
+
+    <div class="card">
+      <div class="card-title">🚗 خودرو با لوگوی Topping — اولویت اول گوگل</div>
+      <div class="shot-grid">
+        <div class="shot-item"><span class="ico">📸</span>خودرو کنار خیابان با لوگوی واضح Topping — نمای جلو</div>
+        <div class="shot-item"><span class="ico">📸</span>خودرو از کنار — لوگو کاملاً خوانا</div>
+        <div class="shot-item"><span class="ico">📸</span>راننده با یونیفرم کنار خودرو — هر دو لوگو دیده میشن</div>
+        <div class="shot-item"><span class="ico">📸</span>خودرو مقابل یک دفتر یا فروشگاه در GTA</div>
+        <div class="shot-item"><span class="ico">📸</span>باز شدن صندوق عقب — بسته‌ها داخل</div>
+        <div class="shot-item"><span class="ico">📸</span>خودرو در حرکت (از پشت یا کنار)</div>
+      </div>
+      <div class="callout">این عکس‌ها مستقیم برای Google Business Profile استفاده میشن — بیشترین تأثیر رو دارن روی اعتماد مشتری بالقوه.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🤝 تحویل — اعتمادسازی</div>
+      <div class="shot-grid">
+        <div class="shot-item"><span class="ico">📸</span>لحظه تحویل بسته به مشتری — راننده با یونیفرم</div>
+        <div class="shot-item"><span class="ico">📸</span>دست دادن راننده و مشتری</div>
+        <div class="shot-item"><span class="ico">📸</span>مشتری در حال دریافت بسته — لبخند</div>
+        <div class="shot-item"><span class="ico">📸</span>تحویل در ورودی یک دفتر B2B</div>
+        <div class="shot-item"><span class="ico">📸</span>نمای نزدیک از بسته در دست راننده</div>
+        <div class="shot-item"><span class="ico">📸</span>راننده در حال اسکن یا ثبت تحویل</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⚙️ پشت صحنه — برای لینکدین</div>
+      <div class="shot-grid">
+        <div class="shot-item"><span class="ico">📸</span>مرتب کردن بسته‌ها داخل خودرو</div>
+        <div class="shot-item"><span class="ico">📸</span>راننده در حال چک کردن مسیر</div>
+        <div class="shot-item"><span class="ico">📸</span>تیم Topping — جلسه کوتاه صبح</div>
+        <div class="shot-item"><span class="ico">📸</span>بارگیری بسته‌ها</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO IDEAS - HIGH VIEW -->
+  <section class="section">
+    <div class="section-title"><span class="ico">🎬</span> ایده‌های ویدئویی پربازدید</div>
+    <p style="color:var(--muted);font-size:14px;margin-bottom:16px;">این ویدئوها بر اساس دغدغه‌های واقعی مشتریان B2B طراحی شدن — همین‌ها توی لینکدین ویو می‌خورن.</p>
+
+    <div class="grid-2">
+
+      <div class="idea-card" data-num="1">
+        <span class="tag tag-li">💼 LinkedIn</span>
+        <h4>مشکلی که همه Courier ها دارن ولی ما حلش کردیم</h4>
+        <p>توضیح یک مشکل رایج: "بسته دیر رسید"، "راننده پیدا نشد"، "هیچ‌کس نبود تحویل بگیره" — و بگو Topping چطور این رو برطرف کرده</p>
+        <p class="hook">✨ Hook: "۸۰٪ کسب‌وکارهای GTA از این مشکل ناله می‌کنن..."</p>
+      </div>
+
+      <div class="idea-card" data-num="2">
+        <span class="tag tag-li">💼 LinkedIn</span>
+        <h4>یک تجربه واقعی — داستان یک مشتری</h4>
+        <p>یه مشتری B2B بگه قبلاً چه مشکلی داشت، الان با Topping چی فرق کرده. حتی ۳۰ ثانیه کافیه — واقعی بودن مهم‌تر از حرفه‌ای بودنه</p>
+        <p class="hook">✨ Hook: "این مشتری ۶ ماه با یه courier بد کار کرد..."</p>
+      </div>
+
+      <div class="idea-card" data-num="3">
+        <span class="tag tag-li">💼 LinkedIn</span>
+        <h4>چرا B2B Delivery با B2C فرق داره؟</h4>
+        <p>آموزشی — توضیح بده که ارسال برای کسب‌وکار چه نیازهای خاصی داره که Topping اون‌ها رو می‌فهمه. این نوع محتوا اعتبار تخصصی میسازه</p>
+        <p class="hook">✨ Hook: "اگه فکر می‌کنی همه courier یکیه، این رو ببین..."</p>
+      </div>
+
+      <div class="idea-card" data-num="4">
+        <span class="tag tag-all">📍 همه پلتفرم‌ها</span>
+        <h4>از ساعت ۹ صبح تا ۱ بعدازظهر — Same Day</h4>
+        <p>یه بسته رو از لحظه تحویل گرفتن تا رساندن نشون بده. بدون موزیک اضافه — فقط واقعی. برای گوگل، لینکدین و سایت فوق‌العاده‌ست</p>
+        <p class="hook">✨ Hook: "Delivered Today. Not Tomorrow."</p>
+      </div>
+
+      <div class="idea-card" data-num="5">
+        <span class="tag tag-li">💼 LinkedIn</span>
+        <h4>۳ چیزی که وقتی Courier انتخاب می‌کنی باید بپرسی</h4>
+        <p>محتوای آموزشی کوتاه — سه سوال کلیدی که هر مدیر باید از courier بپرسه. در انتها Topping رو معرفی کن نه اول</p>
+        <p class="hook">✨ Hook: "قبل از اینکه قرارداد امضا کنی..."</p>
+      </div>
+
+      <div class="idea-card" data-num="6">
+        <span class="tag tag-li">💼 LinkedIn</span>
+        <h4>یک روز با راننده Topping</h4>
+        <p>۴۵ ثانیه — شروع روز، دریافت ماموریت، چند تحویل، پایان روز. لوگو در همه صحنه‌ها. این نوع محتوا حس انسانی میده و engagement بالاست</p>
+        <p class="hook">✨ Hook: "یه روز عادی برای تیم ما..."</p>
+      </div>
+
+      <div class="idea-card" data-num="7">
+        <span class="tag tag-goog">🗺️ Google</span>
+        <h4>معرفی منطقه — "ما در [محله] هستیم"</h4>
+        <p>یه ویدئوی کوتاه که خودرو Topping رو در Vaughan، Markham، Richmond Hill نشون بده. برای Google Business هر محله یه ویدئو جداگانه — خیلی روی سئوی محلی تأثیر داره</p>
+        <p class="hook">✨ "Serving Vaughan businesses — same day, every day"</p>
+      </div>
+
+      <div class="idea-card" data-num="8">
+        <span class="tag tag-li">💼 LinkedIn</span>
+        <h4>دغدغه‌ای که مشتری داره — و جواب Topping</h4>
+        <p>مثلاً: "نگران اینم که بسته‌ام آسیب ببینه" یا "نمی‌دونم کجاست بسته‌ام" — این دغدغه‌ها رو مطرح کن و بگو Topping چطور حل می‌کنه</p>
+        <p class="hook">✨ Hook: "مشتریامون این رو می‌پرسن و ما..."</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHOTO IDEAS FOR LINKEDIN -->
+  <section class="section">
+    <div class="section-title"><span class="ico">🖼️</span> ایده‌های عکس برای لینکدین (پربازدید)</div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title">📊 آمار روی عکس واقعی</div>
+        <p style="font-size:13px;color:var(--muted);">عکس خودروی Topping + متن روی عکس مثل: <em>"۹۸٪ تحویل به موقع در GTA"</em> — آمار واقعی اعتماد میسازه</p>
+      </div>
+      <div class="card">
+        <div class="card-title">💬 Quote از مشتری</div>
+        <p style="font-size:13px;color:var(--muted);">عکس لحظه تحویل + نقل‌قول واقعی از مشتری B2B — حتی یه جمله کوتاه خیلی تأثیر داره</p>
+      </div>
+      <div class="card">
+        <div class="card-title">📍 Before & After</div>
+        <p style="font-size:13px;color:var(--muted);">قبل از Topping: مشکل. بعد از Topping: راه‌حل. دو عکس کنار هم — ساده اما پربازدید</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM STRATEGY -->
+  <section class="section">
+    <div class="section-title"><span class="ico">📱</span> استراتژی هر پلتفرم</div>
+    <table>
+      <thead>
+        <tr>
+          <th>پلتفرم</th>
+          <th>چه محتوایی بذار</th>
+          <th>فرمت</th>
+          <th>هدف</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🗺️ Google Business</strong></td>
+          <td>عکس خودرو با لوگو، تحویل، تیم، محله‌های مختلف GTA</td>
+          <td>JPG کیفیت بالا</td>
+          <td>اعتماد + سئوی محلی</td>
+        </tr>
+        <tr>
+          <td><strong>💼 LinkedIn</strong></td>
+          <td>ویدئوی آموزشی، پشت صحنه، داستان مشتری، دغدغه‌محور</td>
+          <td>ویدئو ۳۰-۶۰ ثانیه عمودی/مربع + زیرنویس</td>
+          <td>B2B leads + اعتبار تخصصی</td>
+        </tr>
+        <tr>
+          <td><strong>📸 Instagram</strong></td>
+          <td>عکس‌های حرفه‌ای، Reels از تحویل، پشت صحنه</td>
+          <td>مربع یا عمودی، ریلز ۱۵-۳۰ ثانیه</td>
+          <td>برندینگ + آگاهی</td>
+        </tr>
+        <tr>
+          <td><strong>🌐 سایت</strong></td>
+          <td>عکس‌های اصلی خدمات، ویدئوی معرفی، تصاویر تحویل</td>
+          <td>افقی ۱۶:۹ برای ویدئو</td>
+          <td>SEO + اعتمادسازی</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CONTENT RATIO -->
+  <section class="section">
+    <div class="section-title"><span class="ico">⚖️</span> نسبت محتوا</div>
+    <div class="ratio-bar">
+      <div class="ratio-real">۷۰٪ — محتوای واقعی و میدانی</div>
+      <div class="ratio-design">۳۰٪ — گرافیک</div>
+    </div>
+    <div class="callout">
+      <strong>چرا ۷۰٪ واقعی؟</strong> در صنعت courier اعتماد مهم‌ترین عامل فروشه. عکس‌های واقعی از راننده، خودرو و تحویل چندین برابر بیشتر از طرح‌های گرافیکی باعث اعتماد میشن — خصوصاً برای مشتریان B2B که می‌خوان بدونن با یه تیم واقعی کار می‌کنن.
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section class="section">
+    <div class="section-title"><span class="ico">✅</span> چک‌لیست یک روز فیلمبرداری</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">🎯 قبل از شروع</div>
+        <ul class="checklist">
+          <li>لوگوی Topping روی خودرو نصب شده</li>
+          <li>راننده یونیفرم با لوگو پوشیده</li>
+          <li>چند بسته آماده برای صحنه‌سازی</li>
+          <li>مکان‌های مناسب از قبل انتخاب شدن</li>
+          <li>نور روز — صبح تا اواسط روز بهتره</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">📋 شات‌های اجباری</div>
+        <ul class="checklist">
+          <li>۶ عکس خودرو (جلو، کنار، راننده کنار ماشین)</li>
+          <li>۴ عکس تحویل (لحظه دادن بسته، لبخند مشتری)</li>
+          <li>۲ عکس پشت صحنه (داخل خودرو، بارگیری)</li>
+          <li>۱ ویدئو Same Day کامل (۳۰-۶۰ ثانیه)</li>
+          <li>۱ ویدئو معرفی راننده یا تیم (۳۰ ثانیه)</li>
+          <li>۱ ویدئو از هر محله برای Google Business</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip">
+      <strong>💡 نکته:</strong> از همین یک روز میشه ۳ تا ۶ ماه محتوا استخراج کرد — عکس‌ها رو برای گوگل، کلیپ‌های کوتاه برای لینکدین، ریلز برای اینستاگرام، و بنر برای سایت.
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>Topping Courier — چارچوب داخلی تولید محتوا · ویژه تیم مارکتینگ</p>
+  </div>
+
+</div>
+</body>
+</html>

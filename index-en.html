@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Topping Tech | Document Dashboard</title>
+<style>
+:root {
+  --glass: rgba(255,255,255,.55);
+  --glass-strong: rgba(255,255,255,.72);
+  --glass-border: rgba(255,255,255,.65);
+  --ink: #0c1a2e;
+  --muted: #5c6b80;
+  --blue: #0f4c81;
+  --radius: 20px;
+  --blur: blur(24px);
+  --font: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  line-height: 1.65;
+  min-height: 100vh;
+  background: #e8eef5;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(30,136,229,.18), transparent),
+    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(255,152,0,.14), transparent);
+  background-attachment: fixed;
+}
+a { color: inherit; text-decoration: none; }
+.topnav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(255,255,255,.45);
+  backdrop-filter: var(--blur);
+  border-bottom: 1px solid var(--glass-border);
+}
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15px; color: var(--blue); }
+.brand img { width: 36px; height: 36px; border-radius: 10px; }
+.nav-home {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 999px;
+  background: var(--glass-strong); backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  font-size: 13px; font-weight: 600; color: var(--blue);
+  transition: transform .15s;
+}
+.nav-home:hover { transform: scale(1.03); }
+.page { max-width: 1100px; margin: 0 auto; padding: 28px 20px 56px; }
+.hero {
+  display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+  padding: 32px; border-radius: 28px;
+  background: var(--glass); backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 40px rgba(15,76,129,.08);
+  margin-bottom: 24px;
+}
+.hero-text h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 700; margin-bottom: 8px; }
+.hero-text p { color: var(--muted); font-size: 15px; max-width: 520px; }
+.hero-poster { width: 120px; height: 120px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,.6); }
+.hero-poster img { width: 100%; height: 100%; object-fit: cover; }
+.stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-top: 24px; }
+.stat { text-align: center; padding: 14px; border-radius: 16px; background: rgba(255,255,255,.4); border: 1px solid rgba(255,255,255,.5); }
+.stat .emoji { font-size: 22px; display: block; margin-bottom: 4px; }
+.stat b { font-size: 22px; font-weight: 700; color: var(--blue); display: block; }
+.stat span { font-size: 11px; color: var(--muted); }
+.toolbar {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 10px;
+  padding: 14px; margin-bottom: 16px; border-radius: var(--radius);
+  background: var(--glass); backdrop-filter: var(--blur); border: 1px solid var(--glass-border);
+}
+.toolbar input, .toolbar select {
+  font-family: inherit; font-size: 13px; padding: 10px 14px; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.6); background: rgba(255,255,255,.5); color: var(--ink);
+}
+.cat-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.cat-pill {
+  cursor: pointer; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  border: 1px solid rgba(255,255,255,.55); background: rgba(255,255,255,.4); color: var(--muted);
+}
+.cat-pill.active { background: rgba(15,76,129,.85); color: #fff; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 14px; }
+.card {
+  padding: 20px; border-radius: var(--radius);
+  background: var(--glass); backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  display: flex; flex-direction: column; min-height: 210px;
+  transition: transform .2s;
+}
+.card:hover { transform: translateY(-3px); }
+.card-top { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.card-emoji { font-size: 32px; }
+.card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.card .sub { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.pill { font-size: 10px; font-weight: 700; padding: 4px 9px; border-radius: 999px; background: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.6); color: var(--muted); }
+.pill-active { background: rgba(5,150,105,.12); color: #047857; }
+.actions { display: flex; gap: 8px; margin-top: 14px; }
+.btn { flex: 1; text-align: center; padding: 9px 12px; border-radius: 11px; font-size: 12px; font-weight: 700; }
+.btn-open { background: rgba(15,76,129,.88); color: #fff; }
+.btn-dl { background: rgba(255,255,255,.5); color: var(--blue); border: 1px solid rgba(255,255,255,.6); }
+.table-wrap { margin-top: 28px; padding: 22px; border-radius: var(--radius); background: var(--glass); backdrop-filter: var(--blur); border: 1px solid var(--glass-border); overflow-x: auto; }
+.table-wrap h2 { font-size: 16px; color: var(--blue); margin-bottom: 14px; }
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 12px; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,.4); }
+th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; }
+code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; border-radius: 4px; }
+.empty { display: none; text-align: center; padding: 40px; color: var(--muted); }
+.footer { text-align: center; padding: 32px 0 8px; font-size: 12px; color: var(--muted); }
+.footer a { color: var(--blue); text-decoration: underline; }
+@media (max-width:768px) { .hero { grid-template-columns: 1fr; text-align: center; } .stats { grid-template-columns: repeat(2,1fr); } .toolbar { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="index-en.html">
+    <img src="topping_poster_v2.svg" alt="Topping" />
+    <span>📦 Topping Tech</span>
+  </a>
+  <div style="display:flex;gap:8px;align-items:center">
+    <a class="nav-home" href="index.html">🇮🇷 فارسی</a>
+    <a class="nav-home" href="index-en.html">🏠 Home</a>
+  </div>
+</nav>
+
+<div class="page">
+  <header class="hero">
+    <div class="hero-text">
+      <h1>✨ Document Dashboard</h1>
+      <p>HTML library — Playbook, Sales, Business Plan & more. Search, filter, one click. Fully bilingual FA / EN.</p>
+      <div class="stats">
+        <div class="stat"><span class="emoji">📄</span><b id="statTotal">0</b><span>Total</span></div>
+        <div class="stat"><span class="emoji">✅</span><b id="statActive">0</b><span>Active</span></div>
+        <div class="stat"><span class="emoji">🗂️</span><b id="statCategories">0</b><span>Categories</span></div>
+        <div class="stat"><span class="emoji">💾</span><b id="statSize">0</b><span>Size</span></div>
+      </div>
+    </div>
+    <div class="hero-poster"><img src="topping_poster_v2.svg" alt="Topping Poster" /></div>
+  </header>
+
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="🔍 Search..." autocomplete="off" />
+    <select id="categoryFilter"><option value="all">📁 All categories</option></select>
+    <select id="languageFilter">
+      <option value="all">🌐 All languages</option>
+      <option value="fa">🇮🇷 Persian</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+    <select id="statusFilter">
+      <option value="all">⚡ All</option>
+      <option value="Active">✅ Active</option>
+    </select>
+  </div>
+
+  <nav class="cat-nav" id="catNav"></nav>
+  <main>
+    <div id="cards" class="grid"></div>
+    <div id="empty" class="empty">😶‍🌫️ No results found</div>
+    <section class="table-wrap">
+      <h2>📋 Index</h2>
+      <table>
+        <thead><tr><th>Title</th><th>Category</th><th>Lang</th><th>Size</th><th>Path</th></tr></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </section>
+  </main>
+  <footer class="footer">Topping Courier · Hamid Barzin · Amir · <a href="README.md">README</a></footer>
+</div>
+
+<script src="assets/files-catalog.js"></script>
+<script>
+const UI = { open:"🔗 Open", active:"✅ Active", all:"✨ All", catAll:"📁 All categories" };
+const catEmoji = { "Playbook":"📘", "Funding":"💰", "Sales":"📈", "Business Plan":"🗺️", "Proposals":"📄", "all":"✨" };
+const langLabel = { fa:"🇮🇷 FA", en:"🇬🇧 EN", mixed:"🔀 Mix" };
+const $ = id => document.getElementById(id);
+function fmtKB(b){ return b<1024?b+" B":(b/1024).toFixed(1)+" KB"; }
+function buildFilters(){
+  [...new Set(files.map(f=>f.category))].sort().forEach(c=>{
+    const o=document.createElement("option"); o.value=c; o.textContent=(catEmoji[c]||"📁")+" "+c; $("categoryFilter").appendChild(o);
+  });
+  [["all",UI.all],...Object.entries(catEmoji).filter(([k])=>k!=="all")].forEach(([k,l])=>{
+    if(k!=="all"&&!files.some(f=>f.category===k)) return;
+    const b=document.createElement("button"); b.className="cat-pill"+(k==="all"?" active":""); b.dataset.cat=k; b.type="button";
+    b.textContent=l+(k==="all"?"":(" "+k.split(" ")[0])); $("catNav").appendChild(b);
+  });
+  $("catNav").onclick=e=>{ const btn=e.target.closest(".cat-pill"); if(!btn)return; $("catNav").querySelectorAll(".cat-pill").forEach(p=>p.classList.remove("active")); btn.classList.add("active"); $("categoryFilter").value=btn.dataset.cat; render(); };
+}
+function getFiltered(){
+  const q=$("search").value.trim().toLowerCase(), cat=$("categoryFilter").value, lang=$("languageFilter").value, stat=$("statusFilter").value;
+  return files.filter(f=>{ const hay=(f.title+f.htmlTitle+f.description+f.category).toLowerCase(); return (!q||hay.includes(q))&&(cat==="all"||f.category===cat)&&(lang==="all"||f.language===lang)&&(stat==="all"||f.status===stat); });
+}
+function render(){
+  const arr=getFiltered(); $("cards").innerHTML=""; $("tableBody").innerHTML=""; $("empty").style.display=arr.length?"none":"block";
+  arr.forEach(f=>{
+    const card=document.createElement("article"); card.className="card";
+    const alt=f.alt?`<a class="btn btn-dl" href="${f.alt}" title="Other language">${f.language==="fa"?"🇬🇧 EN":"🇮🇷 FA"}</a>`:`<a class="btn btn-dl" href="${f.file}" download>⬇️</a>`;
+    card.innerHTML=`<div class="card-top"><div><h3>${f.title}</h3><p class="sub">${f.description}</p></div><span class="card-emoji">${f.emoji}</span></div>
+      <div class="meta"><span class="pill">${catEmoji[f.category]||"📁"} ${f.category}</span><span class="pill">${langLabel[f.language]||f.language}</span><span class="pill">${fmtKB(f.size)}</span><span class="pill pill-active">${UI.active}</span></div>
+      <div class="actions"><a class="btn btn-open" href="${f.file}" target="_blank">${UI.open}</a>${alt}</div>`;
+    $("cards").appendChild(card);
+    const tr=document.createElement("tr"); tr.innerHTML=`<td>${f.emoji} <b>${f.title}</b></td><td>${f.category}</td><td>${langLabel[f.language]||f.language}</td><td>${fmtKB(f.size)}</td><td><code>${f.file}</code></td>`;
+    $("tableBody").appendChild(tr);
+  });
+  $("statTotal").textContent=files.length; $("statActive").textContent=files.filter(f=>f.status==="Active").length;
+  $("statCategories").textContent=new Set(files.map(f=>f.category)).size;
+  $("statSize").textContent=fmtKB(files.filter(f=>f.status==="Active").reduce((s,f)=>s+f.size,0));
+}
+buildFilters(); ["search","categoryFilter","languageFilter","statusFilter"].forEach(id=>$(id).addEventListener("input",render)); render();
+</script>
+<script src="assets/i18n-pairs.js"></script>
+<script src="assets/tc-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>درخواست قیمت اختصاصی | Topping Courier</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Tahoma,Arial,sans-serif;background:#f4f7fb;color:#172033;line-height:1.8}
+    .page{max-width:1180px;margin:auto;padding:24px}
+    .hero{background:linear-gradient(135deg,#101828,#1d4ed8);color:white;border-radius:28px;padding:46px 34px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;box-shadow:0 20px 50px rgba(16,24,40,.22)}
+    .brand{font-size:20px;font-weight:800;letter-spacing:.5px;margin-bottom:20px}
+    h1{font-size:44px;line-height:1.25;margin-bottom:18px}
+    .hero p{font-size:18px;color:#e7eefc;margin-bottom:26px}
+    .badge{display:inline-flex;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:999px;margin-bottom:16px;font-size:14px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{border:0;border-radius:14px;padding:13px 20px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
+    .btn-primary{background:#facc15;color:#111827}
+    .btn-light{background:white;color:#1d4ed8}
+    .hero-card{background:white;color:#172033;border-radius:24px;padding:24px;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+    .hero-card h3{font-size:22px;margin-bottom:14px}
+    .check{display:flex;gap:10px;margin:10px 0;color:#334155}
+    .check span{color:#16a34a;font-weight:900}
+    .section{margin-top:28px;background:white;border-radius:24px;padding:30px;box-shadow:0 10px 30px rgba(15,23,42,.08)}
+    .section-title{font-size:30px;margin-bottom:8px;color:#101828}
+    .section-sub{color:#64748b;margin-bottom:24px}
+    .notice{background:#fff7d6;border:1px solid #facc15;border-radius:18px;padding:18px;margin-bottom:24px;color:#51420b;font-weight:700}
+    form{display:grid;gap:18px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    label{font-weight:800;color:#263244;font-size:14px;margin-bottom:6px;display:block}
+    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #d7deea;border-radius:14px;font-size:15px;background:#fbfdff;outline:none;transition:.2s}
+    input:focus,select:focus,textarea:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.1);background:white}
+    textarea{min-height:120px;resize:vertical}
+    .chips{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .chip input{display:none}
+    .chip span{display:block;border:1px solid #d7deea;background:#fbfdff;border-radius:999px;padding:10px 12px;text-align:center;cursor:pointer;font-size:14px}
+    .chip input:checked + span{background:#1d4ed8;color:white;border-color:#1d4ed8}
+    .submit-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px}
+    .success{display:none;background:#dcfce7;border:1px solid #22c55e;color:#166534;padding:16px;border-radius:16px;font-weight:800}
+    .pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+    table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:18px;background:white;border:1px solid #e2e8f0}
+    th{background:#101828;color:white;text-align:right;padding:14px}
+    td{padding:13px 14px;border-top:1px solid #e2e8f0;color:#334155}
+    tr:nth-child(even) td{background:#f8fafc}
+    .price-card h3{margin-bottom:12px;color:#101828}
+    .footer{margin:28px 0;text-align:center;color:#64748b}
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .logo{font-size:22px;font-weight:900;color:#101828}
+    .contact{font-size:14px;color:#64748b}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;padding:34px 22px}h1{font-size:34px}.grid,.grid-3,.pricing{grid-template-columns:1fr}.chips{grid-template-columns:repeat(2,1fr)}.page{padding:14px}.section{padding:22px}.topbar{display:block}.contact{margin-top:6px}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div class="logo">Topping Courier</div>
+      <div class="contact">info@toppingcourier.ca | ToppingCourier.ca</div>
+    </div>
+
+    <section class="hero">
+      <div>
+        <div class="badge">Business Pricing Request</div>
+        <h1>قیمت اختصاصی برای ارسال‌های شرکت شما</h1>
+        <p>اگر ارسال ماهانه، مسیر ثابت، بسته‌های منظم، پالت یا دلیوری سازمانی دارید، فرم زیر را پر کنید تا بتوانیم قیمت کف و متناسب با حجم واقعی کارتان ارائه بدهیم.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#quoteForm">دریافت قیمت اختصاصی</a>
+          <a class="btn btn-light" href="#pricing">مشاهده لیست قیمت پایه</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>چرا فرم را پر کنید؟</h3>
+        <div class="check"><span>✓</span><div>قیمت بر اساس حجم ماهانه و مسیر واقعی شما تنظیم می‌شود.</div></div>
+        <div class="check"><span>✓</span><div>برای مشتریان منظم امکان نرخ قراردادی وجود دارد.</div></div>
+        <div class="check"><span>✓</span><div>اگر فرم تکمیل نشود، قیمت‌ها طبق لیست پایه پایین صفحه محاسبه می‌شود.</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="quoteForm">
+      <h2 class="section-title">فرم درخواست قیمت شخصی‌سازی‌شده</h2>
+      <p class="section-sub">اطلاعات را وارد کنید؛ درخواست شما برای پیگیری وارد CRM می‌شود.</p>
+      <div class="notice">برای دریافت قیمت پایین‌تر و دقیق‌تر، لطفاً حجم ارسال، مسیرها و نوع بار را کامل وارد کنید.</div>
+
+      <form id="pricingForm">
+        <div class="grid">
+          <div><label>نام شرکت *</label><input name="companyName" required placeholder="مثلاً ABC Distribution" /></div>
+          <div><label>نام شخص مسئول *</label><input name="contactPerson" required placeholder="نام و نام خانوادگی" /></div>
+          <div><label>شماره تماس *</label><input name="phone" required placeholder="مثلاً 416-000-0000" /></div>
+          <div><label>ایمیل *</label><input name="email" type="email" required placeholder="name@company.com" /></div>
+          <div><label>وب‌سایت</label><input name="website" placeholder="https://example.com" /></div>
+          <div><label>آدرس شرکت</label><input name="address" placeholder="City / Address" /></div>
+        </div>
+
+        <div class="grid-3">
+          <div><label>نوع بیزینس</label><select name="businessType"><option value="">انتخاب کنید</option><option>Wholesale / Distributor</option><option>E-commerce</option><option>Medical Supplies</option><option>Food Importer</option><option>Auto Parts</option><option>Fashion / Apparel</option><option>Other</option></select></div>
+          <div><label>تعداد دلیوری در ماه *</label><input name="deliveriesPerMonth" type="number" required placeholder="مثلاً 100" /></div>
+          <div><label>تعداد دلیوری در هفته</label><input name="deliveriesPerWeek" type="number" placeholder="مثلاً 25" /></div>
+          <div><label>میانگین تعداد بسته در هر ارسال</label><input name="boxesPerDelivery" type="number" placeholder="مثلاً 3" /></div>
+          <div><label>میانگین وزن بسته‌ها</label><input name="averageWeight" placeholder="مثلاً 5kg" /></div>
+          <div><label>پالت / اسکید در ماه</label><input name="palletsPerMonth" type="number" placeholder="مثلاً 10" /></div>
+        </div>
+
+        <div>
+          <label>سرویس‌های مورد نیاز</label>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="services" value="Same-Day"><span>Same-Day</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Next-Day"><span>Next-Day</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Scheduled Pickup"><span>Scheduled Pickup</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Dedicated Driver"><span>Dedicated Driver</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Multi-Stop"><span>Multi-Stop</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Pallet / Skid"><span>Pallet / Skid</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Canada-Wide"><span>Canada-Wide</span></label>
+            <label class="chip"><input type="checkbox" name="services" value="Monthly Billing"><span>Monthly Billing</span></label>
+          </div>
+        </div>
+
+        <div><label>مسیرهای اصلی / توضیحات بیشتر</label><textarea name="notes" placeholder="مثلاً Pickup از Richmond Hill، ارسال به Toronto / Mississauga / Markham، روزانه ۱۰ بسته..."></textarea></div>
+
+        <div class="submit-row">
+          <button class="btn btn-primary" type="submit">Submit Request</button>
+          <span style="color:#64748b">بعد از ارسال، تیم فروش برای قیمت اختصاصی با شما تماس می‌گیرد.</span>
+        </div>
+        <div class="success" id="successMsg">درخواست شما ثبت شد. اطلاعات برای پیگیری وارد CRM شد.</div>
+      </form>
+    </section>
+
+    <section class="section" id="pricing">
+      <h2 class="section-title">لیست قیمت پایه</h2>
+      <p class="section-sub">اگر فرم بالا تکمیل نشود، قیمت‌ها بر اساس لیست پایه زیر محاسبه می‌شود.</p>
+      <div class="pricing">
+        <div class="price-card">
+          <h3>GTA Delivery</h3>
+          <table>
+            <tr><th>مسافت</th><th>قیمت پایه</th></tr>
+            <tr><td>0 تا 10 کیلومتر</td><td>Starting from $25</td></tr>
+            <tr><td>10 تا 25 کیلومتر</td><td>Starting from $35</td></tr>
+            <tr><td>25 تا 50 کیلومتر</td><td>Starting from $55</td></tr>
+            <tr><td>50 تا 100 کیلومتر</td><td>Starting from $90</td></tr>
+            <tr><td>بالای 100 کیلومتر</td><td>Custom Quote</td></tr>
+          </table>
+        </div>
+        <div class="price-card">
+          <h3>خدمات اضافه</h3>
+          <table>
+            <tr><th>سرویس</th><th>هزینه</th></tr>
+            <tr><td>Signature Required</td><td>$10</td></tr>
+            <tr><td>Fragile Handling</td><td>$15</td></tr>
+            <tr><td>Extra Box</td><td>$0.50 each</td></tr>
+            <tr><td>Dedicated Vehicle</td><td>Custom</td></tr>
+            <tr><td>Pallet / Skid</td><td>Custom</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Topping Courier — Business Delivery Made Smarter</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('pricingForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.services = [...document.querySelectorAll('input[name="services"]:checked')].map(i => i.value);
+      data.source = 'pricing-landing-page';
+      data.createdAt = new Date().toISOString();
+
+      // برای اتصال واقعی به CRM، آدرس API خودت را اینجا بگذار:
+      // await fetch('/api/leads', {
+      //   method: 'POST',
+      //   headers: {'Content-Type': 'application/json'},
+      //   body: JSON.stringify(data)
+      // });
+
+      console.log('CRM Lead Payload:', data);
+      successMsg.style.display = 'block';
+      form.reset();
+      successMsg.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  </script>
+</body>
+</html>

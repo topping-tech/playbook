@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Center Strategy | Topping Courier</title>
+  <style>
+    :root {
+      --primary: #0F4C81;
+      --secondary: #1E88E5;
+      --accent: #FF9800;
+      --dark: #0B1726;
+      --muted: #667085;
+      --bg: #F6F9FC;
+      --card: rgba(255, 255, 255, 0.86);
+      --border: rgba(15, 76, 129, 0.12);
+      --shadow: 0 24px 70px rgba(15, 76, 129, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(30,136,229,.14), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(255,152,0,.12), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      color: var(--dark);
+      line-height: 1.9;
+    }
+
+    .page {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 42px 24px 80px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 64px 48px;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(15,76,129,.97), rgba(30,136,229,.9)),
+        url("data:image/svg+xml,%3Csvg width='800' height='500' viewBox='0 0 800 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,.18)' stroke-width='1'%3E%3Ccircle cx='120' cy='120' r='90'/%3E%3Ccircle cx='700' cy='400' r='160'/%3E%3Cpath d='M0 420 C180 320 260 540 440 390 S670 250 800 300'/%3E%3C/g%3E%3C/svg%3E");
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.25);
+      backdrop-filter: blur(14px);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 34px);
+      margin: 0 0 22px;
+      font-weight: 500;
+      opacity: .94;
+    }
+
+    .hero p {
+      max-width: 820px;
+      font-size: 19px;
+      opacity: .92;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .card {
+      grid-column: span 6;
+      padding: 30px;
+      border-radius: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 54px rgba(15, 23, 42, 0.06);
+      backdrop-filter: blur(18px);
+    }
+
+    .card.full { grid-column: 1 / -1; }
+    .card.third { grid-column: span 4; }
+
+    h3 {
+      color: var(--primary);
+      font-size: 27px;
+      margin: 0 0 12px;
+      letter-spacing: -.4px;
+    }
+
+    .lead {
+      font-size: 21px;
+      color: #1f2937;
+      margin: 0;
+    }
+
+    .muted { color: var(--muted); }
+
+    .quote {
+      position: relative;
+      padding: 32px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,152,0,.13), rgba(30,136,229,.09));
+      border: 1px solid rgba(255,152,0,.24);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--dark);
+      text-align: center;
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 12px;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+      margin: 18px 0 0;
+      list-style: none;
+    }
+
+    .pill-list li {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(15,76,129,.08);
+      color: var(--primary);
+      font-weight: 700;
+      border: 1px solid rgba(15,76,129,.12);
+    }
+
+    .diagram {
+      direction: ltr;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-family: Arial, sans-serif;
+    }
+
+    .node {
+      min-width: 260px;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(15,76,129,.08);
+      font-weight: 700;
+    }
+
+    .node.center {
+      background: linear-gradient(135deg, var(--accent), #ffc46b);
+      color: #201306;
+      transform: scale(1.06);
+      box-shadow: 0 18px 35px rgba(255,152,0,.26);
+    }
+
+    .arrow {
+      color: var(--secondary);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .step {
+      padding: 22px;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--border);
+      min-height: 150px;
+    }
+
+    .num {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: var(--primary);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .nas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .nas-box {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #fff, #f8fbff);
+      border: 1px solid var(--border);
+    }
+
+    .letter {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding: 28px;
+      border-radius: 28px;
+      background: var(--dark);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer strong { color: #fff; }
+    .footer span { color: rgba(255,255,255,.72); }
+
+    @media (max-width: 850px) {
+      .hero { padding: 42px 26px; }
+      .card, .card.third { grid-column: 1 / -1; }
+      .steps, .nas { grid-template-columns: 1fr; }
+      .quote { font-size: 22px; }
+    }
+
+    @media print {
+      body { background: white; }
+      .page { padding: 0; max-width: none; }
+      .hero, .card, .footer { box-shadow: none; break-inside: avoid; }
+      .hero { border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="badge">Topping Courier Inc. · Strategic Framework</div>
+      <h1>Center Strategy</h1>
+      <h2>هنر کنترل سیستم از طریق پیدا کردن مرکز آن</h2>
+      <p>
+        بیشتر کسب‌وکارها تلاش می‌کنند سریع‌تر حرکت کنند. ما در Topping ابتدا یک سؤال می‌پرسیم:
+        <strong>مرکز این سیستم کجاست؟</strong> چون تا زمانی که مرکز یک سیستم را پیدا نکرده‌ای، هر تلاشی فقط مصرف انرژی است.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card full">
+        <div class="quote">
+          قبل از حرکت، مرکز سیستم را پیدا کن.
+          <small>وقتی مرکز را در اختیار بگیری، با کمترین نیرو بیشترین اثر را می‌گذاری.</small>
+        </div>
+      </div>
+
+      <div class="card third">
+        <h3>الهام از کشتی</h3>
+        <p class="muted">قهرمان دست و پای حریف را جداگانه کنترل نمی‌کند؛ ابتدا تعادل و مرکز ثقل او را پیدا می‌کند. وقتی مرکز حریف را بگیری، حرکت‌های بعدی قابل پیش‌بینی می‌شود.</p>
+      </div>
+
+      <div class="card third">
+        <h3>الهام از فوتبال</h3>
+        <p class="muted">دروازه‌بان از مرکز دروازه بیشترین پوشش را دارد. او وسط می‌ایستد تا با کمترین حرکت، بیشترین زاویه‌ها را کنترل کند.</p>
+      </div>
+
+      <div class="card third">
+        <h3>الهام از سیستم</h3>
+        <p class="muted">در هر شبکه، یک گره وجود دارد که بیشترین جریان از آن عبور می‌کند. اگر آن گره را پیدا کنی، کل شبکه قابل مدیریت می‌شود.</p>
+      </div>
+
+      <div class="card full">
+        <h3>Center Strategy در Topping Courier</h3>
+        <p class="lead">
+          ما فقط به دنبال تعداد زیاد مشتری نیستیم؛ ما به دنبال <strong>مرکز جریان سفارشات</strong> هستیم.
+        </p>
+        <ul class="pill-list">
+          <li>توزیع‌کننده‌ها</li>
+          <li>مراکز پخش</li>
+          <li>Fulfillment Center</li>
+          <li>ERP و نرم‌افزار سفارش</li>
+          <li>Marketplace</li>
+          <li>انبارهای پرتراکم</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>قانون اول</h3>
+        <p class="lead">هیچ‌گاه به شاخه‌ها حمله نکن؛ ریشه را پیدا کن.</p>
+        <p class="muted">به جای تعقیب تک‌تک سفارش‌ها، نقطه‌ای را پیدا کن که سفارش‌ها از آنجا تولید می‌شوند.</p>
+      </div>
+
+      <div class="card">
+        <h3>قانون دوم</h3>
+        <p class="lead">قبل از فروش، سیستم را تحلیل کن.</p>
+        <p class="muted">سفارش از کجا متولد می‌شود؟ تصمیم‌گیرنده واقعی کیست؟ گلوگاه کجاست؟ اگر فقط یک نقطه را تغییر دهیم، بیشترین اثر کجا اتفاق می‌افتد؟</p>
+      </div>
+
+      <div class="card full">
+        <h3>مدل Center در لجستیک</h3>
+        <div class="diagram">
+          <div class="node">Customers</div>
+          <div class="arrow">↓</div>
+          <div class="node">Retail Stores</div>
+          <div class="arrow">↓</div>
+          <div class="node center">Distribution Center · CENTER</div>
+          <div class="arrow">↓</div>
+          <div class="node">Topping Courier</div>
+          <div class="arrow">↓</div>
+          <div class="node">Drivers</div>
+          <div class="arrow">↓</div>
+          <div class="node">Final Delivery</div>
+        </div>
+      </div>
+
+      <div class="card full">
+        <h3>فرمول رشد</h3>
+        <div class="steps">
+          <div class="step"><span class="num">1</span><h3>Center</h3><p class="muted">مرکز جریان را پیدا کن.</p></div>
+          <div class="step"><span class="num">2</span><h3>Density</h3><p class="muted">اطراف آن تراکم سفارش بساز.</p></div>
+          <div class="step"><span class="num">3</span><h3>Control</h3><p class="muted">با سیستم، مسیر و داده را کنترل کن.</p></div>
+          <div class="step"><span class="num">4</span><h3>Scale</h3><p class="muted">بعد توسعه پایدار و قابل پیش‌بینی می‌شود.</p></div>
+        </div>
+      </div>
+
+      <div class="card full">
+        <h3>ارتباط با NAS Framework</h3>
+        <div class="nas">
+          <div class="nas-box"><div class="letter">N</div><h3>Network</h3><p class="muted">مرکز شبکه و گره‌های اصلی جریان سفارش را پیدا کن.</p></div>
+          <div class="nas-box"><div class="letter">A</div><h3>AI</h3><p class="muted">داده‌ها را تحلیل کن تا مرکز واقعی و فرصت سودآور مشخص شود.</p></div>
+          <div class="nas-box"><div class="letter">S</div><h3>Secure & Scale</h3><p class="muted">وقتی مرکز تحت کنترل باشد، رشد امن، سریع و قابل تکرار می‌شود.</p></div>
+        </div>
+      </div>
+
+      <div class="card full">
+        <div class="quote">
+          Don't chase customers. Control the center that creates customers.
+          <small>مشتری‌ها را دنبال نکن؛ مرکزی را به دست بیاور که مشتری‌ها از آنجا ایجاد می‌شوند.</small>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong>Topping Courier Inc.</strong><br />
+        <span>Business Development · Logistics Engineering · Center Strategy</span>
+      </div>
+      <div><span>Prepared for executive presentation</span></div>
+    </footer>
+  </main>
+</body>
+</html>

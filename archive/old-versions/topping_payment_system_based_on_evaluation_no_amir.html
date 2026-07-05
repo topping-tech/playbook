@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topping Courier | سیستم نهایی پرداخت، بونس و کمیسیون</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#06101e; --card:#0d1e35; --card2:#112240; --text:#e9f4ff; --muted:#9bb3c8;
+  --gold:#f2c14e; --gold2:#ffd97a; --blue:#4ab3ff; --green:#2edb8a; --red:#ff5c7a;
+  --purple:#b39dfa; --line:rgba(255,255,255,.12); --soft:rgba(255,255,255,.055);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Vazirmatn',Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.9;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:
+radial-gradient(circle at 12% 5%,rgba(74,179,255,.20),transparent 34%),
+radial-gradient(circle at 88% 20%,rgba(242,193,78,.13),transparent 28%),
+radial-gradient(circle at 45% 90%,rgba(179,157,250,.13),transparent 35%);z-index:-1}
+nav{position:sticky;top:0;z-index:99;background:rgba(6,16,30,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1180px;margin:auto;display:flex;align-items:center;gap:14px;padding:12px 20px}
+.logo{width:46px;height:46px;border-radius:14px;object-fit:cover;border:1px solid rgba(242,193,78,.35)}
+.brand{font-weight:900;line-height:1.2;margin-left:auto}
+.brand small{display:block;color:var(--muted);font-size:11px;font-weight:600}
+.links{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.links a{text-decoration:none;color:var(--muted);font-size:12px;font-weight:800;padding:6px 11px;border-radius:999px;border:1px solid transparent;transition:.2s}
+.links a:hover,.links a.active{color:#fff;background:rgba(255,255,255,.07);border-color:var(--line)}
+.page{max-width:1180px;margin:auto;padding:28px 20px 60px}
+.hero{border:1px solid rgba(255,255,255,.15);background:linear-gradient(135deg,rgba(13,30,53,.9),rgba(17,34,64,.82),rgba(242,193,78,.10));border-radius:30px;padding:42px;position:relative;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.hero:after{content:"PAY";position:absolute;left:-10px;bottom:-50px;font-size:180px;font-weight:900;color:rgba(255,255,255,.035);letter-spacing:-10px}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:6px 15px;border-radius:999px;background:rgba(242,193,78,.13);border:1px solid rgba(242,193,78,.32);color:var(--gold2);font-size:12px;font-weight:900;margin-bottom:14px}
+h1{font-size:34px;line-height:1.3;margin-bottom:12px;font-weight:900}
+h1 span{color:var(--gold2)}
+.lead{color:#cfe4f8;font-size:16px;max-width:880px}
+.slogan{margin-top:20px;border-right:4px solid var(--gold);background:rgba(242,193,78,.08);padding:14px 18px;border-radius:16px;font-weight:900;color:#fff}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.meta span{font-size:12px;color:#dcecff;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:rgba(255,255,255,.05)}
+section{margin-top:22px;background:linear-gradient(180deg,rgba(255,255,255,.058),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 12px 40px rgba(0,0,0,.22)}
+.sec-title{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.num{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(74,179,255,.15);border:1px solid rgba(74,179,255,.35);color:#a8daff;font-weight:900}
+h2{font-size:22px;font-weight:900}
+h3{font-size:17px;color:var(--gold2);margin:18px 0 10px}
+p,li{color:var(--muted);font-size:14px}
+strong{color:#fff}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:18px}
+.card h4{font-size:15px;margin-bottom:7px;color:#fff}
+table{width:100%;border-collapse:collapse;margin:12px 0;border-radius:16px;overflow:hidden}
+th,td{border:1px solid var(--line);padding:12px 13px;text-align:right;vertical-align:top;font-size:13.5px}
+th{background:rgba(74,179,255,.13);color:#d7efff;font-weight:900}
+td{background:rgba(255,255,255,.025);color:var(--muted)}
+tr:hover td{background:rgba(255,255,255,.055);color:var(--text)}
+.ok{color:var(--green);font-weight:900} .warn{color:var(--gold2);font-weight:900} .bad{color:var(--red);font-weight:900} .purple{color:var(--purple);font-weight:900} .blue{color:var(--blue);font-weight:900}
+.callout{border-radius:16px;padding:15px 18px;margin:14px 0;border:1px solid var(--line);font-size:14px}
+.callout.info{background:rgba(74,179,255,.08);border-color:rgba(74,179,255,.25);color:#d4eeff}
+.callout.good{background:rgba(46,219,138,.08);border-color:rgba(46,219,138,.25);color:#c8ffe6}
+.callout.warn{background:rgba(242,193,78,.09);border-color:rgba(242,193,78,.32);color:#fff0b9}
+.callout.danger{background:rgba(255,92,122,.08);border-color:rgba(255,92,122,.28);color:#ffd7df}
+.formula{direction:ltr;text-align:left;background:#07111f;border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px 16px;font-family:Consolas,monospace;color:#dff2ff;margin:12px 0;white-space:pre-wrap}
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.pill{font-size:12px;font-weight:900;border-radius:999px;padding:5px 10px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#dbeeff}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:15px 0}
+.step{padding:16px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line);position:relative}
+.step b{display:block;color:#fff;margin-bottom:5px}
+.step .pay{display:inline-block;margin-top:10px;color:var(--green);font-size:18px;font-weight:900}
+.toggle{cursor:pointer;user-select:none}
+.hidden{display:none}
+.calc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:end}
+.calc label{display:block;color:var(--muted);font-size:12px;margin-bottom:5px;font-weight:800}
+.calc input,.calc select{width:100%;background:#07111f;color:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-family:inherit}
+.result{background:rgba(46,219,138,.08);border:1px solid rgba(46,219,138,.25);border-radius:16px;padding:15px;color:#d7ffe9;font-weight:900}
+.footer{text-align:center;color:#6f8ba3;font-size:12px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+@media(max-width:850px){.grid2,.grid3,.flow,.calc{grid-template-columns:1fr}.hero{padding:28px 20px}h1{font-size:26px}.nav-inner{flex-direction:column;align-items:flex-start}.brand{margin-left:0}table{display:block;overflow-x:auto}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <img class="logo" src="https://res.cloudinary.com/dqeqbomoo/image/upload/v1778545239/-5066772210877836359_121_2_d514q9.jpg" alt="Topping Courier Logo">
+    <div class="brand">Topping Courier <small>Payment · Bonus · Commission System</small></div>
+    <div class="links" id="navLinks">
+      <a href="#principle">اصل مدل</a><a href="#roles">نقش‌ها</a><a href="#commission">کمیسیون</a><a href="#lead">بونس لید</a><a href="#credit">کردیت</a><a href="#retention">ریتنشن</a><a href="#nodes">نودبندی</a><a href="#rules">قوانین</a><a href="#pilot">Pilot</a>
+    </div>
+  </div>
+</nav>
+<div class="page">
+<header class="hero">
+  <div class="badge">Internal Policy Draft · Founder Review</div>
+  <h1>سیستم نهایی <span>پرداخت، بونس و کمیسیون</span> تیم مارکتینگ و فروش</h1>
+  <p class="lead">این سند بر اساس مدل ارزیابی‌شده تنظیم شده: پرداخت فقط روی پول وصول‌شده، ثبت کامل CRM، مشتری فعال واقعی، کنترل سود، و تفکیک دقیق نقش Lead Generator، Sales و Closer.</p>
+  <div class="slogan">شعار تیم: «هر لید فقط یک شروع است؛ ارزش واقعی وقتی ساخته می‌شود که مشتری بماند، پرداخت کند و رشد کند.»</div>
+  <div class="meta"><span>Base Pay توافقی</span><span>No Collected Money = No Commission</span><span>CRM Proof Required</span><span>90-Day Pilot</span></div>
+</header>
+
+<section id="principle">
+  <div class="sec-title"><div class="num">۱</div><h2>اصل مدیریتی مدل پرداخت</h2></div>
+  <div class="grid3">
+    <div class="card"><h4>حقوق ثابت</h4><p>برای حضور، گزارش‌دهی، CRM، پیگیری روزانه، هماهنگی تیمی و اجرای وظایف پایه پرداخت می‌شود.</p></div>
+    <div class="card"><h4>بونس و کمیسیون</h4><p>فقط برای خروجی واقعی، مشتری فعال، invoice پرداخت‌شده و نقش مشخص در CRM پرداخت می‌شود.</p></div>
+    <div class="card"><h4>کردیت</h4><p>کردیت پول مستقیم نیست؛ ابزار سنجش عملکرد و تعیین سطح بونس/Retention است.</p></div>
+  </div>
+  <div class="formula">Final Income = Base Pay + Lead Bonus + Self-Close Commission + Retention Bonus + Strategic Bonus</div>
+  <div class="callout danger"><strong>قانون طلایی:</strong> No collected money = no commission · No CRM proof = no bonus · No qualified customer activity = no payment.</div>
+</section>
+
+<section id="roles">
+  <div class="sec-title"><div class="num">۲</div><h2>تفکیک نقش‌ها و حالت Self-Close</h2></div>
+  <table>
+    <thead><tr><th>نقش</th><th>وظیفه اصلی</th><th>نوع درآمد اضافه</th><th>نکته مهم</th></tr></thead>
+    <tbody>
+      <tr><td class="warn">شایان / آرشیا به عنوان Lead Generator</td><td>پیدا کردن لید، ثبت CRM، ایجاد مسیر ارتباط</td><td>Lead Bonus + Credit Level + Retention</td><td>اگر فقط لید بدهند، کمیسیون closing نمی‌گیرند.</td></tr>
+      <tr><td class="blue">شایان / آرشیا / هر عضو تیم در حالت Self-Close</td><td>خودش لید را بیاورد، مذاکره کند و ببندد</td><td>Lead Bonus + Self-Close Commission + Retention</td><td>باید در CRM مشخص شود: Lead Owner و Closer Owner یک نفر است.</td></tr>
+      <tr><td class="ok">فروشنده حضوری</td><td>جلسه، پرزنت، اعتمادسازی</td><td>Sales Commission</td><td>اگر فقط جلسه برود و شخص دیگری ببندد، سهمش طبق سناریو تقسیم می‌شود.</td></tr>
+      <tr><td class="purple">Closer</td><td>مذاکره نهایی، قیمت، بستن قرارداد</td><td>Closer Commission</td><td>پرداخت فقط بعد از invoice paid و active customer.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout info">اگر شایان یا آرشیا خودشان close کنند، به عنوان <strong>Self-Closer</strong> درصدی از invoice می‌گیرند؛ نه فقط بونس لید.</div>
+</section>
+
+<section id="commission">
+  <div class="sec-title"><div class="num">۳</div><h2>کمیسیون Sales / Closer / Self-Close بر اساس invoice وصول‌شده</h2></div>
+  <p>محاسبه فقط روی <strong>Collected Pre-tax Revenue</strong> انجام می‌شود؛ یعنی HST، invoice پرداخت‌نشده، refund و claim از مبنا خارج است.</p>
+  <table>
+    <thead><tr><th>درآمد ماهانه وصول‌شده</th><th>نرخ کمیسیون کل</th><th>اگر Sales و Closer جدا باشند</th><th>اگر یک نفر Self-Close کند</th><th>پرداخت مرحله‌ای</th></tr></thead>
+    <tbody>
+      <tr><td>تا ۱,۰۰۰ دلار</td><td class="ok">۵٪</td><td>Sales 50٪ / Closer 50٪</td><td class="ok">۱۰۰٪ کمیسیون</td><td>بعد از invoice paid</td></tr>
+      <tr><td>۱,۰۰۰ تا ۳,۰۰۰ دلار</td><td class="ok">۴٪ تا ۴.۵٪</td><td>Sales 50٪ / Closer 50٪</td><td class="ok">۱۰۰٪ کمیسیون</td><td>۵۰٪ بعد از invoice، ۵۰٪ بعد از ۳۰ روز</td></tr>
+      <tr><td>۳,۰۰۰ تا ۵,۰۰۰ دلار</td><td class="warn">۳.۵٪ تا ۴٪</td><td>Sales 50٪ / Closer 50٪</td><td class="warn">۱۰۰٪ کمیسیون</td><td>۵۰٪ بعد از invoice، ۵۰٪ بعد از retention</td></tr>
+      <tr><td>۵,۰۰۰ تا ۱۰,۰۰۰ دلار</td><td class="warn">۲.۵٪ تا ۳٪</td><td>Sales 50٪ / Closer 50٪</td><td class="warn">۱۰۰٪ کمیسیون</td><td>۲ تا ۳ مرحله با تأیید Founder</td></tr>
+      <tr><td>۱۰,۰۰۰ دلار به بالا</td><td class="purple">۲٪ تا ۲.۵٪</td><td>Sales 50٪ / Closer 50٪</td><td class="purple">۱۰۰٪ کمیسیون با approval</td><td>مرحله‌ای + ۹۰ روز retention</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn"><strong>اصلاح مهم:</strong> عدد ۴۰٪ سهم شرکت فقط Gross Company Share قبل از overhead است، نه سود خالص نهایی. برای همین کمیسیون مشتری‌های بزرگ باید مرحله‌ای و کنترل‌شده باشد.</div>
+  <div class="calc">
+    <div><label>Revenue وصول‌شده قبل از HST</label><input id="rev" type="number" value="8000"></div>
+    <div><label>نرخ کمیسیون</label><select id="rate"><option value="0.05">۵٪</option><option value="0.045">۴.۵٪</option><option value="0.04">۴٪</option><option value="0.035">۳.۵٪</option><option value="0.03" selected>۳٪</option><option value="0.025">۲.۵٪</option><option value="0.02">۲٪</option></select></div>
+    <div><label>حالت</label><select id="mode"><option value="split">Sales + Closer جدا</option><option value="self">Self-Close</option></select></div>
+    <div class="result" id="calcResult">محاسبه...</div>
+  </div>
+</section>
+
+<section id="lead">
+  <div class="sec-title"><div class="num">۴</div><h2>بونس شایان و آرشیا به عنوان Lead Generator</h2></div>
+  <p>این بونس برای باز کردن مسیر مشتری است، نه برای بستن قرارداد. اگر همان فرد قرارداد را هم ببندد، علاوه بر این بونس، کمیسیون Self-Close هم می‌گیرد.</p>
+  <table>
+    <thead><tr><th>اندازه مشتری جدید</th><th>بونس Lead Generator</th><th>شرط پرداخت اصلاح‌شده</th></tr></thead>
+    <tbody>
+      <tr><td>۵۰۰ تا ۱,۰۰۰ دلار در ماه</td><td class="ok">۲۵ دلار</td><td>CRM کامل + حداقل ۲ سفارش paid یا حداقل $100 collected</td></tr>
+      <tr><td>۱,۰۰۰ تا ۳,۰۰۰ دلار</td><td class="ok">۵۰ دلار</td><td>لید تأییدشده + invoice paid + customer activity واقعی</td></tr>
+      <tr><td>۳,۰۰۰ تا ۵,۰۰۰ دلار</td><td class="warn">۱۰۰ دلار</td><td>منبع شفاف + حداقل $750 collected</td></tr>
+      <tr><td>۵,۰۰۰ تا ۱۰,۰۰۰ دلار</td><td class="warn">۱۵۰ تا ۲۰۰ دلار</td><td>مشتری فعال + حداقل $1,500 collected یا قرارداد واقعی</td></tr>
+      <tr><td>۱۰,۰۰۰ دلار به بالا</td><td class="purple">۲۵۰ تا ۳۰۰ دلار</td><td>پرداخت مرحله‌ای + Founder approval + retention</td></tr>
+    </tbody>
+  </table>
+  <div class="callout danger">Raw Lead، شماره خام، مشتری بدون نیاز واقعی، یا contact ناقص در CRM هیچ بونسی ندارد.</div>
+</section>
+
+<section id="credit">
+  <div class="sec-title"><div class="num">۵</div><h2>Credit System برای سنجش عملکرد</h2></div>
+  <table>
+    <thead><tr><th>رویداد</th><th>Credit</th><th>شرط اعتبار</th></tr></thead>
+    <tbody>
+      <tr><td>مشتری کوچک فعال</td><td>۱</td><td>invoice paid + CRM proof</td></tr>
+      <tr><td>مشتری متوسط فعال</td><td>۲</td><td>invoice paid + activity واقعی</td></tr>
+      <tr><td>مشتری بزرگ فعال</td><td>۳</td><td>invoice paid + Founder approval</td></tr>
+      <tr><td>Retention ۹۰ روزه</td><td>+۱</td><td>بدون dispute و پرداخت منظم</td></tr>
+      <tr><td>مشتری strategic چندشعبه‌ای</td><td>+۲ تا +۳</td><td>approval کتبی Founder</td></tr>
+    </tbody>
+  </table>
+  <h3>اثر Credit روی بونس</h3>
+  <table>
+    <thead><tr><th>Credit ماهانه</th><th>سطح</th><th>اثر پیشنهادی</th></tr></thead>
+    <tbody>
+      <tr><td>۰ تا ۱۰</td><td class="bad">زیر هدف / پایه</td><td>بدون multiplier</td></tr>
+      <tr><td>۱۰ تا ۲۰</td><td class="warn">هدف</td><td>Bonus Multiplier 110٪</td></tr>
+      <tr><td>۲۱ تا ۳۵</td><td class="ok">قوی</td><td>Bonus Multiplier 125٪</td></tr>
+      <tr><td>۳۶ به بالا</td><td class="purple">استثنایی</td><td>Bonus Multiplier 150٪ با Founder approval</td></tr>
+    </tbody>
+  </table>
+  <div class="callout info">چون حقوق ثابت وجود دارد، Credit خودش پول جدا نیست؛ Credit کیفیت عملکرد را نشان می‌دهد و روی بونس‌های واقعی اثر می‌گذارد.</div>
+</section>
+
+<section id="retention">
+  <div class="sec-title"><div class="num">۶</div><h2>Retention Bonus ماهانه برای مشتری‌های قبلی</h2></div>
+  <p>اگر شایان یا آرشیا مشتری بیاورند و مشتری فعال بماند، تا زمانی که فرد در شرکت کار می‌کند و مشتری invoice پرداخت‌شده دارد، یک بونس ماهانه کوچک دریافت می‌کند.</p>
+  <table>
+    <thead><tr><th>نوع مشتری</th><th>Retention Bonus ماهانه</th><th>شرط فعال بودن</th></tr></thead>
+    <tbody>
+      <tr><td>کوچک</td><td class="ok">$5</td><td>حداقل یک invoice paid در همان ماه</td></tr>
+      <tr><td>متوسط</td><td class="ok">$10</td><td>invoice paid + بدون dispute</td></tr>
+      <tr><td>بزرگ</td><td class="warn">$20</td><td>پرداخت منظم + activity واقعی</td></tr>
+      <tr><td>استراتژیک</td><td class="purple">$30 تا $50</td><td>Founder approval + پرداخت منظم</td></tr>
+    </tbody>
+  </table>
+  <div class="callout good"><strong>منطق:</strong> این بونس باعث می‌شود تیم فقط مشتری نیاورد؛ مشتری را نگه دارد، پیگیری کند و کیفیت رابطه را حفظ کند.</div>
+</section>
+
+<section id="nodes">
+  <div class="sec-title"><div class="num">۷</div><h2>نودبندی GTA و مالکیت لید</h2></div>
+  <div class="grid2">
+    <div class="card"><h4>آرشیا — Social</h4><p>West Toronto، Downtown و Midtown برای Instagram/Facebook. تمرکز روی retail، boutique، beauty، florist و ecommerce کوچک.</p></div>
+    <div class="card"><h4>شایان — Digital B2B</h4><p>North York، Scarborough، Markham، Mississauga، Brampton، Vaughan، Richmond Hill برای Google/SEO/LinkedIn.</p></div>
+  </div>
+  <div class="callout warn"><strong>اصلاح ارزیابی:</strong> نودها قانون مطلق نیستند؛ ابزار جلوگیری از overlap هستند. مالکیت نهایی بر اساس First Valid Touch + Source + CRM Evidence تعیین می‌شود.</div>
+  <div class="formula">Lead Ownership = First Valid CRM Entry + Verified Source + Company Identity Match + Account Owner Assignment</div>
+</section>
+
+<section id="scenarios">
+  <div class="sec-title"><div class="num">۸</div><h2>سناریوهای تقسیم پاداش</h2></div>
+  <table>
+    <thead><tr><th>سناریو</th><th>Lead Bonus</th><th>Commission</th><th>Retention</th></tr></thead>
+    <tbody>
+      <tr><td>شایان لید آورده، فروشنده جلسه رفته، Closer بسته</td><td>شایان</td><td>Sales 50٪ / Closer 50٪</td><td>شایان طبق مشتری</td></tr>
+      <tr><td>شایان خودش لید آورده و خودش بسته</td><td>شایان</td><td>شایان 100٪ Self-Close Commission</td><td>شایان طبق مشتری</td></tr>
+      <tr><td>Founder مشتری را آورده، تیم فقط follow-up کرده</td><td>ندارد مگر نقش واقعی ثبت شود</td><td>فقط در صورت نقش واقعی</td><td>با approval</td></tr>
+      <tr><td>دو نفر در ۷ روز روی یک مشتری کار کرده‌اند و evidence مشخص نیست</td><td>Split 50/50</td><td>طبق نقش واقعی</td><td>Split یا Founder decision</td></tr>
+      <tr><td>Invoice پرداخت نشده یا refund/claim سنگین دارد</td><td>پرداخت نمی‌شود</td><td>پرداخت نمی‌شود / clawback</td><td>ندارد</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="rules">
+  <div class="sec-title"><div class="num">۹</div><h2>قوانین کنترل سوءاستفاده و پرداخت</h2></div>
+  <div class="grid2">
+    <div class="callout danger"><strong>پرداخت نمی‌شود اگر:</strong><br>لید خام باشد، invoice paid نباشد، CRM ناقص باشد، مشتری dispute جدی داشته باشد، یا مشتری خارج از سرویس قابل قبول Topping باشد.</div>
+    <div class="callout good"><strong>پرداخت می‌شود اگر:</strong><br>مشتری B2B واقعی باشد، نیاز مشخص داشته باشد، invoice پرداخت کرده باشد، CRM کامل باشد و owner مشخص باشد.</div>
+  </div>
+  <h3>مشتری هدف مناسب برای بونس قوی</h3>
+  <div class="pills"><span class="pill">Print & Signage</span><span class="pill">Uniforms</span><span class="pill">Packaging Light Supplies</span><span class="pill">Office Coffee / Dry Supplies</span><span class="pill">Beauty / Salon Supplies</span><span class="pill">IT/POS/CCTV Parts</span></div>
+  <h3>مشتری پرریسک که باید pending بماند</h3>
+  <div class="pills"><span class="pill">Refrigerated</span><span class="pill">Pallet Freight</span><span class="pill">Jewelry / Cash</span><span class="pill">Regulated Medical</span><span class="pill">Emergency Rush</span></div>
+</section>
+
+<section id="pilot">
+  <div class="sec-title"><div class="num">۱۰</div><h2>اجرای آزمایشی ۹۰ روزه</h2></div>
+  <table>
+    <thead><tr><th>ماه</th><th>تمرکز</th><th>خروجی</th></tr></thead>
+    <tbody>
+      <tr><td>ماه اول</td><td>CRM کامل، تعریف owner، ثبت source</td><td>جلوگیری از دعوای کمیسیون</td></tr>
+      <tr><td>ماه دوم</td><td>بررسی collected revenue، margin، conversion</td><td>اصلاح نرخ‌ها و شناسایی لیدهای کم‌کیفیت</td></tr>
+      <tr><td>ماه سوم</td><td>Retention، refund، CAC payback</td><td>تبدیل مدل به policy رسمی</td></tr>
+    </tbody>
+  </table>
+  <div class="pills"><span class="pill">Lead-to-meeting</span><span class="pill">Meeting-to-customer</span><span class="pill">Collected Revenue</span><span class="pill">Gross Margin</span><span class="pill">Refund Rate</span><span class="pill">90-Day Retention</span></div>
+</section>
+
+<div class="footer">© 2026 Topping Courier Inc. — Internal Compensation Policy Draft · Based on Founder Model + Evaluation Notes</div>
+</div>
+<script>
+const links=[...document.querySelectorAll('.links a')];
+const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function activeNav(){
+ let idx=0;
+ sections.forEach((s,i)=>{if(s.getBoundingClientRect().top<150)idx=i;});
+ links.forEach(a=>a.classList.remove('active'));
+ if(links[idx]) links[idx].classList.add('active');
+}
+window.addEventListener('scroll', activeNav); activeNav();
+
+function calc(){
+ const rev=Number(document.getElementById('rev').value||0);
+ const rate=Number(document.getElementById('rate').value||0);
+ const mode=document.getElementById('mode').value;
+ const total=rev*rate;
+ let text='';
+ if(mode==='split') {
+   text=`کل کمیسیون: $${total.toFixed(2)} | Sales: $${(total/2).toFixed(2)} | Closer: $${(total/2).toFixed(2)}`;
+ } else {
+   text=`Self-Close Commission: $${total.toFixed(2)}`;
+ }
+ document.getElementById('calcResult').textContent=text;
+}
+['rev','rate','mode'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+calc();
+</script>
+</body>
+</html>

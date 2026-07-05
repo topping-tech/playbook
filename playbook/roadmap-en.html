@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VELOXA Founder Bible & Product Requirements Document</title>
+<style>
+:root{
+  --bg:#070713;
+  --panel:#10101f;
+  --panel2:#15152b;
+  --card:#ffffff;
+  --text:#202033;
+  --muted:#66677a;
+  --primary:#7c3aed;
+  --primary2:#a78bfa;
+  --gold:#d6a84f;
+  --green:#16a34a;
+  --red:#dc2626;
+  --line:#e7e7ef;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma, Arial, sans-serif;
+  background:#f5f6fb;
+  color:var(--text);
+  line-height:2;
+}
+.hero{
+  background:radial-gradient(circle at top right,#3b1c78 0,#090913 42%,#05050c 100%);
+  color:white;
+  padding:60px 28px;
+}
+.hero-inner{max-width:1200px;margin:auto}
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  color:#efe8ff;
+  background:rgba(255,255,255,.08);
+  font-size:13px;
+}
+h1{font-size:38px;margin:18px 0 8px}
+.subtitle{max-width:850px;color:#d7d2e8;font-size:18px}
+.container{max-width:1200px;margin:auto;padding:28px}
+.layout{display:grid;grid-template-columns:280px 1fr;gap:22px}
+.sidebar{
+  position:sticky;
+  top:15px;
+  align-self:start;
+  background:white;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(14,14,35,.08);
+  padding:18px;
+}
+.sidebar a{
+  display:block;
+  text-decoration:none;
+  color:#33344a;
+  padding:10px 12px;
+  border-radius:12px;
+  font-size:14px;
+}
+.sidebar a:hover,.sidebar a.active{background:#f0ebff;color:var(--primary)}
+.content section{
+  background:white;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(14,14,35,.08);
+  padding:30px;
+  margin-bottom:24px;
+}
+h2{color:var(--primary);font-size:26px;margin-top:0}
+h3{color:#2c2c46;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+  background:#fff;
+}
+.card.dark{
+  background:linear-gradient(135deg,#111126,#1e1643);
+  color:white;
+  border-color:#30285c;
+}
+.kpi{
+  text-align:center;
+  padding:18px;
+  background:#faf9ff;
+  border:1px solid #ebe6ff;
+  border-radius:16px;
+}
+.kpi strong{display:block;font-size:24px;color:var(--primary)}
+table{width:100%;border-collapse:collapse;margin:14px 0}
+th,td{border:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}
+th{background:#f3efff;color:#3a236d}
+.flow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+.step{
+  background:#f4f0ff;
+  color:#3b2475;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid #ded4ff;
+  font-weight:700;
+}
+.arrow{color:var(--primary);font-weight:bold}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.tab-btn{
+  border:none;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#f1eff8;
+  cursor:pointer;
+  font-weight:700;
+}
+.tab-btn.active{background:var(--primary);color:white}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.timeline{border-left:3px solid #ded4ff;padding-left:20px}
+.milestone{position:relative;margin-bottom:20px}
+.milestone:before{
+  content:"";
+  position:absolute;
+  left:-29px;
+  top:10px;
+  width:14px;height:14px;
+  background:var(--primary);
+  border-radius:50%;
+}
+.note{
+  background:#fff8e8;
+  border:1px solid #f2dca5;
+  color:#664800;
+  padding:14px 18px;
+  border-radius:14px;
+}
+.warning{
+  background:#fff0f0;
+  border:1px solid #ffcaca;
+  color:#7a1010;
+  padding:14px 18px;
+  border-radius:14px;
+}
+.success{
+  background:#ecfdf3;
+  border:1px solid #bbf7d0;
+  color:#14532d;
+  padding:14px 18px;
+  border-radius:14px;
+}
+.code{
+  background:#0d0d18;
+  color:#e9e6ff;
+  padding:18px;
+  border-radius:14px;
+  direction:ltr;
+  text-align:left;
+  overflow:auto;
+  font-family:monospace;
+  line-height:1.6;
+}
+.chart-wrap{
+  background:#fafafa;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+}
+.bar-row{display:grid;grid-template-columns:130px 1fr 70px;gap:10px;align-items:center;margin:10px 0}
+.bar-bg{height:14px;background:#ebeaf2;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--primary2));border-radius:999px;width:0;transition:width .8s ease}
+.footer{
+  text-align:center;
+  color:#777;
+  padding:30px;
+}
+.print-btn{
+  position:fixed;
+  left:22px;
+  bottom:22px;
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:13px 18px;
+  border-radius:999px;
+  box-shadow:0 10px 24px rgba(124,58,237,.35);
+  cursor:pointer;
+  font-weight:700;
+}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:relative;top:auto}
+  .grid,.grid2{grid-template-columns:1fr}
+  h1{font-size:28px}
+}
+@media print{
+  .sidebar,.print-btn{display:none}
+  .layout{display:block}
+  section{box-shadow:none!important;break-inside:avoid}
+  body{background:white}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="badge">Founder Bible + PRD + Business Model</span>
+    <h1>VELOXA — Comprehensive Vision, Product, and Revenue Model Document</h1>
+    <p class="subtitle">
+      This document is written for developers, business partners, sales teams, and investors so it is completely clear what VELOXA is, what it is not, what has been built, what must be built, and why this project is far more than a simple NFC card.
+    </p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="layout">
+    <nav class="sidebar" id="sidebar">
+      <a href="#summary">Executive Summary</a>
+      <a href="#story">Project Story</a>
+      <a href="#definition">Product Definition</a>
+      <a href="#market">Market Problem</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#journeys">User Journeys</a>
+      <a href="#sponsor">Sponsor Economy</a>
+      <a href="#lead-engine">Lead Engine</a>
+      <a href="#current">What Is Built</a>
+      <a href="#architecture">Technical Architecture</a>
+      <a href="#database">Database</a>
+      <a href="#frontend">Frontend</a>
+      <a href="#backend">Backend</a>
+      <a href="#admin">Admin</a>
+      <a href="#revenue">Revenue Model</a>
+      <a href="#roadmap">Roadmap Phases</a>
+      <a href="#team">Team Structure</a>
+      <a href="#kpi">KPIs</a>
+      <a href="#developer">Message to Developer</a>
+    </nav>
+
+    <main class="content">
+
+      <section id="summary">
+        <h2>1. Executive Summary</h2>
+        <p>
+          VELOXA is not a typical digital business card platform. The core product is a lead-generation network for business owners and sponsors, using NFC as the entry point.
+        </p>
+        <div class="flow">
+          <div class="step">NFC Tap</div><div class="arrow">→</div>
+          <div class="step">Sponsor Teaser</div><div class="arrow">→</div>
+          <div class="step">Lead Form</div><div class="arrow">→</div>
+          <div class="step">CRM</div><div class="arrow">→</div>
+          <div class="step">Owner Profile</div>
+        </div>
+        <p>
+          The system's core value is that every NFC card use by an Owner can generate leads, record interactions, create reports, and unlock sponsorship revenue.
+        </p>
+        <div class="grid">
+          <div class="kpi"><strong>Owner</strong>Digital identity + networking</div>
+          <div class="kpi"><strong>Sponsor</strong>Real leads + CRM</div>
+          <div class="kpi"><strong>Topping/Veloxa</strong>Network growth + recurring revenue</div>
+        </div>
+      </section>
+
+      <section id="story">
+        <h2>2. Project Story</h2>
+        <p>
+          The project started from a simple need: business owners still use business cards, but traditional cards provide no data, leads, reporting, or tracking.
+        </p>
+        <p>
+          The initial idea was to provide NFC cards to Owners so they could introduce their professional digital profile. Then the idea evolved: if each tap also creates value for Sponsors, the NFC card becomes a distribution and sales channel.
+        </p>
+        <p>
+          As a result, VELOXA moved beyond an "NFC card" concept and became a marketing, lead-generation, and CRM infrastructure for a network of business owners.
+        </p>
+        <div class="success">
+          Core statement: NFC is not the final product; NFC is the gateway to a lead-generation and business-connection network.
+        </div>
+      </section>
+
+      <section id="definition">
+        <h2>3. What VELOXA is and what it is not</h2>
+        <div class="grid2">
+          <div class="card">
+            <h3>What VELOXA is</h3>
+            <ul>
+              <li>A business owner network</li>
+              <li>A lead generation system for sponsors</li>
+              <li>CRM-centric</li>
+              <li>An NFC interaction platform</li>
+              <li>A B2B growth infrastructure</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>What VELOXA is not</h3>
+            <ul>
+              <li>Not just an NFC card</li>
+              <li>Not just a digital profile</li>
+              <li>Not just banner advertising</li>
+              <li>Not just a contact tool</li>
+              <li>Not just a landing page</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="market">
+        <h2>4. Market Problem</h2>
+        <table>
+          <tr><th>Problem</th><th>Description</th><th>VELOXA Opportunity</th></tr>
+          <tr>
+            <td>Traditional business cards</td>
+            <td>No analytics, leads, or follow-up.</td>
+            <td>Every tap is measurable.</td>
+          </tr>
+          <tr>
+            <td>Traditional advertising</td>
+            <td>High impressions but unclear lead quality.</td>
+            <td>Sponsors receive leads directly.</td>
+          </tr>
+          <tr>
+            <td>CRM disconnected from marketing</td>
+            <td>Leads are scattered and hard to manage.</td>
+            <td>Leads flow directly into CRM.</td>
+          </tr>
+          <tr>
+            <td>Hard access to business owners</td>
+            <td>Brands struggle to reach real decision-makers.</td>
+            <td>The owner network becomes a strategic asset.</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="ecosystem">
+        <h2>5. VELOXA Ecosystem</h2>
+        <div class="grid">
+          <div class="card dark">
+            <h3>Owner</h3>
+            <p>A business owner, realtor, lawyer, spa owner, mortgage broker, or any professional who receives a personal NFC card.</p>
+          </div>
+          <div class="card dark">
+            <h3>Sponsor</h3>
+            <p>A brand that pays for access to Owners and real lead generation.</p>
+          </div>
+          <div class="card dark">
+            <h3>Admin</h3>
+            <p>Complete management of the system, sponsors, leads, analytics, reports, and revenue.</p>
+          </div>
+        </div>
+        <p>
+          Network value increases as the number of active Owners grows. VELOXA's real asset is its active Owner database and their measurable interactions.
+        </p>
+      </section>
+
+      <section id="journeys">
+        <h2>6. User Journeys</h2>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="owner">Owner Journey</button>
+          <button class="tab-btn" data-tab="sponsor-tab">Sponsor Journey</button>
+          <button class="tab-btn" data-tab="customer">Customer Journey</button>
+          <button class="tab-btn" data-tab="admin-tab">Admin Journey</button>
+        </div>
+        <div id="owner" class="tab-content active">
+          <h3>Owner Journey</h3>
+          <ol>
+            <li>Owner is selected or invited.</li>
+            <li>Receives a free NFC card or premium package.</li>
+            <li>Completes profile setup.</li>
+            <li>Introduces the card to customers and network.</li>
+            <li>Receives tap and interaction analytics.</li>
+            <li>Gradually upgrades to advanced services, CRM, or team packages.</li>
+          </ol>
+        </div>
+        <div id="sponsor-tab" class="tab-content">
+          <h3>Sponsor Journey</h3>
+          <ol>
+            <li>Sponsor selects target city or industry.</li>
+            <li>Teaser and offer campaign are built.</li>
+            <li>When Owner cards are tapped, sponsor teaser appears.</li>
+            <li>User clicks CTA.</li>
+            <li>Lead form is submitted.</li>
+            <li>Lead is saved in CRM and reported to Sponsor.</li>
+          </ol>
+        </div>
+        <div id="customer" class="tab-content">
+          <h3>Audience/Customer Journey</h3>
+          <ol>
+            <li>Taps NFC card.</li>
+            <li>Sees sponsor teaser.</li>
+            <li>If interested, claims the offer.</li>
+            <li>Then views Owner profile.</li>
+            <li>Calls, saves contact, or opens links.</li>
+          </ol>
+        </div>
+        <div id="admin-tab" class="tab-content">
+          <h3>Admin Journey</h3>
+          <ol>
+            <li>Manages owners and cards.</li>
+            <li>Defines sponsors.</li>
+            <li>Configures placement and targeting.</li>
+            <li>Views, filters, and exports leads.</li>
+            <li>Creates monthly sponsor reports.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="sponsor">
+        <h2>7. Sponsor Economy</h2>
+        <p>
+          The sponsor revenue model should never be positioned as "advertising." The correct positioning is: lead generation and direct access to business owners.
+        </p>
+        <table>
+          <tr><th>Package</th><th>Value</th><th>Suggested Price</th></tr>
+          <tr>
+            <td>Awareness Sponsor</td>
+            <td>Teaser + Impression + CTR</td>
+            <td>$500 to $1,000 monthly</td>
+          </tr>
+          <tr>
+            <td>Lead Sponsor</td>
+            <td>Teaser + Lead Form + CRM</td>
+            <td>$1,500 to $3,000 monthly</td>
+          </tr>
+          <tr>
+            <td>Exclusive Partner</td>
+            <td>City/industry exclusivity + Lead + Report</td>
+            <td>$3,000 to $10,000 monthly</td>
+          </tr>
+          <tr>
+            <td>Physical Card Branding</td>
+            <td>Logo printed on selected cards</td>
+            <td>Separate long-term fee</td>
+          </tr>
+        </table>
+        <div class="note">
+          Key point: Sponsors should not feel they are only getting logo placement. They must understand they are receiving trackable leads, reporting, and CRM outcomes.
+        </div>
+      </section>
+
+      <section id="lead-engine">
+        <h2>8. Lead Engine</h2>
+        <p>This is the core of the VELOXA product.</p>
+        <div class="flow">
+          <div class="step">Tap</div><div class="arrow">→</div>
+          <div class="step">Match Sponsor</div><div class="arrow">→</div>
+          <div class="step">Show Teaser</div><div class="arrow">→</div>
+          <div class="step">CTA Click</div><div class="arrow">→</div>
+          <div class="step">Lead Form</div><div class="arrow">→</div>
+          <div class="step">CRM</div>
+        </div>
+        <h3>Simple algorithm</h3>
+        <div class="code">
+1. User taps NFC card
+2. Load Owner profile metadata: city, industry, cardCode
+3. Request matched sponsor: /sponsors/match
+4. Score sponsors by city, industry, active status, priority
+5. Show only one teaser sponsor
+6. Track impression
+7. If CTA clicked:
+   - track click
+   - open lead form
+8. Submit lead
+9. Save lead in CRM
+10. Notify admin/sponsor
+11. Show Owner profile
+        </div>
+      </section>
+
+      <section id="current">
+        <h2>9. What has been built so far</h2>
+        <div class="grid2">
+          <div class="card">
+            <h3>Product</h3>
+            <ul>
+              <li>Public Profile</li>
+              <li>NFC Card Flow</li>
+              <li>Sponsor Teaser</li>
+              <li>Owner Profile</li>
+              <li>Lead Capture Form</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Admin & CRM</h3>
+            <ul>
+              <li>Sponsor Management</li>
+              <li>Sponsor Matching</li>
+              <li>Event Tracking</li>
+              <li>Lead Management</li>
+              <li>CSV Export</li>
+              <li>Conversion Rate</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="architecture">
+        <h2>10. Overall technical architecture</h2>
+        <p>
+          The system should be developed in a modular way so that Owner Portal, Sponsor Portal, Marketplace, and Referral System can be added later.
+        </p>
+        <table>
+          <tr><th>Layer</th><th>Responsibility</th></tr>
+          <tr><td>Frontend</td><td>Render profile, teaser, lead form, dashboard</td></tr>
+          <tr><td>Backend</td><td>API, matching, tracking, CRM, notifications</td></tr>
+          <tr><td>Database</td><td>Profiles, cards, sponsors, events, leads</td></tr>
+          <tr><td>Admin</td><td>Full ecosystem management</td></tr>
+          <tr><td>Reporting</td><td>Monthly sponsor reports and KPI tracking</td></tr>
+        </table>
+      </section>
+
+      <section id="database">
+        <h2>11. Recommended database schema</h2>
+        <table>
+          <tr><th>Table</th><th>Purpose</th></tr>
+          <tr><td>users</td><td>Users and roles</td></tr>
+          <tr><td>profiles</td><td>Owner profiles</td></tr>
+          <tr><td>nfc_cards</td><td>Cards and profile mapping</td></tr>
+          <tr><td>sponsors</td><td>Sponsor data and campaigns</td></tr>
+          <tr><td>sponsor_events</td><td>Impression, click, skip, profile view</td></tr>
+          <tr><td>sponsor_leads</td><td>Registered sponsor leads</td></tr>
+          <tr><td>reports</td><td>Monthly reports</td></tr>
+          <tr><td>referrals</td><td>Future owner referrals</td></tr>
+        </table>
+      </section>
+
+      <section id="frontend">
+        <h2>12. Frontend modules</h2>
+        <ul>
+          <li>PublicProfilePage</li>
+          <li>SponsorTeaser</li>
+          <li>SponsorLeadModal</li>
+          <li>OwnerDashboard</li>
+          <li>AdminSponsorsPage</li>
+          <li>SponsorLeadsPage</li>
+          <li>ReportsPage</li>
+          <li>AnalyticsCards</li>
+        </ul>
+        <div class="warning">
+          The UX must feel premium and uncluttered. Advertising should never look like low-quality banners. Sponsors should appear as Featured Partners.
+        </div>
+      </section>
+
+      <section id="backend">
+        <h2>13. Backend modules</h2>
+        <ul>
+          <li>Profile API</li>
+          <li>NFC Card API</li>
+          <li>Sponsor Matching API</li>
+          <li>Event Tracking API</li>
+          <li>Lead Capture API</li>
+          <li>Admin Lead API</li>
+          <li>CSV Export API</li>
+          <li>Notification Service</li>
+          <li>Monthly Report Generator</li>
+        </ul>
+        <div class="code">
+GET    /sponsors/match
+POST   /sponsors/:id/events
+POST   /sponsors/:id/leads
+GET    /admin/sponsors/:id/leads
+GET    /admin/sponsors/:id/leads/export
+PATCH  /admin/sponsor-leads/:leadId/status
+GET    /admin/sponsors/:id/report
+        </div>
+      </section>
+
+      <section id="admin">
+        <h2>14. Admin System</h2>
+        <p>Admin should be the command center for the entire network.</p>
+        <div class="grid2">
+          <div class="card">
+            <h3>Sponsor management</h3>
+            <ul>
+              <li>Create campaign</li>
+              <li>Target city/industry</li>
+              <li>Lead capture toggle</li>
+              <li>Priority weight</li>
+              <li>CTA and offer</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Lead management</h3>
+            <ul>
+              <li>Search</li>
+              <li>Filter</li>
+              <li>Status change</li>
+              <li>Export CSV</li>
+              <li>Conversion rate</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="revenue">
+        <h2>15. Multi-layer revenue model</h2>
+        <table>
+          <tr><th>Revenue Stream</th><th>Description</th><th>Implementation Phase</th></tr>
+          <tr><td>Sponsor Monthly</td><td>Monthly payment for network presence</td><td>Phase 2</td></tr>
+          <tr><td>Per Lead Fee</td><td>Payment per verified lead</td><td>Phase 2/3</td></tr>
+          <tr><td>Corporate NFC</td><td>Team package for employees</td><td>Phase 3</td></tr>
+          <tr><td>CRM SaaS</td><td>Dashboard and CRM subscription</td><td>Phase 3/4</td></tr>
+          <tr><td>Marketplace</td><td>B2B services ecosystem</td><td>Phase 5</td></tr>
+        </table>
+        <div class="chart-wrap">
+          <h3>Sample revenue potential</h3>
+          <div class="bar-row"><span>Month 3</span><div class="bar-bg"><div class="bar-fill" data-width="20%"></div></div><span>$2K</span></div>
+          <div class="bar-row"><span>Month 6</span><div class="bar-bg"><div class="bar-fill" data-width="45%"></div></div><span>$8K</span></div>
+          <div class="bar-row"><span>Month 12</span><div class="bar-bg"><div class="bar-fill" data-width="75%"></div></div><span>$25K</span></div>
+          <div class="bar-row"><span>Month 24</span><div class="bar-bg"><div class="bar-fill" data-width="100%"></div></div><span>$70K+</span></div>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <h2>16. 24-month phasing</h2>
+        <div class="timeline">
+          <div class="milestone">
+            <h3>Phase 1 — Validation</h3>
+            <p>10 active owners, tap testing, lead testing, and proof that the system is actively used.</p>
+          </div>
+          <div class="milestone">
+            <h3>Phase 2 — First Sponsor Revenue</h3>
+            <p>Acquire 1 to 3 sponsors, build reports, and test lead quality.</p>
+          </div>
+          <div class="milestone">
+            <h3>Phase 3 — Regional Node</h3>
+            <p>Expand in North York, Richmond Hill, Vaughan, and Markham with a regional sales team.</p>
+          </div>
+          <div class="milestone">
+            <h3>Phase 4 — Portal & Reporting</h3>
+            <p>Sponsor dashboard, PDF/HTML reports, lead scoring, and advanced CRM.</p>
+          </div>
+          <div class="milestone">
+            <h3>Phase 5 — Marketplace</h3>
+            <p>Transform the network into a B2B services marketplace and business-connection ecosystem.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="team">
+        <h2>17. Recommended team structure</h2>
+        <table>
+          <tr><th>Role</th><th>Responsibility</th><th>When Needed</th></tr>
+          <tr><td>Founder/CEO</td><td>Vision, strategic sales, partnerships</td><td>Now</td></tr>
+          <tr><td>Developer/CTO</td><td>Product development and technical architecture</td><td>Now</td></tr>
+          <tr><td>Sponsor Negotiator</td><td>Close sponsor contracts</td><td>After initial proof</td></tr>
+          <tr><td>Field Marketer</td><td>Acquire owners and activate NFC usage</td><td>After sponsor revenue</td></tr>
+          <tr><td>CRM/Admin Operator</td><td>Lead follow-up and reporting</td><td>Phase 2/3</td></tr>
+        </table>
+      </section>
+
+      <section id="kpi">
+        <h2>18. KPI Framework</h2>
+        <div class="grid">
+          <div class="kpi"><strong>Qualified Leads</strong>Most important metric</div>
+          <div class="kpi"><strong>Active Owners</strong>Network asset base</div>
+          <div class="kpi"><strong>MRR</strong>Recurring revenue</div>
+          <div class="kpi"><strong>Conversion Rate</strong>Lead ÷ Impression</div>
+          <div class="kpi"><strong>Sponsor Retention</strong>Sponsor stickiness</div>
+          <div class="kpi"><strong>Tap Activity</strong>Real engagement</div>
+        </div>
+      </section>
+
+      <section id="developer">
+        <h2>19. Direct message to developer</h2>
+        <div class="warning">
+          Please do not build this as an NFC Business Card App. That framing will derail the product strategy.
+        </div>
+        <p>
+          VELOXA's core product is a Business Owner Lead Network. NFC is only the entry point. Every technical decision should be evaluated with this question:
+        </p>
+        <h3>Does this feature improve lead generation, CRM management, owner network growth, or sponsor revenue?</h3>
+        <p>
+          If the answer is no, it is not a current priority.
+        </p>
+        <div class="success">
+          Development priorities: Lead Engine, CRM, Sponsor Reports, Owner Activation, Analytics, Referral System.
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
+<footer class="footer">
+  VELOXA Founder Bible — Prepared for product, development, sales and investor communication.
+</footer>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+const links=[...document.querySelectorAll('#sidebar a')];
+const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(sec=>{
+    if(sec && window.scrollY >= sec.offsetTop-120){ current='#'+sec.id; }
+  });
+  links.forEach(a=>{
+    a.classList.toggle('active',a.getAttribute('href')===current);
+  });
+});
+
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.bar-fill').forEach(el=>{
+    setTimeout(()=>{ el.style.width=el.dataset.width; },300);
+  });
+});
+</script>
+<script src="../assets/i18n-pairs.js"></script>
+<script src="../assets/tc-nav.js"></script>
+</body>
+</html>

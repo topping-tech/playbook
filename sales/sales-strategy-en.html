@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2B Market Development and Sales Strategy | Topping Courier Inc.</title>
+<style>
+:root{
+  --primary:#0F4C81;
+  --primary-dark:#0A3459;
+  --secondary:#1E88E5;
+  --accent:#FF9800;
+  --accent-soft:#FFE0B2;
+  --ink:#0B1E33;
+  --slate:#5B6B7F;
+  --slate-light:#8A99AC;
+  --surface:#FFFFFF;
+  --surface-alt:#F4F8FC;
+  --line:#E4EBF2;
+  --success:#1B9C6E;
+  --shadow-sm:0 2px 8px rgba(15,76,129,.06);
+  --shadow-md:0 12px 32px rgba(15,76,129,.10);
+  --shadow-lg:0 24px 64px rgba(15,76,129,.16);
+  --radius:22px;
+  --radius-sm:14px;
+  --font-display:"Vazirmatn","IRANSansX","IRANSans","Segoe UI",Tahoma,sans-serif;
+  --font-body:"Vazirmatn","IRANSans","Segoe UI",Tahoma,sans-serif;
+  --ease:cubic-bezier(.16,.8,.24,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  background:var(--surface);
+  color:var(--ink);
+  direction:ltr;
+  text-align:left;
+  line-height:1.9;
+  overflow-x:hidden;
+  transition:background .5s var(--ease),color .5s var(--ease);
+}
+body.dark{
+  --surface:#081726;
+  --surface-alt:#0D2138;
+  --ink:#EAF2FB;
+  --slate:#9FB2C8;
+  --slate-light:#71879E;
+  --line:#173754;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.3);
+  --shadow-md:0 12px 32px rgba(0,0,0,.4);
+  --shadow-lg:0 24px 64px rgba(0,0,0,.55);
+}
+img,svg{display:block;max-width:100%;}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;letter-spacing:-.01em;}
+.container{max-width:1180px;margin:0 auto;padding:0 32px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:700;color:var(--secondary);
+  letter-spacing:.04em;margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);display:inline-block;}
+.section-title{font-size:clamp(28px,4vw,42px);margin-bottom:16px;color:var(--ink);}
+.section-sub{color:var(--slate);font-size:17px;max-width:680px;margin-bottom:56px;}
+section{padding:120px 0;position:relative;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ===== NAV ===== */
+.topbar{
+  position:fixed;top:0;right:0;left:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 32px;
+  background:color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter:blur(16px) saturate(160%);
+  border-bottom:1px solid var(--line);
+  transition:background .5s var(--ease),border-color .5s var(--ease);
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-family:var(--font-display);}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--secondary));position:relative;flex-shrink:0;}
+.brand-mark::after{content:"";position:absolute;inset:9px;border:2px solid #fff;border-radius:4px;opacity:.9;}
+.brand-name{font-size:15px;}
+.brand-name small{display:block;font-size:10px;font-weight:500;color:var(--slate);letter-spacing:.04em;}
+.nav-tools{display:flex;align-items:center;gap:10px;}
+.tool-btn{
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  width:40px;height:40px;border-radius:12px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .3s var(--ease); font-size:16px;
+}
+.tool-btn:hover{border-color:var(--secondary);color:var(--secondary);transform:translateY(-2px);box-shadow:var(--shadow-sm);}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  padding-top:80px;
+  background:
+    radial-gradient(ellipse 900px 500px at 85% -10%, rgba(30,136,229,.14), transparent),
+    radial-gradient(ellipse 700px 500px at 5% 110%, rgba(255,152,0,.10), transparent),
+    linear-gradient(180deg,var(--surface),var(--surface-alt));
+  overflow:hidden;
+}
+.hero-network{position:absolute;inset:0;z-index:0;opacity:.55;}
+.hero-inner{position:relative;z-index:2;width:100%;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--surface);border:1px solid var(--line);
+  padding:8px 18px;border-radius:999px;font-size:13px;font-weight:600;
+  color:var(--primary);box-shadow:var(--shadow-sm);margin-bottom:32px;
+}
+.dot-live{width:7px;height:7px;border-radius:50%;background:var(--success);box-shadow:0 0 0 4px rgba(27,156,110,.18);}
+.hero h1{
+  font-size:clamp(36px,6vw,68px);line-height:1.18;color:var(--ink);
+  max-width:960px;
+}
+.hero h1 .grad{background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-sub{font-size:clamp(17px,2vw,22px);color:var(--slate);margin-top:26px;max-width:600px;font-weight:500;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:36px;margin-top:56px;}
+.hero-meta div{display:flex;flex-direction:column;gap:4px;}
+.hero-meta span{font-size:12px;color:var(--slate-light);letter-spacing:.04em;}
+.hero-meta strong{font-size:19px;font-family:var(--font-display);}
+.scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--slate-light);font-size:12px;animation:bob 2.4s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+
+/* ===== CARDS shared ===== */
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px;box-shadow:var(--shadow-sm);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:color-mix(in srgb,var(--secondary) 40%, var(--line));}
+.glass{
+  background:color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter:blur(14px);
+  border:1px solid color-mix(in srgb, var(--secondary) 18%, var(--line));
+}
+
+/* ===== EXEC SUMMARY ===== */
+.summary-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start;}
+.summary-text p{color:var(--slate);font-size:16.5px;margin-bottom:18px;}
+.summary-text strong{color:var(--ink);}
+.summary-side{display:flex;flex-direction:column;gap:18px;}
+.pull-quote{
+  border-radius:var(--radius);padding:30px;
+  background:linear-gradient(160deg,var(--primary),var(--primary-dark));
+  color:#fff;box-shadow:var(--shadow-md);position:relative;overflow:hidden;
+}
+.pull-quote::before{content:"“";position:absolute;top:-10px;left:18px;font-size:110px;font-family:Georgia,serif;color:rgba(255,255,255,.12);}
+.pull-quote p{position:relative;font-size:18px;font-weight:600;line-height:1.7;}
+.pull-quote span{display:block;margin-top:14px;font-size:13px;opacity:.75;font-weight:500;}
+.mini-stat{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-radius:var(--radius-sm);border:1px solid var(--line);}
+.mini-stat b{font-family:var(--font-display);font-size:20px;color:var(--secondary);}
+.mini-stat span{font-size:13px;color:var(--slate);}
+
+/* ===== KPI VISION ===== */
+.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;}
+.kpi-card{text-align:center;padding:36px 20px;}
+.kpi-icon{width:52px;height:52px;margin:0 auto 18px;border-radius:14px;background:linear-gradient(135deg,var(--secondary),var(--primary));display:flex;align-items:center;justify-content:center;color:#fff;}
+.kpi-num{font-family:var(--font-display);font-size:34px;font-weight:800;color:var(--ink);}
+.kpi-num sup{font-size:16px;color:var(--accent);margin-inline-start:2px;}
+.kpi-label{font-size:13.5px;color:var(--slate);margin-top:8px;line-height:1.6;}
+
+/* ===== ORG CHART ===== */
+.org-wrap{display:flex;flex-direction:column;align-items:center;gap:0;}
+.org-node{
+  padding:18px 30px;border-radius:16px;background:var(--surface);border:1.5px solid var(--line);
+  box-shadow:var(--shadow-sm);text-align:center;position:relative;z-index:2;
+}
+.org-node.ceo{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border:none;padding:22px 46px;box-shadow:var(--shadow-md);}
+.org-node b{display:block;font-family:var(--font-display);font-size:16px;}
+.org-node small{font-size:12px;opacity:.75;}
+.org-level{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;position:relative;}
+.org-connector{width:2px;background:var(--line);margin:0 auto;position:relative;}
+.org-connector.tall{height:44px;}
+.org-hline{height:2px;background:var(--line);position:relative;}
+.org-people{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:44px;}
+.org-node.person{border-top:3px solid var(--accent);}
+
+/* ===== RESPONSIBILITY GRID ===== */
+.resp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.resp-card{padding:28px 24px;}
+.resp-num{font-family:var(--font-display);font-size:13px;color:var(--accent);font-weight:800;margin-bottom:14px;}
+.resp-card h4{font-size:16.5px;margin-bottom:8px;}
+.resp-card p{font-size:13.5px;color:var(--slate);}
+
+/* ===== TEAM CARDS ===== */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.team-card{padding:0;overflow:hidden;}
+.team-head{padding:30px 28px 24px;background:linear-gradient(160deg,var(--surface-alt),var(--surface));border-bottom:1px solid var(--line);}
+.team-avatar{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--secondary),var(--accent));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:20px;margin-bottom:14px;}
+.team-head h4{font-size:19px;}
+.team-head span{font-size:13px;color:var(--slate);}
+.team-body{padding:24px 28px;}
+.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.tag{background:var(--surface-alt);border:1px solid var(--line);padding:6px 13px;border-radius:999px;font-size:12.5px;color:var(--slate);}
+.team-metrics{display:flex;gap:14px;}
+.team-metric{flex:1;background:var(--surface-alt);border-radius:12px;padding:14px;text-align:center;}
+.team-metric b{display:block;font-family:var(--font-display);font-size:20px;color:var(--primary);}
+.team-metric span{font-size:11.5px;color:var(--slate);}
+
+/* ===== TIMELINE (sales process) ===== */
+.timeline{position:relative;padding:20px 0;}
+.timeline::before{content:"";position:absolute;top:60px;right:0;left:0;height:2px;background:var(--line);}
+.timeline-track{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;}
+.tl-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;}
+.tl-dot{width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--secondary);position:relative;z-index:2;transition:all .4s var(--ease);}
+.tl-step.in .tl-dot{background:var(--secondary);box-shadow:0 0 0 6px color-mix(in srgb,var(--secondary) 18%, transparent);}
+.tl-step span{font-size:12px;font-weight:700;color:var(--slate);}
+.tl-step small{font-size:10.5px;color:var(--slate-light);}
+
+/* ===== DASHBOARD ===== */
+.dash{border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(160deg,var(--surface),var(--surface-alt));padding:36px;box-shadow:var(--shadow-md);}
+.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:24px;}
+.dash-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:22px;}
+.dash-card span{font-size:12.5px;color:var(--slate);}
+.dash-card b{display:block;font-family:var(--font-display);font-size:26px;margin-top:6px;}
+.dash-card .delta{font-size:11.5px;color:var(--success);font-weight:700;margin-top:6px;display:block;}
+.dash-lower{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;}
+.bar-chart{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px;}
+.bar-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.bar-row span{width:76px;font-size:12.5px;color:var(--slate);flex-shrink:0;}
+.bar-track{flex:1;height:10px;background:var(--surface-alt);border-radius:6px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--secondary),var(--primary));width:0;transition:width 1.4s var(--ease);}
+.donut-wrap{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.donut-wrap h4{font-size:13.5px;color:var(--slate);margin-bottom:16px;font-weight:700;}
+
+/* ===== COMPENSATION ===== */
+.comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.comp-card{text-align:center;padding:40px 28px;position:relative;}
+.comp-card.featured{border-color:var(--secondary);box-shadow:var(--shadow-md);}
+.comp-role{font-size:12px;color:var(--slate);letter-spacing:.04em;margin-bottom:6px;}
+.comp-name{font-size:22px;font-family:var(--font-display);margin-bottom:22px;}
+.comp-price{font-size:38px;font-family:var(--font-display);font-weight:800;color:var(--primary);}
+.comp-price sub{font-size:14px;color:var(--slate);font-weight:500;}
+.comp-plus{margin:16px 0;color:var(--accent);font-weight:800;font-size:14px;}
+.comp-note{font-size:13px;color:var(--slate);}
+
+/* ===== KPI SYSTEM CHARTS ===== */
+.kpisys-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.progress-item{margin-bottom:22px;}
+.progress-head{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:8px;}
+.progress-head b{color:var(--ink);}
+.progress-head span{color:var(--slate);}
+
+/* ===== ROADMAP ===== */
+.road-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;}
+.road-card{padding:0;overflow:hidden;}
+.road-head{padding:24px 26px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;}
+.road-head span{font-size:12px;opacity:.8;}
+.road-head h4{font-size:20px;margin-top:4px;}
+.road-body{padding:24px 26px;}
+.road-body li{list-style:none;padding-inline-start:24px;position:relative;margin-bottom:14px;font-size:14px;color:var(--slate);}
+.road-body li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:2px;background:var(--accent);transform:rotate(45deg);}
+
+/* ===== FUTURE VISION ===== */
+.future-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.future-card{padding:30px 26px;text-align:center;}
+.future-card b{display:block;font-family:var(--font-display);font-size:24px;color:var(--primary);margin-bottom:8px;}
+.future-card span{font-size:13.5px;color:var(--slate);}
+
+/* ===== FOOTER ===== */
+footer{padding:100px 0 60px;background:linear-gradient(160deg,var(--primary-dark),var(--primary));color:#fff;text-align:center;position:relative;overflow:hidden;}
+footer .quote{font-size:clamp(20px,3vw,30px);font-weight:700;max-width:820px;margin:0 auto 24px;line-height:1.7;font-family:var(--font-display);}
+footer .sig{opacity:.8;font-size:14px;}
+footer .foot-meta{margin-top:60px;font-size:12.5px;opacity:.55;}
+
+/* ===== responsive ===== */
+@media (max-width:980px){
+  .summary-grid,.dash-lower,.kpisys-grid{grid-template-columns:1fr;}
+  .resp-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid,.comp-grid,.road-grid,.future-grid{grid-template-columns:1fr;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .dash-grid{grid-template-columns:repeat(2,1fr);}
+  .timeline-track{grid-template-columns:repeat(5,1fr);row-gap:36px;}
+  .timeline::before{display:none;}
+}
+@media (max-width:560px){
+  .container{padding:0 20px;}
+  section{padding:80px 0;}
+  .kpi-grid,.dash-grid{grid-template-columns:1fr 1fr;}
+  .timeline-track{grid-template-columns:repeat(2,1fr);}
+}
+
+/* presentation mode */
+body.present .topbar .nav-tools .hide-in-present{display:none;}
+body.present section{padding:60px 0;}
+
+/* print */
+@media print{
+  .topbar{position:static;border:none;}
+  .tool-btn{display:none;}
+  section{padding:36px 0;break-inside:avoid;}
+  .hero{min-height:auto;}
+  body.dark{--surface:#fff;--surface-alt:#f4f8fc;--ink:#0B1E33;--slate:#5B6B7F;--line:#E4EBF2;}
+  .card:hover{transform:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-mark"></div>
+    <div class="brand-name">Topping Courier Inc.<small>B2B Market Development and Sales Strategy</small></div>
+  </div>
+  <div class="nav-tools">
+    <button class="tool-btn hide-in-present" id="darkToggle" title="Dark mode">🌓</button>
+    <button class="tool-btn hide-in-present" id="presentToggle" title="Presentation mode">🖥️</button>
+    <button class="tool-btn hide-in-present" id="printToggle" title="Print / PDF">🖨️</button>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <svg class="hero-network" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+    <g id="netLines" stroke="#1E88E5" stroke-width="1"></g>
+    <g id="netNodes"></g>
+  </svg>
+  <div class="container hero-inner">
+    <div class="hero-tag"><span class="dot-live"></span> Executive Strategy Deck · 2026 Executive Edition</div>
+    <h1>B2B Market Development and Sales <span class="grad">Strategy</span></h1>
+    <p class="hero-sub">Building a data-driven sales machine for sustainable growth, healthy cash flow, and customer density across the Topping Courier network.</p>
+    <div class="hero-meta">
+      <div><span>Company</span><strong>Topping Courier Inc.</strong></div>
+      <div><span>CEO</span><strong>Hamid Barzin</strong></div>
+      <div><span>Quarterly Target</span><strong>50 Active B2B Customers</strong></div>
+      <div><span>Model</span><strong>Data-Driven Sales Machine</strong></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll ↓</div>
+</section>
+
+<!-- ================= EXEC SUMMARY ================= -->
+<section id="summary">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Executive Summary</p>
+      <h2 class="section-title">We are not building a sales team;<br>we are building a growth engine</h2>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-text reveal">
+        <p>Many courier companies leave growth to fragmented sales efforts. <strong>Topping Courier</strong> does not follow that path. We are building an engineered system where every lead, every call, every meeting, and every contract is captured, analyzed, and optimized within a measurable cycle.</p>
+        <p>The CEO leads business intelligence and data analytics: reading the market, identifying and scoring qualified leads, and handing them to the negotiation team. Sales then converts these opportunities into signed contracts and recurring revenue. CRM serves as the organizational memory of this process.</p>
+        <p>The end result is not just a single number; it is a <strong>repeatable architecture</strong> to reach 50 active B2B customers, maintain healthy cash flow, sustain stable revenue, and build geographic density that reduces per-package delivery cost over time.</p>
+      </div>
+      <div class="summary-side reveal">
+        <div class="pull-quote">
+          <p>"Growth is not accidental; growth is designed."</p>
+          <span>Hamid Barzin — CEO, Topping Courier Inc.</span>
+        </div>
+        <div class="mini-stat"><span>Standard Sales Cycle</span><b>10 Stages</b></div>
+        <div class="mini-stat"><span>Team Monthly Lead Capacity</span><b>125+</b></div>
+        <div class="mini-stat"><span>Roadmap Horizon</span><b>90 Days</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VISION KPI ================= -->
+<section id="vision" style="background:var(--surface-alt);">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Vision</p>
+      <h2 class="section-title">Five Pillars of Success</h2>
+      <p class="section-sub">Every strategic decision in this playbook ultimately maps to one of these five indicators.</p>
+    </div>
+    <div class="kpi-grid">
+      <div class="card kpi-card reveal">
+        <div class="kpi-icon">👥</div>
+        <div class="kpi-num" data-count="50">0</div>
+        <div class="kpi-label">Active B2B Customers</div>
+      </div>
+      <div class="card kpi-card reveal">
+        <div class="kpi-icon">💵</div>
+        <div class="kpi-num" data-count="100">0<sup>%</sup></div>
+        <div class="kpi-label">Focus on Healthy Cash Flow</div>
+      </div>
+      <div class="card kpi-card reveal">
+        <div class="kpi-icon">🔁</div>
+        <div class="kpi-num" data-count="70">0<sup>%</sup></div>
+        <div class="kpi-label">Share of Recurring Revenue</div>
+      </div>
+      <div class="card kpi-card reveal">
+        <div class="kpi-icon">📍</div>
+        <div class="kpi-num" data-count="3">0</div>
+        <div class="kpi-label">Target Zones for Customer Density</div>
+      </div>
+      <div class="card kpi-card reveal">
+        <div class="kpi-icon">📈</div>
+        <div class="kpi-num" data-count="200">0<sup>+</sup></div>
+        <div class="kpi-label">Customers in Long-Term Growth Horizon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORG STRUCTURE ================= -->
+<section id="org">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Organizational Structure</p>
+      <h2 class="section-title">Sales Chain of Command</h2>
+      <p class="section-sub">Data flows top-down; results are reported bottom-up.</p>
+    </div>
+    <div class="org-wrap reveal">
+      <div class="org-node ceo"><b>Hamid Barzin</b><small>CEO — Market &amp; Lead Intelligence</small></div>
+      <div class="org-connector tall"></div>
+      <div class="org-level">
+        <div class="org-node"><b>Lead Intelligence</b><small>Market Analysis &amp; Scoring</small></div>
+        <div class="org-node"><b>Central CRM</b><small>Capture and Monitor Every Interaction</small></div>
+        <div class="org-node"><b>Sales Team</b><small>Negotiate and Close Contracts</small></div>
+      </div>
+      <div class="org-connector tall"></div>
+      <div class="org-people">
+        <div class="org-node person"><b>Neima</b><small>Enterprise Sales</small></div>
+        <div class="org-node person"><b>Kianoush</b><small>Wholesale &amp; Distribution</small></div>
+        <div class="org-node person"><b>Tina</b><small>Medical &amp; Healthcare</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CEO RESPONSIBILITIES ================= -->
+<section id="ceo-resp" style="background:var(--surface-alt);">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">CEO Role</p>
+      <h2 class="section-title">Business Intelligence Engine</h2>
+      <p class="section-sub">Before any call is made, the CEO has already illuminated its path with data.</p>
+    </div>
+    <div class="resp-grid">
+      <div class="card resp-card reveal"><div class="resp-num">01</div><h4>Market Analysis</h4><p>Identify zones, industries, and demand patterns to prioritize go-to-market execution.</p></div>
+      <div class="card resp-card reveal"><div class="resp-num">02</div><h4>Lead Research</h4><p>Build qualified business lists from structured data sources and field intelligence.</p></div>
+      <div class="card resp-card reveal"><div class="resp-num">03</div><h4>AI Analysis</h4><p>Process raw data to uncover hidden patterns behind buying decisions.</p></div>
+      <div class="card resp-card reveal"><div class="resp-num">04</div><h4>Lead Scoring</h4><p>Rank opportunities based on conversion probability and contract value.</p></div>
+      <div class="card resp-card reveal"><div class="resp-num">05</div><h4>Offer Design</h4><p>Create tailored proposals aligned to the needs of each target industry.</p></div>
+      <div class="card resp-card reveal"><div class="resp-num">06</div><h4>Strategic Sessions</h4><p>Run weekly alignment sessions with sales to remove closing obstacles.</p></div>
+      <div class="card resp-card reveal"><div class="resp-num">07</div><h4>CRM Governance</h4><p>Ensure every stage of the customer journey is recorded with precision.</p></div>
+      <div class="card resp-card reveal"><div class="resp-num">08</div><h4>Performance Analytics</h4><p>Track team KPIs and recalibrate strategy based on live data.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SALES TEAM ================= -->
+<section id="team">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Sales Team</p>
+      <h2 class="section-title">Three Specialists, Three Markets</h2>
+      <p class="section-sub">Each team member fully owns a market segment - not a generalist seller, but an industry specialist.</p>
+    </div>
+    <div class="team-grid">
+      <div class="card team-card reveal">
+        <div class="team-head"><div class="team-avatar">N</div><h4>Neima</h4><span>Enterprise Sales Lead</span></div>
+        <div class="team-body">
+          <div class="tag-list"><span class="tag">Large Enterprises</span><span class="tag">Franchises</span><span class="tag">Corporate</span><span class="tag">Distributors</span></div>
+          <div class="team-metrics">
+            <div class="team-metric"><b>50</b><span>Leads per Month</span></div>
+            <div class="team-metric"><b>3-5</b><span>Contracts per Month</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card team-card reveal">
+        <div class="team-head"><div class="team-avatar">K</div><h4>Kianoush</h4><span>Wholesale &amp; Distribution</span></div>
+        <div class="team-body">
+          <div class="tag-list"><span class="tag">Wholesalers</span><span class="tag">Manufacturers</span><span class="tag">Distributors</span></div>
+          <div class="team-metrics">
+            <div class="team-metric"><b>50</b><span>Leads per Month</span></div>
+            <div class="team-metric"><b>3-5</b><span>Contracts per Month</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card team-card reveal">
+        <div class="team-head"><div class="team-avatar">T</div><h4>Tina</h4><span>Medical &amp; Healthcare</span></div>
+        <div class="team-body">
+          <div class="tag-list"><span class="tag">Medical</span><span class="tag">Clinics</span><span class="tag">Healthcare</span></div>
+          <div class="team-metrics">
+            <div class="team-metric"><b>25</b><span>Leads per Month</span></div>
+            <div class="team-metric"><b>1-3</b><span>Contracts per Month</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SALES PROCESS TIMELINE ================= -->
+<section id="process" style="background:var(--surface-alt);">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Sales Process</p>
+      <h2 class="section-title">From Data to Active Customer</h2>
+      <p class="section-sub">A ten-stage path that leaves no opportunity without follow-up.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-track" id="tlTrack">
+        <div class="tl-step"><div class="tl-dot"></div><span>Lead Research</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>AI Analysis</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>Scoring</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>Assignment</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>Call</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>Meeting</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>Proposal</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>Negotiation</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>Contract</span></div>
+        <div class="tl-step"><div class="tl-dot"></div><span>Active Customer</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CRM DASHBOARD ================= -->
+<section id="dashboard">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">CRM Dashboard</p>
+      <h2 class="section-title">The Glass Room of Performance</h2>
+      <p class="section-sub">A sample view of what the CEO uses for daily decision-making.</p>
+    </div>
+    <div class="dash reveal">
+      <div class="dash-grid">
+        <div class="dash-card"><span>Calls This Month</span><b data-count="212">0</b><span class="delta">↑ 18% vs last month</span></div>
+        <div class="dash-card"><span>Meetings Held</span><b data-count="64">0</b><span class="delta">↑ 12%</span></div>
+        <div class="dash-card"><span>New Contracts</span><b data-count="9">0</b><span class="delta">↑ 5%</span></div>
+        <div class="dash-card"><span>Monthly Revenue (CAD)</span><b data-count="41500" data-prefix="$">0</b><span class="delta">↑ 23%</span></div>
+      </div>
+      <div class="dash-lower">
+        <div class="bar-chart">
+          <h4 style="font-size:13.5px;color:var(--slate);margin-bottom:18px;font-weight:700;">Lead Pipeline Status</h4>
+          <div class="bar-row"><span>New Lead</span><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
+          <div class="bar-row"><span>Contacted</span><div class="bar-track"><div class="bar-fill" data-w="70"></div></div></div>
+          <div class="bar-row"><span>Met</span><div class="bar-track"><div class="bar-fill" data-w="46"></div></div></div>
+          <div class="bar-row"><span>Proposal</span><div class="bar-track"><div class="bar-fill" data-w="32"></div></div></div>
+          <div class="bar-row"><span>Negotiation</span><div class="bar-track"><div class="bar-fill" data-w="20"></div></div></div>
+          <div class="bar-row"><span>Closed</span><div class="bar-track"><div class="bar-fill" data-w="12"></div></div></div>
+        </div>
+        <div class="donut-wrap">
+          <h4>Overall Conversion Rate</h4>
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="68" fill="none" stroke="var(--line)" stroke-width="14"></circle>
+            <circle id="donutRing" cx="80" cy="80" r="68" fill="none" stroke="var(--secondary)" stroke-width="14" stroke-linecap="round" stroke-dasharray="427" stroke-dashoffset="427" transform="rotate(-90 80 80)"></circle>
+            <text x="80" y="88" text-anchor="middle" font-size="26" font-weight="800" fill="var(--ink)">18%</text>
+          </svg>
+          <span style="font-size:12px;color:var(--slate);margin-top:10px;">Lead -> Contract</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPENSATION ================= -->
+<section id="comp" style="background:var(--surface-alt);">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Commission Model</p>
+      <h2 class="section-title">Base + Performance Incentive</h2>
+      <p class="section-sub">Compensation is directly tied to outcomes - not attendance hours.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="card comp-card reveal">
+        <div class="comp-role">Enterprise Sales</div>
+        <div class="comp-name">Neima</div>
+        <div class="comp-price">1000 <sub>CAD</sub></div>
+        <div class="comp-plus">+ Commission</div>
+        <p class="comp-note">Based on closed contracts in the enterprise segment</p>
+      </div>
+      <div class="card comp-card featured reveal">
+        <div class="comp-role">Wholesale &amp; Distribution</div>
+        <div class="comp-name">Kianoush</div>
+        <div class="comp-price">1000 <sub>CAD</sub></div>
+        <div class="comp-plus">+ Commission</div>
+        <p class="comp-note">Based on closed contracts in the wholesale segment</p>
+      </div>
+      <div class="card comp-card reveal">
+        <div class="comp-role">Medical &amp; Healthcare</div>
+        <div class="comp-name">Tina</div>
+        <div class="comp-price">500 <sub>CAD</sub></div>
+        <div class="comp-plus">+ Commission</div>
+        <p class="comp-note">Based on closed contracts in the healthcare segment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KPI SYSTEM ================= -->
+<section id="kpisys">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">KPI System</p>
+      <h2 class="section-title">What gets measured gets managed</h2>
+      <p class="section-sub">Seven key indicators that reveal the health of the full sales engine.</p>
+    </div>
+    <div class="card reveal" style="padding:40px;">
+      <div class="kpisys-grid">
+        <div>
+          <div class="progress-item"><div class="progress-head"><b>Monthly Leads</b><span>125 / 150</span></div><div class="bar-track"><div class="bar-fill" data-w="83"></div></div></div>
+          <div class="progress-item"><div class="progress-head"><b>Conversion Rate</b><span>18%</span></div><div class="bar-track"><div class="bar-fill" data-w="18"></div></div></div>
+          <div class="progress-item"><div class="progress-head"><b>New Contracts</b><span>9 / 12</span></div><div class="bar-track"><div class="bar-fill" data-w="75"></div></div></div>
+          <div class="progress-item"><div class="progress-head"><b>Recurring Revenue</b><span>70% of total</span></div><div class="bar-track"><div class="bar-fill" data-w="70"></div></div></div>
+        </div>
+        <div>
+          <div class="progress-item"><div class="progress-head"><b>Customer Retention</b><span>92%</span></div><div class="bar-track"><div class="bar-fill" data-w="92"></div></div></div>
+          <div class="progress-item"><div class="progress-head"><b>Regional Customer Density</b><span>54%</span></div><div class="bar-track"><div class="bar-fill" data-w="54"></div></div></div>
+          <div class="progress-item"><div class="progress-head"><b>Monthly Growth Rate</b><span>14%</span></div><div class="bar-track"><div class="bar-fill" data-w="14"></div></div></div>
+          <div class="progress-item"><div class="progress-head"><b>Progress Toward 50 Customers</b><span>28 / 50</span></div><div class="bar-track"><div class="bar-fill" data-w="56"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROADMAP ================= -->
+<section id="roadmap" style="background:var(--surface-alt);">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">90-Day Roadmap</p>
+      <h2 class="section-title">Three Months to Prove the Model</h2>
+    </div>
+    <div class="road-grid">
+      <div class="card road-card reveal">
+        <div class="road-head"><span>Month One</span><h4>System Launch</h4></div>
+        <div class="road-body"><ul>
+          <li>Complete CRM implementation</li>
+          <li>Define the standard sales process</li>
+          <li>Start structured sessions with initial leads</li>
+        </ul></div>
+      </div>
+      <div class="card road-card reveal">
+        <div class="road-head"><span>Month Two</span><h4>Contract Closure</h4></div>
+        <div class="road-body"><ul>
+          <li>Convert meetings into signed contracts</li>
+          <li>Stabilize recurring customers</li>
+          <li>Optimize conversion at each stage</li>
+        </ul></div>
+      </div>
+      <div class="card road-card reveal">
+        <div class="road-head"><span>Month Three</span><h4>Scalability</h4></div>
+        <div class="road-body"><ul>
+          <li>Accelerate cash flow growth</li>
+          <li>Expand sales team capacity</li>
+          <li>Prepare for the 100-customer phase</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUTURE VISION ================= -->
+<section id="future">
+  <div class="container">
+    <div class="reveal">
+      <p class="eyebrow">Future Vision</p>
+      <h2 class="section-title">Beyond the First 50 Customers</h2>
+    </div>
+    <div class="future-grid">
+      <div class="card future-card reveal"><b>100</b><span>Active B2B Customers</span></div>
+      <div class="card future-card reveal"><b>200</b><span>Active B2B Customers</span></div>
+      <div class="card future-card reveal"><b>+3</b><span>New Expansion Zones</span></div>
+      <div class="card future-card reveal"><b>N</b><span>Parallel Sales Teams</span></div>
+      <div class="card future-card reveal"><b>AI</b><span>Full Lead-Cycle Automation</span></div>
+      <div class="card future-card reveal"><b>National</b><span>Nationwide Network Expansion</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="quote">"We are not just building a courier company; we are building a data-driven logistics growth engine."</p>
+    <span class="sig">Hamid Barzin — CEO, Topping Courier Inc.</span>
+    <div class="foot-meta">Topping Courier Inc. · Executive Sales &amp; Market Strategy Deck · Prepared for internal use</div>
+  </div>
+</footer>
+
+<script>
+// dark mode
+document.getElementById('darkToggle').addEventListener('click',()=>document.body.classList.toggle('dark'));
+// presentation mode
+document.getElementById('presentToggle').addEventListener('click',()=>document.body.classList.toggle('present'));
+// print
+document.getElementById('printToggle').addEventListener('click',()=>window.print());
+
+// reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.15});
+revealEls.forEach(el=>io.observe(el));
+
+// animated counters
+function animateCount(el){
+  const target = parseFloat(el.dataset.count);
+  const prefix = el.dataset.prefix || '';
+  const supEl = el.querySelector('sup');
+  const supText = supEl ? supEl.outerHTML : '';
+  const dur = 1600; const start = performance.now();
+  function toEn(n){ return n.toLocaleString('en-US'); }
+  function step(t){
+    const p = Math.min((t-start)/dur,1);
+    const eased = 1 - Math.pow(1-p,3);
+    const val = Math.round(target*eased);
+    el.innerHTML = prefix + toEn(val) + supText;
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const counters = document.querySelectorAll('[data-count]');
+const ioCount = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ animateCount(e.target); ioCount.unobserve(e.target);} });
+},{threshold:.4});
+counters.forEach(el=>ioCount.observe(el));
+
+// bar fills
+const bars = document.querySelectorAll('.bar-fill');
+const ioBar = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.width = e.target.dataset.w + '%'; ioBar.unobserve(e.target);} });
+},{threshold:.3});
+bars.forEach(b=>ioBar.observe(b));
+
+// donut
+const donut = document.getElementById('donutRing');
+const ioDonut = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ donut.style.transition='stroke-dashoffset 1.6s cubic-bezier(.16,.8,.24,1)'; donut.style.strokeDashoffset = 427 - (427*0.18); ioDonut.unobserve(e.target);} });
+},{threshold:.5});
+ioDonut.observe(donut);
+
+// timeline sequential highlight
+const tlSteps = document.querySelectorAll('.tl-step');
+const ioTl = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tlSteps.forEach((s,i)=> setTimeout(()=>s.classList.add('in'), i*120) );
+      ioTl.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+if(document.getElementById('tlTrack')) ioTl.observe(document.getElementById('tlTrack'));
+
+// hero network background (nodes + connecting lines representing route density)
+(function(){
+  const nodesG = document.getElementById('netNodes');
+  const linesG = document.getElementById('netLines');
+  const pts = [];
+  const cols = 8, rows = 5;
+  for(let i=0;i<cols;i++){
+    for(let j=0;j<rows;j++){
+      const x = 60 + i*(1080/(cols-1)) + (Math.random()*40-20);
+      const y = 60 + j*(680/(rows-1)) + (Math.random()*40-20);
+      pts.push({x,y});
+    }
+  }
+  pts.forEach((p,idx)=>{
+    // connect to nearest 1-2 points for a route-like mesh
+    for(let k=0;k<2;k++){
+      const other = pts[Math.floor(Math.random()*pts.length)];
+      const dist = Math.hypot(p.x-other.x,p.y-other.y);
+      if(other!==p && dist < 260){
+        const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+        line.setAttribute('x1',p.x); line.setAttribute('y1',p.y);
+        line.setAttribute('x2',other.x); line.setAttribute('y2',other.y);
+        line.setAttribute('opacity', (0.06 + Math.random()*0.12).toFixed(2));
+        linesG.appendChild(line);
+      }
+    }
+  });
+  pts.forEach((p,idx)=>{
+    const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',p.x); c.setAttribute('cy',p.y);
+    c.setAttribute('r', idx%7===0 ? 4 : 2.2);
+    c.setAttribute('fill', idx%7===0 ? '#FF9800' : '#0F4C81');
+    c.setAttribute('opacity', idx%7===0 ? '0.55' : '0.3');
+    if(idx%7===0){
+      const anim = document.createElementNS('http://www.w3.org/2000/svg','animate');
+      anim.setAttribute('attributeName','r');
+      anim.setAttribute('values','4;6;4');
+      anim.setAttribute('dur', (3+Math.random()*2).toFixed(1)+'s');
+      anim.setAttribute('repeatCount','indefinite');
+      c.appendChild(anim);
+    }
+    nodesG.appendChild(c);
+  });
+})();
+</script>
+<script src="../assets/i18n-pairs.js"></script>
+<script src="../assets/tc-nav.js"></script>
+</body>
+</html>

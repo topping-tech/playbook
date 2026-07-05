@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خلاصه قیمت‌گذاری حمل پالت در GTA | Topping Courier</title>
+  <style>
+    :root {
+      --primary: #12355b;
+      --accent: #f39c12;
+      --muted: #64748b;
+      --border: #d9e2ec;
+      --bg: #f6f8fb;
+      --white: #ffffff;
+      --danger: #b42318;
+      --success: #0f766e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #1f2937;
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.85;
+      direction: rtl;
+    }
+
+    .document {
+      max-width: 980px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    .page {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      padding: 34px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+
+    .header {
+      border-bottom: 4px solid var(--accent);
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #fff4df;
+      color: #8a4b00;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+      margin-top: 0;
+      line-height: 1.45;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 22px;
+      border-right: 5px solid var(--accent);
+      padding-right: 12px;
+      margin: 28px 0 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 22px 0 10px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      text-align: justify;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .note {
+      background: #eef6ff;
+      border: 1px solid #c7ddff;
+      border-right: 5px solid #2563eb;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+
+    .warning {
+      background: #fff1f0;
+      border: 1px solid #ffd2cc;
+      border-right: 5px solid var(--danger);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-weight: 700;
+    }
+
+    .recommendation {
+      background: #ecfdf5;
+      border: 1px solid #bfead7;
+      border-right: 5px solid var(--success);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 22px;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    th {
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      text-align: right;
+      padding: 11px 10px;
+      border: 1px solid var(--primary);
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .number {
+      direction: ltr;
+      unicode-bidi: embed;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .quote-box {
+      background: #fcfcfd;
+      border: 1px dashed #94a3b8;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 16px 0 22px;
+      font-size: 15px;
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .decision-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fbfdff;
+    }
+
+    .decision-card strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    ul {
+      margin: 8px 0 16px;
+      padding-right: 22px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      margin-top: 26px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .document {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .page {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        padding: 22mm 18mm;
+        min-height: 297mm;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+
+      table {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 19px;
+      }
+
+      .no-print {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 22px;
+      }
+
+      .decision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        font-size: 13px;
+      }
+
+      th, td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="document">
+
+    <section class="page">
+      <header class="header">
+        <span class="eyebrow">خلاصه دوصفحه‌ای قیمت‌گذاری</span>
+        <h1>خلاصه قیمت‌گذاری حمل پالت در GTA</h1>
+        <p class="subtitle">نسخه کوتاه برای مذاکره با توزیع‌کننده مواد غذایی — بدون بخش راننده</p>
+      </header>
+
+      <h2>۱. نتیجه اصلی بازار</h2>
+      <p>
+        برای حمل پالت در GTA سه سطح قیمت اصلی دیده می‌شود. ارزان‌ترین و مناسب‌ترین نقطه ورود برای
+        Topping Courier سرویس‌های برنامه‌ریزی‌شده، B2B، تکرارشونده و dock-to-dock است؛ نه سفارش‌های فوری و
+        تک‌موردی same-day.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>نوع سرویس</th>
+            <th>بازه قیمت بازار</th>
+            <th>برداشت عملی برای Topping Courier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> LTL برنامه‌ریزی‌شده / Next-Day داخل GTA</td>
+            <td><span class="number">CAD 85–110</span> برای هر پالت</td>
+            <td>بهترین نقطه ورود؛ مخصوصاً مسیرهای تکراری و dock-to-dock.</td>
+          </tr>
+          <tr>
+            <td>LTL گسترده‌تر داخل Ontario</td>
+            <td><span class="number">CAD 150–400</span> برای هر پالت</td>
+            <td>برای مسیرهای دورتر، سنگین‌تر، پیچیده‌تر یا دارای هزینه‌های جانبی.</td>
+          </tr>
+          <tr>
+            <td>Same-Day Dedicated با کامیون اختصاصی</td>
+            <td><span class="number">CAD 300–500</span></td>
+            <td>نباید قیمت پایه باشد؛ فقط به‌عنوان سرویس premium یا استثنایی.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="recommendation">
+        <strong>نتیجه مستقیم:</strong>
+        ورود هوشمندانه برای ما سرویس فوری same-day نیست. مسیر بهتر، سرویس برنامه‌ریزی‌شده، B2B، weekday،
+        dock-to-dock، و مخصوص پالت‌های غذایی ambient برای مشتری‌های recurring است.
+      </div>
+
+      <h2>۲. قیمت پیشنهادی پایه برای Topping Courier</h2>
+      <p>
+        قیمت‌های زیر برای یک پالت استاندارد، weekday، ambient، dock-to-dock، یک pickup و یک delivery،
+        بدون liftgate، بدون inside delivery، بدون residential/limited access، بدون appointment fee و بدون مالیات هستند.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>فاصله</th>
+            <th>قیمت تهاجمی برای گرفتن قرارداد</th>
+            <th>قیمت حداقل منطقی / Breakeven</th>
+            <th>قیمت استاندارد بازار</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>داخل <span class="number">10 km</span></td>
+            <td><span class="number">CAD 79</span></td>
+            <td><span class="number">CAD 89</span></td>
+            <td><span class="number">CAD 99</span></td>
+          </tr>
+          <tr>
+            <td><span class="number">10–50 km</span></td>
+            <td><span class="number">CAD 99</span></td>
+            <td><span class="number">CAD 115</span></td>
+            <td><span class="number">CAD 135</span></td>
+          </tr>
+          <tr>
+            <td><span class="number">50–200 km</span></td>
+            <td><span class="number">CAD 159</span></td>
+            <td><span class="number">CAD 189</span></td>
+            <td><span class="number">CAD 229</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        برای مسیر معمول ۱۰ تا ۵۰ کیلومتر، زیر CAD 115 نروید مگر اینکه مشتری حجم واقعی، مسیر تکراری، یا چند پالت
+        در یک route بدهد.
+      </div>
+
+      <h2>۳. فرمول ساده پیشنهادی برای قیمت‌دهی</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>آیتم قیمت‌گذاری</th>
+            <th>مدل پیشنهادی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>حداقل هزینه سفارش</td>
+            <td><span class="number">CAD 89–99</span></td>
+          </tr>
+          <tr>
+            <td>بعد از <span class="number">10 km</span> اول</td>
+            <td><span class="number">CAD 1.10–1.30</span> به ازای هر km loaded</td>
+          </tr>
+          <tr>
+            <td>پالت اضافه برای همان مقصد</td>
+            <td><span class="number">CAD 15–18</span> برای هر پالت اضافه</td>
+          </tr>
+          <tr>
+            <td>توقف اضافه در همان مسیر</td>
+            <td><span class="number">CAD 25–35</span> برای هر توقف اضافه</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>۴. مثال‌های کاربردی برای قیمت‌دهی</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>سناریو</th>
+            <th>قیمت حداقلی منطقی</th>
+            <th>قیمت استاندارد بهتر</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="number">30 km</span>، یک پالت، یک مقصد</td>
+            <td><span class="number">CAD 115</span></td>
+            <td><span class="number">CAD 135</span></td>
+          </tr>
+          <tr>
+            <td><span class="number">30 km</span>، دو پالت، یک مقصد</td>
+            <td><span class="number">CAD 130</span></td>
+            <td><span class="number">CAD 153</span></td>
+          </tr>
+          <tr>
+            <td><span class="number">30 km</span>، چهار پالت، یک مقصد</td>
+            <td><span class="number">CAD 160</span></td>
+            <td><span class="number">CAD 189</span></td>
+          </tr>
+          <tr>
+            <td><span class="number">100 km</span>، یک پالت</td>
+            <td><span class="number">CAD 189</span></td>
+            <td><span class="number">CAD 229</span></td>
+          </tr>
+          <tr>
+            <td><span class="number">100 km</span>، دو پالت</td>
+            <td><span class="number">CAD 204</span></td>
+            <td><span class="number">CAD 247</span></td>
+          </tr>
+          <tr>
+            <td><span class="number">100 km</span>، چهار پالت</td>
+            <td><span class="number">CAD 234</span></td>
+            <td><span class="number">CAD 283</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="footer">صفحه ۱ از ۲ — خلاصه قیمت‌گذاری حمل پالت در GTA</div>
+    </section>
+
+    <section class="page">
+      <header class="header">
+        <span class="eyebrow">هزینه‌های جانبی و سیاست مذاکره</span>
+        <h1>استراتژی قیمت‌گذاری، قرارداد و مذاکره</h1>
+        <p class="subtitle">تمرکز این صفحه روی accessorials، تعریف پالت استاندارد، قرارداد recurring و پاسخ پیشنهادی به مشتری است.</p>
+      </header>
+
+      <h2>۵. هزینه‌های جانبی که باید جداگانه حساب شوند</h2>
+      <p>
+        مشکل اصلی حمل پالت فقط فاصله نیست. هزینه واقعی با مواردی مثل liftgate، limited access،
+        residential، inside delivery، appointment، wait time، re-delivery و handling بالا می‌رود.
+        این موارد باید جداگانه حساب شوند تا مسیر سودده باقی بماند.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Accessorial</th>
+            <th>قیمت تهاجمی</th>
+            <th>قیمت منطقی</th>
+            <th>قیمت استاندارد</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Liftgate / Tailgate</td>
+            <td><span class="number">CAD 30</span></td>
+            <td><span class="number">CAD 40</span></td>
+            <td><span class="number">CAD 50</span></td>
+          </tr>
+          <tr>
+            <td>Private residence / Limited access</td>
+            <td><span class="number">CAD 30</span></td>
+            <td><span class="number">CAD 40</span></td>
+            <td><span class="number">CAD 50</span></td>
+          </tr>
+          <tr>
+            <td>Inside delivery</td>
+            <td><span class="number">CAD 40</span></td>
+            <td><span class="number">CAD 55</span></td>
+            <td><span class="number">CAD 70</span></td>
+          </tr>
+          <tr>
+            <td>Appointment / timed window</td>
+            <td><span class="number">CAD 20</span></td>
+            <td><span class="number">CAD 30</span></td>
+            <td><span class="number">CAD 40</span></td>
+          </tr>
+          <tr>
+            <td>Wait time بعد از ۱۵ دقیقه اول</td>
+            <td><span class="number">CAD 15</span> / هر ۱۵ دقیقه</td>
+            <td><span class="number">CAD 20</span> / هر ۱۵ دقیقه</td>
+            <td><span class="number">CAD 25</span> / هر ۱۵ دقیقه</td>
+          </tr>
+          <tr>
+            <td>Re-delivery / failed delivery</td>
+            <td><span class="number">CAD 35</span></td>
+            <td><span class="number">CAD 45</span></td>
+            <td><span class="number">CAD 60</span></td>
+          </tr>
+          <tr>
+            <td>Manual re-stack / pallet handling</td>
+            <td><span class="number">CAD 15</span> / پالت</td>
+            <td><span class="number">CAD 20</span> / پالت</td>
+            <td><span class="number">CAD 25</span> / پالت</td>
+          </tr>
+          <tr>
+            <td>Oversize pallet</td>
+            <td>فقط quote اختصاصی</td>
+            <td>فقط quote اختصاصی</td>
+            <td>فقط quote اختصاصی</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="warning">
+        Liftgate را رایگان نگذارید. Inside delivery را هم با dockless یکی نگیرید. این دو سرویس جدا هستند و اگر
+        رایگان شوند، سود مسیر را از بین می‌برند.
+      </div>
+
+      <h2>۶. تعریف پالت استاندارد برای قیمت پایه</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>مورد</th>
+            <th>تعریف پیشنهادی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ابعاد پایه</td>
+            <td><span class="number">48&quot; × 40&quot;</span></td>
+          </tr>
+          <tr>
+            <td>نوع بار</td>
+            <td>Ambient / dry / shelf-stable food</td>
+          </tr>
+          <tr>
+            <td>بسته‌بندی</td>
+            <td>Shrink-wrapped و pallet-jackable</td>
+          </tr>
+          <tr>
+            <td>وزن پیشنهادی برای قیمت استاندارد</td>
+            <td>تا حدود <span class="number">1,500 lb</span></td>
+          </tr>
+          <tr>
+            <td>ارتفاع پیشنهادی برای قیمت استاندارد</td>
+            <td>تا حدود <span class="number">60 inches</span></td>
+          </tr>
+          <tr>
+            <td>موارد خارج از قیمت پایه</td>
+            <td>Oversize، fragile، non-stackable خاص، dangerous goods، chilled/frozen</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>۷. استراتژی قرارداد در برابر سفارش موردی</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>نوع مشتری</th>
+            <th>سیاست قیمت‌گذاری پیشنهادی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>سفارش موردی / Spot</td>
+            <td>استفاده از Standard Market Rate، پرداخت سریع، accessorial جدا.</td>
+          </tr>
+          <tr>
+            <td>قرارداد recurring</td>
+            <td>تخفیف محدود فقط در برابر volume واقعی.</td>
+          </tr>
+          <tr>
+            <td><span class="number">20–49</span> پالت در هفته</td>
+            <td>حدود <span class="number">5%</span> تخفیف.</td>
+          </tr>
+          <tr>
+            <td><span class="number">50+</span> پالت در هفته</td>
+            <td>حدود <span class="number">8%–10%</span> تخفیف.</td>
+          </tr>
+          <tr>
+            <td>مسیر ثابت روزانه</td>
+            <td>تبدیل به fixed daily milk-run fee.</td>
+          </tr>
+          <tr>
+            <td>Same-day direct</td>
+            <td>خارج از tariff عادی؛ minimum از حدود <span class="number">CAD 299+</span>.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>۸. جواب پیشنهادی برای مشتری غذایی</h2>
+
+      <div class="quote-box">
+        برای حمل پالت‌های غذایی در GTA، قیمت پایه ما برای سرویس برنامه‌ریزی‌شده و dock-to-dock از حدود
+        <strong>CAD 89–99</strong> برای مسیرهای نزدیک شروع می‌شود. برای مسیرهای معمول <strong>10–50 km</strong>،
+        قیمت عملیاتی معمول بین <strong>CAD 115–135 برای هر پالت</strong> است. اگر حجم هفتگی، مسیرهای تکراری،
+        یا چند پالت در یک مسیر داشته باشید، می‌توانیم نرخ قراردادی بهتر ارائه کنیم. هزینه‌هایی مثل liftgate،
+        limited access، inside delivery، appointment و wait time جداگانه محاسبه می‌شوند.
+      </div>
+
+      <h2>۹. جمع‌بندی تصمیم پیشنهادی</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>وضعیت</th>
+            <th>قیمت پیشنهادی</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>برای مذاکره اولیه و نشان دادن رقابت‌پذیری</td>
+            <td><span class="number">CAD 99–115</span></td>
+          </tr>
+          <tr>
+            <td>برای مسیرهای معمول <span class="number">10–50 km</span></td>
+            <td><span class="number">CAD 115–135</span></td>
+          </tr>
+          <tr>
+            <td>برای مسیرهای <span class="number">50–200 km</span></td>
+            <td><span class="number">CAD 189–229</span></td>
+          </tr>
+          <tr>
+            <td>برای same-day direct</td>
+            <td>حداقل <span class="number">CAD 299+</span></td>
+          </tr>
+          <tr>
+            <td>تخفیف قراردادی واقعی</td>
+            <td>فقط با volume هفتگی و route density.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>خط قرمز:</strong>
+        برای مسیر معمول ۱۰ تا ۵۰ کیلومتر، بدون volume قطعی و بدون چند پالت در یک مسیر، زیر
+        <strong>CAD 115</strong> نروید. این عدد حداقل قابل دفاع برای شروع استارتاپ است.
+      </div>
+
+      <div class="footer">صفحه ۲ از ۲ — آماده برای چاپ، ارسال داخلی و مذاکره اولیه</div>
+    </section>
+
+  </main>
+</body>
+</html>

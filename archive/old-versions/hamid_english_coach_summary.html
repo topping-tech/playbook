@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamid Personal English Coach Bot - خلاصه ایده و مراحل</title>
+<style>
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f7fb;color:#1f2937;line-height:2}
+.container{max-width:1100px;margin:auto;padding:34px}
+.hero{background:linear-gradient(135deg,#0f172a,#2563eb);color:white;padding:36px;border-radius:24px;margin-bottom:24px;box-shadow:0 12px 30px rgba(15,23,42,.22)}
+.hero h1{margin:0 0 10px;font-size:30px}.hero p{margin:0;color:#dbeafe}
+.card{background:white;border:1px solid #e5e7eb;border-radius:18px;padding:24px;margin-bottom:18px;box-shadow:0 8px 22px rgba(15,23,42,.08)}
+h2{margin-top:0;color:#1d4ed8;border-right:5px solid #2563eb;padding-right:12px}
+.badge{display:inline-block;background:#dbeafe;color:#1e40af;padding:4px 12px;border-radius:999px;font-size:13px;margin:3px}
+.ok{color:#16a34a;font-weight:bold}
+code{direction:ltr;unicode-bidi:embed;background:#eef2ff;color:#111827;padding:4px 8px;border-radius:7px}
+pre{direction:ltr;text-align:left;background:#0f172a;color:#e5e7eb;padding:16px;border-radius:14px;overflow:auto;line-height:1.7}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th,td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:right;vertical-align:top}
+th{background:#eff6ff;color:#1e3a8a}
+.footer{text-align:center;color:#64748b;margin-top:24px;font-size:13px}
+.timeline{border-right:3px solid #2563eb;padding-right:18px}.step{margin-bottom:18px}.step strong{color:#1d4ed8}
+a{color:#2563eb;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+<section class="hero">
+<h1>🤖 Hamid Personal English Coach Bot</h1>
+<p>خلاصه ایده، هدف، مسیر اجرا و امکانات ربات شخصی آموزش زبان انگلیسی حمید</p>
+</section>
+<section class="card"><h2>1. خلاصه ایده</h2>
+<p>ایده اصلی ساخت یک <strong>کوچ شخصی زبان انگلیسی</strong> برای حمید است؛ نه یک اپ عمومی زبان. این ربات در تلگرام کار می‌کند و هر روز با حمید تمرین انگلیسی انجام می‌دهد. تمرکز آن روی لغت، تلفظ، ریشه‌یابی، جمله‌سازی، اصلاح جمله با AI و لغات مرتبط با کار، بیزینس، فروش و لجستیک است.</p>
+<p>هدف این است که حمید بتواند انگلیسی را برای استفاده واقعی در جلسه، مذاکره، ایمیل، فروش، مدیریت و کارهای روزانه تمرین کند.</p>
+</section>
+<section class="card"><h2>2. هدف اصلی پروژه</h2>
+<ul>
+<li>یادگیری روزانه لغات کاربردی انگلیسی</li><li>تمرین جمله‌سازی با لغات جدید</li><li>اصلاح گرامر و ساختار جمله با AI</li><li>دریافت تلفظ صوتی هر لغت</li><li>تمرین با متن و ویس تلگرام</li><li>ثبت پیشرفت و لغات سخت</li><li>ارسال پیام روزانه طبق ساعت تورنتو</li><li>تمرکز روی انگلیسی روزمره، بیزینسی، فروش و لجستیک</li>
+</ul></section>
+<section class="card"><h2>3. تفاوت این ربات با اپ‌های معمولی زبان</h2>
+<table><tr><th>اپ معمولی زبان</th><th>ربات شخصی حمید</th></tr>
+<tr><td>لغات ثابت و عمومی می‌دهد</td><td>لغات روزمره، کاری، فروش و لجستیک می‌دهد</td></tr>
+<tr><td>فقط معنی لغت را نشان می‌دهد</td><td>معنی، تلفظ، ریشه، مثال روزمره و مثال کاری می‌دهد</td></tr>
+<tr><td>برای همه کاربران یکسان است</td><td>برای نیازهای حمید و کارهای واقعی او طراحی شده</td></tr>
+<tr><td>معمولاً تمرین واقعی جمله‌سازی ندارد</td><td>جمله حمید را با AI اصلاح و نمره‌دهی می‌کند</td></tr>
+</table></section>
+<section class="card"><h2>4. مسیر اجرای پروژه</h2>
+<div class="timeline">
+<div class="step"><strong>مرحله 1:</strong> شروع با لغات 504 و یادگیری معنی، تلفظ و ریشه.</div>
+<div class="step"><strong>مرحله 2:</strong> جمله‌سازی با هر لغت و اصلاح جمله با AI.</div>
+<div class="step"><strong>مرحله 3:</strong> اضافه کردن تلفظ صوتی برای هر لغت.</div>
+<div class="step"><strong>مرحله 4:</strong> اضافه کردن Voice Input؛ حمید ویس می‌فرستد و ربات آن را تبدیل به متن و اصلاح می‌کند.</div>
+<div class="step"><strong>مرحله 5:</strong> ذخیره پیشرفت در <code>user-state.json</code>.</div>
+<div class="step"><strong>مرحله 6:</strong> ثبت لغات سخت برای مرور بعدی.</div>
+<div class="step"><strong>مرحله 7:</strong> خروج از محدودیت فایل 504 و اتصال به منبع نامحدود لغت با AI.</div>
+</div></section>
+<section class="card"><h2>5. امکانات نسخه فعلی</h2>
+<p><span class="badge">Telegram Bot</span><span class="badge">OpenAI Correction</span><span class="badge">Voice Input</span><span class="badge">Audio Pronunciation</span><span class="badge">Toronto Schedule</span><span class="badge">Progress Tracking</span><span class="badge">Hard Words</span><span class="badge">Unlimited AI Words</span></p>
+<ul>
+<li><span class="ok">✅</span> ربات در تلگرام فعال شده است.</li>
+<li><span class="ok">✅</span> با PM2 روی سرور اجرا می‌شود.</li>
+<li><span class="ok">✅</span> ساعت سرور روی Toronto تنظیم شده است.</li>
+<li><span class="ok">✅</span> ربات می‌تواند لغت جدید بسازد.</li>
+<li><span class="ok">✅</span> ربات معنی فارسی، تلفظ، ریشه و مثال می‌دهد.</li>
+<li><span class="ok">✅</span> جمله حمید را با AI بررسی و اصلاح می‌کند.</li>
+<li><span class="ok">✅</span> بعد از اصلاح، لغت بعدی را می‌دهد.</li>
+<li><span class="ok">✅</span> لغات تکراری در <code>learned-words.json</code> ذخیره می‌شوند.</li>
+</ul></section>
+<section class="card"><h2>6. فلو کاری ربات</h2>
+<pre>/start
+↓
+نمایش منو
+↓
+📚 لغت جدید
+↓
+AI یک لغت جدید و کاربردی می‌سازد
+↓
+معنی فارسی + تلفظ + ریشه + مثال روزمره + مثال کاری
+↓
+حمید جمله می‌سازد یا ویس می‌فرستد
+↓
+AI جمله را اصلاح می‌کند
+↓
+نمره می‌دهد
+↓
+اگر سخت بود در hardWords ذخیره می‌شود
+↓
+ربات لغت بعدی را می‌دهد</pre></section>
+<section class="card"><h2>7. دسته‌بندی لغات موردنیاز حمید</h2>
+<table>
+<tr><th>دسته</th><th>کاربرد</th></tr>
+<tr><td>Daily English</td><td>لغات روزمره برای مکالمه عادی</td></tr>
+<tr><td>Business English</td><td>لغات مدیریتی، مالی و بیزینسی</td></tr>
+<tr><td>Logistics English</td><td>لغات حمل‌ونقل، ارسال، انبار، shipment و delivery</td></tr>
+<tr><td>Sales English</td><td>لغات فروش، follow-up، lead، proposal و negotiation</td></tr>
+<tr><td>Meeting English</td><td>عبارات لازم برای جلسه، معرفی و مذاکره</td></tr>
+<tr><td>Email English</td><td>نوشتن ایمیل کاری و پاسخ به مشتری</td></tr>
+</table></section>
+<section class="card"><h2>8. ساختار فنی پروژه</h2>
+<table>
+<tr><th>بخش</th><th>توضیح</th></tr>
+<tr><td>Platform</td><td>Telegram Bot</td></tr>
+<tr><td>Backend</td><td>Node.js</td></tr>
+<tr><td>Bot Framework</td><td>Telegraf</td></tr>
+<tr><td>AI</td><td>OpenAI API</td></tr>
+<tr><td>Voice to Text</td><td>OpenAI Whisper</td></tr>
+<tr><td>Text to Speech</td><td>gTTS</td></tr>
+<tr><td>Scheduler</td><td>node-cron</td></tr>
+<tr><td>Process Manager</td><td>PM2</td></tr>
+<tr><td>Timezone</td><td>America/Toronto</td></tr>
+</table></section>
+<section class="card"><h2>9. فایل‌ها و مسیرها</h2>
+<ul>
+<li><strong>مسیر پروژه:</strong> <code>/www/holding-barzin/apps/english-coach-bot</code></li>
+<li><strong>فایل اصلی:</strong> <code>index.js</code></li>
+<li><strong>تنظیمات محرمانه:</strong> <code>.env</code></li>
+<li><strong>وضعیت کاربر:</strong> <code>user-state.json</code></li>
+<li><strong>لغات ساخته‌شده:</strong> <code>learned-words.json</code></li>
+<li><strong>فایل‌های صوتی:</strong> <code>audio/</code></li>
+</ul></section>
+<section class="card"><h2>10. لینک و وضعیت اجرا</h2>
+<ul>
+<li><strong>Telegram Bot:</strong> <a href="https://t.me/HamidEnglishBot" target="_blank">https://t.me/HamidEnglishBot</a></li>
+<li><strong>PM2 Service:</strong> <code>english-coach-bot</code></li>
+<li><strong>Daily Message:</strong> هر روز ساعت 9 صبح به وقت تورنتو</li>
+<li><strong>Status:</strong> فعال و در حال توسعه</li>
+</ul></section>
+<section class="card"><h2>11. نتیجه نهایی</h2>
+<p>این پروژه یک ربات شخصی برای رشد انگلیسی حمید است. هدف آن این است که حمید هر روز با لغات واقعی و کاربردی کار کند، جمله بسازد، اصلاح بگیرد، تلفظ بشنود و به مرور در مکالمه، ایمیل، جلسه و مذاکره قوی‌تر شود.</p>
+</section>
+<div class="footer">Prepared for Hamid Personal English Coach Bot Documentation — 2026</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barzin Holding - Server Inventory</title>
+  <style>
+    body{font-family:Tahoma,Arial,sans-serif;background:#f5f7fb;color:#1f2937;margin:0;line-height:1.9}
+    .container{max-width:1100px;margin:auto;padding:32px}
+    .hero{background:linear-gradient(135deg,#0f172a,#1d4ed8);color:white;border-radius:24px;padding:34px;margin-bottom:24px;box-shadow:0 12px 30px rgba(15,23,42,.22)}
+    h1{margin:0 0 8px;font-size:30px}.hero p{margin:0;color:#dbeafe}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:white;border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:0 8px 22px rgba(15,23,42,.08);border:1px solid #e5e7eb}
+    h2{margin:0 0 14px;color:#0f172a;font-size:22px;border-right:5px solid #2563eb;padding-right:12px}
+    h3{margin:0 0 8px;color:#1d4ed8;font-size:18px}
+    table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden}
+    th,td{padding:12px 14px;border-bottom:1px solid #e5e7eb;text-align:right;vertical-align:top}
+    th{background:#eff6ff;color:#1e3a8a;font-weight:700}
+    code{direction:ltr;unicode-bidi:embed;background:#eef2ff;color:#111827;padding:3px 7px;border-radius:6px;font-size:13px}
+    pre{direction:ltr;text-align:left;background:#0f172a;color:#e5e7eb;padding:16px;border-radius:14px;overflow:auto;line-height:1.7}
+    .warn{background:#fff7ed;border-right:5px solid #f97316;color:#7c2d12}
+    .ok{background:#ecfdf5;border-right:5px solid #10b981;color:#064e3b}
+    .muted{color:#6b7280}.badge{display:inline-block;background:#dbeafe;color:#1e40af;padding:3px 10px;border-radius:999px;font-size:12px}
+    .footer{text-align:center;color:#64748b;font-size:13px;margin-top:24px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>🏛️ Barzin Holding – Server Inventory & Recovery Map</h1>
+      <p>نقشه مدیریتی سرور، سرویس‌ها، دیتابیس‌ها، مسیرها و بکاپ‌ها — بدون نمایش پسوردها و توکن‌های حساس</p>
+    </section>
+
+    <div class="card ok">
+      <h2>وضعیت کلی فعلی</h2>
+      <p>ساختار مرکزی هولدینگ ساخته شده و مسیر اصلی آن این است:</p>
+      <pre>/www/holding-barzin</pre>
+      <p>سرویس‌های اصلی CRM، NFC، Gozaresh و Veloxa فعال هستند. Gozaresh با <code>systemd</code> اجرا می‌شود و بقیه عمدتاً با <code>PM2</code>.</p>
+    </div>
+
+    <div class="card warn">
+      <h2>قانون امنیتی مهم</h2>
+      <p>پسوردها، توکن‌ها، API Keyها و Connection Stringهای کامل نباید داخل فایل HTML عمومی نوشته شوند. فقط مسیر فایل‌های <code>.env</code> ثبت شده تا خود مدیر سرور بتواند آن‌ها را ببیند.</p>
+    </div>
+
+    <section class="card">
+      <h2>دامنه‌ها و مسیر پروژه‌ها</h2>
+      <table>
+        <tr><th>سیستم</th><th>دامنه</th><th>مسیر پروژه</th><th>نوع اجرا</th></tr>
+        <tr><td>CRM</td><td><code>crm.toppingcourier.ca</code></td><td><code>/www/wwwroot/crm.toppingcourier.ca</code></td><td>PM2: <code>kpi-crm-api</code></td></tr>
+        <tr><td>NFC Lab</td><td><code>nfc-lab.toppingcourier.ca</code></td><td><code>/www/wwwroot/New-Nfc_Topping-courier</code></td><td>PM2: <code>nfc-api</code></td></tr>
+        <tr><td>Gozaresh</td><td><code>gozaresh.toppingcourier.ca</code></td><td><code>/home/ubuntu/robat-ghozaresh-topping</code></td><td>systemd: <code>gozaresh-api</code> و <code>gozaresh-bot</code></td></tr>
+        <tr><td>Veloxa</td><td><code>veloxa.toppingcourier.ca</code></td><td><code>/www/wwwroot/veloxa</code></td><td>PM2: <code>veloxa-api</code></td></tr>
+        <tr><td>AI API</td><td><code>api.toppingcourier.ca</code></td><td><span class="muted">طبق PM2 بررسی شود</span></td><td>PM2: <code>topping-ai-api</code></td></tr>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>دیتابیس‌ها</h2>
+      <table>
+        <tr><th>سیستم</th><th>Database</th><th>User</th><th>وضعیت</th></tr>
+        <tr><td>CRM</td><td><code>topping_crm_db</code></td><td><code>topping_crm_db</code></td><td><span class="badge">فعال</span></td></tr>
+        <tr><td>NFC</td><td><code>topping_nfc_db</code></td><td><code>topping_nfc_db_user</code></td><td><span class="badge">فعال؛ دیتای قدیمی‌تر Restore شده</span></td></tr>
+        <tr><td>Gozaresh</td><td><code>daily_reports</code></td><td><code>daily_user</code></td><td><span class="badge">فعال؛ schema_ok=true؛ دیتای قبلی پیدا نشد</span></td></tr>
+        <tr><td>Veloxa</td><td><code>veloxa_db</code></td><td><code>veloxa_user</code></td><td><span class="badge">فعال</span></td></tr>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>فایل‌های تنظیمات حساس (.env)</h2>
+      <table>
+        <tr><th>سیستم</th><th>مسیر فایل</th></tr>
+        <tr><td>Gozaresh</td><td><code>/home/ubuntu/robat-ghozaresh-topping/.env</code></td></tr>
+        <tr><td>NFC</td><td><code>/www/wwwroot/New-Nfc_Topping-courier/artifacts/api-server/.env</code></td></tr>
+        <tr><td>Veloxa</td><td><code>/www/wwwroot/veloxa/.env</code></td></tr>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>ساختار پیشنهادی Holding Barzin</h2>
+      <pre>/www/holding-barzin
+├── apps
+├── backups
+│   ├── databases
+│   ├── projects
+│   └── server
+├── docs
+├── logs
+├── scripts
+├── secrets
+└── archive</pre>
+    </section>
+
+    <section class="card">
+      <h2>دستورات مهم مدیریت</h2>
+      <h3>بررسی سرویس‌های PM2</h3>
+      <pre>pm2 list
+pm2 show nfc-api
+pm2 logs nfc-api --lines 50</pre>
+      <h3>بررسی Gozaresh</h3>
+      <pre>sudo systemctl status gozaresh-api.service --no-pager -l
+sudo systemctl status gozaresh-bot.service --no-pager -l
+curl http://127.0.0.1:8000/health</pre>
+      <h3>بررسی PostgreSQL</h3>
+      <pre>sudo -u postgres psql -c "\l"
+sudo -u postgres psql -c "\du"</pre>
+    </section>
+
+    <section class="card">
+      <h2>بکاپ دیتابیس‌ها</h2>
+      <p>پوشه بکاپ با <code>chattr +i</code> قفل می‌شود. برای گرفتن بکاپ جدید، اول قفل را بردار، بکاپ بگیر، سپس دوباره قفل کن.</p>
+      <pre>sudo chattr -i /www/holding-barzin/backups
+# run backup script here
+sudo chattr +i /www/holding-barzin/backups</pre>
+      <p>مسیر فعلی بکاپ‌ها:</p>
+      <pre>/www/holding-barzin/backups</pre>
+    </section>
+
+    <section class="card warn">
+      <h2>یادداشت بازیابی داده‌ها</h2>
+      <p>دیتای تاریخی Gozaresh در دیتابیس فعلی پیدا نشد: <code>reports=0</code>، <code>weekly_reports=0</code>، <code>users=1</code>. سیستم از الان آماده ذخیره گزارش‌های جدید است.</p>
+      <p>برای NFC، بکاپ موجود قدیمی‌تر شامل ۳ پروفایل و ۲۰ کارت Restore شده است. دیتای جدیدتر روی VPS پیدا نشد و احتمالاً قبلاً روی Render یا دیتابیس خارجی بوده است.</p>
+    </section>
+
+    <section class="card">
+      <h2>چک‌لیست روزانه مدیر سرور</h2>
+      <ul>
+        <li>بررسی <code>pm2 list</code></li>
+        <li>بررسی وضعیت <code>gozaresh-api.service</code> و <code>gozaresh-bot.service</code></li>
+        <li>اجرای بکاپ دیتابیس‌ها</li>
+        <li>نگهداری بکاپ خارج از سرور</li>
+        <li>حذف نکردن پوشه‌ها قبل از گرفتن بکاپ</li>
+      </ul>
+    </section>
+
+    <div class="footer">Prepared for Barzin Holding Infrastructure Recovery</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Topping Tech | Document Dashboard</title>
+<!--
+  Topping Tech — Glass Dashboard
+  Maintainer: Amir | Pure HTML/CSS/JS
+  Add new docs in the `files` array below.
+-->
+<style>
+:root {
+  --glass: rgba(255,255,255,.55);
+  --glass-strong: rgba(255,255,255,.72);
+  --glass-border: rgba(255,255,255,.65);
+  --ink: #0c1a2e;
+  --muted: #5c6b80;
+  --blue: #0f4c81;
+  --accent: #ff9800;
+  --radius: 20px;
+  --blur: blur(24px);
+  --font: system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  line-height: 1.65;
+  min-height: 100vh;
+  background: #e8eef5;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(30,136,229,.18), transparent),
+    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(255,152,0,.14), transparent),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(15,76,129,.1), transparent);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── Top nav (glass) ── */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(255,255,255,.45);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border-bottom: 1px solid var(--glass-border);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--blue);
+}
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(15,76,129,.15);
+}
+.nav-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--glass-strong);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+  box-shadow: 0 4px 16px rgba(15,76,129,.08);
+  transition: transform .15s;
+}
+.nav-home:hover { transform: scale(1.03); }
+
+.page { max-width: 1100px; margin: 0 auto; padding: 28px 20px 56px; }
+
+/* ── Hero glass card ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 32px;
+  border-radius: 28px;
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 40px rgba(15,76,129,.08), inset 0 1px 0 rgba(255,255,255,.9);
+  margin-bottom: 24px;
+}
+.hero-text h1 {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin-bottom: 8px;
+}
+.hero-text p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 520px;
+}
+.hero-poster {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.6);
+  box-shadow: 0 12px 32px rgba(15,76,129,.12);
+  flex-shrink: 0;
+}
+.hero-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── Stats glass pills ── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+}
+.stat {
+  text-align: center;
+  padding: 14px 10px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.5);
+}
+.stat .emoji { font-size: 22px; display: block; margin-bottom: 4px; }
+.stat b { font-size: 22px; font-weight: 700; display: block; color: var(--blue); }
+.stat span { font-size: 11px; color: var(--muted); }
+
+/* ── Toolbar ── */
+.toolbar {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: var(--radius);
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 24px rgba(15,76,129,.06);
+}
+.toolbar input,
+.toolbar select {
+  font-family: inherit;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.6);
+  background: rgba(255,255,255,.5);
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+}
+.toolbar input:focus,
+.toolbar select:focus {
+  outline: none;
+  border-color: rgba(30,136,229,.4);
+  box-shadow: 0 0 0 3px rgba(30,136,229,.1);
+}
+
+/* ── Category pills ── */
+.cat-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.cat-pill {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,.55);
+  background: rgba(255,255,255,.4);
+  backdrop-filter: blur(12px);
+  color: var(--muted);
+  transition: all .15s;
+}
+.cat-pill:hover { background: rgba(255,255,255,.7); color: var(--blue); }
+.cat-pill.active {
+  background: rgba(15,76,129,.85);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(15,76,129,.25);
+}
+
+/* ── Cards ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+.card {
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 24px rgba(15,76,129,.06), inset 0 1px 0 rgba(255,255,255,.8);
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(15,76,129,.12);
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.card-emoji {
+  font-size: 32px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.08));
+}
+.card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+.card .sub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.pill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.5);
+  border: 1px solid rgba(255,255,255,.6);
+  color: var(--muted);
+}
+.pill-active { background: rgba(5,150,105,.12); color: #047857; border-color: rgba(5,150,105,.2); }
+
+.actions { display: flex; gap: 8px; margin-top: 14px; }
+.btn {
+  flex: 1;
+  text-align: center;
+  padding: 9px 12px;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all .15s;
+}
+.btn-open {
+  background: rgba(15,76,129,.88);
+  color: #fff;
+  border: 1px solid transparent;
+}
+.btn-open:hover { background: #0d3d66; }
+.btn-dl {
+  background: rgba(255,255,255,.5);
+  color: var(--blue);
+  border: 1px solid rgba(255,255,255,.6);
+}
+.btn-dl:hover { background: rgba(255,255,255,.8); }
+
+/* ── Table ── */
+.table-wrap {
+  margin-top: 28px;
+  padding: 22px;
+  border-radius: var(--radius);
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  overflow-x: auto;
+}
+.table-wrap h2 { font-size: 16px; color: var(--blue); margin-bottom: 14px; }
+table { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 12px; }
+th, td { padding: 10px 12px; text-align: right; border-bottom: 1px solid rgba(255,255,255,.4); }
+th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+tr:last-child td { border-bottom: none; }
+code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; border-radius: 4px; }
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.footer {
+  text-align: center;
+  padding: 32px 0 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .hero-poster { margin: 0 auto; }
+  .hero-text p { margin: 0 auto; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .toolbar { grid-template-columns: 1fr; }
+}
+@media print { .topnav, .toolbar, .cat-nav, .actions { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- Sticky glass nav -->
+<nav class="topnav">
+  <a class="brand" href="index.html">
+    <img src="topping_poster_v2.svg" alt="Topping" />
+    <span>📦 Topping Tech</span>
+  </a>
+  <div style="display:flex;gap:8px;align-items:center">
+    <a class="nav-home" href="index-en.html">🇬🇧 English</a>
+    <a class="nav-home" href="index.html">🏠 خانه</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <header class="hero">
+    <div class="hero-text">
+      <h1>✨ داشبورد اسناد</h1>
+      <p>کتابخانه HTML دوزبانه FA / EN — Playbook، Sales، Business Plan و بیشتر.</p>
+      <div class="stats">
+        <div class="stat"><span class="emoji">📄</span><b id="statTotal">0</b><span>کل</span></div>
+        <div class="stat"><span class="emoji">✅</span><b id="statActive">0</b><span>فعال</span></div>
+        <div class="stat"><span class="emoji">🗂️</span><b id="statCategories">0</b><span>دسته</span></div>
+        <div class="stat"><span class="emoji">💾</span><b id="statSize">0</b><span>حجم</span></div>
+      </div>
+    </div>
+    <div class="hero-poster">
+      <img src="topping_poster_v2.svg" alt="Topping Poster" />
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="🔍 جستجو..." autocomplete="off" />
+    <select id="categoryFilter"><option value="all">📁 همه دسته‌ها</option></select>
+    <select id="languageFilter">
+      <option value="all">🌐 همه زبان‌ها</option>
+      <option value="fa">🇮🇷 فارسی</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="mixed">🔀 Mixed</option>
+    </select>
+    <select id="statusFilter">
+      <option value="all">⚡ همه</option>
+      <option value="Active">✅ فعال</option>
+    </select>
+  </div>
+
+  <nav class="cat-nav" id="catNav"></nav>
+
+  <main>
+    <div id="cards" class="grid"></div>
+    <div id="empty" class="empty">😶‍🌫️ چیزی پیدا نشد</div>
+
+    <section class="table-wrap">
+      <h2>📋 فهرست</h2>
+      <table>
+        <thead>
+          <tr><th>عنوان</th><th>دسته</th><th>زبان</th><th>حجم</th><th>مسیر</th></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Topping Courier · Hamid Barzin · Amir &nbsp;·&nbsp;
+    <a href="README.md">README</a> · <a href="CLEANUP_REPORT.md">Report</a>
+  </footer>
+</div>
+
+<script src="assets/files-catalog.js"></script>
+<script>
+const UI = { open:"🔗 باز کردن", active:"✅ فعال", all:"✨ همه", catAll:"📁 همه دسته‌ها" };
+const catEmoji = { "Playbook":"📘", "Funding":"💰", "Sales":"📈", "Business Plan":"🗺️", "Proposals":"📄", "all":"✨" };
+const langLabel = { fa:"🇮🇷 FA", en:"🇬🇧 EN", mixed:"🔀 Mix" };
+const $ = id => document.getElementById(id);
+
+function fmtKB(b) { return b < 1024 ? b+" B" : (b/1024).toFixed(1)+" KB"; }
+
+function buildFilters() {
+  [...new Set(files.map(f=>f.category))].sort().forEach(c => {
+    const o = document.createElement("option");
+    o.value = c; o.textContent = (catEmoji[c]||"📁")+" "+c;
+    $("categoryFilter").appendChild(o);
+  });
+
+  [["all",UI.all], ...Object.entries(catEmoji).filter(([k])=>k!=="all")].forEach(([k,l]) => {
+    if (k!=="all" && !files.some(f=>f.category===k)) return;
+    const b = document.createElement("button");
+    b.className = "cat-pill"+(k==="all"?" active":"");
+    b.dataset.cat = k;
+    b.type = "button";
+    b.textContent = l+(k==="all"?"":(" "+k.split(" ")[0]));
+    $("catNav").appendChild(b);
+  });
+
+  $("catNav").onclick = e => {
+    const btn = e.target.closest(".cat-pill");
+    if (!btn) return;
+    $("catNav").querySelectorAll(".cat-pill").forEach(p=>p.classList.remove("active"));
+    btn.classList.add("active");
+    $("categoryFilter").value = btn.dataset.cat;
+    render();
+  };
+}
+
+function getFiltered() {
+  const q=$("search").value.trim().toLowerCase();
+  const cat=$("categoryFilter").value;
+  const lang=$("languageFilter").value;
+  const stat=$("statusFilter").value;
+  return files.filter(f => {
+    const hay=(f.title+f.htmlTitle+f.description+f.category).toLowerCase();
+    return (!q||hay.includes(q)) && (cat==="all"||f.category===cat) && (lang==="all"||f.language===lang) && (stat==="all"||f.status===stat);
+  });
+}
+
+function render() {
+  const arr = getFiltered();
+  $("cards").innerHTML = "";
+  $("tableBody").innerHTML = "";
+  $("empty").style.display = arr.length ? "none" : "block";
+
+  arr.forEach(f => {
+    const altBtn = f.alt
+      ? `<a class="btn btn-dl" href="${f.alt}" title="زبان دیگر">${f.language==="fa"?"🇬🇧 EN":"🇮🇷 FA"}</a>`
+      : `<a class="btn btn-dl" href="${f.file}" download>⬇️</a>`;
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="card-top">
+        <div>
+          <h3>${f.title}</h3>
+          <p class="sub">${f.description}</p>
+        </div>
+        <span class="card-emoji">${f.emoji}</span>
+      </div>
+      <div class="meta">
+        <span class="pill">${catEmoji[f.category]||"📁"} ${f.category}</span>
+        <span class="pill">${langLabel[f.language]||f.language}</span>
+        <span class="pill">${fmtKB(f.size)}</span>
+        <span class="pill pill-active">${UI.active}</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-open" href="${f.file}" target="_blank">${UI.open}</a>
+        ${altBtn}
+      </div>`;
+    $("cards").appendChild(card);
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td>${f.emoji} <b>${f.title}</b></td><td>${f.category}</td><td>${langLabel[f.language]||f.language}</td><td>${fmtKB(f.size)}</td><td><code>${f.file}</code></td>`;
+    $("tableBody").appendChild(tr);
+  });
+
+  const active = files.filter(f=>f.status==="Active");
+  $("statTotal").textContent = files.length;
+  $("statActive").textContent = active.length;
+  $("statCategories").textContent = new Set(files.map(f=>f.category)).size;
+  $("statSize").textContent = fmtKB(active.reduce((s,f)=>s+f.size,0));
+}
+
+buildFilters();
+["search","categoryFilter","languageFilter","statusFilter"].forEach(id=>$(id).addEventListener("input",render));
+render();
+</script>
+<script src="assets/i18n-pairs.js"></script>
+<script src="assets/tc-nav.js"></script>
+</body>
+</html>

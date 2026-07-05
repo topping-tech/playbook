@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>گزارش ارتقای زیرساخت سرور - Barzin Holding</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f7fb;color:#1f2937;line-height:2}.container{max-width:1150px;margin:auto;padding:32px}.hero{background:linear-gradient(135deg,#0f172a,#1d4ed8);color:white;border-radius:24px;padding:36px;margin-bottom:24px;box-shadow:0 14px 36px rgba(15,23,42,.22)}.hero h1{margin:0 0 10px;font-size:32px}.hero p{margin:6px 0;color:#dbeafe}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;padding:24px;margin-bottom:18px;box-shadow:0 8px 24px rgba(15,23,42,.08)}h2{margin:0 0 14px;color:#1d4ed8;border-right:5px solid #2563eb;padding-right:12px}h3{color:#0f172a;margin-bottom:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.badge{display:inline-block;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:bold}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.info{background:#dbeafe;color:#1e40af}code{direction:ltr;unicode-bidi:embed;background:#eef2ff;color:#111827;padding:4px 8px;border-radius:6px;font-size:13px}pre{direction:ltr;text-align:left;background:#0f172a;color:#e5e7eb;padding:16px;border-radius:14px;overflow:auto;line-height:1.7}table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden}th,td{padding:12px 14px;border-bottom:1px solid #e5e7eb;text-align:right;vertical-align:top}th{background:#eff6ff;color:#1e3a8a}.footer{text-align:center;color:#64748b;font-size:13px;margin:28px 0}.note{background:#fff7ed;border-right:5px solid #f97316;color:#7c2d12}.success{background:#ecfdf5;border-right:5px solid #10b981;color:#064e3b}a{color:#1d4ed8;text-decoration:none;font-weight:bold}a:hover{text-decoration:underline}.ltr{direction:ltr;text-align:left}
+</style>
+</head>
+<body>
+<div class="container">
+
+<section class="hero">
+<h1>گزارش اجرایی ارتقای زیرساخت سرور Barzin Holding</h1>
+<p>خلاصه کامل کارهایی که انجام شد، ارتقاهای ایجادشده، فایل‌ها، کدها و لینک‌های ساخته‌شده</p>
+<p>تاریخ: 2026-06-06</p>
+</section>
+
+<section class="card success">
+<h2>خلاصه مدیریتی</h2>
+<p>در این عملیات، سرور از حالت پراکنده و وابسته به حافظه فردی، به یک زیرساخت منظم، مستند، قابل بکاپ‌گیری، قابل بازیابی و قابل مانیتورینگ تبدیل شد. تمرکز کار روی پروژه‌های CRM، Veloxa، Gozaresh، NFC و AI API بود.</p>
+<p><strong>نتیجه اصلی:</strong> اکنون برای Barzin Holding یک مرکز کنترل زیرساخت، سیستم بکاپ خودکار، مستندات بازیابی، امنیت پایه و داشبورد مانیتورینگ Live ایجاد شده است.</p>
+</section>
+
+<section class="card">
+<h2>1. ساختار مرکزی ایجادشده</h2>
+<p>یک مسیر مرکزی برای نگهداری مستندات، بکاپ‌ها، اسکریپت‌ها، لاگ‌ها و اطلاعات عملیاتی ساخته شد:</p>
+<pre>/www/holding-barzin</pre>
+<table>
+<tr><th>بخش</th><th>کاربرد</th></tr>
+<tr><td><code>apps</code></td><td>مرجع پروژه‌ها و اپلیکیشن‌ها</td></tr>
+<tr><td><code>databases</code></td><td>آرشیو بکاپ دیتابیس‌ها و schemaها</td></tr>
+<tr><td><code>docs</code></td><td>مستندات، نقشه سرور، Recovery Plan و گزارش‌ها</td></tr>
+<tr><td><code>scripts</code></td><td>اسکریپت‌های بکاپ، Cleanup و تولید وضعیت Live</td></tr>
+<tr><td><code>logs</code></td><td>لاگ‌های بکاپ، Cleanup و وضعیت‌ها</td></tr>
+<tr><td><code>secrets</code></td><td>محل نگهداری فایل‌های حساس داخلی</td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>2. دیتابیس‌ها و بکاپ‌ها</h2>
+<p>دیتابیس‌های اصلی شناسایی، مرتب و برای هرکدام پوشه اختصاصی ایجاد شد.</p>
+<table>
+<tr><th>سیستم</th><th>Database</th><th>وضعیت</th></tr>
+<tr><td>Gozaresh</td><td><code>daily_reports</code></td><td><span class="badge ok">فعال و بکاپ‌دار</span></td></tr>
+<tr><td>CRM</td><td><code>topping_crm_db</code></td><td><span class="badge ok">فعال و بکاپ‌دار</span></td></tr>
+<tr><td>NFC</td><td><code>topping_nfc_db</code></td><td><span class="badge ok">آرشیو و بکاپ‌دار</span></td></tr>
+<tr><td>Veloxa</td><td><code>veloxa_db</code></td><td><span class="badge ok">جدید ساخته شد و بکاپ‌دار شد</span></td></tr>
+</table>
+<p>برای هر دیتابیس دو خروجی ایجاد شد:</p>
+<ul>
+<li>Full Backup</li>
+<li>Schema Backup</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>3. مشکل فنی بکاپ و راه‌حل</h2>
+<p>مشکل اصلی بکاپ این بود که PostgreSQL سرور نسخه 18 بود ولی ابزار پیش‌فرض <code>pg_dump</code> نسخه 14 بود. نتیجه این اختلاف نسخه، ساخت فایل‌های بکاپ صفر بایت بود.</p>
+<p>مسیر صحیح پیدا شد و برای بکاپ‌گیری استفاده شد:</p>
+<pre>/www/server/pgsql/bin/pg_dump</pre>
+<p><span class="badge ok">نتیجه:</span> بکاپ‌های واقعی و قابل استفاده تولید شدند.</p>
+</section>
+
+<section class="card">
+<h2>4. بکاپ خودکار و Cleanup</h2>
+<p>برای جلوگیری از وابستگی به بکاپ دستی، اسکریپت بکاپ خودکار ساخته و به Cron وصل شد.</p>
+<table>
+<tr><th>عملیات</th><th>زمان</th><th>توضیح</th></tr>
+<tr><td>Backup</td><td>03:00 AM</td><td>بکاپ روزانه دیتابیس‌ها</td></tr>
+<tr><td>Cleanup</td><td>04:00 AM</td><td>حذف بکاپ‌های قدیمی‌تر از 30 روز</td></tr>
+</table>
+<p>فایل‌های اصلی:</p>
+<pre>/www/holding-barzin/scripts/backup-all-databases.sh
+/www/holding-barzin/scripts/cleanup-old-backups.sh</pre>
+</section>
+
+<section class="card">
+<h2>5. امنیت سرور</h2>
+<ul>
+<li><span class="badge ok">انجام شد</span> PostgreSQL فقط روی <code>127.0.0.1</code> فعال شد.</li>
+<li><span class="badge ok">انجام شد</span> پورت عمومی <code>5432</code> از UFW حذف شد.</li>
+<li><span class="badge ok">انجام شد</span> Fail2Ban بررسی شد و فعال بود.</li>
+<li><span class="badge ok">انجام شد</span> فایل‌های حساس مثل <code>.env</code> برای CRM، Veloxa و Gozaresh مسدود شدند.</li>
+<li><span class="badge ok">تست شد</span> درخواست به <code>/.env</code> خروجی <code>403 Forbidden</code> داد.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>6. PM2 و بازیابی بعد از ریبوت</h2>
+<p>سرویس‌های Node.js با PM2 ذخیره شدند و Startup فعال شد تا بعد از ریبوت سرور، سرویس‌ها خودکار بالا بیایند.</p>
+<pre>pm2 save
+pm2 startup</pre>
+<table>
+<tr><th>Service</th><th>Port</th><th>Status</th></tr>
+<tr><td><code>kpi-crm-api</code></td><td>4000</td><td><span class="badge ok">Online</span></td></tr>
+<tr><td><code>nfc-api</code></td><td>8080</td><td><span class="badge ok">Online</span></td></tr>
+<tr><td><code>topping-ai-api</code></td><td>3001</td><td><span class="badge ok">Online</span></td></tr>
+<tr><td><code>veloxa-api</code></td><td>8081</td><td><span class="badge ok">Online</span></td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>7. مستندات ساخته‌شده</h2>
+<table>
+<tr><th>فایل</th><th>کاربرد</th></tr>
+<tr><td><code>/www/holding-barzin/docs/server-map.txt</code></td><td>نقشه سرور، سرویس‌ها، دامنه‌ها، دیتابیس‌ها و مسیرها</td></tr>
+<tr><td><code>/www/holding-barzin/docs/disaster-recovery-plan.txt</code></td><td>برنامه بازیابی در صورت خرابی VPS یا مهاجرت سرور</td></tr>
+<tr><td><code>/www/holding-barzin/docs/pm2-recovery.txt</code></td><td>دستورالعمل بازیابی PM2 و سرویس‌ها بعد از ریبوت</td></tr>
+<tr><td><code>/www/holding-barzin/docs/index.html</code></td><td>داشبورد اولیه HTML برای مستندات زیرساخت</td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>8. داشبوردهای آنلاین و لینک‌ها</h2>
+<p>برای مشاهده وضعیت زیرساخت، داشبورد آنلاین ایجاد شد و روی دامنه CRM منتشر شد.</p>
+<table>
+<tr><th>نام</th><th>لینک</th><th>توضیح</th></tr>
+<tr><td>Live Operations Dashboard</td><td><a href="https://crm.toppingcourier.ca/holding-dashboard.html" target="_blank">https://crm.toppingcourier.ca/holding-dashboard.html</a></td><td>نمایش Live وضعیت سرویس‌ها، بکاپ، دیسک، PostgreSQL و Fail2Ban</td></tr>
+<tr><td>Status JSON</td><td><a href="https://crm.toppingcourier.ca/holding-status.json" target="_blank">https://crm.toppingcourier.ca/holding-status.json</a></td><td>فایل JSON که اطلاعات Live داشبورد را تأمین می‌کند</td></tr>
+</table>
+</section>
+
+<section class="card">
+<h2>9. کدها و فایل‌های ساخته‌شده</h2>
+<table>
+<tr><th>فایل / کد</th><th>مسیر</th><th>کاربرد</th></tr>
+<tr><td>Backup Script</td><td><code>/www/holding-barzin/scripts/backup-all-databases.sh</code></td><td>بکاپ خودکار دیتابیس‌ها</td></tr>
+<tr><td>Cleanup Script</td><td><code>/www/holding-barzin/scripts/cleanup-old-backups.sh</code></td><td>حذف بکاپ‌های قدیمی‌تر از 30 روز</td></tr>
+<tr><td>Status Generator</td><td><code>/www/holding-barzin/scripts/generate-status.sh</code></td><td>تولید فایل JSON وضعیت Live</td></tr>
+<tr><td>Live Dashboard HTML</td><td><code>/www/wwwroot/crm.toppingcourier.ca/holding-dashboard.html</code></td><td>صفحه مانیتورینگ آنلاین</td></tr>
+<tr><td>Status JSON</td><td><code>/www/wwwroot/crm.toppingcourier.ca/holding-status.json</code></td><td>داده Live برای داشبورد</td></tr>
+</table>
+</section>
+
+<section class="card note">
+<h2>10. نکته امنیتی مهم درباره لینک آنلاین</h2>
+<p>داشبورد فعلاً روی لینک CRM قابل مشاهده است و اطلاعات کلی زیرساخت را نشان می‌دهد. این داشبورد نباید شامل پسورد، API Key، Connection String یا اطلاعات محرمانه باشد.</p>
+<p>پیشنهاد امنیتی برای مرحله بعد: اضافه کردن Basic Auth یا Cloudflare Access برای محدود کردن دسترسی.</p>
+</section>
+
+<section class="card">
+<h2>11. خروجی نهایی عملیات</h2>
+<p>در پایان این کار، زیرساخت Barzin Holding به وضعیت زیر رسید:</p>
+<ul>
+<li><span class="badge ok">مرتب‌سازی مرکزی</span> همه چیز در مسیر <code>/www/holding-barzin</code> متمرکز شد.</li>
+<li><span class="badge ok">بکاپ خودکار</span> دیتابیس‌ها هر روز ذخیره می‌شوند.</li>
+<li><span class="badge ok">امنیت پایه</span> PostgreSQL، UFW، Fail2Ban و .env Protection بررسی و تنظیم شدند.</li>
+<li><span class="badge ok">بازیابی</span> Disaster Recovery Plan و PM2 Recovery ساخته شدند.</li>
+<li><span class="badge ok">مانیتورینگ</span> داشبورد Live برای بررسی وضعیت سرویس‌ها ساخته شد.</li>
+<li><span class="badge ok">مستندسازی</span> نقشه سرور، مسیرها، سرویس‌ها و فایل‌ها ثبت شدند.</li>
+</ul>
+</section>
+
+<section class="card success">
+<h2>جمع‌بندی رسمی</h2>
+<p>این عملیات، پایه یک <strong>Infrastructure Control System</strong> برای Barzin Holding را ایجاد کرد. اکنون سرور قابل بررسی، قابل بازیابی، دارای بکاپ خودکار، دارای مستندات و دارای داشبورد مانیتورینگ Live است.</p>
+<p>این سند برای نگهداری داخلی، تحویل به مدیر IT، بررسی مدیریتی و ارزیابی وضعیت فنی سرور قابل استفاده است.</p>
+</section>
+
+<div class="footer">Prepared for Barzin Holding Infrastructure Documentation — 2026</div>
+</div>
+</body>
+</html>

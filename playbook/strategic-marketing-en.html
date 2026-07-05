@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topping Courier — Complete Lead Generation Strategy</title>
+<style>
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --ink: #172033;
+  --muted: #5f6b7a;
+  --brand: #1455d9;
+  --brand-dark: #0b327e;
+  --green: #0f8a5f;
+  --green-soft: #eafaf4;
+  --blue-soft: #eef4ff;
+  --yellow: #a16207;
+  --yellow-soft: #fff7df;
+  --red: #b42318;
+  --red-soft: #fff1f0;
+  --line: #d9e1ee;
+  --shadow: 0 10px 28px rgba(20,32,58,0.08);
+  --radius: 16px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Tahoma, Arial, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; text-align: left; }
+.page { max-width: 1200px; margin: 0 auto; padding: 30px 18px 80px; }
+
+/* HERO */
+.hero { background: linear-gradient(135deg, #0b245f, #1455d9); color: #fff; padding: 36px; border-radius: 24px; box-shadow: 0 18px 44px rgba(20,85,217,0.22); margin-bottom: 24px; }
+.hero h1 { font-size: 28px; margin-bottom: 10px; line-height: 1.3; }
+.hero p { font-size: 15px; opacity: 0.95; max-width: 900px; }
+.pill-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+.pill { display: inline-flex; align-items: center; padding: 7px 14px; border-radius: 999px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); font-size: 12.5px; font-weight: 700; }
+
+/* CARDS */
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px; margin: 20px 0; }
+.section-title { font-size: 22px; color: var(--brand-dark); font-weight: 800; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid var(--line); display: flex; align-items: center; gap: 10px; }
+.section-title .icon { font-size: 26px; }
+h3 { font-size: 16px; color: var(--ink); margin: 18px 0 10px; font-weight: 700; }
+
+/* CALLOUTS */
+.callout { background: var(--green-soft); border-right: 5px solid var(--green); padding: 14px 16px; border-radius: 12px; margin: 12px 0; font-size: 14px; }
+.note { background: var(--blue-soft); border-right: 5px solid var(--brand); padding: 14px 16px; border-radius: 12px; margin: 12px 0; font-size: 14px; }
+.warning { background: var(--red-soft); border-right: 5px solid var(--red); padding: 14px 16px; border-radius: 12px; margin: 12px 0; font-size: 14px; }
+.caution { background: var(--yellow-soft); border-right: 5px solid var(--yellow); padding: 14px 16px; border-radius: 12px; margin: 12px 0; font-size: 14px; }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.mini-card { background: #f9fbff; border: 1px solid var(--line); border-radius: 13px; padding: 16px; }
+.mini-card strong { display: block; color: var(--brand-dark); margin-bottom: 8px; font-size: 14px; }
+.mini-card ul { margin-left: 16px; font-size: 13px; }
+.mini-card li { margin: 5px 0; }
+
+/* TABLE */
+table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13.5px; }
+th, td { text-align: left; padding: 11px 13px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #edf3ff; color: var(--brand-dark); font-weight: 800; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #f8f9ff; }
+
+/* TAGS */
+.tag { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; white-space: nowrap; }
+.tag-p1 { color: #0f8a5f; background: #eafaf4; }
+.tag-p1b { color: #0b327e; background: #eef4ff; }
+.tag-p2 { color: #9a5700; background: #fff7df; }
+.tag-big { color: #7c3aed; background: #f3e8ff; }
+.tag-no { color: #b42318; background: #fff1f0; }
+
+/* FLOW STEPS */
+.flow-steps { display: flex; flex-direction: column; gap: 0; }
+.step { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.step:last-child { border-bottom: none; }
+.step-num { min-width: 36px; height: 36px; border-radius: 50%; background: var(--brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+.step-content { flex: 1; }
+.step-content strong { display: block; font-size: 14.5px; color: var(--brand-dark); margin-bottom: 4px; }
+.step-content p { font-size: 13.5px; color: var(--muted); margin: 0; }
+
+/* CHANNELS */
+.channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
+.ch { border-radius: 10px; padding: 12px 14px; font-size: 13px; font-weight: 700; border: 2px solid; text-align: center; }
+.ch-li  { background: #0c1a2e; border-color: #2563eb; color: #93c5fd; }
+.ch-em  { background: #1a0a00; border-color: #ea580c; color: #fdba74; }
+.ch-fb  { background: #0d1f3c; border-color: #1877f2; color: #93c5fd; }
+.ch-tg  { background: #0a1a2e; border-color: #2ca5e0; color: #67e8f9; }
+.ch-wa  { background: #052e1c; border-color: #25d366; color: #86efac; }
+.ch-gb  { background: #1a1200; border-color: #fbbc05; color: #fde68a; }
+.ch-ph  { background: #2d0a0a; border-color: #dc2626; color: #fca5a5; }
+
+/* LOCATION BADGES */
+.loc-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.loc-badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 10px; font-size: 13px; font-weight: 700; border: 1.5px solid; }
+.loc-1 { background: #fff7df; border-color: #ca8a04; color: #92400e; }
+.loc-2 { background: #eef4ff; border-color: #2563eb; color: #1e3a8a; }
+
+/* KPI BOX */
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 14px 0; }
+.kpi { background: linear-gradient(135deg, #eef4ff, #f8faff); border: 2px solid #c7d9ff; border-radius: 14px; padding: 18px; text-align: center; }
+.kpi .num { font-size: 36px; font-weight: 900; color: var(--brand); }
+.kpi .lbl { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* DECISION BOXES */
+.decision-branch { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+.branch-yes { background: #eafaf4; border: 2px solid #16a34a; border-radius: 14px; padding: 16px; }
+.branch-no  { background: #fff1f0; border: 2px solid #dc2626; border-radius: 14px; padding: 16px; }
+.branch-label { font-size: 13px; font-weight: 800; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.branch-yes .branch-label { color: #0f8a5f; }
+.branch-no  .branch-label { color: #b42318; }
+.branch-steps { font-size: 13px; color: var(--ink); }
+.branch-steps li { margin: 6px 0; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 3px; background: var(--line); border-radius: 3px; }
+.tl-item { position: relative; padding-bottom: 20px; }
+.tl-dot { position: absolute; left: -20px; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--brand); background: #fff; }
+.tl-item .day { font-size: 12px; font-weight: 800; color: var(--brand); margin-bottom: 3px; }
+.tl-item .action { font-size: 13.5px; }
+
+/* ROADMAP PLANS */
+.plan-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.plan-badge { padding: 6px 16px; border-radius: 999px; font-weight: 800; font-size: 13px; }
+.badge-p1 { background: #eafaf4; color: #0f8a5f; border: 2px solid #16a34a; }
+.badge-p2 { background: #f3e8ff; color: #7c3aed; border: 2px solid #9333ea; }
+
+/* FOOTER */
+.footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line); }
+
+/* PROGRESS ARROW */
+.progress-row { display: flex; align-items: center; justify-content: center; gap: 0; margin: 16px 0; flex-wrap: wrap; }
+.prog-box { background: #eef4ff; border: 2px solid #2563eb; border-radius: 12px; padding: 12px 20px; text-align: center; min-width: 120px; }
+.prog-box .n { font-size: 28px; font-weight: 900; color: var(--brand); }
+.prog-box .l { font-size: 12px; color: var(--muted); }
+.prog-arrow { font-size: 28px; color: #2563eb; padding: 0 8px; }
+.prog-box.highlight { background: linear-gradient(135deg, #0b245f, #1455d9); border-color: #0b245f; }
+.prog-box.highlight .n { color: #fff; }
+.prog-box.highlight .l { color: rgba(255,255,255,0.8); }
+
+@media (max-width: 880px) {
+  .grid-2, .grid-3, .grid-4, .channel-grid, .decision-branch, .kpi-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 22px; }
+  .hero { padding: 22px; }
+  .progress-row { flex-direction: column; }
+  .prog-arrow { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>🚀 Topping Courier — Complete B2B Lead Generation Strategy</h1>
+    <p>A complete roadmap to generate 20 real leads in month one and scale to 50 leads in month two — including Roadmap 1 (SMB) and Roadmap 2 (Enterprise) with neighborhood and industry prioritization.</p>
+    <div class="pill-row">
+      <span class="pill">🗺️ 10 Neighborhood GTA</span>
+      <span class="pill">📦 B2B Only</span>
+      <span class="pill">🔄 Recurring Accounts</span>
+      <span class="pill">📍 Richmond Hill First</span>
+      <span class="pill">🏢 SMB + Enterprise</span>
+      <span class="pill">🎯 70 SMB + 2 Enterprise / week</span>
+    </div>
+  </section>
+
+  <!-- KPI GROWTH -->
+  <section class="card">
+    <div class="section-title"><span class="icon">📈</span> Lead Growth Target</div>
+    <div class="progress-row">
+      <div class="prog-box">
+        <div class="n">25</div>
+        <div class="l">Companies identified<br>from Hunter (weekly)</div>
+      </div>
+      <div class="prog-arrow">→</div>
+      <div class="prog-box">
+        <div class="n">20</div>
+        <div class="l">Qualified leads<br>Month 1 🎯</div>
+      </div>
+      <div class="prog-arrow">→</div>
+      <div class="prog-box highlight">
+        <div class="n">50</div>
+        <div class="l">Qualified leads<br>Month 2 🚀</div>
+      </div>
+      <div class="prog-arrow">→</div>
+      <div class="prog-box">
+        <div class="n">100+</div>
+        <div class="l">Leads in pipeline<br>Month 3</div>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>✅ If we reach 20 real leads this month,</strong> it proves the system works, and next month we can scale the same method to reach 50 leads. Hitting 20 targeted leads from 100 initial contacts is achievable — a 20% early-stage conversion rate is realistic.
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section class="card">
+    <div class="section-title"><span class="icon">📍</span> Target Neighborhoods — Priority Order</div>
+    <div class="loc-grid">
+      <div class="loc-badge loc-1">① Richmond Hill</div>
+      <div class="loc-badge loc-1">② Markham</div>
+      <div class="loc-badge loc-1">③ Vaughan</div>
+      <div class="loc-badge loc-1">④ Concord</div>
+      <div class="loc-badge loc-1">⑤ North York</div>
+      <div class="loc-badge loc-2">⑥ Mississauga</div>
+      <div class="loc-badge loc-2">⑦ Brampton</div>
+      <div class="loc-badge loc-2">⑧ Scarborough</div>
+      <div class="loc-badge loc-2">⑨ Etobicoke</div>
+      <div class="loc-badge loc-2">⑩ Aurora</div>
+    </div>
+    <div class="note">
+      <strong>📌 Neighborhood rule:</strong> First, contact every target business in Richmond Hill and run the full outreach flow. After finishing that neighborhood, move to Markham, and continue the same way. This keeps the team focused and improves the system in each area.
+    </div>
+    <table>
+      <thead><tr><th>Neighborhood</th><th>Best starter industries</th><th>Sample Google/LinkedIn search</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Richmond Hill</strong></td><td>Printing, IT/POS, Packaging, Promotional Products</td><td>print shop Richmond Hill; packaging supplier Richmond Hill; POS supplier Richmond Hill</td></tr>
+        <tr><td><strong>Markham</strong></td><td>IT, CCTV, Electronics, Print, Promotional</td><td>POS supplier Markham; CCTV distributor Markham; promotional products Markham</td></tr>
+        <tr><td><strong>Vaughan / Concord</strong></td><td>Packaging, Labels, Signage, Uniforms, Apparel</td><td>packaging supplier Vaughan; signage company Concord; uniform supplier Vaughan</td></tr>
+        <tr><td><strong>North York</strong></td><td>Print, Embroidery, Beauty Supply, Clinic Supplies</td><td>embroidery shop North York; beauty supply North York; print shop North York</td></tr>
+        <tr><td><strong>Mississauga</strong></td><td>Packaging, Office Supplies, Coffee, Shipping Supplies</td><td>shipping supplies Mississauga; office coffee supplier Mississauga</td></tr>
+        <tr><td><strong>Brampton</strong></td><td>Packaging, Workwear, Label, Shipping Supply</td><td>workwear supplier Brampton; label supplier Brampton; packaging Brampton</td></tr>
+        <tr><td><strong>Scarborough</strong></td><td>Print, Dry Food, Packaging, Apparel Production</td><td>dry food distributor Scarborough; screen printing Scarborough</td></tr>
+        <tr><td><strong>Etobicoke</strong></td><td>Packaging, Print, Office Supply, Fulfillment</td><td>commercial printer Etobicoke; office supply Etobicoke</td></tr>
+        <tr><td><strong>Aurora</strong></td><td>Print, Promotional, Light Supply, Coffee</td><td>promotional products Aurora; office coffee Aurora; print shop Aurora</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===================== ROADMAP 1 ===================== -->
+  <section class="card">
+    <div class="plan-header">
+      <div class="section-title" style="border:none;padding:0;margin:0;"><span class="icon">🟢</span> Roadmap 1 — Small and Medium Brands (SMB)</div>
+      <span class="plan-badge badge-p1">SMB · Small & Medium Business</span>
+    </div>
+    <div class="note">For each neighborhood, <strong>all target industries below</strong> are contacted. After one neighborhood is completed, the next neighborhood starts.</div>
+
+    <h3>📦 Roadmap 1 Target Industries (Priority Order)</h3>
+    <table>
+      <thead><tr><th>Phase</th><th>Industry / Category</th><th>Sample businesses</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="tag tag-p1">Phase 1A</span></td>
+          <td>Print, Signage & Marketing</td>
+          <td>Commercial print shops, Signage companies, Sticker/label printers, Brochure printers</td>
+          <td style="color:#0f8a5f;font-weight:800;">Very high</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-p1">Phase 1B</span></td>
+          <td>Uniforms, Embroidery & Promotional</td>
+          <td>Uniform suppliers, Embroidery shops, Screen printing, Promotional product companies</td>
+          <td style="color:#0f8a5f;font-weight:800;">Very high</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-p1">Phase 1C</span></td>
+          <td>Packaging & Labels</td>
+          <td>Packaging Suppliers, Label Suppliers, Shipping Supply Companies, Mailer Box Suppliers, Office Supply Distributors, Stationery Suppliers</td>
+          <td style="color:#0f8a5f;font-weight:800;">High</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-p1">Phase 1D</span></td>
+          <td>Office Coffee & Snacks</td>
+          <td>Office Coffee Suppliers, Workplace Snack Suppliers, Coffee Roasters, Tea Suppliers, Corporate Pantry Services</td>
+          <td style="color:#0f8a5f;font-weight:800;">High</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-p1b">Phase 1E</span></td>
+          <td>IT & Equipment</td>
+          <td>POS Suppliers, CCTV Suppliers, Security Equipment Suppliers, IT Hardware Suppliers, Network Equipment Suppliers, Electronics Wholesalers</td>
+          <td style="color:#0b327e;font-weight:800;">Medium-high</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-p1b">Phase 1B+</span></td>
+          <td>Beauty, Salon & Spa Supplies</td>
+          <td>Beauty supply distributors, Hair salon suppliers, Spa product suppliers, Cosmetic distributors</td>
+          <td style="color:#0b327e;font-weight:800;">Medium-high</td>
+        </tr>
+        <tr>
+          <td><span class="tag tag-p2">Phase 2</span></td>
+          <td>Dental, Optical & Clinic Supplies</td>
+          <td>Dental supply distributors, Optical supply companies, Clinic supply companies</td>
+          <td style="color:#9a5700;font-weight:800;">After trust is built</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- OUTREACH FLOW ROADMAP 1 -->
+  <section class="card">
+    <div class="section-title"><span class="icon">🔄</span> Outreach Flow — Roadmap 1 (SMB)</div>
+
+    <div class="flow-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>🔍 Find 70 companies from Hunter / LinkedIn</strong>
+          <p>Each week, identify 70 companies from the current neighborhood + target industry. Data: name, website, LinkedIn, email, phone, decision-maker name.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>📊 Analyze and score (0 to 10)</strong>
+          <p>Based on: recurring potential, B2B fit, vehicle fit, risk level, batching potential, and service expectation — only scores of 8+ enter primary outreach.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>🚚 Check current courier partnership</strong>
+          <p>Do they already use a courier? Who are they working with? Find this from their website, LinkedIn posts, and Google reviews.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>🔎 Review the company’s LinkedIn posts</strong>
+          <p>What do they post? What challenges do they show? Use that insight to create targeted comments.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <strong>💬 Post a targeted LinkedIn comment</strong>
+          <p>Write comments that show research, understanding, and value — not direct promotion.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="decision-branch">
+      <div class="branch-yes">
+        <div class="branch-label">✅ Replied to comment — same day</div>
+        <ul class="branch-steps">
+          <li>📩 LinkedIn direct message the same day</li>
+          <li>📧 Send a personalized email</li>
+          <li>🗺️ Direct them to Google Business Profile for trust-building</li>
+          <li>📅 Set a meeting (phone/address — not email)</li>
+        </ul>
+      </div>
+      <div class="branch-no">
+        <div class="branch-label">❌ No reply — Follow-up</div>
+        <ul class="branch-steps">
+          <li>💬 Second comment after 3 days</li>
+          <li>📧 Send email 2 more days later</li>
+          <li>📩 LinkedIn Direct Message</li>
+          <li>📘 Facebook Message</li>
+          <li>✈️ Telegram Message</li>
+          <li>💬 WhatsApp Message</li>
+          <li>🗂️ If still no response → archive for marketer phone call</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>⏰ Outreach timeline per lead</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="day">Day 1</div>
+        <div class="action">💬 Targeted LinkedIn comment</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="day">Day 1 (if replied) / Day 4 (if no reply)</div>
+        <div class="action">📩 LinkedIn Direct Message + 📧 first email</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="day">Day 7</div>
+        <div class="action">📘 Facebook / ✈️ Telegram / 💬 WhatsApp (if still no reply)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="day">Day 10</div>
+        <div class="action">📧 Second email (different angle)</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="day">Day 14</div>
+        <div class="action">🗂️ Archive → marketer call list</div>
+      </div>
+    </div>
+
+    <h3>📢 Communication channels</h3>
+    <div class="channel-grid">
+      <div class="ch ch-li">💼 LinkedIn Comment<br><small>first</small></div>
+      <div class="ch ch-li">📩 LinkedIn DM<br><small>second</small></div>
+      <div class="ch ch-em">📧 Email<br><small>third</small></div>
+      <div class="ch ch-fb">📘 Facebook<br><small>fourth</small></div>
+      <div class="ch ch-tg">✈️ Telegram<br><small>fifth</small></div>
+      <div class="ch ch-wa">💬 WhatsApp<br><small>sixth</small></div>
+      <div class="ch ch-gb">🗺️ Google Business<br><small>trust-building</small></div>
+      <div class="ch ch-ph">📞 Phone call<br><small>archive</small></div>
+    </div>
+  </section>
+
+  <!-- ===================== ROADMAP 2 ===================== -->
+  <section class="card">
+    <div class="plan-header">
+      <div class="section-title" style="border:none;padding:0;margin:0;"><span class="icon">🟣</span> Roadmap 2 — Large Brands (Enterprise)</div>
+      <span class="plan-badge badge-p2">Enterprise · Large Business</span>
+    </div>
+    <div class="note">
+      <strong>📌 Same 10 neighborhoods and same industries, but larger brands.</strong> Each week, identify 2 large brands through social media or Hunter. Key difference: instead of only contacting the company, connect directly with <strong>all decision-making members</strong>.
+    </div>
+
+    <div class="grid-2">
+      <div class="mini-card">
+        <strong>👥 Decision-makers to identify</strong>
+        <ul>
+          <li>Owner / CEO / Founder / President</li>
+          <li>Operations Manager / Director</li>
+          <li>Logistics Manager / Coordinator</li>
+          <li>Procurement Manager</li>
+          <li>Warehouse / Production Manager</li>
+          <li>Office Manager</li>
+          <li>Sales Manager / Customer Service Manager</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <strong>🔍 Tools to find decision makers</strong>
+        <ul>
+          <li>LinkedIn Sales Navigator (Company + Role filter)</li>
+          <li>Hunter.io (corporate email)</li>
+          <li>Google: "Operations Manager [Company Name]"</li>
+          <li>LinkedIn Company Page → People</li>
+          <li>Instagram / Facebook Business Page</li>
+          <li>Website → About Us / Team</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>🔄 Outreach Flow — Roadmap 2 (Enterprise)</h3>
+    <div class="flow-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>🏢 Run Roadmap 1 once at company level</strong>
+          <p>Company LinkedIn comment, company email, and company Facebook page — one full pass.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>👥 Identify all decision makers</strong>
+          <p>Full list: name, title, personal LinkedIn, personal email, and phone (if possible).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>📩 Personal LinkedIn outreach — first</strong>
+          <p>Message: "Hi [Name], I noticed [Company] is active in [industry] — are you currently working with a courier company for deliveries?"</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <strong>📧 Personal email — second</strong>
+          <p>If there is no reply, send an email with the same angle. Focus on Topping advantages: dedicated team, higher speed, every package matters.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <strong>📘 Personal Facebook / ✈️ Telegram / 💬 WhatsApp — third</strong>
+          <p>If there is still no reply, use their personal social channels.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <strong>💬 Comment on personal LinkedIn posts</strong>
+          <p>Leave smart comments on their posts to get noticed, then send a direct message.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>🎯 Roadmap 2 first message (example):</strong><br>
+      "Hi [Name], I saw that [Company] is active in [industry] in [neighborhood]. Are you currently using a courier for your product deliveries? Topping Courier works exclusively in B2B and delivers each package faster than competitors. Can we schedule a 15-minute call?"
+    </div>
+
+    <div class="decision-branch">
+      <div class="branch-yes">
+        <div class="branch-label">✅ Replied</div>
+        <ul class="branch-steps">
+          <li>📩 LinkedIn + 📧 follow-up email</li>
+          <li>🗺️ Google Business for trust-building</li>
+          <li>📅 Meeting setup (phone/address)</li>
+          <li>📋 Prepare a company briefing document</li>
+        </ul>
+      </div>
+      <div class="branch-no">
+        <div class="branch-label">❌ No response (no decision maker)</div>
+        <ul class="branch-steps">
+          <li>🔄 Move to the next person in the DM list</li>
+          <li>📘 Personal Facebook outreach</li>
+          <li>✈️ Personal Telegram outreach</li>
+          <li>💬 Personal WhatsApp outreach</li>
+          <li>🗂️ Archive → marketer phone call</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warning">
+      <strong>⚠️ Key Roadmap 2 difference:</strong> Company-level contact happens once. But each decision maker is approached individually — each follows a full outreach path.
+    </div>
+  </section>
+
+  <!-- CRM TRACKING -->
+  <section class="card">
+    <div class="section-title"><span class="icon">🗂️</span> Tracking and CRM System</div>
+    <div class="note">Without accurate tracking, 25+ parallel companies will become unmanageable. Track these fields for every lead.</div>
+    <div class="grid-2">
+      <div class="mini-card">
+        <strong>📝 Required fields per lead</strong>
+        <ul>
+          <li>Company name + website</li>
+          <li>Neighborhood (GTA Zone)</li>
+          <li>Industry / phase</li>
+          <li>Decision maker name + title</li>
+          <li>Company LinkedIn + personal LinkedIn</li>
+          <li>Email (company + personal)</li>
+          <li>Phone number</li>
+          <li>Score 0 to 10</li>
+          <li>Current courier status</li>
+          <li>Last contact date</li>
+          <li>Channel used</li>
+          <li>Next step + date</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <strong>📊 Pipeline stages (Status)</strong>
+        <ul>
+          <li>🆕 New — recently added</li>
+          <li>🔍 Researched — analyzed</li>
+          <li>💬 Commented — comment posted</li>
+          <li>📩 Messaged — message sent</li>
+          <li>📧 Emailed — email sent</li>
+          <li>🔄 Multi-channel — multiple channels active</li>
+          <li>💬 Responded — replied</li>
+          <li>📅 Meeting Set — meeting scheduled</li>
+          <li>✅ Won — collaboration started</li>
+          <li>🗂️ Archived — archived / marketer</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>🛠️ Recommended tools:</strong> Notion (free, simple), HubSpot Free, or Google Sheets with proper filters. Most important: update daily.
+    </div>
+  </section>
+
+  <!-- MESSAGE TEMPLATES -->
+  <section class="card">
+    <div class="section-title"><span class="icon">✍️</span> Message Structure (Template Framework)</div>
+    <div class="grid-2">
+      <div class="mini-card">
+        <strong>💬 LinkedIn comment (sample structure)</strong>
+        <p style="font-size:13px;margin-top:8px;">✅ <em>"[A point about the post] — in [industry], delivery challenges are usually [relevant challenge]. Interesting that [value point or smart question]."</em></p>
+        <p style="font-size:12px;color:var(--muted);">❌ No direct promotion in comments</p>
+      </div>
+      <div class="mini-card">
+        <strong>📩 First LinkedIn DM (sample)</strong>
+        <p style="font-size:13px;margin-top:8px;"><em>"Hi [Name], I saw your comment — are you currently using a courier for product deliveries? Topping Courier is B2B-focused and much faster. Do you have 15 minutes?"</em></p>
+      </div>
+      <div class="mini-card">
+        <strong>📧 First email (structure)</strong>
+        <ul style="font-size:13px;">
+          <li><strong>Subject:</strong> [Company Name] + Dedicated Courier Service</li>
+          <li>Short intro + what I saw about your business</li>
+          <li>One question: are you currently using a courier?</li>
+          <li>Topping key advantage: dedicated team, every package matters</li>
+          <li>CTA: 15-minute conversation</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <strong>📋 Pre-meeting prep</strong>
+        <ul style="font-size:13px;">
+          <li>Company briefing document</li>
+          <li>Review their Google reviews</li>
+          <li>Defined key questions</li>
+          <li>Initial proposal ready</li>
+          <li>Topping Google Business Profile ready</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>🔑 Topping core message across all channels:</strong> "Topping Courier has a dedicated B2B team — every package matters to us, and we deliver much faster than competitors."
+    </div>
+    <div class="warning">
+      <strong>❌ Never say:</strong> emergency courier, rush delivery, refrigerated, pallet, freight, heavy industrial
+    </div>
+  </section>
+
+  <!-- LEAD SCORING -->
+  <section class="card">
+    <div class="section-title"><span class="icon">⭐</span> Lead Scoring Model (0 to 12)</div>
+    <table>
+      <thead><tr><th>Factor</th><th>Score 0</th><th>Score 1</th><th>Score 2</th></tr></thead>
+      <tbody>
+        <tr><td>Recurring potential</td><td>No recurring need</td><td>Sometimes recurring</td><td>Weekly / daily</td></tr>
+        <tr><td>B2B fit</td><td>Consumer only</td><td>Mixed B2B/B2C</td><td>Fully B2B</td></tr>
+        <tr><td>Vehicle fit</td><td>Needs truck/pallet</td><td>Sometimes van-sized</td><td>Car/Van friendly</td></tr>
+        <tr><td>Risk level</td><td>Hazardous / High-value</td><td>Moderate caution</td><td>Low risk</td></tr>
+        <tr><td>Batching potential</td><td>Scattered single drops</td><td>Somewhat concentrated</td><td>Multiple drops / route</td></tr>
+        <tr><td>Service expectation</td><td>Emergency / Rush</td><td>Mixed</td><td>Scheduled same/next day</td></tr>
+      </tbody>
+    </table>
+    <div class="grid-3" style="margin-top:14px;">
+      <div class="mini-card" style="border-color:#16a34a;">
+        <strong style="color:#0f8a5f;">✅ 9 to 12 — first priority</strong>
+        <p style="font-size:13px;">Go to primary outreach</p>
+      </div>
+      <div class="mini-card" style="border-color:#ca8a04;">
+        <strong style="color:#92400e;">⏳ 6 to 8 — second priority</strong>
+        <p style="font-size:13px;">After top-priority segment</p>
+      </div>
+      <div class="mini-card" style="border-color:#dc2626;">
+        <strong style="color:#b42318;">❌ Below 6 — reject or archive</strong>
+        <p style="font-size:13px;">Set aside for now</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMING & BEST PRACTICES -->
+  <section class="card">
+    <div class="section-title"><span class="icon">⏰</span> Best Timing and Execution Tips</div>
+    <div class="grid-2">
+      <div class="mini-card">
+        <strong>📅 Best day and time</strong>
+        <ul>
+          <li><strong>LinkedIn:</strong> Tuesday to Wednesday, 9-11 AM</li>
+          <li><strong>Email:</strong> Monday or Tuesday, 8-10 AM</li>
+          <li><strong>Follow-up:</strong> Keep 3-5 days between touches</li>
+          <li><strong>WhatsApp/Telegram:</strong> Midweek afternoons</li>
+        </ul>
+      </div>
+      <div class="mini-card">
+        <strong>🔑 Key success tips</strong>
+        <ul>
+          <li>Your LinkedIn profile must be professional and ready</li>
+          <li>Topping Google Business Profile must be up to date</li>
+          <li>Every message must be personalized — no copy-paste</li>
+          <li>Keep 3-5 days between channels</li>
+          <li>After meeting: summary email + proposal</li>
+          <li>Update CRM daily</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEEKLY PLAN -->
+  <section class="card">
+    <div class="section-title"><span class="icon">📆</span> Recommended Weekly Plan</div>
+    <table>
+      <thead><tr><th>Day</th><th>Roadmap 1 (SMB)</th><th>Roadmap 2 (Enterprise)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Saturday</strong></td><td>Find 70 new companies + analyze and score</td><td>Find 2 large brands + decision-maker list</td></tr>
+        <tr><td><strong>Sunday</strong></td><td>Review current courier + LinkedIn posts</td><td>Full research on decision makers</td></tr>
+        <tr><td><strong>Monday</strong></td><td>Post targeted LinkedIn comments</td><td>Comment on company post + personal LinkedIn DM outreach</td></tr>
+        <tr><td><strong>Tuesday</strong></td><td>Follow up responses — DM + email responders</td><td>Personal emails to decision makers</td></tr>
+        <tr><td><strong>Wednesday</strong></td><td>Second-comment follow-up for non-responders</td><td>Personal Facebook/Telegram/WhatsApp for DMs</td></tr>
+        <tr><td><strong>Thursday</strong></td><td>Multi-channel (Facebook/Telegram/WhatsApp) for non-responders</td><td>Follow up possible meetings + briefing</td></tr>
+        <tr><td><strong>Friday</strong></td><td>Update CRM + review week results + prep next week</td><td>Update CRM + weekly KPI</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- KPI METRICS -->
+  <section class="card">
+    <div class="section-title"><span class="icon">📊</span> Success Metrics (KPI)</div>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="num">70</div>
+        <div class="lbl">SMB companies identified / week</div>
+      </div>
+      <div class="kpi">
+        <div class="num">30%</div>
+        <div class="lbl">LinkedIn comment response rate</div>
+      </div>
+      <div class="kpi">
+        <div class="num">20%</div>
+        <div class="lbl">Conversion rate to meetings</div>
+      </div>
+      <div class="kpi">
+        <div class="num">20</div>
+        <div class="lbl">Qualified leads in month 1 🎯</div>
+      </div>
+      <div class="kpi">
+        <div class="num">50</div>
+        <div class="lbl">Qualified leads in month 2 🚀</div>
+      </div>
+      <div class="kpi">
+        <div class="num">2</div>
+        <div class="lbl">Large brands / week (Roadmap 2)</div>
+      </div>
+    </div>
+    <div class="callout">
+      <strong>📌 Golden rule:</strong> If we convert 100 initial contacts into 20 real leads, then next month, with message optimization and higher outreach volume, reaching 50 leads is fully realistic.
+    </div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="card" style="background: linear-gradient(135deg, #eef4ff, #f8faff); border-color: #c7d9ff;">
+    <div class="section-title"><span class="icon">📌</span> Strategy Summary</div>
+    <div class="grid-2">
+      <div>
+        <h3 style="color:#0f8a5f;">🟢 Roadmap 1 — SMB</h3>
+        <ul style="font-size:14px;">
+          <li>Small and medium brands</li>
+          <li>10 GTA neighborhoods in sequence</li>
+          <li>All target industries in each neighborhood</li>
+          <li>Contact company page + decision maker</li>
+          <li>8 communication channels in sequence</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color:#7c3aed;">🟣 Roadmap 2 — Enterprise</h3>
+        <ul style="font-size:14px;">
+          <li>Large brands (2 per week)</li>
+          <li>Same 10 neighborhoods — same industries</li>
+          <li>Run Roadmap 1 once at company level</li>
+          <li>Separate outreach to all decision makers</li>
+          <li>Personal LinkedIn/Email/Social outreach</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>Topping Courier — Internal B2B Lead Generation Strategy · Full Version</p>
+    <p style="margin-top:6px;font-size:12px;">Recommended review checkpoint: after first 100 contacts and first 20 meetings</p>
+  </div>
+
+</div>
+<script src="../assets/i18n-pairs.js"></script>
+<script src="../assets/tc-nav.js"></script>
+</body>
+</html>
