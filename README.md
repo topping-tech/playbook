@@ -132,8 +132,8 @@ topic-descriptor[-language].html
 5. داشبورد در آدرس زیر در دسترس است:
 
 ```text
-https://<username>.github.io/<repo-name>/
-```
+(https://topping-tech.github.io/playbook/)
+
 
 ## نکات امنیتی
 
