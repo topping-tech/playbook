@@ -341,7 +341,7 @@ code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; bord
   <header class="hero">
     <div class="hero-text">
       <h1>✨ داشبورد اسناد</h1>
-      <p>کتابخانه HTML دوزبانه FA / EN — Playbook، Sales، Business Plan و بیشتر.</p>
+      <p>کتابخانه HTML دوزبانه — <b>۲۲ فعال</b> + <b>۱۰۸ آرشیو</b> = ۱۳۲ فایل کل</p>
       <div class="stats">
         <div class="stat"><span class="emoji">📄</span><b id="statTotal">0</b><span>کل</span></div>
         <div class="stat"><span class="emoji">✅</span><b id="statActive">0</b><span>فعال</span></div>
@@ -364,8 +364,10 @@ code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; bord
       <option value="mixed">🔀 Mixed</option>
     </select>
     <select id="statusFilter">
-      <option value="all">⚡ همه</option>
-      <option value="Active">✅ فعال</option>
+      <option value="all">⚡ همه (۱۳۲)</option>
+      <option value="Active">✅ فعال (۲۲)</option>
+      <option value="Duplicate">📦 تکراری</option>
+      <option value="Old Version">🗄️ آرشیو قدیمی</option>
     </select>
   </div>
 
@@ -393,23 +395,26 @@ code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; bord
 </div>
 
 <script src="assets/files-catalog.js"></script>
+<script src="assets/files-catalog-archive.js"></script>
 <script>
+const allFiles = files.concat(typeof archivedFiles !== "undefined" ? archivedFiles : []);
 const UI = { open:"🔗 باز کردن", active:"✅ فعال", all:"✨ همه", catAll:"📁 همه دسته‌ها" };
-const catEmoji = { "Playbook":"📘", "Funding":"💰", "Sales":"📈", "Business Plan":"🗺️", "Proposals":"📄", "all":"✨" };
+const catEmoji = { "Playbook":"📘", "Funding":"💰", "Sales":"📈", "Business Plan":"🗺️", "Proposals":"📄", "Archive":"🗄️", "all":"✨" };
 const langLabel = { fa:"🇮🇷 FA", en:"🇬🇧 EN", mixed:"🔀 Mix" };
+const statusLabel = { Active:"✅ فعال", Duplicate:"📦 تکراری", "Old Version":"🗄️ قدیمی" };
 const $ = id => document.getElementById(id);
 
 function fmtKB(b) { return b < 1024 ? b+" B" : (b/1024).toFixed(1)+" KB"; }
 
 function buildFilters() {
-  [...new Set(files.map(f=>f.category))].sort().forEach(c => {
+  [...new Set(allFiles.map(f=>f.category))].sort().forEach(c => {
     const o = document.createElement("option");
     o.value = c; o.textContent = (catEmoji[c]||"📁")+" "+c;
     $("categoryFilter").appendChild(o);
   });
 
   [["all",UI.all], ...Object.entries(catEmoji).filter(([k])=>k!=="all")].forEach(([k,l]) => {
-    if (k!=="all" && !files.some(f=>f.category===k)) return;
+    if (k!=="all" && !allFiles.some(f=>f.category===k)) return;
     const b = document.createElement("button");
     b.className = "cat-pill"+(k==="all"?" active":"");
     b.dataset.cat = k;
@@ -433,8 +438,8 @@ function getFiltered() {
   const cat=$("categoryFilter").value;
   const lang=$("languageFilter").value;
   const stat=$("statusFilter").value;
-  return files.filter(f => {
-    const hay=(f.title+f.htmlTitle+f.description+f.category).toLowerCase();
+  return allFiles.filter(f => {
+    const hay=(f.title+f.htmlTitle+f.description+f.category+f.file).toLowerCase();
     return (!q||hay.includes(q)) && (cat==="all"||f.category===cat) && (lang==="all"||f.language===lang) && (stat==="all"||f.status===stat);
   });
 }
@@ -449,6 +454,7 @@ function render() {
     const altBtn = f.alt
       ? `<a class="btn btn-dl" href="${f.alt}" title="زبان دیگر">${f.language==="fa"?"🇬🇧 EN":"🇮🇷 FA"}</a>`
       : `<a class="btn btn-dl" href="${f.file}" download>⬇️</a>`;
+    const st = statusLabel[f.status] || f.status;
     const card = document.createElement("article");
     card.className = "card";
     card.innerHTML = `
@@ -461,9 +467,9 @@ function render() {
       </div>
       <div class="meta">
         <span class="pill">${catEmoji[f.category]||"📁"} ${f.category}</span>
-        <span class="pill">${langLabel[f.language]||f.language}</span>
+        <span class="pill">${langLabel[f.language]||f.language||"—"}</span>
         <span class="pill">${fmtKB(f.size)}</span>
-        <span class="pill pill-active">${UI.active}</span>
+        <span class="pill pill-active">${st}</span>
       </div>
       <div class="actions">
         <a class="btn btn-open" href="${f.file}" target="_blank">${UI.open}</a>
@@ -472,15 +478,15 @@ function render() {
     $("cards").appendChild(card);
 
     const tr = document.createElement("tr");
-    tr.innerHTML = `<td>${f.emoji} <b>${f.title}</b></td><td>${f.category}</td><td>${langLabel[f.language]||f.language}</td><td>${fmtKB(f.size)}</td><td><code>${f.file}</code></td>`;
+    tr.innerHTML = `<td>${f.emoji} <b>${f.title}</b></td><td>${f.category}</td><td>${langLabel[f.language]||"—"}</td><td>${fmtKB(f.size)}</td><td><code>${f.file}</code></td>`;
     $("tableBody").appendChild(tr);
   });
 
-  const active = files.filter(f=>f.status==="Active");
-  $("statTotal").textContent = files.length;
+  const active = allFiles.filter(f=>f.status==="Active");
+  $("statTotal").textContent = allFiles.length;
   $("statActive").textContent = active.length;
-  $("statCategories").textContent = new Set(files.map(f=>f.category)).size;
-  $("statSize").textContent = fmtKB(active.reduce((s,f)=>s+f.size,0));
+  $("statCategories").textContent = new Set(allFiles.map(f=>f.category)).size;
+  $("statSize").textContent = fmtKB(allFiles.reduce((s,f)=>s+f.size,0));
 }
 
 buildFilters();

@@ -1,34 +1,59 @@
 /**
  * Topping Tech floating nav: Back Home + FA/EN language switch
- * Load AFTER i18n-pairs.js:
- *   <script src="../assets/i18n-pairs.js"></script>
- *   <script src="../assets/tc-nav.js"></script>
+ * Works on local server AND GitHub Pages (e.g. topping-tech.github.io/playbook/)
  */
 (function () {
   if (document.getElementById("tc-nav-bar")) return;
 
-  var pathParts = location.pathname.split("/").filter(Boolean);
-  var fileName = pathParts[pathParts.length - 1] || "index.html";
-  var folderParts = pathParts.slice(0, -1);
-  var relKey = folderParts.length ? folderParts.join("/") + "/" + fileName : fileName;
-  var depth = folderParts.length;
-  var homeHref = depth > 0 ? "../".repeat(depth) + "index.html" : "./index.html";
+  /** GitHub Pages project sites: /REPO/... — strip repo prefix for pair lookup */
+  function parsePath() {
+    var pathParts = location.pathname.split("/").filter(Boolean);
+    var fileName = pathParts[pathParts.length - 1] || "index.html";
+
+    /* github.io/playbook/sales/x.html → base /playbook/, relKey sales/x.html */
+    if (location.hostname.indexOf("github.io") !== -1 && pathParts.length >= 1) {
+      var repo = pathParts[0];
+      var inside = pathParts.slice(1);
+      var folderParts = inside.slice(0, -1);
+      var relKey = folderParts.length
+        ? folderParts.join("/") + "/" + fileName
+        : fileName;
+      return {
+        base: "/" + repo + "/",
+        fileName: fileName,
+        folderParts: folderParts,
+        relKey: relKey,
+        isDashboard: inside.length <= 1 && (fileName === "index.html" || fileName === "index-en.html")
+      };
+    }
+
+    /* Local: /sales/x.html */
+    var folderParts = pathParts.slice(0, -1);
+    var relKey = folderParts.length
+      ? folderParts.join("/") + "/" + fileName
+      : fileName;
+    return {
+      base: "/",
+      fileName: fileName,
+      folderParts: folderParts,
+      relKey: relKey,
+      isDashboard: pathParts.length <= 1 && (fileName === "index.html" || fileName === "index-en.html")
+    };
+  }
+
+  var p = parsePath();
+  var homeHref = p.base + "index.html";
 
   function resolveAltHref() {
     var pairs = window.TC_I18N_PAIRS || {};
-    var alt = pairs[relKey];
+    var alt = pairs[p.relKey];
     if (!alt) return null;
-    var altParts = alt.split("/");
-    var altFile = altParts[altParts.length - 1];
-    var altFolder = altParts.slice(0, -1).join("/");
-    var curFolder = folderParts.join("/");
-    if (altFolder === curFolder) return altFile;
-    if (depth === 0) return alt;
-    return "../".repeat(depth) + alt;
+    return p.base + alt;
   }
 
-  var isEn = /-en\.html$/.test(fileName) || fileName === "index-en.html" ||
-    fileName === "sales-candidate-package-en.html";
+  var isEn = /-en\.html$/.test(p.fileName) ||
+    p.fileName === "index-en.html" ||
+    p.fileName === "sales-candidate-package-en.html";
 
   var style = document.createElement("style");
   style.textContent = [
@@ -59,8 +84,7 @@
     bar.appendChild(langBtn);
   }
 
-  var isRootDash = (fileName === "index.html" || fileName === "index-en.html") && depth <= 1;
-  if (!isRootDash) {
+  if (!p.isDashboard) {
     var homeBtn = document.createElement("a");
     homeBtn.className = "tc-nav-btn";
     homeBtn.href = homeHref;

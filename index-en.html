@@ -130,7 +130,7 @@ code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; bord
   <header class="hero">
     <div class="hero-text">
       <h1>✨ Document Dashboard</h1>
-      <p>HTML library — Playbook, Sales, Business Plan & more. Search, filter, one click. Fully bilingual FA / EN.</p>
+      <p><b>22 active</b> + <b>108 archived</b> = 132 HTML files total. Bilingual FA / EN.</p>
       <div class="stats">
         <div class="stat"><span class="emoji">📄</span><b id="statTotal">0</b><span>Total</span></div>
         <div class="stat"><span class="emoji">✅</span><b id="statActive">0</b><span>Active</span></div>
@@ -150,8 +150,10 @@ code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; bord
       <option value="en">🇬🇧 English</option>
     </select>
     <select id="statusFilter">
-      <option value="all">⚡ All</option>
-      <option value="Active">✅ Active</option>
+      <option value="all">⚡ All (132)</option>
+      <option value="Active">✅ Active (22)</option>
+      <option value="Duplicate">📦 Duplicate</option>
+      <option value="Old Version">🗄️ Old Version</option>
     </select>
   </div>
 
@@ -171,18 +173,21 @@ code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; bord
 </div>
 
 <script src="assets/files-catalog.js"></script>
+<script src="assets/files-catalog-archive.js"></script>
 <script>
-const UI = { open:"🔗 Open", active:"✅ Active", all:"✨ All", catAll:"📁 All categories" };
-const catEmoji = { "Playbook":"📘", "Funding":"💰", "Sales":"📈", "Business Plan":"🗺️", "Proposals":"📄", "all":"✨" };
+const allFiles = files.concat(typeof archivedFiles !== "undefined" ? archivedFiles : []);
+const UI = { open:"🔗 Open", active:"✅ Active", all:"✨ All" };
+const catEmoji = { "Playbook":"📘", "Funding":"💰", "Sales":"📈", "Business Plan":"🗺️", "Proposals":"📄", "Archive":"🗄️", "all":"✨" };
 const langLabel = { fa:"🇮🇷 FA", en:"🇬🇧 EN", mixed:"🔀 Mix" };
+const statusLabel = { Active:"✅ Active", Duplicate:"📦 Dup", "Old Version":"🗄️ Old" };
 const $ = id => document.getElementById(id);
 function fmtKB(b){ return b<1024?b+" B":(b/1024).toFixed(1)+" KB"; }
 function buildFilters(){
-  [...new Set(files.map(f=>f.category))].sort().forEach(c=>{
+  [...new Set(allFiles.map(f=>f.category))].sort().forEach(c=>{
     const o=document.createElement("option"); o.value=c; o.textContent=(catEmoji[c]||"📁")+" "+c; $("categoryFilter").appendChild(o);
   });
   [["all",UI.all],...Object.entries(catEmoji).filter(([k])=>k!=="all")].forEach(([k,l])=>{
-    if(k!=="all"&&!files.some(f=>f.category===k)) return;
+    if(k!=="all"&&!allFiles.some(f=>f.category===k)) return;
     const b=document.createElement("button"); b.className="cat-pill"+(k==="all"?" active":""); b.dataset.cat=k; b.type="button";
     b.textContent=l+(k==="all"?"":(" "+k.split(" ")[0])); $("catNav").appendChild(b);
   });
@@ -190,23 +195,24 @@ function buildFilters(){
 }
 function getFiltered(){
   const q=$("search").value.trim().toLowerCase(), cat=$("categoryFilter").value, lang=$("languageFilter").value, stat=$("statusFilter").value;
-  return files.filter(f=>{ const hay=(f.title+f.htmlTitle+f.description+f.category).toLowerCase(); return (!q||hay.includes(q))&&(cat==="all"||f.category===cat)&&(lang==="all"||f.language===lang)&&(stat==="all"||f.status===stat); });
+  return allFiles.filter(f=>{ const hay=(f.title+f.htmlTitle+f.description+f.category+f.file).toLowerCase(); return (!q||hay.includes(q))&&(cat==="all"||f.category===cat)&&(lang==="all"||f.language===lang)&&(stat==="all"||f.status===stat); });
 }
 function render(){
   const arr=getFiltered(); $("cards").innerHTML=""; $("tableBody").innerHTML=""; $("empty").style.display=arr.length?"none":"block";
   arr.forEach(f=>{
     const card=document.createElement("article"); card.className="card";
-    const alt=f.alt?`<a class="btn btn-dl" href="${f.alt}" title="Other language">${f.language==="fa"?"🇬🇧 EN":"🇮🇷 FA"}</a>`:`<a class="btn btn-dl" href="${f.file}" download>⬇️</a>`;
+    const alt=f.alt?`<a class="btn btn-dl" href="${f.alt}">${f.language==="fa"?"🇬🇧 EN":"🇮🇷 FA"}</a>`:`<a class="btn btn-dl" href="${f.file}" download>⬇️</a>`;
+    const st=statusLabel[f.status]||f.status;
     card.innerHTML=`<div class="card-top"><div><h3>${f.title}</h3><p class="sub">${f.description}</p></div><span class="card-emoji">${f.emoji}</span></div>
-      <div class="meta"><span class="pill">${catEmoji[f.category]||"📁"} ${f.category}</span><span class="pill">${langLabel[f.language]||f.language}</span><span class="pill">${fmtKB(f.size)}</span><span class="pill pill-active">${UI.active}</span></div>
+      <div class="meta"><span class="pill">${catEmoji[f.category]||"📁"} ${f.category}</span><span class="pill">${langLabel[f.language]||"—"}</span><span class="pill">${fmtKB(f.size)}</span><span class="pill pill-active">${st}</span></div>
       <div class="actions"><a class="btn btn-open" href="${f.file}" target="_blank">${UI.open}</a>${alt}</div>`;
     $("cards").appendChild(card);
-    const tr=document.createElement("tr"); tr.innerHTML=`<td>${f.emoji} <b>${f.title}</b></td><td>${f.category}</td><td>${langLabel[f.language]||f.language}</td><td>${fmtKB(f.size)}</td><td><code>${f.file}</code></td>`;
+    const tr=document.createElement("tr"); tr.innerHTML=`<td>${f.emoji} <b>${f.title}</b></td><td>${f.category}</td><td>${langLabel[f.language]||"—"}</td><td>${fmtKB(f.size)}</td><td><code>${f.file}</code></td>`;
     $("tableBody").appendChild(tr);
   });
-  $("statTotal").textContent=files.length; $("statActive").textContent=files.filter(f=>f.status==="Active").length;
-  $("statCategories").textContent=new Set(files.map(f=>f.category)).size;
-  $("statSize").textContent=fmtKB(files.filter(f=>f.status==="Active").reduce((s,f)=>s+f.size,0));
+  $("statTotal").textContent=allFiles.length; $("statActive").textContent=allFiles.filter(f=>f.status==="Active").length;
+  $("statCategories").textContent=new Set(allFiles.map(f=>f.category)).size;
+  $("statSize").textContent=fmtKB(allFiles.reduce((s,f)=>s+f.size,0));
 }
 buildFilters(); ["search","categoryFilter","languageFilter","statusFilter"].forEach(id=>$(id).addEventListener("input",render)); render();
 </script>
