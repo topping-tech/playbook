@@ -1,4 +1,4 @@
-// Auto-generated archive catalog — 108 files
+// Archive catalog — 67 old-version files
 const archivedFiles = [
   {
     "title": "Amir Projects Report",
@@ -9,7 +9,7 @@ const archivedFiles = [
     "file": "archive/old-versions/Amir_Projects_Report-v1.html",
     "size": 3219,
     "status": "Old Version",
-    "description": "Old Version — Amir_Projects_Report-v1.html"
+    "description": "نسخه قدیمی — Amir_Projects_Report-v1.html"
   },
   {
     "title": "Amir Projects Report",
@@ -20,7 +20,7 @@ const archivedFiles = [
     "file": "archive/old-versions/Amir_Projects_Report.html",
     "size": 3219,
     "status": "Old Version",
-    "description": "Old Version — Amir_Projects_Report.html"
+    "description": "نسخه قدیمی — Amir_Projects_Report.html"
   },
   {
     "title": "Nas Framework Proposal Fa",
@@ -31,7 +31,7 @@ const archivedFiles = [
     "file": "archive/old-versions/NAS_Framework_Proposal_FA-v1.html",
     "size": 7413,
     "status": "Old Version",
-    "description": "Old Version — NAS_Framework_Proposal_FA-v1.html"
+    "description": "نسخه قدیمی — NAS_Framework_Proposal_FA-v1.html"
   },
   {
     "title": "Nas Framework Proposal Fa",
@@ -42,7 +42,7 @@ const archivedFiles = [
     "file": "archive/old-versions/NAS_Framework_Proposal_FA.html",
     "size": 7413,
     "status": "Old Version",
-    "description": "Old Version — NAS_Framework_Proposal_FA.html"
+    "description": "نسخه قدیمی — NAS_Framework_Proposal_FA.html"
   },
   {
     "title": "Topping Ceo B2B Scenario Full",
@@ -53,7 +53,7 @@ const archivedFiles = [
     "file": "archive/old-versions/Topping_CEO_B2B_Scenario_FULL-v1.html",
     "size": 13619,
     "status": "Old Version",
-    "description": "Old Version — Topping_CEO_B2B_Scenario_FULL-v1.html"
+    "description": "نسخه قدیمی — Topping_CEO_B2B_Scenario_FULL-v1.html"
   },
   {
     "title": "Topping Ceo B2B Scenario Full",
@@ -64,7 +64,7 @@ const archivedFiles = [
     "file": "archive/old-versions/Topping_CEO_B2B_Scenario_FULL.html",
     "size": 13619,
     "status": "Old Version",
-    "description": "Old Version — Topping_CEO_B2B_Scenario_FULL.html"
+    "description": "نسخه قدیمی — Topping_CEO_B2B_Scenario_FULL.html"
   },
   {
     "title": "Topping Courier Combined Marketing Compensation Evaluation F",
@@ -75,7 +75,7 @@ const archivedFiles = [
     "file": "archive/old-versions/Topping_Courier_Combined_Marketing_Compensation_Evaluation_FA_v1-v1.html",
     "size": 34489,
     "status": "Old Version",
-    "description": "Old Version — Topping_Courier_Combined_Marketing_Compensation_Evaluation_FA_v1-v1.html"
+    "description": "نسخه قدیمی — Topping_Courier_Combined_Marketing_Compensation_Evaluation_FA_v1-v1.html"
   },
   {
     "title": "Topping Courier Combined Marketing Compensation Evaluation F",
@@ -86,7 +86,7 @@ const archivedFiles = [
     "file": "archive/old-versions/Topping_Courier_Combined_Marketing_Compensation_Evaluation_FA_v1.html",
     "size": 34489,
     "status": "Old Version",
-    "description": "Old Version — Topping_Courier_Combined_Marketing_Compensation_Evaluation_FA_v1.html"
+    "description": "نسخه قدیمی — Topping_Courier_Combined_Marketing_Compensation_Evaluation_FA_v1.html"
   },
   {
     "title": "Barzin Holding Server Inventory",
@@ -97,7 +97,7 @@ const archivedFiles = [
     "file": "archive/old-versions/barzin_holding_server_inventory-v1.html",
     "size": 8174,
     "status": "Old Version",
-    "description": "Old Version — barzin_holding_server_inventory-v1.html"
+    "description": "نسخه قدیمی — barzin_holding_server_inventory-v1.html"
   },
   {
     "title": "Barzin Holding Server Inventory",
@@ -108,7 +108,7 @@ const archivedFiles = [
     "file": "archive/old-versions/barzin_holding_server_inventory.html",
     "size": 8174,
     "status": "Old Version",
-    "description": "Old Version — barzin_holding_server_inventory.html"
+    "description": "نسخه قدیمی — barzin_holding_server_inventory.html"
   },
   {
     "title": "Center Method Case Study",
@@ -119,7 +119,7 @@ const archivedFiles = [
     "file": "archive/old-versions/center_method_case_study-v1.html",
     "size": 25938,
     "status": "Old Version",
-    "description": "Old Version — center_method_case_study-v1.html"
+    "description": "نسخه قدیمی — center_method_case_study-v1.html"
   },
   {
     "title": "Center Method Case Study",
@@ -130,7 +130,7 @@ const archivedFiles = [
     "file": "archive/old-versions/center_method_case_study.html",
     "size": 25938,
     "status": "Old Version",
-    "description": "Old Version — center_method_case_study.html"
+    "description": "نسخه قدیمی — center_method_case_study.html"
   },
   {
     "title": "Center Strategy Topping",
@@ -141,7 +141,7 @@ const archivedFiles = [
     "file": "archive/old-versions/center_strategy_topping-v1.html",
     "size": 12620,
     "status": "Old Version",
-    "description": "Old Version — center_strategy_topping-v1.html"
+    "description": "نسخه قدیمی — center_strategy_topping-v1.html"
   },
   {
     "title": "Center Strategy Topping",
@@ -152,7 +152,7 @@ const archivedFiles = [
     "file": "archive/old-versions/center_strategy_topping.html",
     "size": 12620,
     "status": "Old Version",
-    "description": "Old Version — center_strategy_topping.html"
+    "description": "نسخه قدیمی — center_strategy_topping.html"
   },
   {
     "title": "Hamid English Coach Summary",
@@ -163,7 +163,7 @@ const archivedFiles = [
     "file": "archive/old-versions/hamid_english_coach_summary-v1.html",
     "size": 9905,
     "status": "Old Version",
-    "description": "Old Version — hamid_english_coach_summary-v1.html"
+    "description": "نسخه قدیمی — hamid_english_coach_summary-v1.html"
   },
   {
     "title": "Hamid English Coach Summary",
@@ -174,7 +174,7 @@ const archivedFiles = [
     "file": "archive/old-versions/hamid_english_coach_summary.html",
     "size": 9905,
     "status": "Old Version",
-    "description": "Old Version — hamid_english_coach_summary.html"
+    "description": "نسخه قدیمی — hamid_english_coach_summary.html"
   },
   {
     "title": "Lead Flowchart",
@@ -185,7 +185,7 @@ const archivedFiles = [
     "file": "archive/old-versions/lead_flowchart (1) (1)-v1.html",
     "size": 7599,
     "status": "Old Version",
-    "description": "Old Version — lead_flowchart (1) (1)-v1.html"
+    "description": "نسخه قدیمی — lead_flowchart (1) (1)-v1.html"
   },
   {
     "title": "Lead Flowchart",
@@ -196,7 +196,7 @@ const archivedFiles = [
     "file": "archive/old-versions/lead_flowchart (1) (1).html",
     "size": 7599,
     "status": "Old Version",
-    "description": "Old Version — lead_flowchart (1) (1).html"
+    "description": "نسخه قدیمی — lead_flowchart (1) (1).html"
   },
   {
     "title": "Leadership Assessment Demo",
@@ -207,7 +207,7 @@ const archivedFiles = [
     "file": "archive/old-versions/leadership_assessment_demo-v1.html",
     "size": 11956,
     "status": "Old Version",
-    "description": "Old Version — leadership_assessment_demo-v1.html"
+    "description": "نسخه قدیمی — leadership_assessment_demo-v1.html"
   },
   {
     "title": "Leadership Assessment Demo",
@@ -218,7 +218,7 @@ const archivedFiles = [
     "file": "archive/old-versions/leadership_assessment_demo.html",
     "size": 11956,
     "status": "Old Version",
-    "description": "Old Version — leadership_assessment_demo.html"
+    "description": "نسخه قدیمی — leadership_assessment_demo.html"
   },
   {
     "title": "Server",
@@ -229,7 +229,7 @@ const archivedFiles = [
     "file": "archive/old-versions/server (2)-v1.html",
     "size": 12777,
     "status": "Old Version",
-    "description": "Old Version — server (2)-v1.html"
+    "description": "نسخه قدیمی — server (2)-v1.html"
   },
   {
     "title": "Server",
@@ -240,7 +240,7 @@ const archivedFiles = [
     "file": "archive/old-versions/server (2).html",
     "size": 12777,
     "status": "Old Version",
-    "description": "Old Version — server (2).html"
+    "description": "نسخه قدیمی — server (2).html"
   },
   {
     "title": "Server 26 06 06",
@@ -251,7 +251,7 @@ const archivedFiles = [
     "file": "archive/old-versions/server_26_06_06-v1.html",
     "size": 8174,
     "status": "Old Version",
-    "description": "Old Version — server_26_06_06-v1.html"
+    "description": "نسخه قدیمی — server_26_06_06-v1.html"
   },
   {
     "title": "Server 26 06 06",
@@ -262,7 +262,7 @@ const archivedFiles = [
     "file": "archive/old-versions/server_26_06_06.html",
     "size": 8174,
     "status": "Old Version",
-    "description": "Old Version — server_26_06_06.html"
+    "description": "نسخه قدیمی — server_26_06_06.html"
   },
   {
     "title": "Topping B2B Sales Strategy",
@@ -273,7 +273,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping-b2b-sales-strategy.html",
     "size": 19305,
     "status": "Old Version",
-    "description": "Old Version — topping-b2b-sales-strategy.html"
+    "description": "نسخه قدیمی — topping-b2b-sales-strategy.html"
   },
   {
     "title": "Topping Courier Modern Signin",
@@ -284,7 +284,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping-courier-modern-signin (1)-v1.html",
     "size": 24873,
     "status": "Old Version",
-    "description": "Old Version — topping-courier-modern-signin (1)-v1.html"
+    "description": "نسخه قدیمی — topping-courier-modern-signin (1)-v1.html"
   },
   {
     "title": "Topping Courier Modern Signin",
@@ -295,7 +295,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping-courier-modern-signin (1).html",
     "size": 24873,
     "status": "Old Version",
-    "description": "Old Version — topping-courier-modern-signin (1).html"
+    "description": "نسخه قدیمی — topping-courier-modern-signin (1).html"
   },
   {
     "title": "Topping Courier Modern Signin",
@@ -306,7 +306,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping-courier-modern-signin-v1.html",
     "size": 24873,
     "status": "Old Version",
-    "description": "Old Version — topping-courier-modern-signin-v1.html"
+    "description": "نسخه قدیمی — topping-courier-modern-signin-v1.html"
   },
   {
     "title": "Topping Courier Modern Signin",
@@ -317,7 +317,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping-courier-modern-signin.html",
     "size": 24873,
     "status": "Old Version",
-    "description": "Old Version — topping-courier-modern-signin.html"
+    "description": "نسخه قدیمی — topping-courier-modern-signin.html"
   },
   {
     "title": "Topping Crm Guide",
@@ -328,7 +328,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping-crm-guide-v1.html",
     "size": 26381,
     "status": "Old Version",
-    "description": "Old Version — topping-crm-guide-v1.html"
+    "description": "نسخه قدیمی — topping-crm-guide-v1.html"
   },
   {
     "title": "Topping Crm Guide",
@@ -339,7 +339,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping-crm-guide.html",
     "size": 26381,
     "status": "Old Version",
-    "description": "Old Version — topping-crm-guide.html"
+    "description": "نسخه قدیمی — topping-crm-guide.html"
   },
   {
     "title": "Topping Content Guide",
@@ -350,7 +350,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_content_guide (1)-v1.html",
     "size": 23762,
     "status": "Old Version",
-    "description": "Old Version — topping_content_guide (1)-v1.html"
+    "description": "نسخه قدیمی — topping_content_guide (1)-v1.html"
   },
   {
     "title": "Topping Content Guide",
@@ -361,7 +361,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_content_guide (1).html",
     "size": 23762,
     "status": "Old Version",
-    "description": "Old Version — topping_content_guide (1).html"
+    "description": "نسخه قدیمی — topping_content_guide (1).html"
   },
   {
     "title": "Topping Courier B2B Outreach Templates",
@@ -372,7 +372,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_courier_b2b_outreach_templates-v1.html",
     "size": 7206,
     "status": "Old Version",
-    "description": "Old Version — topping_courier_b2b_outreach_templates-v1.html"
+    "description": "نسخه قدیمی — topping_courier_b2b_outreach_templates-v1.html"
   },
   {
     "title": "Topping Courier B2B Outreach Templates",
@@ -383,7 +383,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_courier_b2b_outreach_templates.html",
     "size": 7206,
     "status": "Old Version",
-    "description": "Old Version — topping_courier_b2b_outreach_templates.html"
+    "description": "نسخه قدیمی — topping_courier_b2b_outreach_templates.html"
   },
   {
     "title": "Topping Courier Carrier Partnership Outreach Crm Archive",
@@ -394,7 +394,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_courier_carrier_partnership_outreach_crm_archive (1)-v1.html",
     "size": 17165,
     "status": "Old Version",
-    "description": "Old Version — topping_courier_carrier_partnership_outreach_crm_archive (1)-v1.html"
+    "description": "نسخه قدیمی — topping_courier_carrier_partnership_outreach_crm_archive (1)-v1.html"
   },
   {
     "title": "Topping Courier Carrier Partnership Outreach Crm Archive",
@@ -405,7 +405,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_courier_carrier_partnership_outreach_crm_archive (1).html",
     "size": 17165,
     "status": "Old Version",
-    "description": "Old Version — topping_courier_carrier_partnership_outreach_crm_archive (1).html"
+    "description": "نسخه قدیمی — topping_courier_carrier_partnership_outreach_crm_archive (1).html"
   },
   {
     "title": "Topping Courier Carrier Partnership Outreach Crm Archive",
@@ -416,7 +416,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_courier_carrier_partnership_outreach_crm_archive-v1.html",
     "size": 17165,
     "status": "Old Version",
-    "description": "Old Version — topping_courier_carrier_partnership_outreach_crm_archive-v1.html"
+    "description": "نسخه قدیمی — topping_courier_carrier_partnership_outreach_crm_archive-v1.html"
   },
   {
     "title": "Topping Courier Carrier Partnership Outreach Crm Archive",
@@ -427,7 +427,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_courier_carrier_partnership_outreach_crm_archive.html",
     "size": 17165,
     "status": "Old Version",
-    "description": "Old Version — topping_courier_carrier_partnership_outreach_crm_archive.html"
+    "description": "نسخه قدیمی — topping_courier_carrier_partnership_outreach_crm_archive.html"
   },
   {
     "title": "Topping Courier Sales Strategy",
@@ -438,7 +438,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_courier_sales_strategy-v1.html",
     "size": 19305,
     "status": "Old Version",
-    "description": "Old Version — topping_courier_sales_strategy-v1.html"
+    "description": "نسخه قدیمی — topping_courier_sales_strategy-v1.html"
   },
   {
     "title": "Topping Courier Sales Strategy",
@@ -449,7 +449,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_courier_sales_strategy.html",
     "size": 19305,
     "status": "Old Version",
-    "description": "Old Version — topping_courier_sales_strategy.html"
+    "description": "نسخه قدیمی — topping_courier_sales_strategy.html"
   },
   {
     "title": "Topping International Center Business Plan",
@@ -460,7 +460,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_international_center_business_plan-v1.html",
     "size": 27611,
     "status": "Old Version",
-    "description": "Old Version — topping_international_center_business_plan-v1.html"
+    "description": "نسخه قدیمی — topping_international_center_business_plan-v1.html"
   },
   {
     "title": "Topping International Center Business Plan",
@@ -471,7 +471,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_international_center_business_plan.html",
     "size": 27611,
     "status": "Old Version",
-    "description": "Old Version — topping_international_center_business_plan.html"
+    "description": "نسخه قدیمی — topping_international_center_business_plan.html"
   },
   {
     "title": "Topping Marketing Compensation",
@@ -482,7 +482,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_marketing_compensation_v2-v1.html",
     "size": 34918,
     "status": "Old Version",
-    "description": "Old Version — topping_marketing_compensation_v2-v1.html"
+    "description": "نسخه قدیمی — topping_marketing_compensation_v2-v1.html"
   },
   {
     "title": "Topping Marketing Compensation",
@@ -493,7 +493,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_marketing_compensation_v2.html",
     "size": 34918,
     "status": "Old Version",
-    "description": "Old Version — topping_marketing_compensation_v2.html"
+    "description": "نسخه قدیمی — topping_marketing_compensation_v2.html"
   },
   {
     "title": "Topping Pallet Pricing Summary Fa",
@@ -504,7 +504,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_pallet_pricing_summary_fa-v1.html",
     "size": 20918,
     "status": "Old Version",
-    "description": "Old Version — topping_pallet_pricing_summary_fa-v1.html"
+    "description": "نسخه قدیمی — topping_pallet_pricing_summary_fa-v1.html"
   },
   {
     "title": "Topping Pallet Pricing Summary Fa",
@@ -515,7 +515,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_pallet_pricing_summary_fa.html",
     "size": 20918,
     "status": "Old Version",
-    "description": "Old Version — topping_pallet_pricing_summary_fa.html"
+    "description": "نسخه قدیمی — topping_pallet_pricing_summary_fa.html"
   },
   {
     "title": "Topping Partner Rate Model",
@@ -526,7 +526,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_partner_rate_model (1)-v1.html",
     "size": 6493,
     "status": "Old Version",
-    "description": "Old Version — topping_partner_rate_model (1)-v1.html"
+    "description": "نسخه قدیمی — topping_partner_rate_model (1)-v1.html"
   },
   {
     "title": "Topping Partner Rate Model",
@@ -537,7 +537,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_partner_rate_model (1).html",
     "size": 6493,
     "status": "Old Version",
-    "description": "Old Version — topping_partner_rate_model (1).html"
+    "description": "نسخه قدیمی — topping_partner_rate_model (1).html"
   },
   {
     "title": "Topping Partner Rate Model",
@@ -548,7 +548,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_partner_rate_model-v1.html",
     "size": 6493,
     "status": "Old Version",
-    "description": "Old Version — topping_partner_rate_model-v1.html"
+    "description": "نسخه قدیمی — topping_partner_rate_model-v1.html"
   },
   {
     "title": "Topping Partner Rate Model",
@@ -559,7 +559,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_partner_rate_model.html",
     "size": 6493,
     "status": "Old Version",
-    "description": "Old Version — topping_partner_rate_model.html"
+    "description": "نسخه قدیمی — topping_partner_rate_model.html"
   },
   {
     "title": "Topping Payment System Based On Evaluation",
@@ -570,7 +570,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_based_on_evaluation (1) (1)-v1.html",
     "size": 24825,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_based_on_evaluation (1) (1)-v1.html"
+    "description": "نسخه قدیمی — topping_payment_system_based_on_evaluation (1) (1)-v1.html"
   },
   {
     "title": "Topping Payment System Based On Evaluation",
@@ -581,7 +581,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_based_on_evaluation (1) (1).html",
     "size": 24825,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_based_on_evaluation (1) (1).html"
+    "description": "نسخه قدیمی — topping_payment_system_based_on_evaluation (1) (1).html"
   },
   {
     "title": "Topping Payment System Based On Evaluation",
@@ -592,7 +592,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_based_on_evaluation (1)-v1.html",
     "size": 24825,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_based_on_evaluation (1)-v1.html"
+    "description": "نسخه قدیمی — topping_payment_system_based_on_evaluation (1)-v1.html"
   },
   {
     "title": "Topping Payment System Based On Evaluation",
@@ -603,7 +603,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_based_on_evaluation (1).html",
     "size": 24825,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_based_on_evaluation (1).html"
+    "description": "نسخه قدیمی — topping_payment_system_based_on_evaluation (1).html"
   },
   {
     "title": "Topping Payment System Based On Evaluation",
@@ -614,7 +614,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_based_on_evaluation-v1.html",
     "size": 24825,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_based_on_evaluation-v1.html"
+    "description": "نسخه قدیمی — topping_payment_system_based_on_evaluation-v1.html"
   },
   {
     "title": "Topping Payment System Based On Evaluation",
@@ -625,7 +625,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_based_on_evaluation.html",
     "size": 24825,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_based_on_evaluation.html"
+    "description": "نسخه قدیمی — topping_payment_system_based_on_evaluation.html"
   },
   {
     "title": "Topping Payment System Based On Evaluation No Amir",
@@ -636,7 +636,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_based_on_evaluation_no_amir-v1.html",
     "size": 24623,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_based_on_evaluation_no_amir-v1.html"
+    "description": "نسخه قدیمی — topping_payment_system_based_on_evaluation_no_amir-v1.html"
   },
   {
     "title": "Topping Payment System Based On Evaluation No Amir",
@@ -647,7 +647,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_based_on_evaluation_no_amir.html",
     "size": 24623,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_based_on_evaluation_no_amir.html"
+    "description": "نسخه قدیمی — topping_payment_system_based_on_evaluation_no_amir.html"
   },
   {
     "title": "Topping Payment System Final",
@@ -658,7 +658,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_final (1)-v1.html",
     "size": 28835,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_final (1)-v1.html"
+    "description": "نسخه قدیمی — topping_payment_system_final (1)-v1.html"
   },
   {
     "title": "Topping Payment System Final",
@@ -669,7 +669,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_final (1).html",
     "size": 28835,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_final (1).html"
+    "description": "نسخه قدیمی — topping_payment_system_final (1).html"
   },
   {
     "title": "Topping Payment System Final",
@@ -680,7 +680,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_final (2)-v1.html",
     "size": 28835,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_final (2)-v1.html"
+    "description": "نسخه قدیمی — topping_payment_system_final (2)-v1.html"
   },
   {
     "title": "Topping Payment System Final",
@@ -691,7 +691,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_final (2).html",
     "size": 28835,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_final (2).html"
+    "description": "نسخه قدیمی — topping_payment_system_final (2).html"
   },
   {
     "title": "Topping Payment System Final",
@@ -702,7 +702,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_final-v1.html",
     "size": 28835,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_final-v1.html"
+    "description": "نسخه قدیمی — topping_payment_system_final-v1.html"
   },
   {
     "title": "Topping Payment System Final",
@@ -713,7 +713,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_payment_system_final.html",
     "size": 28835,
     "status": "Old Version",
-    "description": "Old Version — topping_payment_system_final.html"
+    "description": "نسخه قدیمی — topping_payment_system_final.html"
   },
   {
     "title": "Topping Pricing Landing",
@@ -724,7 +724,7 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_pricing_landing-v1.html",
     "size": 12419,
     "status": "Old Version",
-    "description": "Old Version — topping_pricing_landing-v1.html"
+    "description": "نسخه قدیمی — topping_pricing_landing-v1.html"
   },
   {
     "title": "Topping Pricing Landing",
@@ -735,457 +735,6 @@ const archivedFiles = [
     "file": "archive/old-versions/topping_pricing_landing.html",
     "size": 12419,
     "status": "Old Version",
-    "description": "Old Version — topping_pricing_landing.html"
-  },
-  {
-    "title": "Topping B2B Proposal Template Fa",
-    "emoji": "📦",
-    "htmlTitle": "Topping_B2B_Proposal_Template_FA (1)-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/Topping_B2B_Proposal_Template_FA (1)-dup1.html",
-    "size": 29443,
-    "status": "Duplicate",
-    "description": "Duplicate — Topping_B2B_Proposal_Template_FA (1)-dup1.html"
-  },
-  {
-    "title": "Topping B2B Proposal Template Fa",
-    "emoji": "📦",
-    "htmlTitle": "Topping_B2B_Proposal_Template_FA (1).html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/Topping_B2B_Proposal_Template_FA (1).html",
-    "size": 29443,
-    "status": "Duplicate",
-    "description": "Duplicate — Topping_B2B_Proposal_Template_FA (1).html"
-  },
-  {
-    "title": "Veloxa Founder Bible Prd Complete",
-    "emoji": "📦",
-    "htmlTitle": "VELOXA_Founder_Bible_PRD_Complete (1)-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/VELOXA_Founder_Bible_PRD_Complete (1)-dup1.html",
-    "size": 29017,
-    "status": "Duplicate",
-    "description": "Duplicate — VELOXA_Founder_Bible_PRD_Complete (1)-dup1.html"
-  },
-  {
-    "title": "Veloxa Founder Bible Prd Complete",
-    "emoji": "📦",
-    "htmlTitle": "VELOXA_Founder_Bible_PRD_Complete (1).html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/VELOXA_Founder_Bible_PRD_Complete (1).html",
-    "size": 29017,
-    "status": "Duplicate",
-    "description": "Duplicate — VELOXA_Founder_Bible_PRD_Complete (1).html"
-  },
-  {
-    "title": "Veloxa Founder Bible Prd Complete",
-    "emoji": "📦",
-    "htmlTitle": "VELOXA_Founder_Bible_PRD_Complete-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/VELOXA_Founder_Bible_PRD_Complete-dup1.html",
-    "size": 29017,
-    "status": "Duplicate",
-    "description": "Duplicate — VELOXA_Founder_Bible_PRD_Complete-dup1.html"
-  },
-  {
-    "title": "Veloxa Founder Bible Prd Complete",
-    "emoji": "📦",
-    "htmlTitle": "VELOXA_Founder_Bible_PRD_Complete.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/VELOXA_Founder_Bible_PRD_Complete.html",
-    "size": 29017,
-    "status": "Duplicate",
-    "description": "Duplicate — VELOXA_Founder_Bible_PRD_Complete.html"
-  },
-  {
-    "title": "Center Method Topping",
-    "emoji": "📦",
-    "htmlTitle": "center-method-topping.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/center-method-topping.html",
-    "size": 20068,
-    "status": "Duplicate",
-    "description": "Duplicate — center-method-topping.html"
-  },
-  {
-    "title": "Center Method Topping",
-    "emoji": "📦",
-    "htmlTitle": "center_method_topping (1)-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/center_method_topping (1)-dup1.html",
-    "size": 20068,
-    "status": "Duplicate",
-    "description": "Duplicate — center_method_topping (1)-dup1.html"
-  },
-  {
-    "title": "Center Method Topping",
-    "emoji": "📦",
-    "htmlTitle": "center_method_topping (1).html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/center_method_topping (1).html",
-    "size": 20068,
-    "status": "Duplicate",
-    "description": "Duplicate — center_method_topping (1).html"
-  },
-  {
-    "title": "Center Method Topping",
-    "emoji": "📦",
-    "htmlTitle": "center_method_topping-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/center_method_topping-dup1.html",
-    "size": 20068,
-    "status": "Duplicate",
-    "description": "Duplicate — center_method_topping-dup1.html"
-  },
-  {
-    "title": "Center Method Topping",
-    "emoji": "📦",
-    "htmlTitle": "center_method_topping.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/center_method_topping.html",
-    "size": 20068,
-    "status": "Duplicate",
-    "description": "Duplicate — center_method_topping.html"
-  },
-  {
-    "title": "Sales Candidate Package En",
-    "emoji": "📦",
-    "htmlTitle": "sales-candidate-package-en-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/sales-candidate-package-en-dup1.html",
-    "size": 50228,
-    "status": "Duplicate",
-    "description": "Duplicate — sales-candidate-package-en-dup1.html"
-  },
-  {
-    "title": "Sales Candidate Package En",
-    "emoji": "📦",
-    "htmlTitle": "sales-candidate-package-en.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/sales-candidate-package-en.html",
-    "size": 50228,
-    "status": "Duplicate",
-    "description": "Duplicate — sales-candidate-package-en.html"
-  },
-  {
-    "title": "Sales Candidate Package Fa",
-    "emoji": "📦",
-    "htmlTitle": "sales-candidate-package-fa-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/sales-candidate-package-fa-dup1.html",
-    "size": 57493,
-    "status": "Duplicate",
-    "description": "Duplicate — sales-candidate-package-fa-dup1.html"
-  },
-  {
-    "title": "Sales Candidate Package Fa",
-    "emoji": "📦",
-    "htmlTitle": "sales-candidate-package-fa.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/sales-candidate-package-fa.html",
-    "size": 57493,
-    "status": "Duplicate",
-    "description": "Duplicate — sales-candidate-package-fa.html"
-  },
-  {
-    "title": "Topping 2026 Business Plan Center Method",
-    "emoji": "📦",
-    "htmlTitle": "topping-2026-business-plan-center-method-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-2026-business-plan-center-method-dup1.html",
-    "size": 28112,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-2026-business-plan-center-method-dup1.html"
-  },
-  {
-    "title": "Topping 2026 Business Plan Center Method",
-    "emoji": "📦",
-    "htmlTitle": "topping-2026-business-plan-center-method.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-2026-business-plan-center-method.html",
-    "size": 28112,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-2026-business-plan-center-method.html"
-  },
-  {
-    "title": "Topping B2B Proposal Template Fa",
-    "emoji": "📦",
-    "htmlTitle": "topping-b2b-proposal-template-fa.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-b2b-proposal-template-fa.html",
-    "size": 29443,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-b2b-proposal-template-fa.html"
-  },
-  {
-    "title": "Topping Center Negotiation Strategy",
-    "emoji": "📦",
-    "htmlTitle": "topping-center-negotiation-strategy.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-center-negotiation-strategy.html",
-    "size": 51318,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-center-negotiation-strategy.html"
-  },
-  {
-    "title": "Topping Courier Center Negotiation Updated",
-    "emoji": "📦",
-    "htmlTitle": "topping-courier-center-negotiation-updated-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-courier-center-negotiation-updated-dup1.html",
-    "size": 51318,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-courier-center-negotiation-updated-dup1.html"
-  },
-  {
-    "title": "Topping Courier Center Negotiation Updated",
-    "emoji": "📦",
-    "htmlTitle": "topping-courier-center-negotiation-updated.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-courier-center-negotiation-updated.html",
-    "size": 51318,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-courier-center-negotiation-updated.html"
-  },
-  {
-    "title": "Topping Courier Strategy",
-    "emoji": "📦",
-    "htmlTitle": "topping-courier-strategy-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-courier-strategy-dup1.html",
-    "size": 43831,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-courier-strategy-dup1.html"
-  },
-  {
-    "title": "Topping Courier Strategy",
-    "emoji": "📦",
-    "htmlTitle": "topping-courier-strategy.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-courier-strategy.html",
-    "size": 43831,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-courier-strategy.html"
-  },
-  {
-    "title": "Topping Credit Bonus System",
-    "emoji": "📦",
-    "htmlTitle": "topping-credit-bonus-system-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-credit-bonus-system-dup1.html",
-    "size": 14115,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-credit-bonus-system-dup1.html"
-  },
-  {
-    "title": "Topping Credit Bonus System",
-    "emoji": "📦",
-    "htmlTitle": "topping-credit-bonus-system-dup2.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-credit-bonus-system-dup2.html",
-    "size": 14115,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-credit-bonus-system-dup2.html"
-  },
-  {
-    "title": "Topping Credit Bonus System",
-    "emoji": "📦",
-    "htmlTitle": "topping-credit-bonus-system.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-credit-bonus-system.html",
-    "size": 14115,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-credit-bonus-system.html"
-  },
-  {
-    "title": "Topping Funding Sop 2026",
-    "emoji": "📦",
-    "htmlTitle": "topping-funding-sop-2026.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping-funding-sop-2026.html",
-    "size": 28245,
-    "status": "Duplicate",
-    "description": "Duplicate — topping-funding-sop-2026.html"
-  },
-  {
-    "title": "Topping 2026 Business Plan Center Method",
-    "emoji": "📦",
-    "htmlTitle": "topping_2026_business_plan_center_method (1)-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_2026_business_plan_center_method (1)-dup1.html",
-    "size": 28112,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_2026_business_plan_center_method (1)-dup1.html"
-  },
-  {
-    "title": "Topping 2026 Business Plan Center Method",
-    "emoji": "📦",
-    "htmlTitle": "topping_2026_business_plan_center_method (1).html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_2026_business_plan_center_method (1).html",
-    "size": 28112,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_2026_business_plan_center_method (1).html"
-  },
-  {
-    "title": "Topping 2026 Business Plan Center Method",
-    "emoji": "📦",
-    "htmlTitle": "topping_2026_business_plan_center_method-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_2026_business_plan_center_method-dup1.html",
-    "size": 28112,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_2026_business_plan_center_method-dup1.html"
-  },
-  {
-    "title": "Topping 2026 Business Plan Center Method",
-    "emoji": "📦",
-    "htmlTitle": "topping_2026_business_plan_center_method.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_2026_business_plan_center_method.html",
-    "size": 28112,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_2026_business_plan_center_method.html"
-  },
-  {
-    "title": "Topping Courier Sales Candidate Information Package",
-    "emoji": "📦",
-    "htmlTitle": "topping_courier_sales_candidate_information_package-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_courier_sales_candidate_information_package-dup1.html",
-    "size": 50228,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_courier_sales_candidate_information_package-dup1.html"
-  },
-  {
-    "title": "Topping Courier Sales Candidate Information Package",
-    "emoji": "📦",
-    "htmlTitle": "topping_courier_sales_candidate_information_package.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_courier_sales_candidate_information_package.html",
-    "size": 50228,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_courier_sales_candidate_information_package.html"
-  },
-  {
-    "title": "Topping Courier Sales Candidate Information Package Fa",
-    "emoji": "📦",
-    "htmlTitle": "topping_courier_sales_candidate_information_package_fa-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_courier_sales_candidate_information_package_fa-dup1.html",
-    "size": 57493,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_courier_sales_candidate_information_package_fa-dup1.html"
-  },
-  {
-    "title": "Topping Courier Sales Candidate Information Package Fa",
-    "emoji": "📦",
-    "htmlTitle": "topping_courier_sales_candidate_information_package_fa.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_courier_sales_candidate_information_package_fa.html",
-    "size": 57493,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_courier_sales_candidate_information_package_fa.html"
-  },
-  {
-    "title": "Topping Credit System",
-    "emoji": "📦",
-    "htmlTitle": "topping_credit_system-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_credit_system-dup1.html",
-    "size": 14115,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_credit_system-dup1.html"
-  },
-  {
-    "title": "Topping Credit System",
-    "emoji": "📦",
-    "htmlTitle": "topping_credit_system.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_credit_system.html",
-    "size": 14115,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_credit_system.html"
-  },
-  {
-    "title": "Topping Employee Funding Sop 1",
-    "emoji": "📦",
-    "htmlTitle": "topping_employee_funding_sop-1-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_employee_funding_sop-1-dup1.html",
-    "size": 28245,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_employee_funding_sop-1-dup1.html"
-  },
-  {
-    "title": "Topping Employee Funding Sop 1",
-    "emoji": "📦",
-    "htmlTitle": "topping_employee_funding_sop-1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_employee_funding_sop-1.html",
-    "size": 28245,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_employee_funding_sop-1.html"
-  },
-  {
-    "title": "Topping Lead Strategy",
-    "emoji": "📦",
-    "htmlTitle": "topping_lead_strategy (1) (1)-dup1.html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_lead_strategy (1) (1)-dup1.html",
-    "size": 41035,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_lead_strategy (1) (1)-dup1.html"
-  },
-  {
-    "title": "Topping Lead Strategy",
-    "emoji": "📦",
-    "htmlTitle": "topping_lead_strategy (1) (1).html",
-    "category": "Archive",
-    "language": "fa",
-    "file": "archive/duplicates/topping_lead_strategy (1) (1).html",
-    "size": 41035,
-    "status": "Duplicate",
-    "description": "Duplicate — topping_lead_strategy (1) (1).html"
+    "description": "نسخه قدیمی — topping_pricing_landing.html"
   }
 ];

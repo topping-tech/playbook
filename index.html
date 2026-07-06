@@ -255,7 +255,14 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(255,255,255,.6);
   color: var(--muted);
 }
-.pill-active { background: rgba(5,150,105,.12); color: #047857; border-color: rgba(5,150,105,.2); }
+.pill-active { background: rgba(5,150,105,.15); color: #047857; border-color: rgba(5,150,105,.35); font-weight: 800; }
+.pill-old    { background: rgba(245,158,11,.18); color: #b45309; border-color: rgba(245,158,11,.45); font-weight: 800; }
+.pill-dup    { background: rgba(239,68,68,.14); color: #b91c1c; border-color: rgba(239,68,68,.35); font-weight: 800; }
+
+.card-live { border-color: rgba(5,150,105,.25); box-shadow: 0 4px 24px rgba(5,150,105,.08); }
+.card-old  { border-color: rgba(245,158,11,.4); background: rgba(255,251,235,.55); box-shadow: 0 4px 20px rgba(245,158,11,.1); }
+.card-old h3 { color: #92400e; }
+.card-old .sub { color: #a16207; }
 
 .actions { display: flex; gap: 8px; margin-top: 14px; }
 .btn {
@@ -341,7 +348,7 @@ code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; bord
   <header class="hero">
     <div class="hero-text">
       <h1>✨ داشبورد اسناد</h1>
-      <p>کتابخانه HTML دوزبانه — <b>۲۲ فعال</b> + <b>۱۰۸ آرشیو</b> = ۱۳۲ فایل کل</p>
+      <p>کتابخانه HTML — <b style="color:#047857">۲۲ فعال</b> · <b style="color:#b45309">۶۷ قدیمی</b> · تکراری‌ها حذف شدند</p>
       <div class="stats">
         <div class="stat"><span class="emoji">📄</span><b id="statTotal">0</b><span>کل</span></div>
         <div class="stat"><span class="emoji">✅</span><b id="statActive">0</b><span>فعال</span></div>
@@ -364,10 +371,9 @@ code { font-size: 11px; background: rgba(255,255,255,.4); padding: 2px 6px; bord
       <option value="mixed">🔀 Mixed</option>
     </select>
     <select id="statusFilter">
-      <option value="all">⚡ همه (۱۳۲)</option>
+      <option value="all">⚡ همه (۸۹)</option>
       <option value="Active">✅ فعال (۲۲)</option>
-      <option value="Duplicate">📦 تکراری</option>
-      <option value="Old Version">🗄️ آرشیو قدیمی</option>
+      <option value="Old Version">🗄️ قدیمی (۶۷)</option>
     </select>
   </div>
 
@@ -402,6 +408,8 @@ const UI = { open:"🔗 باز کردن", active:"✅ فعال", all:"✨ همه
 const catEmoji = { "Playbook":"📘", "Funding":"💰", "Sales":"📈", "Business Plan":"🗺️", "Proposals":"📄", "Archive":"🗄️", "all":"✨" };
 const langLabel = { fa:"🇮🇷 FA", en:"🇬🇧 EN", mixed:"🔀 Mix" };
 const statusLabel = { Active:"✅ فعال", Duplicate:"📦 تکراری", "Old Version":"🗄️ قدیمی" };
+const statusPill  = { Active:"pill-active", Duplicate:"pill-dup", "Old Version":"pill-old" };
+const cardClass   = { Active:"card-live", "Old Version":"card-old", Duplicate:"card-dup" };
 const $ = id => document.getElementById(id);
 
 function fmtKB(b) { return b < 1024 ? b+" B" : (b/1024).toFixed(1)+" KB"; }
@@ -455,8 +463,9 @@ function render() {
       ? `<a class="btn btn-dl" href="${f.alt}" title="زبان دیگر">${f.language==="fa"?"🇬🇧 EN":"🇮🇷 FA"}</a>`
       : `<a class="btn btn-dl" href="${f.file}" download>⬇️</a>`;
     const st = statusLabel[f.status] || f.status;
+    const pillCls = statusPill[f.status] || "pill-active";
     const card = document.createElement("article");
-    card.className = "card";
+    card.className = "card " + (cardClass[f.status] || "");
     card.innerHTML = `
       <div class="card-top">
         <div>
@@ -469,7 +478,7 @@ function render() {
         <span class="pill">${catEmoji[f.category]||"📁"} ${f.category}</span>
         <span class="pill">${langLabel[f.language]||f.language||"—"}</span>
         <span class="pill">${fmtKB(f.size)}</span>
-        <span class="pill pill-active">${st}</span>
+        <span class="pill ${pillCls}">${st}</span>
       </div>
       <div class="actions">
         <a class="btn btn-open" href="${f.file}" target="_blank">${UI.open}</a>
