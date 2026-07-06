@@ -130,11 +130,8 @@ topic-descriptor[-language].html
 3. **Settings → Pages → Source:** Deploy from branch
 4. Branch: `main` / Folder: `/ (root)`
 5. داشبورد در آدرس زیر در دسترس است:
-
-```text
-(https://topping-tech.github.io/playbook/)
-
-
+[
+https://topping-tech.github.io/playbook/
 ## نکات امنیتی
 
 هرگز در این Repository ذخیره نکنید:
